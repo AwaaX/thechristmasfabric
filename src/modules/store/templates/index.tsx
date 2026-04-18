@@ -42,7 +42,7 @@ const StoreTemplate = ({
             <div className="flex flex-col gap-y-2">
               <ul
                 className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-2"
-                data-testid="footer-categories"
+     
               >
                 {productCategories?.slice(0, 6).map((c) => {
                   if (c.parent_category) {
@@ -67,12 +67,11 @@ const StoreTemplate = ({
                           children && "txt-small-plus"
                         )}
                         href={`/categories/${c.handle}`}
-                        data-testid="category-link"
                       >
                         <img
                           src={c?.product_category_image?.[0]?.url}
                           alt={c.name}
-                          className=" h-auto"
+                          className="w-full h-32 object-cover mb-2 rounded-mdd"
                         />
                         {c.name}
                       </LocalizedClientLink>

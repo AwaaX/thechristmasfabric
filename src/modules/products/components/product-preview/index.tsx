@@ -24,6 +24,7 @@ export default async function ProductPreview({
   //   return null
   // }
 
+
   const { cheapestPrice } = getProductPrice({
     product,
   })
