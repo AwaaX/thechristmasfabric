@@ -41,6 +41,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
                     v !== current,
                 }
               )}
+              style={{ flex: "auto"}}
               disabled={disabled}
               data-testid="option-button"
             >
