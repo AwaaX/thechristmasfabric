@@ -14,7 +14,7 @@ import {
   setCartId,
 } from "./cookies"
 import { getRegion } from "./regions"
-import { getLocale } from "@lib/data/locale-actions"
+import { getLocale, updateLocale } from "@lib/data/locale-actions"
 
 /**
  * Retrieves a cart by its ID. If no ID is provided, it will use the cart ID from the cookies.
@@ -442,6 +442,14 @@ export async function updateRegion(countryCode: string, currentPath: string) {
     await updateCart({ region_id: region.id })
     const cartCacheTag = await getCacheTag("carts")
     revalidateTag(cartCacheTag)
+  }
+
+  // Set locale from region metadata (e.g. metadata.locale_de = "de")
+  const metadataLocale = region.metadata?.[`locale_${countryCode}`] as
+    | string
+    | undefined
+  if (metadataLocale) {
+    await updateLocale(metadataLocale)
   }
 
   const regionCacheTag = await getCacheTag("regions")
