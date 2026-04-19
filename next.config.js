@@ -32,6 +32,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "tcfbucket.s3.fr-par.scw.cloud",
+      },
+      {
+        protocol: "https",
         hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
       },
       {

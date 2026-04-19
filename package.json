@@ -20,6 +20,7 @@
     "@medusajs/js-sdk": "latest",
     "@medusajs/ui": "latest",
     "@meilisearch/instant-meilisearch": "^0.30.0",
+    "@next/third-parties": "^16.2.4",
     "@radix-ui/react-accordion": "^1.2.1",
     "@stripe/react-stripe-js": "^5.3.0",
     "@stripe/stripe-js": "^8.2.0",

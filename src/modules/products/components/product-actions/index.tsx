@@ -2,6 +2,8 @@
 
 import { addToCart } from "@lib/data/cart"
 import { useIntersection } from "@lib/hooks/use-in-view"
+import { buildProductAnalyticsItem } from "@lib/util/ga4"
+import { trackGAEvent } from "@lib/util/ga4-client"
 import { HttpTypes } from "@medusajs/types"
 import { Button } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
@@ -30,6 +32,7 @@ const optionsAsKeymap = (
 
 export default function ProductActions({
   product,
+  region,
   disabled,
 }: ProductActionsProps) {
   const router = useRouter()
@@ -130,13 +133,27 @@ export default function ProductActions({
 
     setIsAdding(true)
 
-    await addToCart({
-      variantId: selectedVariant.id,
-      quantity: 1,
-      countryCode,
-    })
+    try {
+      await addToCart({
+        variantId: selectedVariant.id,
+        quantity: 1,
+        countryCode,
+      })
 
-    setIsAdding(false)
+      const gaItem = buildProductAnalyticsItem({
+        product,
+        quantity: 1,
+        variantId: selectedVariant.id,
+      })
+
+      trackGAEvent("add_to_cart", {
+        currency: region.currency_code?.toUpperCase(),
+        value: gaItem.price,
+        items: [gaItem],
+      })
+    } finally {
+      setIsAdding(false)
+    }
   }
 
   return (

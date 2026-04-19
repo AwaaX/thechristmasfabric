@@ -1,5 +1,6 @@
 import React, { Suspense } from "react"
 
+import AnalyticsEvent from "@modules/analytics/components/event"
 import ImageGallery from "@modules/products/components/image-gallery"
 import ProductActions from "@modules/products/components/product-actions"
 import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta"
@@ -10,6 +11,7 @@ import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-relat
 import { notFound } from "next/navigation"
 import { HttpTypes } from "@medusajs/types"
 
+import { buildProductAnalyticsItem } from "@lib/util/ga4"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import ProductReviews from "../components/product-reviews"
 
@@ -18,6 +20,7 @@ type ProductTemplateProps = {
   region: HttpTypes.StoreRegion
   countryCode: string
   images: HttpTypes.StoreProductImage[]
+  selectedVariantId?: string
 }
 
 const ProductTemplate: React.FC<ProductTemplateProps> = ({
@@ -25,13 +28,27 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   region,
   countryCode,
   images,
+  selectedVariantId,
 }) => {
   if (!product || !product.id) {
     return notFound()
   }
 
+  const productAnalyticsItem = buildProductAnalyticsItem({
+    product,
+    variantId: selectedVariantId,
+  })
+
   return (
     <>
+      <AnalyticsEvent
+        eventName="view_item"
+        params={{
+          currency: region.currency_code?.toUpperCase(),
+          value: productAnalyticsItem.price,
+          items: [productAnalyticsItem],
+        }}
+      />
       <div
         className="content-container  flex flex-col small:flex-row  py-6 relative"
         data-testid="product-container"
@@ -66,7 +83,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         {
           <div
             dangerouslySetInnerHTML={{
-              __html: product.description.replace(/\\n/g, ""),
+              __html: product.description?.replace(/\\n/g, "") ?? "",
             }}
           />
         }

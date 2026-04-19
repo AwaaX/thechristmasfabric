@@ -1,7 +1,9 @@
 import { listProducts } from "@lib/data/products"
+import { buildProductListAnalyticsItems } from "@lib/util/ga4"
 import { HttpTypes } from "@medusajs/types"
 import { Text } from "@medusajs/ui"
 
+import AnalyticsEvent from "@modules/analytics/components/event"
 import InteractiveLink from "@modules/common/components/interactive-link"
 import ProductPreview from "@modules/products/components/product-preview"
 
@@ -28,6 +30,16 @@ export default async function ProductRail({
 
   return (
     <div className="content-container py-12 small:py-24">
+      <AnalyticsEvent
+        eventName="view_item_list"
+        params={{
+          item_list_name: collection.title,
+          items: buildProductListAnalyticsItems({
+            listName: collection.title,
+            products: pricedProducts,
+          }),
+        }}
+      />
       <div className="flex justify-between mb-8">
         <Text className="txt-xlarge">{collection.title}</Text>
         <InteractiveLink href={`/collections/${collection.handle}`}>

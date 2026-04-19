@@ -1,6 +1,7 @@
 import { Heading } from "@medusajs/ui"
 import { cookies as nextCookies } from "next/headers"
 
+import AnalyticsEvent from "@modules/analytics/components/event"
 import CartTotals from "@modules/common/components/cart-totals"
 import Help from "@modules/order/components/help"
 import Items from "@modules/order/components/items"
@@ -9,6 +10,7 @@ import OrderDetails from "@modules/order/components/order-details"
 import ShippingDetails from "@modules/order/components/shipping-details"
 import PaymentDetails from "@modules/order/components/payment-details"
 import { HttpTypes } from "@medusajs/types"
+import { buildOrderAnalyticsPayload } from "@lib/util/ga4"
 
 type OrderCompletedTemplateProps = {
   order: HttpTypes.StoreOrder
@@ -18,11 +20,17 @@ export default async function OrderCompletedTemplate({
   order,
 }: OrderCompletedTemplateProps) {
   const cookies = await nextCookies()
+  const purchaseAnalyticsPayload = buildOrderAnalyticsPayload(order)
 
   const isOnboarding = cookies.get("_medusa_onboarding")?.value === "true"
 
   return (
     <div className="py-6 min-h-[calc(100vh-64px)]">
+      <AnalyticsEvent
+        eventName="purchase"
+        params={purchaseAnalyticsPayload}
+        storageKey={`ga4-purchase-${order.id}`}
+      />
       <div className="content-container flex flex-col justify-center items-center gap-y-10 max-w-4xl h-full w-full">
         {isOnboarding && <OnboardingCta orderId={order.id} />}
         <div

@@ -1,3 +1,5 @@
+import { buildCartAnalyticsPayload } from "@lib/util/ga4"
+import AnalyticsEvent from "@modules/analytics/components/event"
 import ItemsTemplate from "./items"
 import Summary from "./summary"
 import EmptyCartMessage from "../components/empty-cart-message"
@@ -12,9 +14,14 @@ const CartTemplate = ({
   cart: HttpTypes.StoreCart | null
   customer: HttpTypes.StoreCustomer | null
 }) => {
+  const cartAnalyticsPayload = cart ? buildCartAnalyticsPayload(cart) : null
+
   return (
     <div className="py-12">
       <div className="content-container" data-testid="cart-container">
+        {cart?.items?.length && cartAnalyticsPayload && (
+          <AnalyticsEvent eventName="view_cart" params={cartAnalyticsPayload} />
+        )}
         {cart?.items?.length ? (
           <div className="grid grid-cols-1 small:grid-cols-[1fr_360px] gap-x-40">
             <div className="flex flex-col bg-white py-6 gap-y-6">
