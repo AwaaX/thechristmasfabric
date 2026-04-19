@@ -1,6 +1,7 @@
 import { sdk } from "@lib/config"
 import { HttpTypes } from "@medusajs/types"
 import { getCacheOptions } from "./cookies"
+import { getLocale } from "./locale-actions"
 
 export const listCategories = async (query?: Record<string, any>) => {
   const next = {
@@ -9,13 +10,18 @@ export const listCategories = async (query?: Record<string, any>) => {
 
   const limit = query?.limit || 100
 
+  const locale = await getLocale()
+
+  const customTranslationFields = locale
+    ? `*custom_translation.${locale}`
+    : "*custom_translation"
+
   return sdk.client
     .fetch<{ product_categories: HttpTypes.StoreProductCategory[] }>(
       "/store/product-categories",
       {
         query: {
-          fields:
-            "*category_children, *products, *parent_category, *parent_category.parent_category,*product_category_image",
+          fields: `*category_children, *products, *parent_category, *parent_category.parent_category,*product_category_image,${customTranslationFields}`,
           limit,
           ...query,
         },
@@ -32,18 +38,23 @@ export const getCategoryByHandle = async (categoryHandle: string[]) => {
   const next = {
     ...(await getCacheOptions("categories")),
   }
+  const locale = await getLocale()
+
+  const customTranslationFields = locale
+    ? `*custom_translation.${locale}`
+    : "*custom_translation"
 
   return sdk.client
     .fetch<HttpTypes.StoreProductCategoryListResponse>(
       `/store/product-categories`,
       {
         query: {
-          fields: "*category_children, *products",
+          fields: `*category_children, *products,${customTranslationFields}`,
           handle,
         },
         next,
         cache: "force-cache",
       }
     )
-    .then(({ product_categories }) => product_categories[0])
+    .then(({ product_categories }) => product_categories)
 }
