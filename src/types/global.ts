@@ -1,4 +1,4 @@
-import { StorePrice } from "@medusajs/types"
+import { HttpTypes, StorePrice } from "@medusajs/types"
 
 export type FeaturedProduct = {
   id: string
@@ -30,4 +30,16 @@ export type StoreProductReview = {
   content: string
   first_name: string
   last_name: string
+}
+
+export type StoreWishlistItem = {
+  id: string
+  variant_id?: string | null
+  product_variant_id?: string | null
+  product_variant?: Partial<HttpTypes.StoreProductVariant> & { id: string }
+}
+
+export type StoreWishlist = {
+  id: string
+  items: StoreWishlistItem[]
 }

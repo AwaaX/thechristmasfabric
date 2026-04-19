@@ -7,11 +7,11 @@ import { Button } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
-import { useParams, usePathname, useSearchParams } from "next/navigation"
+import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
-import { useRouter } from "next/navigation"
+import WishlistButton from "../wishlist-button"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -58,6 +58,10 @@ export default function ProductActions({
       return isEqual(variantOptions, options)
     })
   }, [product.variants, options])
+
+  const wishlistVariantId =
+    selectedVariant?.id ??
+    ((product.variants?.length ?? 0) === 1 ? product.variants?.[0]?.id : undefined)
 
   // update the options when a variant is selected
   const setOptionValue = (optionId: string, value: string) => {
@@ -182,6 +186,11 @@ export default function ProductActions({
             ? "Out of stock"
             : "Add to cart"}
         </Button>
+        <WishlistButton
+          disabled={!!disabled}
+          variantId={wishlistVariantId}
+          unavailableLabel="Select a variant to save"
+        />
         <MobileActions
           product={product}
           variant={selectedVariant}

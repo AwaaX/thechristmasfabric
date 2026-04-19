@@ -1,10 +1,11 @@
 import { Text } from "@medusajs/ui"
-import { listProducts } from "@lib/data/products"
 import { getProductPrice } from "@lib/util/get-product-price"
+import { getDefaultProductVariant } from "@lib/util/product"
 import { HttpTypes } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "../thumbnail"
 import PreviewPrice from "./price"
+import WishlistButton from "../wishlist-button"
 
 export default async function ProductPreview({
   product,
@@ -15,23 +16,19 @@ export default async function ProductPreview({
   isFeatured?: boolean
   region: HttpTypes.StoreRegion
 }) {
-  // const pricedProduct = await listProducts({
-  //   regionId: region.id,
-  //   queryParams: { id: [product.id!] },
-  // }).then(({ response }) => response.products[0])
-
-  // if (!pricedProduct) {
-  //   return null
-  // }
-
-
   const { cheapestPrice } = getProductPrice({
     product,
   })
+  const defaultVariant = getDefaultProductVariant(product)
 
   return (
-    <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper">
+    <div className="group relative" data-testid="product-wrapper">
+      <WishlistButton
+        variantId={defaultVariant?.id}
+        mode="icon"
+        className="absolute right-3 top-3 z-10"
+      />
+      <LocalizedClientLink href={`/products/${product.handle}`} className="block">
         <Thumbnail
           thumbnail={product.thumbnail}
           images={product.images}
@@ -46,7 +43,7 @@ export default async function ProductPreview({
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
         </div>
-      </div>
-    </LocalizedClientLink>
+      </LocalizedClientLink>
+    </div>
   )
 }

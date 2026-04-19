@@ -2,6 +2,8 @@ import { Metadata } from "next"
 
 import { listCartOptions, retrieveCart } from "@lib/data/cart"
 import { retrieveCustomer } from "@lib/data/customer"
+import { retrieveWishlist } from "@lib/data/wishlist"
+import { WishlistProvider } from "@lib/context/wishlist-context"
 import { getBaseURL } from "@lib/util/env"
 import { StoreCartShippingOption } from "@medusajs/types"
 import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
@@ -15,6 +17,7 @@ export const metadata: Metadata = {
 
 export default async function PageLayout(props: { children: React.ReactNode }) {
   const customer = await retrieveCustomer()
+  const wishlist = customer ? await retrieveWishlist() : null
   const cart = await retrieveCart()
   let shippingOptions: StoreCartShippingOption[] = []
 
@@ -25,7 +28,10 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
   }
 
   return (
-    <>
+    <WishlistProvider
+      initialHasCustomer={Boolean(customer)}
+      initialWishlist={wishlist}
+    >
       <Nav />
       {customer && cart && (
         <CartMismatchBanner customer={customer} cart={cart} />
@@ -40,6 +46,6 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
       )}
       {props.children}
       <Footer />
-    </>
+    </WishlistProvider>
   )
 }
