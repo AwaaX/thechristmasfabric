@@ -36,17 +36,17 @@ export default async function Home(props: {
 
   return (
     <>
-     <Hero />
+      <Hero />
       {/* CountDown Section */}
       <CountDownSection />
       {/* Discover Section */}
       <DiscoverySection />
       {/* Qucik Look Section */}
-      {/* <QuickLookSection countryCode={countryCode} /> */}
+      <QuickLookSection countryCode={countryCode} />
       {/* Services Section */}
       <ServicesSection />
       {/* Review Section */}
-      {/* <ReviewSection /> */}
+      <ReviewSection />
       {/* NewsLetter Section */}
       <NewsLetterSection />
     </>

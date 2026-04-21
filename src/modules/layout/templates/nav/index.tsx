@@ -82,7 +82,7 @@ export default async function Nav() {
         </div>
       </div>
       {/* Main Navigation */}
-      <header id="header" className=" top-0 inset-x-0 z-50 group duration-500">
+      <header id="header" className="top-0 inset-x-0 z-50 group duration-500">
         <div className="h-[50px] md:h-[70px] mx-auto  duration-200 bg-white ">
           <nav className="content-container flex items-center justify-between h-full ">
             {/* Logo */}

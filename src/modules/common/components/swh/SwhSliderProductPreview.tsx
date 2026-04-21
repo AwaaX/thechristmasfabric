@@ -2,11 +2,9 @@
 
 import React from "react"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
-import { useWishlist } from "../context/WishlistContext"
-import { useModalWishlistContext } from "../context/ModalWishlistContext"
-import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import DynamicImage from "../components/DynamicImage"
+import DynamicImage from "./DynamicImage"
+
 
 const SwhSliderProductPreview = ({ data, type }) => {
   const OriginalPrice = data.price
@@ -43,7 +41,7 @@ const SwhSliderProductPreview = ({ data, type }) => {
                     <div className="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm">
                       Add To Wishlist
                     </div>
-                    <Icon.Star size={18} />
+                    <Icon.StarIcon size={18} />
                   </div>
                 </div>
 

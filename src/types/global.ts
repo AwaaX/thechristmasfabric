@@ -43,3 +43,18 @@ export type StoreWishlist = {
   id: string
   items: StoreWishlistItem[]
 }
+
+
+export interface TestimonialType {
+    id: string,
+    category: string,
+    title: string,
+    name: string,
+    shop?:string,
+    avatar: string,
+    date: string,
+    address: string,
+    description: string,
+    images: Array<string>,
+    star: number,
+}

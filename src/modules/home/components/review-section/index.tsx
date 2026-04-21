@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Heading, Text } from "@medusajs/ui"
-import Testimonial from "@modules/custom/components/Home1/Testimonial"
-import testimonialData from "@modules/custom/data/Testimonial.json"
+import reviews from "@lib/data/reviews.json"
+
 import { useTranslations } from "next-intl"
+import Testimonial from "@modules/layout/components/testimonial"
 const ReviewSection = () => {
   const t = useTranslations("HomePage.Reviews")
   return (
@@ -24,7 +25,7 @@ const ReviewSection = () => {
 
           {/* Review Slider */}
           <div className="md:h-[400px] w-full">
-            <Testimonial data={testimonialData} limit={6} />
+            <Testimonial data={reviews} limit={6} />
           </div>
         </div>
       </div>

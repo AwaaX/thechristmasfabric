@@ -1,0 +1,99 @@
+[
+    {
+        "id": "1",
+        "category": "fashion",
+        "title": "Variety of Styles!",
+        "name": "Ellie S.",
+        "shop":"French Shop",
+        "avatar": "/images/avatar/1.png",
+        "date": "November 10, 2023",
+        "address": "Tokyo, Japan",
+        "description": "I had been looking for matching pyjamas for a while before I came across The Christmas Fabric project. As well as being part of a cause that is important to me, the pyjamas are of good quality. They wash very well. We absolutely love them.",
+        "images": [
+            "/images/product/1000x1000.png",
+            "/images/product/1000x1000.png"
+        ],
+        "star": 5
+    },
+    {
+        "id": "2",
+        "category": "fashion",
+        "title": "Quality of Clothing!",
+        "name": "Shanna K.",
+        "shop":"Ireland",
+        "avatar": "/images/avatar/2.png",
+        "date": "November 11, 2023",
+        "address": "Madrid, Spain",
+        "description": "My 10 year old son is smaller than average, I took a size that was a little too big and customer service responded quickly to arrange an exchange. The pyjamas run large so I ordered an M rather than an L after checking the measurements; being a woman. The Christmas Fabric pyjamas are soft and the colour held up very well after the first hand wash. I appreciate my order and the project around this site.",
+        "images": [
+            "/images/product/1000x1000.png",
+            "/images/product/1000x1000.png"
+        ],
+        "star": 5
+    },
+    {
+        "id": "3",
+        "category": "fashion",
+        "title": "Customer Service!",
+        "name": "Leon H.",
+        "shop":"United Kingdom",
+        "avatar": "/images/avatar/3.png",
+        "date": "November 13, 2023",
+        "address": "Manchester, UK",
+        "description": "Ordered and received perfectly as expected. Soft and comfortable pyjamas. I am very pleased with the size of the pyjamas, they are quite large, this is fine for me as they are pyjamas, if not you can go one size down. Machine washed at 30 with colour fixer. No problems at all. Especially very cute for Christmas, and nice family pictures with everyone. Very positive about this site, and happy to be part of this initiative. I will order again.",
+        "images": [
+            "/images/product/1000x1000.png",
+            "/images/product/1000x1000.png"
+        ],
+        "star": 4
+    },
+    {
+        "id": "4",
+        "category": "fashion",
+        "title": "Variety of Styles!",
+        "name": "Ellie S.",
+        "shop":"French Shop",
+        "avatar": "/images/avatar/1.png",
+        "date": "November 10, 2023",
+        "address": "Tokyo, Japan",
+        "description": "I had been looking for matching pyjamas for a while before I came across The Christmas Fabric project. As well as being part of a cause that is important to me, the pyjamas are of good quality. They wash very well. We absolutely love them.",
+        "images": [
+            "/images/product/1000x1000.png",
+            "/images/product/1000x1000.png"
+        ],
+        "star": 5
+    },
+    {
+        "id": "5",
+        "category": "fashion",
+        "title": "Quality of Clothing!",
+        "name": "Shanna K.",
+        "shop":"Ireland",
+        "avatar": "/images/avatar/2.png",
+        "date": "November 11, 2023",
+        "address": "Madrid, Spain",
+        "description": "My 10 year old son is smaller than average, I took a size that was a little too big and customer service responded quickly to arrange an exchange. The pyjamas run large so I ordered an M rather than an L after checking the measurements; being a woman. The Christmas Fabric pyjamas are soft and the colour held up very well after the first hand wash. I appreciate my order and the project around this site.",
+        "images": [
+            "/images/product/1000x1000.png",
+            "/images/product/1000x1000.png"
+        ],
+        "star": 5
+    },
+    {
+        "id": "6",
+        "category": "fashion",
+        "title": "Customer Service!",
+        "name": "Leon H.",
+        "shop":"United Kingdom",
+        "avatar": "/images/avatar/3.png",
+        "date": "November 13, 2023",
+        "address": "Manchester, UK",
+        "description": "Ordered and received perfectly as expected. Soft and comfortable pyjamas. I am very pleased with the size of the pyjamas, they are quite large, this is fine for me as they are pyjamas, if not you can go one size down. Machine washed at 30 with colour fixer. No problems at all. Especially very cute for Christmas, and nice family pictures with everyone. Very positive about this site, and happy to be part of this initiative. I will order again.",
+        "images": [
+            "/images/product/1000x1000.png",
+            "/images/product/1000x1000.png"
+        ],
+        "star": 4
+    }
+ 
+]
