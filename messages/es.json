@@ -1,0 +1,151 @@
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Envío gratis en pedidos superiores a £65. No te pierdas el descuento."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "Nueva colección de Pijamas de Navidad 2023 aquí"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "todos los pijamas",
+        "Matching pyjamas": "Pijamas a juego",
+        "Family pyjamas": "Pijamas familiares",
+        "Customer service": "Servicio al cliente",
+        "baby": "talla de bebé disponible",
+        "kid": "talla de niño disponible",
+        "men": "talla de hombre disponible",
+        "women": "talla de mujer disponible"
+      },
+      "IconMenu": {
+        "Account": "Cuenta",
+        "Search": "Buscar",
+        "Wishlist": "Lista de deseos",
+        "Cart": "Carrito"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "LA TELA NAVIDEÑA ESTÁ LISTA PARA 2024",
+      "heading": "Pijamas y más",
+      "shortdescription": "Entra en el proyecto y compra increíbles pijamas y ropa original para Navidad y esta temporada de invierno de The Christmas Fabric",
+      "button": "comprar ahora"
+    },
+    "Timer": {
+      "heading": "reloj de Navidad",
+      "days": "días",
+      "hours": "horas",
+      "minutes": "minutos",
+      "seconds": "segundos"
+    },
+    "NewsLetter": {
+      "text1": "Suscríbete para estar de nuestro lado",
+      "text2": "Recibe las noticias más importantes sobre el mayor proyecto navideño internacional"
+    },
+    "Reviews": {
+      "text1": "Ellos comparten amor con hermosos pijamas",
+      "text2": "Opiniones de nuestra querida comunidad"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Envío gratis para pedidos superiores a £65",
+        "brief": "\"Obtén envío terrestre gratuito en cada pedido. ¿No te encanta? Devuélvenoslo.\""
+      },
+      "card2": {
+        "heading": "100% exclusividad navideña",
+        "brief": "Parte de las ganancias se destinarán directamente a un proyecto humanitario. ¡La aventura puede seguirse en Instagram o a través de nuestro boletín!"
+      },
+      "card3": {
+        "heading": "Comunidad real de amantes de la Navidad",
+        "brief": "Nuestros clientes son entusiastas de la Navidad y compartimos los mismos detalles para nuestra Navidad"
+      },
+      "description": "Todo un equipo está listo para recibir tus pedidos este año y satisfacer todas tus necesidades. Además de la seriedad con la que hacemos nuestros pijamas, ofrecemos un servicio de calidad que es importante para nosotros para garantizarte una experiencia de compra agradable con nosotros",
+      "query": "¿Cómo financiará tu pedido un proyecto humanitario?",
+      "link": "Haz clic aquí para saber más."
+    },
+    "QuickLook": {
+      "heading": "Vista rápida de nuestros productos",
+      "description": "Nos esforzamos por mantener la calidad en todo lo que hacemos, aquí tienes algunos de nuestros productos recién disponibles para esta Navidad"
+    },
+    "Discovery": {
+      "heading": "Descubre nuestros pijamas",
+      "description": "The Christmas Fabric ha trabajado duro este año nuevamente para traerte increíbles pijamas navideños. Encarga algunos para ti y tus seres queridos y apoya un proyecto humanitario con tu pedido",
+      "Item1": {
+        "heading": "Descubre todos nuestros pijamas de Navidad sin buscar más",
+        "brief": "La colección definitiva de nuestros últimos pijamas y ropa de Navidad para todos. Sin clasificar.",
+        "title": "Pijamas navideños"
+      },
+      "Item2": {
+        "heading": "Perfecto para familias, grandes o pequeñas",
+        "brief": "Encuentra un modelo de pijama disponible para toda tu familia directamente. Aquí cada modelo está disponible en todas las edades y tamaños. ¡Ideal para Navidad!",
+        "title": "Pijamas de Navidad para toda la familia"
+      },
+      "Item3": {
+        "heading": "Nuestros diseños a juego para que tú y tu pareja los usen juntos",
+        "brief": "Encuentra nuestros modelos de pijamas a juego disponibles para hombres y mujeres. Disponible en todas las tallas. Para ti y tu ser querido.",
+        "title": "Pijamas de Navidad para toda la familia"
+      },
+      "item3": {
+        "title": "Pijamas de Navidad para parejas y a juego"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Cambiar país o moneda",
+      "Link1": "Contacta con el servicio al cliente y preguntas frecuentes",
+      "Link2": "Tu compra financiará este proyecto humanitario"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — AMANTES DE LA NAVIDAD EN TODO EL MUNDO",
+      "text2": "COMUNIDAD"
+    },
+    "Middle": {
+      "text1": "Servicio de atención al cliente reactivo 24/7",
+      "text2": "Envío rápido rastreado las 24 horas",
+      "text3": "Devolución fácil y rápida en 24 horas",
+      "text4": "Pago en 4 veces con Paypal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "ayuda",
+        "text2": "¿Necesitas ayuda?",
+        "text3": "Servicio al cliente",
+        "text4": "Nuestros equipos están conectados para responder a tus necesidades en 24 horas"
+      },
+      "Col2": {
+        "text1": "enlaces útiles",
+        "text2": "Información",
+        "link1": "Abrir mi lista de deseos",
+        "link2": "Ir a mi carrito",
+        "link3": "Ir a pagar",
+        "link4": "Iniciar sesión o registrarse",
+        "link5": "Mi cuenta"
+      },
+      "Col3": {
+        "text1": "Información",
+        "link1": "Rastrear mi pedido",
+        "link2": "Términos de entrega",
+        "link3": "Devolución y reembolso",
+        "link4": "Términos generales de venta",
+        "link5": "Aviso legal",
+        "link6": "Política de privacidad"
+      },
+      "Col4": {
+        "text1": "Boletín informativo — Tu sorpresa te espera",
+        "text2": "Recibe las noticias más importantes de la mayor comunidad navideña, infórmate de promociones y del avance del proyecto humanitario. Reclama tu regalo gratuito de bienvenida."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "Acepto los",
+      "txt2": "términos y condiciones",
+      "txt3": "la protección de datos",
+      "txt4": "¡Gracias por suscribirte al boletín! Nos",
+      "txt5": "pondremos en contacto pronto.",
+      "Placeholder": "Tu correo electrónico"
+    }
+  }
+}

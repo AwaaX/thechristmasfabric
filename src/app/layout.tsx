@@ -1,19 +1,70 @@
+import { getLocale } from "@lib/data/locale-actions"
 import { getBaseURL } from "@lib/util/env"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Metadata } from "next"
-import "styles/globals.css"
+import { NextIntlClientProvider } from "next-intl"
+import Script from "next/script"
+import "styles/globals.scss"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
 }
 
-export default function RootLayout(props: { children: React.ReactNode }) {
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "The Christmas Fabric",
+  url: "https://www.thechristmasfabric.com/",
+  logo: "https://www.thechristmasfabric.com/wp-content/uploads/2022/08/cropped-thechristmasfabric-icon-32x32.png",
+}
+
+export default async function RootLayout(props: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
+    const locale = await getLocale()
 
   return (
-    <html lang="en" data-mode="light">
+    <html lang={locale || ""} data-mode="light">
       <body>
-        <main className="relative">{props.children}</main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <main className="relative">
+          {" "}
+          <NextIntlClientProvider>{props.children}</NextIntlClientProvider>
+        </main>
+      <Script id="show-hide-header" strategy="beforeInteractive">
+        {`
+           let prevScrollPos = window.scrollY;
+          const header = document.getElementById('header');
+
+
+
+          window.addEventListener('scroll', () => {
+            const currentScrollPos = window.scrollY ;
+        
+            if (currentScrollPos <=100) {
+              // Scrolling up
+              header?.classList.remove('show-header')
+            }
+            else if (prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 20) {
+              // Scrolling up
+              header?.classList.add('show-header')
+            } else if(prevScrollPos < currentScrollPos && currentScrollPos-prevScrollPos > 20) {
+              // Scrolling down
+              header?.classList.remove('show-header')
+            }else{
+
+            }
+        
+            prevScrollPos = currentScrollPos;
+          });
+
+          
+
+          
+          `}
+      </Script>
       </body>
       {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>

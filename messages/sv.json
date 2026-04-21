@@ -1,0 +1,152 @@
+
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Fri frakt på beställningar över £65. Missa inte rabatten."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "Ny julpyjamas 2023-kollektion här"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "alla pyjamas",
+        "Matching pyjamas": "Matchande pyjamas",
+        "Family pyjamas": "Familjepyjamas",
+        "Customer service": "Kundtjänst",
+        "baby": "babystorlekar tillgängliga",
+        "kid": "barnstorlekar tillgängliga",
+        "men": "herrstorlekar tillgängliga",
+        "women": "dammstorlekar tillgängliga"
+      },
+      "IconMenu": {
+        "Account": "Konto",
+        "Search": "Sök",
+        "Wishlist": "Önskelista",
+        "Cart": "Varukorg"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "JULSTOFFEN ÄR REDO FÖR 2024",
+      "heading": "Pyjamas & mer",
+      "shortdescription": "Gå med i projektet och köp fantastiska pyjamas och originalkläder för julen och den här vintersäsongen från The Christmas Fabric",
+      "button": "handla nu"
+    },
+    "Timer": {
+      "heading": "julklok",
+      "days": "dagar",
+      "hours": "timmar",
+      "minutes": "minuter",
+      "seconds": "sekunder"
+    },
+    "NewsLetter": {
+      "text1": "Prenumerera för att stå på vår sida",
+      "text2": "Ta emot de viktigaste nyheterna om det största internationella julprojektet"
+    },
+    "Reviews": {
+      "text1": "De delar kärlek med vackra pyjamas",
+      "text2": "Recensioner från vår kära community"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Fri frakt på beställningar över £65",
+        "brief": "\"Få gratis markfrakt på varje beställning. Gillar du inte det? Skicka tillbaka det till oss.\""
+      },
+      "card2": {
+        "heading": "100% julexklusivitet",
+        "brief": "En del av vinsten går direkt till ett humanitärt projekt. Äventyret kan följas på Instagram eller via vårt nyhetsbrev!"
+      },
+      "card3": {
+        "heading": "En riktig gemenskap av julälskare",
+        "brief": "Våra kunder är julentusiaster och vi delar samma passion för vår jul"
+      },
+      "description": "Ett helt team står redo att ta emot dina beställningar i år och möta alla dina behov. Förutom noggrannheten med vilken vi tillverkar våra pyjamas, erbjuder vi en kvalitetstjänst som är viktig för oss för att säkerställa en trevlig shoppingupplevelse",
+      "query": "Hur finansierar din beställning ett humanitärt projekt?",
+      "link": "Klicka här för att ta reda på mer."
+    },
+    "QuickLook": {
+      "heading": "En snabb titt på våra produkter",
+      "description": "Vi strävar efter att upprätthålla kvalitet i allt vi gör, här är några av våra nyare produkter för denna jul"
+    },
+    "Discovery": {
+      "heading": "Upptäck våra pyjamas",
+      "description": "The Christmas Fabric har återigen arbetat hårt i år för att ge dig fantastiska julpyjamas. Beställ några för dig och dina nära och kära och stöd ett humanitärt projekt med din beställning",
+      "Item1": {
+        "heading": "Upptäck alla våra julpyjamas utan att leta längre",
+        "brief": "Den ultimata samlingen av våra senaste pyjamas och julkläder för alla. Oklassificerad.",
+        "title": "Julpyjamas"
+      },
+      "Item2": {
+        "heading": "Perfekt för familjer, stora eller små",
+        "brief": "Hitta en tillgänglig pyjamamodell för hela familjen direkt. Här finns varje modell tillgänglig i alla åldrar och storlekar. Perfekt för julen!",
+        "title": "Julpyjamas för hela familjen"
+      },
+      "Item3": {
+        "heading": "Våra matchande modeller för dig och din partner att bära tillsammans",
+        "brief": "Hitta våra modeller av matchande pyjamas för män och kvinnor. Finns i alla storlekar. För dig och din älskling.",
+        "title": "Julpyjamas för hela familjen"
+      },
+      "item3": {
+        "title": "Matchande och par julpyjamas"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Byt land eller valuta",
+      "Link1": "Kontakta kundtjänst & Vanliga frågor",
+      "Link2": "Ditt köp finansierar detta humanitära projekt"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — VÄRLDSOMSPANNANDE JULÄLSKARE",
+      "text2": "GEMENSKAP"
+    },
+    "Middle": {
+      "text1": "24/7 reaktiv kundtjänst",
+      "text2": "Spårbar snabb leverans inom 24 timmar",
+      "text3": "Enkel och snabb retur inom 24 timmar",
+      "text4": "Betalning i 4 delar med PayPal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "hjälp",
+        "text2": "Behöver du hjälp?",
+        "text3": "Kundtjänst",
+        "text4": "Våra team är redo att svara på dina behov inom 24 timmar"
+      },
+      "Col2": {
+        "text1": "nyttiga länkar",
+        "text2": "Information",
+        "link1": "Öppna min önskelista",
+        "link2": "Gå till min kundvagn",
+        "link3": "Gå till kassan och betala",
+        "link4": "Logga in eller registrera dig",
+        "link5": "Mitt konto"
+      },
+      "Col3": {
+        "text1": "Information",
+        "link1": "Spåra min beställning",
+        "link2": "Leveransvillkor",
+        "link3": "Retur och återbetalning",
+        "link4": "Allmänna försäljningsvillkor",
+        "link5": "Juridiskt meddelande",
+        "link6": "Integritetspolicy"
+      },
+      "Col4": {
+        "text1": "Nyhetsbrev — Din överraskning väntar",
+        "text2": "Ta emot de viktigaste nyheterna från den största julgemenskapen, håll dig uppdaterad om kampanjer och framsteg för det humanitära projektet. Hämta din välkomstpresent."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "Jag accepterar",
+      "txt2": "villkoren",
+      "txt3": "dataskyddet",
+      "txt4": " Tack för att du anmält dig till nyhetsbrevet! Vi",
+      "txt5": "hör av oss snart.",
+      "Placeholder": "Din e-post"
+    }
+  }
+}

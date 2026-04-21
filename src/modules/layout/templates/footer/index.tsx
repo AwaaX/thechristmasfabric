@@ -1,155 +1,236 @@
-import { listCategories } from "@lib/data/categories"
-import { listCollections } from "@lib/data/collections"
-import { Text, clx } from "@medusajs/ui"
 
+
+import { listRegions } from "@lib/data/regions"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import MedusaCTA from "@modules/layout/components/medusa-cta"
+import { getTranslations } from "next-intl/server"
+import { TbTruckDelivery } from "react-icons/tb"
+import { MdOutlinePayment } from "react-icons/md"
+import { FaRotateLeft, FaInstagram, FaTiktok } from "react-icons/fa6"
+import { BiSupport } from "react-icons/bi"
+import fbbImg from "@lib/img/payment-1.png.webp"
+import Image from "next/image"
+import Link from "next/link"
+import NewsLetterEmail from "@modules/common/components/news-letter-email"
+
 
 export default async function Footer() {
-  const { collections } = await listCollections({
-    fields: "*products",
-  })
-  const productCategories = await listCategories()
+  
+  const regions = await listRegions().then((regions) => regions)
+  const t = await getTranslations("Footer")
+  const usefulLinks = [
+    {
+      name: t("Main.Col2.link1"),
+      path: "/wishlist",
+    },
+    {
+      name: t("Main.Col2.link2"),
+      path: "/cart",
+    },
+    {
+      name: t("Main.Col2.link3"),
+      path: "/cart",
+    },
+    {
+      name: t("Main.Col2.link4"),
+      path: "/account",
+    },
+    {
+      name: t("Main.Col2.link5"),
+      path: "/account",
+    },
+  ]
+  
+  const InfoLinks = [
+    {
+      name: t("Main.Col3.link1"),
+      path: "/track-my-order",
+    },
+    {
+      name: t("Main.Col3.link2"),
+      path: "/terms-of-delivery",
+    },
+    {
+      name: t("Main.Col3.link3"),
+      path: "/return-and-refund",
+    },
+    {
+      name: t("Main.Col3.link4"),
+      path: "/legal-notice",
+    },
+    {
+      name: t("Main.Col3.link5"),
+      path: "/legal-notice",
+    },
+    {
+      name: t("Main.Col3.link6"),
+      path: "/privacy-policy",
+    },
+  ]
+
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
-      <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div>
+    // Footer outer container
+    <footer className="w-full bg-[#f5f5f5]">
+      {/* Footer top Bar */}
+      <div className="w-full  py-9 ">
+        <div className="content-container flex max-md:flex-col md:items-center md:justify-between">
+          <div className="flex-1">
+            <div className="relative flex max-md:flex-col items-center gap-x-6 h-full flex-1 basis-0 justify-start">
+              <p>{t("Top.SwitchText")}</p>
+              {/* <SwhRegionSelect regions={regions} />
+              <SwhCurrencySelect regions={regions} /> */}
+            </div>
+          </div>
+          <div className="flex-1 text-center max-md:border-t border-black">
             <LocalizedClientLink
-              href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              href="/customer-service"
+              className="hover:text-hoverGray cursor-pointer duration-300 md:underline-gap whitespace-nowrap"
+              data-testid="nav-store-link"
             >
-              Medusa Store
+              {t("Top.Link1")}
             </LocalizedClientLink>
           </div>
-          <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
-            {productCategories && productCategories?.length > 0 && (
-              <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
-                  Categories
-                </span>
-                <ul
-                  className="grid grid-cols-1 gap-2"
-                  data-testid="footer-categories"
-                >
-                  {productCategories?.slice(0, 6).map((c) => {
-                    if (c.parent_category) {
-                      return
-                    }
+          <div className="flex-1 text-end max-md:text-center">
+            <LocalizedClientLink
+              href="/humanitarian-project"
+              className="hover:text-hoverGray cursor-pointer duration-300  whitespace-nowrap"
+              data-testid="nav-store-link"
+            >
+              {t("Top.Link2")}
+            </LocalizedClientLink>
+          </div>
+        </div>
+      </div>
 
-                    const children =
-                      c.category_children?.map((child) => ({
-                        name: child.name,
-                        handle: child.handle,
-                        id: child.id,
-                      })) || null
+      {/* Footer second Bar */}
+      <div className="w-full  py-6 border-t border-black">
+        <div className="content-container grid grid-cols-2 md:grid-cols-4 md:gap-x-16">
+          <div className=" font-normal flex items-center justify-center gap-[10px] group  md:border border-gray-400 p-5 md:px-7 rounded-full">
+            <BiSupport className="text-2xl" />
+            <p>{t("Middle.text1")}</p>
+          </div>
+          <div className=" font-normal flex items-center justify-center gap-[10px] group  md:border border-gray-400 p-5 md:px-7 rounded-full">
+            <TbTruckDelivery className="text-2xl" />
+            <p>{t("Middle.text2")}</p>
+          </div>
+          <div className=" font-normal flex items-center justify-center gap-[10px] group  md:border border-gray-400 p-5 md:px-7 rounded-full">
+            <FaRotateLeft className="text-2xl" />
+            <p>{t("Middle.text3")}</p>
+          </div>
+          <div className=" font-normal flex items-center justify-center gap-[10px] group  md:border border-gray-400 p-5 md:px-7 rounded-full">
+            <MdOutlinePayment className="text-2xl" />
+            <p>{t("Middle.text4")}</p>
+          </div>
+        </div>
+      </div>
 
-                    return (
-                      <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
-                        key={c.id}
-                      >
-                        <LocalizedClientLink
-                          className={clx(
-                            "hover:text-ui-fg-base",
-                            children && "txt-small-plus"
-                          )}
-                          href={`/categories/${c.handle}`}
-                          data-testid="category-link"
-                        >
-                          {c.name}
-                        </LocalizedClientLink>
-                        {children && (
-                          <ul className="grid grid-cols-1 ml-3 gap-2">
-                            {children &&
-                              children.map((child) => (
-                                <li key={child.id}>
-                                  <LocalizedClientLink
-                                    className="hover:text-ui-fg-base"
-                                    href={`/categories/${child.handle}`}
-                                    data-testid="category-link"
-                                  >
-                                    {child.name}
-                                  </LocalizedClientLink>
-                                </li>
-                              ))}
-                          </ul>
-                        )}
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            )}
-            {collections && collections.length > 0 && (
-              <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
-                  Collections
-                </span>
-                <ul
-                  className={clx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
-                    {
-                      "grid-cols-2": (collections?.length || 0) > 3,
-                    }
-                  )}
+      {/* footer body */}
+      <div className=" w-full py-16 border-t border-black">
+        <div className="content-container flex justify-between items-start gap-4 content-container flex-col md:flex-row">
+          {/* Column 1 */}
+          <div className="flex-1  flex flex-col items-start justify-start gap-5">
+            <div className="font-medium capitalize ">
+              {t("Main.Col1.text1")}
+            </div>
+            <div className="text-[#666]">
+              <p className="mb-1">{t("Main.Col1.text2")}</p>
+              <LocalizedClientLink
+                href={"/customer-service"}
+                className="underline-gap hover:text-black duration-300 ease-in-out "
+              >
+                {t("Main.Col1.text3")}
+              </LocalizedClientLink>
+            </div>
+            <div className="text-[#666]">
+              <p className="mb-1">{t("Main.Col1.text4")}</p>
+              <a
+                href="mailto: customer@thechristmasfabric.com"
+                className="text-black hover:text-hoverGray duration-300 ease-in-out"
+              >
+                {" "}
+                customer@thechristmasfabric.com
+              </a>
+            </div>
+          </div>
+          {/* Column 2 */}
+          <ul className="flex-1  flex flex-col items-start justify-start gap-3">
+            <li className="font-medium capitalize mb-4">
+              {t("Main.Col2.text1")}
+            </li>
+            {usefulLinks.map((item, index) => {
+              return (
+                <li
+                  key={item.name + index}
+                  className="text-[#666666] hover:text-black cursor-pointer capitalize"
                 >
-                  {collections?.slice(0, 6).map((c) => (
-                    <li key={c.id}>
-                      <LocalizedClientLink
-                        className="hover:text-ui-fg-base"
-                        href={`/collections/${c.handle}`}
-                      >
-                        {c.title}
-                      </LocalizedClientLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
-              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
-                <li>
-                  <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
-                  >
-                    GitHub
-                  </a>
+                  <LocalizedClientLink href={item.path}>
+                    {item.name}
+                  </LocalizedClientLink>
                 </li>
-                <li>
-                  <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
-                  >
-                    Documentation
-                  </a>
+              )
+            })}
+          </ul>
+          {/* Column 3 */}
+          <ul className="flex-1  flex flex-col items-start justify-start gap-3">
+            <li className="font-medium capitalize mb-4">
+              {t("Main.Col3.text1")}
+            </li>
+            {InfoLinks.map((item, index) => {
+              return (
+                <li
+                  key={item.name + index}
+                  className="text-[#666666] hover:text-black cursor-pointer capitalize"
+                >
+                  <LocalizedClientLink href={item.path}>
+                    {item.name}
+                  </LocalizedClientLink>
                 </li>
-                <li>
-                  <a
-                    href="https://github.com/medusajs/nextjs-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-ui-fg-base"
-                  >
-                    Source code
-                  </a>
-                </li>
-              </ul>
+              )
+            })}
+          </ul>
+          {/* Column 4 */}
+          <div className="flex-1  flex flex-col justify-start gap-5">
+            <div className="font-medium capitalize">{t("Main.Col4.text1")}</div>
+            <div className="text-[#666] mb-2">{t("Main.Col4.text2")}</div>
+            <div className="text-[#666]">
+              <NewsLetterEmail />
             </div>
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
-          <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Medusa Store. All rights reserved.
-          </Text>
-          <MedusaCTA />
+      </div>
+
+      {/* Footer bottom Bar */}
+      <div className="w-full  py-7 border-t border-black">
+        <div className="content-container flex max-md:flex-col items-center justify-between max-md:gap-8  md:items-start md:justify-between ">
+          <div className="flex-1 ">
+            <Image
+              src={fbbImg}
+              alt="payments-gatway-img"
+              className="max-w-full object-contain object-center"
+            />
+          </div>
+          <div className="flex-1 text-center text-[14px] tracking-[0.7px]">
+            2024 &copy; {t("Bottom.text1")}
+            <br /> {t("Bottom.text2")}
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center justify-end gap-4">
+              <Link
+                href={"https://www.tiktok.com/@thechristmasfabric"}
+                target="_blank"
+                className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300"
+              >
+                <FaTiktok className="text-base" />
+              </Link>
+              <Link
+                href={"https://www.instagram.com/thechristmasfabric/"}
+                target="_blank"
+                className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300"
+              >
+                <FaInstagram className="text-base" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

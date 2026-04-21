@@ -1,0 +1,151 @@
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Spedizione gratuita per ordini superiori a £65. Non perdere lo sconto."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "Nuova collezione di pigiami natalizi 2023 qui"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "tutti i pigiami",
+        "Matching pyjamas": "Pigiami coordinati",
+        "Family pyjamas": "Pigiami per la famiglia",
+        "Customer service": "Servizio clienti",
+        "baby": "taglia baby disponibile",
+        "kid": "taglia bambino disponibile",
+        "men": "taglia uomo disponibile",
+        "women": "taglia donna disponibile"
+      },
+      "IconMenu": {
+        "Account": "Account",
+        "Search": "Cerca",
+        "Wishlist": "Lista dei desideri",
+        "Cart": "Carrello"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "IL TESSUTO NATALIZIO È PRONTO PER IL 2024",
+      "heading": "Pigiami & altro",
+      "shortdescription": "Entra nel progetto e acquista fantastici pigiami e abbigliamento originale per il Natale e questa stagione invernale da The Christmas Fabric",
+      "button": "acquista ora"
+    },
+    "Timer": {
+      "heading": "orologio natalizio",
+      "days": "giorni",
+      "hours": "ore",
+      "minutes": "minuti",
+      "seconds": "secondi"
+    },
+    "NewsLetter": {
+      "text1": "Iscriviti per essere dei nostri",
+      "text2": "Ricevi le notizie più importanti sul più grande progetto natalizio internazionale"
+    },
+    "Reviews": {
+      "text1": "Condividono amore con bei pigiami",
+      "text2": "Recensioni dalla nostra cara comunità"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Spedizione gratuita per ordini superiori a £65",
+        "brief": "\"Ricevi la spedizione gratuita su ogni ordine. Non ti piace? Restituiscilo a noi.\""
+      },
+      "card2": {
+        "heading": "100% esclusività natalizia",
+        "brief": "Parte dei profitti andrà direttamente a un progetto umanitario. L'avventura può essere seguita su Instagram o tramite la nostra newsletter!"
+      },
+      "card3": {
+        "heading": "Vera comunità di amanti del Natale",
+        "brief": "I nostri clienti sono appassionati del Natale e condividiamo gli stessi dettagli per il nostro Natale"
+      },
+      "description": "Un intero team è pronto a ricevere i tuoi ordini quest'anno e soddisfare tutte le tue esigenze. Oltre alla serietà con cui realizziamo i nostri pigiami, offriamo un servizio di qualità che ci sta a cuore per garantirti un'esperienza di acquisto piacevole con noi",
+      "query": "Come finanzierà il tuo ordine un progetto umanitario?",
+      "link": "Clicca qui per saperne di più."
+    },
+    "QuickLook": {
+      "heading": "Uno sguardo veloce ai nostri prodotti",
+      "description": "Ci impegniamo a mantenere la qualità in tutto ciò che facciamo, ecco alcuni dei nostri prodotti appena disponibili per questo Natale"
+    },
+    "Discovery": {
+      "heading": "Scopri i nostri pigiami",
+      "description": "The Christmas Fabric ha lavorato sodo anche quest'anno per offrirti fantastici pigiami natalizi. Ordina alcuni per te e i tuoi cari e supporta un progetto umanitario con il tuo ordine",
+      "Item1": {
+        "heading": "Scopri tutti i nostri pigiami natalizi senza cercare oltre",
+        "brief": "La collezione definitiva dei nostri ultimi pigiami e vestiti di Natale per tutti. Senza classificazione.",
+        "title": "Pigiami di Natale"
+      },
+      "Item2": {
+        "heading": "Perfetto per famiglie, grandi o piccole",
+        "brief": "Trova un modello di pigiama disponibile per tutta la tua famiglia. Qui ogni modello è disponibile per tutte le età e taglie. Perfetto per Natale!",
+        "title": "Pigiami di Natale per tutta la famiglia"
+      },
+      "Item3": {
+        "heading": "I nostri modelli coordinati per te e il tuo partner da indossare insieme",
+        "brief": "Trova i nostri modelli di pigiami coordinati disponibili per uomini e donne. Disponibile in tutte le taglie. Per te e il tuo caro.",
+        "title": "Pigiami di Natale per la famiglia"
+      },
+      "item3": {
+        "title": "Pigiami di Natale coordinati per coppie"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Cambia paese o valuta",
+      "Link1": "Contatta il servizio clienti e FAQ",
+      "Link2": "Il tuo acquisto finanzierà questo progetto umanitario"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — AMANTI DEL NATALE IN TUTTO IL MONDO",
+      "text2": "COMUNITÀ"
+    },
+    "Middle": {
+      "text1": "Servizio clienti reattivo 24/7",
+      "text2": "Spedizione tracciata rapida in 24 ore",
+      "text3": "Reso facile e veloce in 24 ore",
+      "text4": "Pagamento in 4 rate con Paypal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "aiuto",
+        "text2": "Hai bisogno di aiuto?",
+        "text3": "Servizio clienti",
+        "text4": "I nostri team sono pronti a rispondere alle tue esigenze entro 24 ore"
+      },
+      "Col2": {
+        "text1": "link utili",
+        "text2": "Informazioni",
+        "link1": "Apri la mia lista dei desideri",
+        "link2": "Vai al carrello",
+        "link3": "Vai al checkout e paga",
+        "link4": "Accedi o registrati",
+        "link5": "Il mio account"
+      },
+      "Col3": {
+        "text1": "Informazioni",
+        "link1": "Traccia il mio ordine",
+        "link2": "Termini di consegna",
+        "link3": "Rimborso e reso",
+        "link4": "Condizioni generali di vendita",
+        "link5": "Avviso legale",
+        "link6": "Politica sulla privacy"
+      },
+      "Col4": {
+        "text1": "Newsletter — Il tuo regalo ti aspetta",
+        "text2": "Ricevi le notizie più importanti della più grande comunità natalizia, scopri promozioni e avanzamenti del progetto umanitario. Richiedi il tuo regalo di benvenuto."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "Accetto i",
+      "txt2": "termini e condizioni",
+      "txt3": "la protezione dei dati",
+      "txt4": "Grazie per esserti iscritto alla newsletter! Ti",
+      "txt5": "contatteremo presto.",
+      "Placeholder": "La tua email"
+    }
+  }
+}

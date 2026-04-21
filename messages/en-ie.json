@@ -1,0 +1,151 @@
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Free delivery on orders over £65. Do not miss discount."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "New Christmas Pyjamas 2023 collection here"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "all pyjamas",
+        "Matching pyjamas": "Matching pyjamas",
+        "Family pyjamas": "Family pyjamas",
+        "Customer service": "Customer service",
+        "baby": "baby size available",
+        "kid": "kid size available",
+        "men": "men size available",
+        "women": "women size available"
+      },
+      "IconMenu": {
+        "Account": "Account",
+        "Search": "Search",
+        "Wishlist": "Wishlist",
+        "Cart": "Cart"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "THE CHRISTMAS FABRIC IS READY FOR 2024",
+      "heading": "Pyjamas & more",
+      "shortdescription": "Get into the project and buy awesome pyjamas and original wear for Christmas and this winter season from The Christmas Fabric",
+      "button": "shop now"
+    },
+    "Timer": {
+      "heading": "xmas clock",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds"
+    },
+    "NewsLetter": {
+      "text1": "Subscribe to be on our side",
+      "text2": "Receive the most important news about the biggest international\r\n              Christmas project"
+    },
+    "Reviews": {
+      "text1": "They share love with beautiful pyjamas",
+      "text2": "Reviews from our dear community"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Free delivery for orders over £65",
+        "brief": " \"Get complimentary ground shipping on every order. Don&apos;t love it? Send it back to us.\""
+      },
+      "card2": {
+        "heading": "100% Christmas exclusivity",
+        "brief": "Part of the profits will go directly to a humanitarian project. The adventure can be followed on Instagram or via our newsletter!"
+      },
+      "card3": {
+        "heading": "Real community of Christmas lovers",
+        "brief": "Our customers are Christmas enthusiasts and we share the same passion for our Christmas"
+      },
+      "description": "An entire team is standing by to receive your orders this year and\r\n              meet all your needs. In addition to the seriousness with which we\r\n              make our pyjamas, we offer a quality service that is important to\r\n              us in order to guarantee you a pleasant shopping experience with\r\n              us",
+      "query": "How your order will finance a humanitarian project?",
+      "link": "Click here to find out more."
+    },
+    "QuickLook": {
+      "heading": "Quick look of our products",
+      "description": "We strive to maintain quality in everything we do, here are some\r\n              of our freshly available products for this Christmas"
+    },
+    "Discovery": {
+      "heading": "Discover our pyjamas",
+      "description": "The Christmas Fabric has worked hard this year again to bring you\r\n              amazing Christmas pyjamas. Order some for you and your loved ones\r\n              and support a humanitarian project with your order",
+      "Item1": {
+        "heading": "Discover all our Christmas pyjamas without looking any further",
+        "brief": "The ultimate collection of our latest pyjamas and Christmas clothes for everyone. Unclassified.",
+        "title": "Christmas pyjamas"
+      },
+      "Item2": {
+        "heading": "Perfect for families, large or small",
+        "brief": "Find an available pyjama model for your whole family directly. Here every model is available in all ages and sizes. Great for Christmas!",
+        "title": "Christmas pyjamas for the whole family"
+      },
+      "Item3": {
+        "heading": "Our matching designs for you and your partner to wear together",
+        "brief": "Find our models of matching pyjamas available for men and women. Available in all sizes. For you and your loved one.",
+        "title": "Christmas pyjamas for the whole family"
+      },
+      "item3": {
+        "title": "Matching and couples Christmas pyjamas"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Change country or currency",
+      "Link1": "Contact customer service & FAQs",
+      "Link2": "Your purchase will fund this humanitarian project"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — WORLDWIDE CHRISTMAS LOVERS",
+      "text2": "COMMUNITY"
+    },
+    "Middle": {
+      "text1": "24/7 reactive customer service",
+      "text2": "24 hours tracked fast shipping",
+      "text3": "24 hours easy and fast return",
+      "text4": "4 times payment with Paypal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "help",
+        "text2": "Need Help?",
+        "text3": "Customer Service",
+        "text4": "Our teams stay connected to respond to your needs within 24 hours"
+      },
+      "Col2": {
+        "text1": "useful links",
+        "text2": "Information",
+        "link1": "Open my wishlist",
+        "link2": "Go to my cart",
+        "link3": "Go to checkout and pay",
+        "link4": "Login or Register",
+        "link5": "My account"
+      },
+      "Col3": {
+        "text1": "Information",
+        "link1": "Track my order",
+        "link2": "Terms of delivery",
+        "link3": "Return and refund",
+        "link4": "General terms of sale",
+        "link5": "Legal notice",
+        "link6": "Privacy policy"
+      },
+      "Col4": {
+        "text1": "Newsletter — Your surprise awaits",
+        "text2": "Receive the most important news of the biggest Christmas community, be aware of promotions and advancement of the humanitarian project. Claim your free gift for your welcome."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "I accept the",
+      "txt2": "terms & conditions",
+      "txt3": "the data protection",
+      "txt4": "Thanks for signing up for the newsletter! We",
+      "txt5": "ll be in touch soon.",
+      "Placeholder": "Your Email"
+    }
+  }
+}

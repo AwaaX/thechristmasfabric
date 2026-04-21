@@ -1,0 +1,151 @@
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Livraison gratuite pour les commandes de plus de 65 £. Ne manquez pas la réduction."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "Nouvelle collection de pyjamas de Noël 2023 ici"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "tous les pyjamas",
+        "Matching pyjamas": "Pyjamas assortis",
+        "Family pyjamas": "Pyjamas familiaux",
+        "Customer service": "Service client",
+        "baby": "taille bébé disponible",
+        "kid": "taille enfant disponible",
+        "men": "taille homme disponible",
+        "women": "taille femme disponible"
+      },
+      "IconMenu": {
+        "Account": "Compte",
+        "Search": "Recherche",
+        "Wishlist": "Liste de souhaits",
+        "Cart": "Panier"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "THE CHRISTMAS FABRIC EST PRÊT POUR 2024",
+      "heading": "Pyjamas et plus encore",
+      "shortdescription": "Participez au projet et achetez de superbes pyjamas et des vêtements originaux pour Noël et cette saison d'hiver chez The Christmas Fabric",
+      "button": "acheter maintenant"
+    },
+    "Timer": {
+      "heading": "compte à rebours de Noël",
+      "days": "jours",
+      "hours": "heures",
+      "minutes": "minutes",
+      "seconds": "secondes"
+    },
+    "NewsLetter": {
+      "text1": "Abonnez-vous pour être avec nous",
+      "text2": "Recevez les actualités les plus importantes sur le plus grand projet\r\n              international de Noël"
+    },
+    "Reviews": {
+      "text1": "Ils partagent l'amour avec de magnifiques pyjamas",
+      "text2": "Avis de notre chère communauté"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Livraison gratuite pour les commandes de plus de 65 £",
+        "brief": " \"Profitez de la livraison standard offerte sur chaque commande. Vous n'aimez pas ? Renvoyez-le-nous.\""
+      },
+      "card2": {
+        "heading": "Exclusivité de Noël à 100 %",
+        "brief": "Une partie des bénéfices sera reversée directement à un projet humanitaire. L'aventure peut être suivie sur Instagram ou via notre newsletter !"
+      },
+      "card3": {
+        "heading": "Une vraie communauté d'amoureux de Noël",
+        "brief": "Nos clients sont des passionnés de Noël et nous partageons la même passion pour cette fête"
+      },
+      "description": "Toute une équipe est mobilisée pour recevoir vos commandes cette année et\r\n              répondre à tous vos besoins. En plus du sérieux avec lequel nous\r\n              fabriquons nos pyjamas, nous proposons un service de qualité qui\r\n              nous tient à cœur afin de vous garantir une expérience d'achat\r\n              agréable chez nous",
+      "query": "Comment votre commande financera-t-elle un projet humanitaire ?",
+      "link": "Cliquez ici pour en savoir plus."
+    },
+    "QuickLook": {
+      "heading": "Aperçu rapide de nos produits",
+      "description": "Nous nous efforçons de maintenir la qualité dans tout ce que nous faisons, voici quelques-uns\r\n              de nos produits fraîchement disponibles pour ce Noël"
+    },
+    "Discovery": {
+      "heading": "Découvrez nos pyjamas",
+      "description": "The Christmas Fabric a encore beaucoup travaillé cette année pour vous proposer\r\n              d'incroyables pyjamas de Noël. Commandez-en pour vous et vos proches\r\n              et soutenez un projet humanitaire avec votre commande",
+      "Item1": {
+        "heading": "Découvrez tous nos pyjamas de Noël sans chercher plus loin",
+        "brief": "La collection ultime de nos derniers pyjamas et vêtements de Noël pour tout le monde. Sans catégorie.",
+        "title": "Pyjamas de Noël"
+      },
+      "Item2": {
+        "heading": "Parfait pour les familles, grandes ou petites",
+        "brief": "Trouvez directement un modèle de pyjama disponible pour toute votre famille. Ici, chaque modèle est disponible pour tous les âges et toutes les tailles. Parfait pour Noël !",
+        "title": "Pyjamas de Noël pour toute la famille"
+      },
+      "Item3": {
+        "heading": "Nos modèles assortis à porter avec votre partenaire",
+        "brief": "Découvrez nos modèles de pyjamas assortis disponibles pour homme et femme. Disponibles dans toutes les tailles. Pour vous et l'être aimé.",
+        "title": "Pyjamas de Noël pour toute la famille"
+      },
+      "item3": {
+        "title": "Pyjamas de Noël assortis pour couples"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Changer de pays ou de devise",
+      "Link1": "Contacter le service client et FAQ",
+      "Link2": "Votre achat financera ce projet humanitaire"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — LES AMOUREUX DE NOËL DANS LE MONDE ENTIER",
+      "text2": "COMMUNAUTÉ"
+    },
+    "Middle": {
+      "text1": "Service client réactif 24h/24 et 7j/7",
+      "text2": "Livraison rapide avec suivi en 24 heures",
+      "text3": "Retour simple et rapide en 24 heures",
+      "text4": "Paiement en 4 fois avec Paypal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "aide",
+        "text2": "Besoin d'aide ?",
+        "text3": "Service client",
+        "text4": "Nos équipes restent disponibles pour répondre à vos besoins sous 24 heures"
+      },
+      "Col2": {
+        "text1": "liens utiles",
+        "text2": "Informations",
+        "link1": "Ouvrir ma liste de souhaits",
+        "link2": "Aller à mon panier",
+        "link3": "Aller au paiement",
+        "link4": "Se connecter ou s'inscrire",
+        "link5": "Mon compte"
+      },
+      "Col3": {
+        "text1": "Informations",
+        "link1": "Suivre ma commande",
+        "link2": "Conditions de livraison",
+        "link3": "Retour et remboursement",
+        "link4": "Conditions générales de vente",
+        "link5": "Mentions légales",
+        "link6": "Politique de confidentialité"
+      },
+      "Col4": {
+        "text1": "Newsletter — Votre surprise vous attend",
+        "text2": "Recevez les actualités les plus importantes de la plus grande communauté de Noël, soyez informé des promotions et de l'avancement du projet humanitaire. Recevez votre cadeau de bienvenue."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "J'accepte les",
+      "txt2": "conditions générales",
+      "txt3": "la protection des données",
+      "txt4": "Merci pour votre inscription à la newsletter ! Nous",
+      "txt5": "vous contacterons bientôt.",
+      "Placeholder": "Votre e-mail"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Gratis levering op bestellingen boven de £65. Mis de korting niet."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "Nieuwe kerstpyjama's 2023 collectie hier"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "alle pyjama's",
+        "Matching pyjamas": "Matchende pyjama's",
+        "Family pyjamas": "Familiepyjama's",
+        "Customer service": "Klantenservice",
+        "baby": "babymaten beschikbaar",
+        "kid": "kindermaat beschikbaar",
+        "men": "herenmaat beschikbaar",
+        "women": "damesmaat beschikbaar"
+      },
+      "IconMenu": {
+        "Account": "Account",
+        "Search": "Zoeken",
+        "Wishlist": "Verlanglijst",
+        "Cart": "Winkelwagen"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "DE KERSTSTOF IS KLAAR VOOR 2024",
+      "heading": "Pyjama's & meer",
+      "shortdescription": "Doe mee aan het project en koop geweldige pyjama's en originele kleding voor Kerstmis en dit winterseizoen bij The Christmas Fabric",
+      "button": "winkel nu"
+    },
+    "Timer": {
+      "heading": "kerstklok",
+      "days": "dagen",
+      "hours": "uren",
+      "minutes": "minuten",
+      "seconds": "seconden"
+    },
+    "NewsLetter": {
+      "text1": "Schrijf je in om aan onze kant te staan",
+      "text2": "Ontvang het belangrijkste nieuws over het grootste internationale kerstproject"
+    },
+    "Reviews": {
+      "text1": "Ze delen liefde met mooie pyjama's",
+      "text2": "Recensies van onze geliefde community"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Gratis levering voor bestellingen boven de £65",
+        "brief": "\"Ontvang gratis verzending bij elke bestelling. Niet tevreden? Stuur het naar ons terug.\""
+      },
+      "card2": {
+        "heading": "100% kerstexclusiviteit",
+        "brief": "Een deel van de winst gaat direct naar een humanitair project. Het avontuur kan gevolgd worden op Instagram of via onze nieuwsbrief!"
+      },
+      "card3": {
+        "heading": "Echte gemeenschap van kerstliefhebbers",
+        "brief": "Onze klanten zijn kerstenthousiastelingen en we delen dezelfde passie voor onze kerst"
+      },
+      "description": "Een heel team staat klaar om dit jaar uw bestellingen te ontvangen en aan al uw behoeften te voldoen. Naast de zorg waarmee we onze pyjama's maken, bieden we een kwaliteitsservice die belangrijk voor ons is om u een prettige winkelervaring te garanderen",
+      "query": "Hoe financiert uw bestelling een humanitair project?",
+      "link": "Klik hier om meer te weten."
+    },
+    "QuickLook": {
+      "heading": "Een snelle blik op onze producten",
+      "description": "We streven ernaar om kwaliteit te behouden in alles wat we doen, hier zijn enkele van onze vers verkrijgbare producten voor deze kerst"
+    },
+    "Discovery": {
+      "heading": "Ontdek onze pyjama's",
+      "description": "The Christmas Fabric heeft dit jaar weer hard gewerkt om u geweldige kerstpyjama's te brengen. Bestel er een paar voor uzelf en uw dierbaren en steun een humanitair project met uw bestelling",
+      "Item1": {
+        "heading": "Ontdek al onze kerstpyjama's zonder verder te zoeken",
+        "brief": "De ultieme collectie van onze nieuwste pyjama's en kerstkleding voor iedereen. Niet geclassificeerd.",
+        "title": "Kerstpyjama's"
+      },
+      "Item2": {
+        "heading": "Perfect voor gezinnen, groot of klein",
+        "brief": "Vind een beschikbaar pyjamamodel voor het hele gezin. Hier is elk model beschikbaar voor alle leeftijden en maten. Geweldig voor Kerstmis!",
+        "title": "Kerstpyjama's voor het hele gezin"
+      },
+      "Item3": {
+        "heading": "Onze matchende ontwerpen voor jou en je partner om samen te dragen",
+        "brief": "Vind onze modellen van matchende pyjama's voor mannen en vrouwen. Verkrijgbaar in alle maten. Voor jou en je geliefde.",
+        "title": "Kerstpyjama's voor het hele gezin"
+      },
+      "item3": {
+        "title": "Matchende en koppels kerstpyjama's"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Wijzig land of valuta",
+      "Link1": "Contact klantenservice & Veelgestelde vragen",
+      "Link2": "Uw aankoop financiert dit humanitaire project"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — WERELDWIJDE KERSTLIEFHEBBERS",
+      "text2": "COMMUNITY"
+    },
+    "Middle": {
+      "text1": "24/7 reactieve klantenservice",
+      "text2": "Snelle verzending met tracking binnen 24 uur",
+      "text3": "Gemakkelijk en snel retourneren binnen 24 uur",
+      "text4": "Betaling in 4 termijnen met PayPal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "help",
+        "text2": "Hulp nodig?",
+        "text3": "Klantenservice",
+        "text4": "Onze teams staan klaar om binnen 24 uur aan uw behoeften te voldoen"
+      },
+      "Col2": {
+        "text1": "nuttige links",
+        "text2": "Informatie",
+        "link1": "Open mijn verlanglijst",
+        "link2": "Ga naar mijn winkelwagen",
+        "link3": "Ga naar afrekenen en betalen",
+        "link4": "Inloggen of registreren",
+        "link5": "Mijn account"
+      },
+      "Col3": {
+        "text1": "Informatie",
+        "link1": "Mijn bestelling volgen",
+        "link2": "Leveringsvoorwaarden",
+        "link3": "Retourneren en terugbetaling",
+        "link4": "Algemene verkoopvoorwaarden",
+        "link5": "Juridische kennisgeving",
+        "link6": "Privacybeleid"
+      },
+      "Col4": {
+        "text1": "Nieuwsbrief — Uw verrassing wacht",
+        "text2": "Ontvang het belangrijkste nieuws van de grootste kerstgemeenschap, blijf op de hoogte van promoties en vooruitgang van het humanitaire project. Claim uw welkomstgeschenk."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "Ik accepteer de",
+      "txt2": "algemene voorwaarden",
+      "txt3": " gegevensbescherming",
+      "txt4": " Bedankt voor het aanmelden voor de nieuwsbrief! We",
+      "txt5": "houden binnenkort contact.",
+      "Placeholder": "Uw e-mail"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "NavBar": {
+    "Top": {
+      "alert": "Kostenlose Lieferung bei Bestellungen über £65. Verpassen Sie nicht den Rabatt."
+    },
+    "Middle": {
+      "Instagram": "Instagram",
+      "Tiktok": "Tiktok",
+      "alert": "Neue Weihnachts-Pyjamas 2023 Kollektion hier"
+    },
+    "Main": {
+      "NavMenu": {
+        "all pyjamas": "alle Pyjamas",
+        "Matching pyjamas": "Passende Pyjamas",
+        "Family pyjamas": "Familienpyjamas",
+        "Customer service": "Kundendienst",
+        "baby": "Babymode verfügbar",
+        "kid": "Kindermode verfügbar",
+        "men": "Herrenmode verfügbar",
+        "women": "Damenmode verfügbar"
+      },
+      "IconMenu": {
+        "Account": "Konto",
+        "Search": "Suche",
+        "Wishlist": "Wunschliste",
+        "Cart": "Warenkorb"
+      }
+    }
+  },
+  "HomePage": {
+    "Hero": {
+      "title": "DER WEIHNACHTSSTOFF IST BEREIT FÜR 2024",
+      "heading": "Pyjamas & mehr",
+      "shortdescription": "Tauchen Sie in das Projekt ein und kaufen Sie fantastische Pyjamas und originelle Kleidung für Weihnachten und die Wintersaison von The Christmas Fabric",
+      "button": "Jetzt einkaufen"
+    },
+    "Timer": {
+      "heading": "Weihnachtsuhr",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten",
+      "seconds": "Sekunden"
+    },
+    "NewsLetter": {
+      "text1": "Abonnieren Sie uns",
+      "text2": "Erhalten Sie die wichtigsten Neuigkeiten über das größte internationale Weihnachtsprojekt"
+    },
+    "Reviews": {
+      "text1": "Sie teilen Liebe mit schönen Pyjamas",
+      "text2": "Bewertungen aus unserer lieben Community"
+    },
+    "Services": {
+      "card1": {
+        "heading": "Kostenlose Lieferung für Bestellungen über £65",
+        "brief": "\"Kostenloser Versand bei jeder Bestellung. Nicht zufrieden? Senden Sie es an uns zurück.\""
+      },
+      "card2": {
+        "heading": "100% Weihnachts-Exklusivität",
+        "brief": "Ein Teil der Gewinne geht direkt an ein humanitäres Projekt. Das Abenteuer kann auf Instagram oder über unseren Newsletter verfolgt werden!"
+      },
+      "card3": {
+        "heading": "Echte Gemeinschaft von Weihnachtsliebhabern",
+        "brief": "Unsere Kunden sind Weihnachts-Enthusiasten und wir teilen die gleichen Details für unser Weihnachten"
+      },
+      "description": "Ein ganzes Team steht bereit, um Ihre Bestellungen dieses Jahr anzunehmen und alle Ihre Bedürfnisse zu erfüllen. Neben der Ernsthaftigkeit, mit der wir unsere Pyjamas herstellen, bieten wir einen qualitativ hochwertigen Service, der uns wichtig ist, um Ihnen ein angenehmes Einkaufserlebnis zu garantieren.",
+      "query": "Wie finanziert Ihre Bestellung ein humanitäres Projekt?",
+      "link": "Hier klicken, um mehr zu erfahren."
+    },
+    "QuickLook": {
+      "heading": "Ein kurzer Blick auf unsere Produkte",
+      "description": "Wir bemühen uns, Qualität in allem, was wir tun, zu gewährleisten. Hier sind einige unserer frisch verfügbaren Produkte für dieses Weihnachten"
+    },
+    "Discovery": {
+      "heading": "Entdecken Sie unsere Pyjamas",
+      "description": "The Christmas Fabric hat dieses Jahr wieder hart gearbeitet, um Ihnen fantastische Weihnachts-Pyjamas zu bringen. Bestellen Sie einige für sich und Ihre Lieben und unterstützen Sie mit Ihrer Bestellung ein humanitäres Projekt",
+      "Item1": {
+        "heading": "Entdecken Sie alle unsere Weihnachts-Pyjamas ohne weitere Suche",
+        "brief": "Die ultimative Kollektion unserer neuesten Pyjamas und Weihnachtskleidung für jeden. Unklassifiziert.",
+        "title": "Weihnachtspyjamas"
+      },
+      "Item2": {
+        "heading": "Perfekt für Familien, groß oder klein",
+        "brief": "Finden Sie ein passendes Pyjamamodell für Ihre ganze Familie. Hier ist jedes Modell in allen Altersgruppen und Größen verfügbar. Ideal für Weihnachten!",
+        "title": "Weihnachtspyjamas für die ganze Familie"
+      },
+      "Item3": {
+        "heading": "Unsere passenden Designs, die Sie und Ihr Partner zusammen tragen können",
+        "brief": "Finden Sie unsere passenden Pyjamas für Männer und Frauen. In allen Größen verfügbar. Für Sie und Ihren Liebsten.",
+        "title": "Weihnachtspyjamas für die ganze Familie"
+      },
+      "item3": {
+        "title": "Weihnachts-Pyjamas für Paare und im Partnerlook"
+      }
+    }
+  },
+  "Footer": {
+    "Top": {
+      "SwitchText": "Land oder Währung ändern",
+      "Link1": "Kundenservice & FAQs kontaktieren",
+      "Link2": "Ihr Kauf finanziert dieses humanitäre Projekt"
+    },
+    "Bottom": {
+      "text1": "THE CHRISTMAS FABRIC — WELTWEITE WEIHNACHTSBEGEISTERUNG",
+      "text2": "GEMEINSCHAFT"
+    },
+    "Middle": {
+      "text1": "24/7 reaktiver Kundenservice",
+      "text2": "24 Stunden schneller Versand mit Sendungsverfolgung",
+      "text3": "24 Stunden einfache und schnelle Rückgabe",
+      "text4": "Bezahlung in 4 Raten mit Paypal"
+    },
+    "Main": {
+      "Col1": {
+        "text1": "Hilfe",
+        "text2": "Brauchen Sie Hilfe?",
+        "text3": "Kundenservice",
+        "text4": "Unsere Teams bleiben in Verbindung, um Ihre Bedürfnisse innerhalb von 24 Stunden zu erfüllen"
+      },
+      "Col2": {
+        "text1": "Nützliche Links",
+        "text2": "Informationen",
+        "link1": "Meine Wunschliste öffnen",
+        "link2": "Zum Warenkorb gehen",
+        "link3": "Zur Kasse und bezahlen",
+        "link4": "Einloggen oder Registrieren",
+        "link5": "Mein Konto"
+      },
+      "Col3": {
+        "text1": "Informationen",
+        "link1": "Meine Bestellung verfolgen",
+        "link2": "Lieferbedingungen",
+        "link3": "Rückgabe und Erstattung",
+        "link4": "Allgemeine Verkaufsbedingungen",
+        "link5": "Rechtliche Hinweise",
+        "link6": "Datenschutzrichtlinie"
+      },
+      "Col4": {
+        "text1": "Newsletter — Ihr Geschenk wartet",
+        "text2": "Erhalten Sie die wichtigsten Nachrichten der größten Weihnachts-Community, erfahren Sie von Aktionen und Fortschritten des humanitären Projekts. Fordern Sie Ihr Willkommensgeschenk an."
+      }
+    },
+    "NewsLetter": {
+      "txt1": "Ich akzeptiere die",
+      "txt2": "Allgemeinen Geschäftsbedingungen",
+      "txt3": "den Datenschutz",
+      "txt4": "Danke, dass Sie sich für den Newsletter angemeldet haben! Wir",
+      "txt5": "werden uns bald bei Ihnen melden.",
+      "Placeholder": "Ihre E-Mail"
+    }
+  }
+}

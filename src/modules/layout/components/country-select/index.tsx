@@ -14,6 +14,7 @@ import { StateType } from "@lib/hooks/use-toggle-state"
 import { useParams, usePathname } from "next/navigation"
 import { updateRegion } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
+import { IoIosArrowDown } from "react-icons/io"
 
 type CountryOption = {
   country: string
@@ -63,7 +64,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
   }
 
   return (
-    <div>
+    <div className="relative">
       <Listbox
         as="span"
         onChange={handleChange}
@@ -73,35 +74,36 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
             : undefined
         }
       >
-        <ListboxButton className="py-1 w-full">
-          <div className="txt-compact-small flex items-start gap-x-2">
-            <span>Shipping to:</span>
-            {current && (
-              <span className="txt-compact-small flex items-center gap-x-2">
-                {/* @ts-ignore */}
-                <ReactCountryFlag
-                  svg
-                  style={{
-                    width: "16px",
-                    height: "16px",
-                  }}
-                  countryCode={current.country ?? ""}
-                />
-                {current.label}
-              </span>
-            )}
-          </div>
+        <ListboxButton className="py-1 ">
+          {current && (
+            <span className="txt-compact-small flex items-center gap-x-2">
+              {/* @ts-ignore */}
+              <ReactCountryFlag
+                svg
+                style={{
+                  width: "16px",
+                  height: "16px",
+                }}
+                countryCode={current.country ?? ""}
+              />
+              {current.label}
+              <IoIosArrowDown className="group-hover:text-hoverGray " />
+            </span>
+          )}
         </ListboxButton>
-        <div className="flex relative w-full min-w-[320px]">
+          <div className="flex absolute right-0 w-full min-w-[180px]">
           <Transition
             show={state}
             as={Fragment}
+              enter="transition ease-in duration-150"
+            enterFrom="opacity-0 translate-y-10"
+            enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 translate-y-10"
           >
-            <ListboxOptions
-              className="absolute -bottom-[calc(100%-36px)] left-0 xsmall:left-auto xsmall:right-0 max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar rounded-rounded w-full"
+               <ListboxOptions
+              className="absolute -top-[calc(100%-8px)] left-0 xsmall:left-auto xsmall:right-0 max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar rounded-rounded w-full"
               static
             >
               {options?.map((o, index) => {
