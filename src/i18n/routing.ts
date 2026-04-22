@@ -26,8 +26,8 @@ export const routing = defineRouting({
     // If all locales use the same pathname, a single
     // external path can be used for all locales
     "/": "/",
-    "/checkout":"/checkout",
-    "/order/confirmed/[id]":"/order/confirmed/[id]",
+    "/checkout": "/checkout",
+    "/order/confirmed/[id]": "/order/confirmed/[id]",
     "/christmas-pyjamas": {
       "es-es": "/pijamas-de-navidad", // Spanish (Spain)
       "de-de": "/weihnachtspyjamas", // German (Germany)
@@ -76,17 +76,17 @@ export const routing = defineRouting({
       "en-ie": "/search", // English (Ireland)
       "en-gb": "/search", // English (United Kingdom)
     },
-    "/shop": {
+    "/christmas-pyjamas": {
       "es-es": "/tienda", // Spanish (Spain)
-      "de-de": "/shop", // German (Germany)
+      "de-de": "/christmas-pyjamas", // German (Germany)
       "it-it": "/negozio", // Italian (Italy)
       "nl-nl": "/winkel", // Dutch (Netherlands)
       "sv-se": "/butik", // Swedish (Sweden)
-      "en-us": "/shop", // English (United States)
-      "en-ca": "/shop", // English (Canada)
-      "en-au": "/shop", // English (Australia)
-      "en-ie": "/shop", // English (Ireland)
-      "en-gb": "/shop", // English (United Kingdom)
+      "en-us": "/christmas-pyjamas", // English (United States)
+      "en-ca": "/christmas-pyjamas", // English (Canada)
+      "en-au": "/christmas-pyjamas", // English (Australia)
+      "en-ie": "/christmas-pyjamas", // English (Ireland)
+      "en-gb": "/christmas-pyjamas", // English (United Kingdom)
     },
   },
 })

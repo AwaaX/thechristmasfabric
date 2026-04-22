@@ -10,6 +10,10 @@ export default getRequestConfig(async () => {
   // if (!locale || !routing.locales.includes(locale as any)) {
   //   locale = routing.defaultLocale;
   // }
+
+  if(!locale){
+    locale = 'en';
+  }
  
   return {
     locale,

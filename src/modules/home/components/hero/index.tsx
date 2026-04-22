@@ -6,10 +6,10 @@ import { getTranslations } from "next-intl/server"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const Hero = async () => {
-    const t = await getTranslations("HomePage.Hero")
+  const t = await getTranslations("HomePage.Hero")
   return (
     <>
-        {/* Hero Section */}
+      {/* Hero Section */}
       <div className="h-[554px] md:h-[710px] w-full relative ">
         <Image
           src={heroImg}
@@ -37,13 +37,14 @@ const Hero = async () => {
             </Text>
           </span>
           <LocalizedClientLink
-            href="/shop"
+            href="/christmas-pyjamas"
             className="border border-black px-[25px] min-h-[45px] rounded-[5px] flex items-center justify-center text-hoverGray hover:bg-black hover:text-white duration-300 ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)] capitalize"
           >
             {t("button")}
           </LocalizedClientLink>
         </div>
-      </div></>
+      </div>
+    </>
   )
 }
 

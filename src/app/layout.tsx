@@ -4,7 +4,8 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
 import Script from "next/script"
-import "styles/globals.scss"
+import "styles/styles.scss"
+import "styles/font.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),

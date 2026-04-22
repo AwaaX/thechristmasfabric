@@ -139,7 +139,7 @@ const SwhModalCart = () =>
                   </div>
                   <span>Your shopping bag is empty.</span>
                   <div>
-                    <LocalizedClientLink href="/shop">
+                    <LocalizedClientLink href="/christmas-pyjamas">
                       <>
                         <span className="sr-only">Go to all products page</span>
                         <Button onClick={close}>Explore products</Button>

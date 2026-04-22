@@ -28,7 +28,7 @@ const Testimonial: React.FC<Props> = ({ data, limit }) => {
               // pagination={{ clickable: true }}
               navigation
               loop={true}
-              modules={[ Autoplay]}
+              modules={[Navigation, Autoplay]}
               breakpoints={{
                 680: {
                   slidesPerView: 2,
