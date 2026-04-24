@@ -10,35 +10,40 @@ import AnimatedContainer from "./AnimatedContainer"
 import animation from "@lib/util/animation"
 // import { useSearchParams } from "next/navigation"
 
-
-
 const sortOptions = [
-    {
-      value: "created_at",
-      label: "Latest Arrivals",
-    },
-    {
-      value: "price_asc",
-      label: "Price: Low to High",
-    },
-    {
-      value: "price_desc",
-      label: "Price: High to Low",
-    },
-  ]
+  {
+    value: "created_at",
+    label: "Latest Arrivals",
+  },
+  {
+    value: "price_asc",
+    label: "Price: Low to High",
+  },
+  {
+    value: "price_desc",
+    label: "Price: High to Low",
+  },
+]
+
+const gridColsMap: Record<number, string> = {
+  2: "lg:grid-cols-2",
+  3: "lg:grid-cols-3",
+  4: "lg:grid-cols-4",
+  5: "lg:grid-cols-5",
+}
 
 const SwhProductsPage = ({
-sortBy,
+  sortBy,
   products,
   page,
   totalPages,
   totalProducts,
   productsPerPage,
 }) => {
-  const [layoutCol, setLayoutCol] = useState<number | null>(3)
+  const [layoutCol, setLayoutCol] = useState<number | null>(4)
   const [layoutType, setLayoutType] = useState<string>("grid")
-  const [isSortFilterOpen, setIsSortFilterOpen] = useState(false);
-//   const {sortBy} = useSearchParams()
+  const [isSortFilterOpen, setIsSortFilterOpen] = useState(false)
+  //   const {sortBy} = useSearchParams()
 
   const handleLayoutCol = (col: number) => {
     setLayoutCol(col)
@@ -47,9 +52,8 @@ sortBy,
   const FromProductNo = 12 * (page - 1)
   const ToProductNo = products.length + 12 * (page - 1)
 
-  const selectedOption = sortOptions.find(o => o.value === sortBy);
-  const selectedValue = selectedOption ? selectedOption.label : null; // or some default value
-
+  const selectedOption = sortOptions.find((o) => o.value === sortBy)
+  const selectedValue = selectedOption ? selectedOption.label : null // or some default value
 
   return (
     <>
@@ -60,38 +64,36 @@ sortBy,
           </div>
         </div>
         <div className="right flex items-center gap-3">
-
           <div className="relative ">
-             <div className="flex items-center justify-between gap-2">
-            <button
-              onClick={() => {
-                setIsSortFilterOpen(!isSortFilterOpen)
-              }}
-              className={`group flex items-center justify-center gap-2 text-black px-4 py-2 text-title`}
-            >
-            {selectedValue}
-              <IoIosArrowUp
-                className={clsx(
-                  "text-sm",
-                  { "rotate-0": isSortFilterOpen },
-                  { "rotate-180": !isSortFilterOpen },
-                  "duration-200",
-                  "ease-in"
-                )}
-              />
-            
-            </button>
-             </div>
-
-          <AnimatedContainer
-            trigger={isSortFilterOpen}
-            animation={animation.slideUpDownMenu}
-            className="absolute top-[56px] left-0 z-10"
-            onMouseLeave={()=>setIsSortFilterOpen(false)}
-          >
-            <RefinementList sortBy={sortBy || "created_at"} />
-          </AnimatedContainer>
+            <div className="flex items-center justify-between gap-2">
+              <button
+                onClick={() => {
+                  setIsSortFilterOpen(!isSortFilterOpen)
+                }}
+                className={`group flex items-center justify-center gap-2 text-black px-4 py-2 text-title`}
+              >
+                {selectedValue}
+                <IoIosArrowUp
+                  className={clsx(
+                    "text-sm",
+                    { "rotate-0": isSortFilterOpen },
+                    { "rotate-180": !isSortFilterOpen },
+                    "duration-200",
+                    "ease-in"
+                  )}
+                />
+              </button>
             </div>
+
+            <AnimatedContainer
+              trigger={isSortFilterOpen}
+              animation={animation.slideUpDownMenu}
+              className="absolute top-[56px] left-0 z-10"
+              onMouseLeave={() => setIsSortFilterOpen(false)}
+            >
+              <RefinementList sortBy={sortBy || "created_at"} />
+            </AnimatedContainer>
+          </div>
 
           <div className="choose-layout flex items-center gap-2">
             <div
@@ -219,7 +221,13 @@ sortBy,
                                     }
                                 </div> */}
       <ul
-        className={`grid mt-7 ${layoutType==="list"?" flex flex-col gap-8":`lg:grid-cols-${layoutCol} sm:grid-cols-3 grid-cols-2 sm:gap-[30px] gap-[20px]`}  w-full  gap-x-6 gap-y-8`}
+        className={`grid mt-7 ${
+          layoutType === "list"
+            ? "flex flex-col gap-8"
+            : `${
+                gridColsMap[layoutCol!]
+              } sm:grid-cols-3 grid-cols-2 sm:gap-[30px] gap-[20px]`
+        } w-full gap-x-6 gap-y-8`}
         data-testid="products-list"
       >
         {products.map((p) => {
