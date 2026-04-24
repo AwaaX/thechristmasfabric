@@ -6,13 +6,8 @@ import { Navigation, Thumbs, Scrollbar } from "swiper/modules"
 import "swiper/css/bundle"
 import Image from "next/image"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
-import { useWishlist } from "../context/WishlistContext"
-import { useModalWishlistContext } from "../context/ModalWishlistContext"
-import Rate from "../components/Other/Rate"
-import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta"
-import ProductActions from "@modules/products/components/product-actions"
-import ProductActionsWrapper from "@modules/products/templates/product-actions-wrapper"
-import DynamicImage from "../components/DynamicImage"
+import DynamicImage from "./DynamicImage"
+
 
 SwiperCore.use([Navigation, Thumbs])
 

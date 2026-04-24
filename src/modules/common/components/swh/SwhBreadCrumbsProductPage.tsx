@@ -16,11 +16,11 @@ const SwhBreadCrumbsProductPage = ({ title, path, params, localizedTitle }) => {
         <div className="container  relative">
           <div className="link flex items-center justify-center gap-2 py-[7px] flex-wrap">
             <LocalizedClientLink href={"/"}>Home</LocalizedClientLink>
-            <Icon.CaretRight size={14} className="text-secondary2" />
+            <Icon.CaretRightIcon size={14} className="text-secondary2" />
             <LocalizedClientLink href={"/"}>Products</LocalizedClientLink>
             {path && (
               <>
-                <Icon.CaretRight size={14} className="text-secondary2" />
+                <Icon.CaretRightIcon size={14} className="text-secondary2" />
                 <LocalizedClientLink href={`/${path}`} className="capitalize">
                   {path_title}
                 </LocalizedClientLink>
@@ -28,7 +28,7 @@ const SwhBreadCrumbsProductPage = ({ title, path, params, localizedTitle }) => {
             )}
             {params?.category && (
               <>
-                <Icon.CaretRight size={14} className="text-secondary2" />
+                <Icon.CaretRightIcon size={14} className="text-secondary2" />
                 <div className="text-secondary2 capitalize">
                   {formatted_title}
                 </div>
@@ -36,7 +36,7 @@ const SwhBreadCrumbsProductPage = ({ title, path, params, localizedTitle }) => {
             )}
             {params?.handle && (
               <>
-                <Icon.CaretRight size={14} className="text-secondary2" />
+                <Icon.CaretRightIcon size={14} className="text-secondary2" />
                 <div className="text-secondary2 capitalize">
                   {/* {formatted_handle} */}
                   {localizedTitle}

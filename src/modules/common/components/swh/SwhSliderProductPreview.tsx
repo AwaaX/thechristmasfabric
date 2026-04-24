@@ -26,7 +26,7 @@ const SwhSliderProductPreview = ({ data, type }) => {
   return (
     <>
       <LocalizedClientLink
-        href={`/christmas-pyjamas/${categorytitle}/${data.handle}/${data.id}`}
+        href={`/products/${data.handle}`}
         className="group"
       >
         {type === "grid" ? (

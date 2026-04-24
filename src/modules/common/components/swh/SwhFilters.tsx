@@ -1,12 +1,11 @@
 import React from "react"
 import Slider from "rc-slider"
-import "rc-slider/assets/index.css"
-import { getCategoriesList, getCategoryByHandle } from "@lib/data"
 import { notFound } from "next/navigation"
 import SwhCategoryFilter from "@modules/layout/components/swh-category-filter"
+import { listCategories } from "@lib/data/categories"
 
 const fetchCategories = async () => {
-  const { product_categories } = await getCategoriesList()
+  const  product_categories  = await listCategories()
   let topLevelCategories = []
 
   if (product_categories && product_categories?.length > 0) {

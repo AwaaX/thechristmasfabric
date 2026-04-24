@@ -2,11 +2,12 @@ import { Metadata } from "next"
 
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import StoreTemplate from "@modules/store/templates"
-import { listCategories } from "@lib/data/categories"
+
 
 export const metadata: Metadata = {
-  title: "Store",
-  description: "Explore all of our products.",
+  title: "Christmas Pyjamas - The Christmas Fabric",
+  description:
+    "Get into the project and buy awesome pyjamas and original wear for Christmas and this winter season from The Christmas Fabric",
 }
 
 type Params = {
@@ -22,7 +23,6 @@ type Params = {
 export default async function StorePage(props: Params) {
   const params = await props.params;
   const searchParams = await props.searchParams;
-   const productCategories = await listCategories()
   const { sortBy, page } = searchParams
 
   return (
@@ -30,7 +30,6 @@ export default async function StorePage(props: Params) {
       sortBy={sortBy}
       page={page}
       countryCode={params.countryCode}
-      productCategories={productCategories}
     />
   )
 }

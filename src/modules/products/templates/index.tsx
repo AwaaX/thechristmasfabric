@@ -14,6 +14,7 @@ import { HttpTypes } from "@medusajs/types"
 import { buildProductAnalyticsItem } from "@lib/util/ga4"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import ProductReviews from "../components/product-reviews"
+import SwhProductDetails from "@modules/common/components/swh/SwhProductDetails"
 
 type ProductTemplateProps = {
   product: HttpTypes.StoreProduct
@@ -49,7 +50,52 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           items: [productAnalyticsItem],
         }}
       />
-      <div
+
+      <div className="product-detail grouped small-container">
+        <div className="featured-product underwear md:py-20 py-10">
+          <div className="container flex justify-between gap-y-6 flex-wrap">
+            <SwhProductDetails data={product} region={region} />
+            <div className="product-infor md:w-1/2 w-full lg:pl-[15px] md:pl-2">
+              <div className="flex flex-col  small:top-48 small:py-0  w-full md:py-8 gap-y-12 md:mt-8">
+                <ProductActionsWrapper
+                  id={product.id}
+                  region={region}
+                />
+              </div>
+
+              {/* Product information */}
+              <div className="flex flex-col  small:top-48 small:py-0  w-full py-8 gap-y-6">
+                <ProductTabs product={product} />
+              </div>
+            </div>
+          </div>
+          <div className="mt-20 christmas-product-description px-3">
+            <h1 className="text-[36px] font-normal text-center capitalize py-6">
+              description
+            </h1>
+            {
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: product.description?.replace(/\\n/g, "") ?? "",
+                }}
+              />
+            }
+          </div>
+      {/* <div className="content-container my-16 small:my-32">
+        <ProductReviews productId={product.id} />
+      </div> */}
+          {/* <div
+            className="content-container my-16 small:my-32"
+            data-testid="related-products-container"
+          >
+            <Suspense fallback={<SkeletonRelatedProducts />}>
+              <RelatedProducts product={product} countryCode={countryCode} />
+            </Suspense>
+          </div> */}
+        </div>
+      </div>
+
+      {/* <div
         className="content-container  flex flex-col small:flex-row  py-6 relative"
         data-testid="product-container"
       >
@@ -74,12 +120,11 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           </div>
           <ProductTabs product={product} />
         </div>
-      </div>
-      <div className="mt-20 max-w-4xl mx-auto px-3">
+      </div> */}
+      {/* <div className="mt-20 max-w-4xl mx-auto px-3">
         <h1 className="text-[36px] font-normal text-center capitalize py-6">
           description
         </h1>
-        {/* {sanity?.content || parse(localizedProduct.description)} */}
         {
           <div
             dangerouslySetInnerHTML={{
@@ -87,18 +132,18 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             }}
           />
         }
-      </div>
-      <div className="content-container my-16 small:my-32">
+      </div> */}
+      {/* <div className="content-container my-16 small:my-32">
         <ProductReviews productId={product.id} />
-      </div>
-      <div
+      </div> */}
+      {/* <div
         className="content-container my-16 small:my-32"
         data-testid="related-products-container"
       >
         <Suspense fallback={<SkeletonRelatedProducts />}>
           <RelatedProducts product={product} countryCode={countryCode} />
         </Suspense>
-      </div>
+      </div> */}
     </>
   )
 }

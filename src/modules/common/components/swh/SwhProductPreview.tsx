@@ -2,12 +2,10 @@
 
 import React from "react"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
-import { useWishlist } from "../context/WishlistContext"
-import { useModalWishlistContext } from "../context/ModalWishlistContext"
-import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import DynamicImage from "../components/DynamicImage"
-import parse from "html-react-parser"
+import DynamicImage from "./DynamicImage"
+
+
 
 const SwhProductPreview = ({ data, type }) => {
   // const { addToWishlist, removeFromWishlist, wishlistState } = useWishlist();
@@ -42,7 +40,8 @@ const SwhProductPreview = ({ data, type }) => {
   return (
     <>
       <LocalizedClientLink
-        href={`/christmas-pyjamas/${categorytitle}/${data.handle}/${data.id}`}
+        // href={`/christmas-pyjamas/${categorytitle}/${data.handle}/${data.id}`}
+        href={`/products/${data.handle}`}
         className="group"
       >
         {type === "grid" ? (

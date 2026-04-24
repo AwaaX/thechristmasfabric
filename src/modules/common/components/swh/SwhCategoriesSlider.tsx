@@ -1,11 +1,12 @@
-import { getCategoriesList } from "@lib/data"
+
+import { listCategories } from "@lib/data/categories"
 import SwhCatSliderUI from "@modules/layout/components/swh-cat-slider-ui"
 
 const fetchCategories = async () => {
   try {
-    const { product_categories } = await getCategoriesList()
-    if (product_categories && product_categories.length > 0) {
-      return product_categories.filter(
+    const productCategories = await listCategories()
+    if (productCategories && productCategories.length > 0) {
+      return productCategories.filter(
         (category) => category.parent_category === null
       )
     } else {

@@ -77,7 +77,7 @@ export default async function Nav() {
             {/* <div className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300">
              <p>USA</p> <FaGlobe className="text-base" />
            </div> */}
-            <SwhRegionSelect regions={regions} />
+            {/* <SwhRegionSelect regions={regions} /> */}
           </div>
         </div>
       </div>

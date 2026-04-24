@@ -14,8 +14,10 @@ import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "@modules/products/components/thumbnail"
+import { useTranslations } from "next-intl"
 import { usePathname } from "next/navigation"
 import { Fragment, useEffect, useRef, useState } from "react"
+import { BiShoppingBag } from "react-icons/bi"
 
 const CartDropdown = ({
   cart: cartState,
@@ -26,6 +28,7 @@ const CartDropdown = ({
     undefined
   )
   const [cartDropdownOpen, setCartDropdownOpen] = useState(false)
+    const main = useTranslations("NavBar.Main.IconMenu")
 
   const open = () => setCartDropdownOpen(true)
   const close = () => setCartDropdownOpen(false)
@@ -80,13 +83,27 @@ const CartDropdown = ({
       onMouseLeave={close}
     >
       <Popover className="relative h-full">
-        <PopoverButton className="h-full">
+        {/* <PopoverButton className="h-full">
           <LocalizedClientLink
             className="hover:text-ui-fg-base"
             href="/cart"
             data-testid="nav-cart-link"
           >{`Cart (${totalItems})`}</LocalizedClientLink>
-        </PopoverButton>
+        </PopoverButton> */}
+
+                <Popover.Button className="h-full outline-none ">
+          <div
+            className="hover:text-hoverGray text-black font-medium duration-300 ease-in-out relative  text-[20px] md:text-[24px] tag-action-ctrl"
+          >
+            <BiShoppingBag />
+            <span className="w-5 h-5 rounded-full bg-christmas text-white font-bold text-xs flex items-center justify-center absolute -top-3 -right-3">
+              {totalItems}
+            </span>
+            <div className="tag-action-swh bg-black text-white caption2 ">
+              {main("Cart")}
+            </div>
+          </div>
+        </Popover.Button>
         <Transition
           show={cartDropdownOpen}
           as={Fragment}
@@ -210,7 +227,7 @@ const CartDropdown = ({
                   </div>
                   <span>Your shopping bag is empty.</span>
                   <div>
-                    <LocalizedClientLink href="/store">
+                    <LocalizedClientLink href="/christmas-pyjamas">
                       <>
                         <span className="sr-only">Go to all products page</span>
                         <Button onClick={close}>Explore products</Button>

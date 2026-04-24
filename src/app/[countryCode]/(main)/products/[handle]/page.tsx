@@ -4,6 +4,7 @@ import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
+import SwhBreadCrumbsProductPage from "@modules/common/components/swh/SwhBreadCrumbsProductPage"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -120,13 +121,33 @@ export default async function ProductPage(props: Props) {
 
   const images = getImagesForVariant(pricedProduct, selectedVariantId)
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: pricedProduct.title,
+    image: pricedProduct.thumbnail ? pricedProduct.thumbnail : "",
+    description: pricedProduct.description,
+  }
+
   return (
-    <ProductTemplate
-      product={pricedProduct}
-      region={region}
-      countryCode={params.countryCode}
-      images={images}
-      selectedVariantId={selectedVariantId}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SwhBreadCrumbsProductPage
+        title={"shop"}
+        path={"christmas-pyjamas"}
+        params={params}
+        localizedTitle={pricedProduct.title}
+      />
+      <ProductTemplate
+        product={pricedProduct}
+        region={region}
+        countryCode={params.countryCode}
+        images={images}
+        selectedVariantId={selectedVariantId}
+      />
+    </>
   )
 }

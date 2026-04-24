@@ -2,10 +2,17 @@ import { getLocale } from "@lib/data/locale-actions"
 import { getBaseURL } from "@lib/util/env"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Metadata } from "next"
+import { Jost } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import Script from "next/script"
 import "styles/styles.scss"
-import "styles/font.css"
+import ProgressBarProviders from "@modules/common/components/swh/ProgressBarProvider"
+
+const jost = Jost({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jost",
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
@@ -21,21 +28,21 @@ const jsonLd = {
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
-    const locale = await getLocale()
+  const locale = await getLocale()
 
   return (
     <html lang={locale || ""} data-mode="light">
-      <body>
+      <body className={jost.variable}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <main className="relative">
           {" "}
-          <NextIntlClientProvider>{props.children}</NextIntlClientProvider>
+          <NextIntlClientProvider><ProgressBarProviders>{props.children}</ProgressBarProviders></NextIntlClientProvider>
         </main>
-      <Script id="show-hide-header" strategy="beforeInteractive">
-        {`
+        <Script id="show-hide-header" strategy="beforeInteractive">
+          {`
            let prevScrollPos = window.scrollY;
           const header = document.getElementById('header');
 
@@ -65,7 +72,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
           
           `}
-      </Script>
+        </Script>
       </body>
       {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>

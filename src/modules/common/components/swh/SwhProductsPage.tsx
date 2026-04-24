@@ -1,13 +1,13 @@
 "use client"
 import React, { useState } from "react"
-import SwhProductPreview from "@modules/custom/swh/SwhProductPreview"
 import { Pagination } from "@modules/store/components/pagination"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import RefinementList from "@modules/store/components/refinement-list"
-import animation from "@lib/animation"
-import AnimatedContainer from "@modules/animatedContainer/AnimatedContainer"
 import { IoIosArrowUp } from "react-icons/io"
 import clsx from "clsx"
+import SwhProductPreview from "./SwhProductPreview"
+import AnimatedContainer from "./AnimatedContainer"
+import animation from "@lib/util/animation"
 // import { useSearchParams } from "next/navigation"
 
 
@@ -35,7 +35,7 @@ sortBy,
   totalProducts,
   productsPerPage,
 }) => {
-  const [layoutCol, setLayoutCol] = useState<number | null>(4)
+  const [layoutCol, setLayoutCol] = useState<number | null>(3)
   const [layoutType, setLayoutType] = useState<string>("grid")
   const [isSortFilterOpen, setIsSortFilterOpen] = useState(false);
 //   const {sortBy} = useSearchParams()

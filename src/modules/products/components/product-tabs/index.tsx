@@ -7,9 +7,10 @@ import Refresh from "@modules/common/icons/refresh"
 import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
 import { useMemo, useState } from "react"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 type ProductTabsProps = {
-  product: HttpTypes.StoreProduct 
+  product: HttpTypes.StoreProduct
 }
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
@@ -17,6 +18,10 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
     {
       label: "Size guide",
       component: <SizeGuideTab sizeguides={product.sizeguides} />,
+    },
+    {
+      label: "Delivery information",
+      component: <ShippingInfoTab />,
     },
     // {
     //   label: "Product Information",
@@ -87,37 +92,18 @@ const ShippingInfoTab = () => {
   return (
     <div className="text-small-regular py-8">
       <div className="grid grid-cols-1 gap-y-8">
-        <div className="flex items-start gap-x-2">
-          <FastDelivery />
-          <div>
-            <span className="font-semibold">Fast delivery</span>
-            <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
-            </p>
-          </div>
-        </div>
-        <div className="flex items-start gap-x-2">
-          <Refresh />
-          <div>
-            <span className="font-semibold">Simple exchanges</span>
-            <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
-            </p>
-          </div>
-        </div>
-        <div className="flex items-start gap-x-2">
-          <Back />
-          <div>
-            <span className="font-semibold">Easy returns</span>
-            <p className="max-w-sm">
-              Just return your product and we&apos;ll refund your money. No
-              questions asked – we&apos;ll do our best to make sure your return
-              is hassle-free.
-            </p>
-          </div>
-        </div>
+        <ul className="text-[16px] font-normal text-christmasText list-disc pl-8">
+          <li>
+            Shipment of your order in less than 24 hours from Monday to Saturday
+            (excluding public holidays)
+          </li>
+          <li>
+            Free 5-day tracked delivery from &pound;65, 70&euro; or $80 purchase
+            (at home)
+          </li>
+          <li>Standard tracked delivery 4-5 days at 4,90&pound; (at home)</li>
+          <li>Track your package easily by e-mail and on the website</li>
+        </ul>
       </div>
     </div>
   )
@@ -129,7 +115,7 @@ const SizeGuideTab = ({ sizeguides }) => {
 
   const structuredSizeGuides = useMemo(() => {
     return sizeguides.map((guide) => {
-      const table=guide.data
+      const table = guide.data
       // Extract the title from the table_id
       const title = table.table_id.split("-").slice(-2, -1)[0]
 
@@ -159,7 +145,6 @@ const SizeGuideTab = ({ sizeguides }) => {
           your waist size. Any doubts? Contact us.
         </p>
         <ul className="text-[16px] font-normal text-black flex flex-col gap-4">
-       
           {structuredSizeGuides.map((guide, index) => (
             <li key={index}>
               {guide.title.charAt(0).toUpperCase() + guide.title.slice(1)}
@@ -178,6 +163,17 @@ const SizeGuideTab = ({ sizeguides }) => {
             </li>
           ))}
         </ul>
+        <LocalizedClientLink
+          href={"/measurement-guide"}
+          className="text-[16px] font-normal text-christmasText border border-dashed border-black p-2"
+        >
+          How to take your measurements?{" "}
+          <span className="hover:text-hoverGray duration-200 ease-in-out cursor-pointer">
+            {" "}
+            Click here to follow The Christmas Fabric guide and take your
+            measurements easily at home without making mistakes
+          </span>
+        </LocalizedClientLink>
       </div>
       {/* <ModalSizeguide data={productMain} isOpen={openSizeGuide} onClose={handleCloseSizeGuide} /> */}
     </div>
@@ -189,34 +185,34 @@ const SizeGuideTable = ({ tableData }) => {
     <div id="size-guides-container" className="mt-4 w-full">
       <table className="size-guide-table border border-black  text-sm w-full table-auto">
         {/* {tableData.options?.table_head && ( */}
-          <thead className="text-xs text-white uppercase bg-black">
-            <tr>
-              {tableData[0].map((header, index) => {
-                // Check if the current header is "#colspan#"
-                if (header === "#colspan#") {
-                  return null // Skip rendering the colspan indicator
-                }
+        <thead className="text-xs text-white uppercase bg-black">
+          <tr>
+            {tableData[0].map((header, index) => {
+              // Check if the current header is "#colspan#"
+              if (header === "#colspan#") {
+                return null // Skip rendering the colspan indicator
+              }
 
-                // Determine colSpan: if the next cell is "#colspan#"
-                const colSpan =
-                  index < tableData[0].length - 1 &&
-                  tableData[0][index + 1] === "#colspan#"
-                    ? 2
-                    : 1
+              // Determine colSpan: if the next cell is "#colspan#"
+              const colSpan =
+                index < tableData[0].length - 1 &&
+                tableData[0][index + 1] === "#colspan#"
+                  ? 2
+                  : 1
 
-                return (
-                  <th
-                    key={index}
-                    colSpan={colSpan}
-                    scope="col"
-                    className=" py-1 border !border-white"
-                  >
-                    {header}
-                  </th>
-                )
-              })}
-            </tr>
-          </thead>
+              return (
+                <th
+                  key={index}
+                  colSpan={colSpan}
+                  scope="col"
+                  className=" py-1 border !border-white"
+                >
+                  {header}
+                </th>
+              )
+            })}
+          </tr>
+        </thead>
         {/* )} */}
         <tbody>
           {tableData.slice(1).map((row, rowIndex) => (

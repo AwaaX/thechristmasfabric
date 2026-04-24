@@ -2,6 +2,7 @@ import { listProductsWithSort } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { buildProductListAnalyticsItems } from "@lib/util/ga4"
 import AnalyticsEvent from "@modules/analytics/components/event"
+import SwhProductsPage from "@modules/common/components/swh/SwhProductsPage"
 import ProductPreview from "@modules/products/components/product-preview"
 import { Pagination } from "@modules/store/components/pagination"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
@@ -81,7 +82,7 @@ export default async function PaginatedProducts({
           }),
         }}
       />
-      <ul
+      {/* <ul
         className="grid grid-cols-2 w-full small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8"
         data-testid="products-list"
       >
@@ -99,7 +100,16 @@ export default async function PaginatedProducts({
           page={page}
           totalPages={totalPages}
         />
-      )}
+      )} */}
+
+      <SwhProductsPage
+      sortBy={sortBy}
+      products={products}
+      page={page}
+      totalPages={totalPages}
+      totalProducts={count}
+      productsPerPage={PRODUCT_LIMIT}
+    />
     </>
   )
 }
