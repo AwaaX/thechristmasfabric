@@ -3,6 +3,7 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import DynamicImage from "./DynamicImage"
 import SwhWishlistToggle, { type SwhProductPreviewData } from "./SwhWishlistToggle"
+import parse from "html-react-parser"
 
 type SwhProductPreviewProps = {
   data: SwhProductPreviewData
@@ -151,7 +152,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                   <div className="text-secondary desc mt-5 max-sm:hidden">
                     {/* {parse(data?.metadata?.["en-gb_short_description"]) ||
                       "No Description Found"} */}
-                      {data.description}
+                      {parse(data.subtitle)}
                   </div>
 
                   <div className="flex items-center justify-start gap-8 mt-8">

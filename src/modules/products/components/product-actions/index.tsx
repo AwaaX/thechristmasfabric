@@ -516,7 +516,7 @@ export default function ProductActions({
                 <div className="tag-action-swh bg-black text-white caption2 ">
                   {wishlistLabel}
                 </div>
-                <Icon.Star
+                <Icon.StarIcon
                   className={clx({
                     "text-white": isWishlistSaved,
                   })}
