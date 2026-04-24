@@ -2,8 +2,12 @@
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import DynamicImage from "./DynamicImage"
-import SwhWishlistToggle, { type SwhProductPreviewData } from "./SwhWishlistToggle"
+import SwhWishlistToggle, {
+  type SwhProductPreviewData,
+} from "./SwhWishlistToggle"
 import parse from "html-react-parser"
+import PreviewPrice from "@modules/products/components/product-preview/price"
+import { getProductPrice } from "@lib/util/get-product-price"
 
 type SwhProductPreviewProps = {
   data: SwhProductPreviewData
@@ -11,6 +15,9 @@ type SwhProductPreviewProps = {
 }
 
 const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
+    const { cheapestPrice,highestPrice } = getProductPrice({
+      product: data,
+    })
   const originalPriceText = data.price?.original_price
   const salePriceText = data.price?.calculated_price
   const originalPrice = originalPriceText
@@ -86,7 +93,9 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                 </div>
                 <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
                   <div className="product-price text-title">
-                    {data.price?.calculated_price}
+                    {/* {data.price?.calculated_price} */}
+
+                    {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
                   </div>
                   {typeof percentSale === "number" && percentSale > 0 && (
                     <>
@@ -152,7 +161,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                   <div className="text-secondary desc mt-5 max-sm:hidden">
                     {/* {parse(data?.metadata?.["en-gb_short_description"]) ||
                       "No Description Found"} */}
-                      {parse(data.subtitle)}
+                    {parse(data.subtitle)}
                   </div>
 
                   <div className="flex items-center justify-start gap-8 mt-8">

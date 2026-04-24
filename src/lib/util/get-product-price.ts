@@ -55,6 +55,23 @@ export function getProductPrice({
     return getPricesForVariant(cheapestVariant)
   }
 
+  const highestPrice = () => {
+    if (!product || !product.variants?.length) {
+      return null
+    }
+
+    const highestVariant: any = product.variants
+      .filter((v: any) => !!v.calculated_price)
+      .sort((a: any, b: any) => {
+        return (
+          b.calculated_price.calculated_amount -
+          a.calculated_price.calculated_amount
+        )
+      })[0]
+
+    return getPricesForVariant(highestVariant)
+  }
+
   const variantPrice = () => {
     if (!product || !variantId) {
       return null
@@ -74,6 +91,7 @@ export function getProductPrice({
   return {
     product,
     cheapestPrice: cheapestPrice(),
+    highestPrice: highestPrice(),
     variantPrice: variantPrice(),
   }
 }

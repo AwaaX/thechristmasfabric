@@ -2,6 +2,7 @@ import { listProducts } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { HttpTypes } from "@medusajs/types"
 import Product from "../product-preview"
+import SwhProductPreview from "@modules/common/components/swh/SwhProductPreview"
 
 type RelatedProductsProps = {
   product: HttpTypes.StoreProduct
@@ -60,7 +61,8 @@ export default async function RelatedProducts({
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8">
         {products.map((product) => (
           <li key={product.id}>
-            <Product region={region} product={product} />
+            {/* <Product region={region} product={product} /> */}
+      <SwhProductPreview data={product} type="grid" />
           </li>
         ))}
       </ul>

@@ -81,17 +81,17 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
               />
             }
           </div>
-      {/* <div className="content-container my-16 small:my-32">
+      <div className="content-container my-16 small:my-32">
         <ProductReviews productId={product.id} />
-      </div> */}
-          {/* <div
+      </div>
+          <div
             className="content-container my-16 small:my-32"
             data-testid="related-products-container"
           >
             <Suspense fallback={<SkeletonRelatedProducts />}>
               <RelatedProducts product={product} countryCode={countryCode} />
             </Suspense>
-          </div> */}
+          </div>
         </div>
       </div>
 

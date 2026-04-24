@@ -3,6 +3,8 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import DynamicImage from "./DynamicImage"
 import SwhWishlistToggle, { type SwhProductPreviewData } from "./SwhWishlistToggle"
+import { getProductPrice } from "@lib/util/get-product-price"
+import PreviewPrice from "@modules/products/components/product-preview/price"
 
 type SwhSliderProductPreviewProps = {
   data: SwhProductPreviewData
@@ -13,6 +15,9 @@ const SwhSliderProductPreview = ({
   data,
   type,
 }: SwhSliderProductPreviewProps) => {
+      const { cheapestPrice,highestPrice } = getProductPrice({
+        product: data,
+      })
   const originalPriceText = data.price?.original_price
   const salePriceText = data.price?.calculated_price
   const originalPrice = originalPriceText
@@ -72,7 +77,8 @@ const SwhSliderProductPreview = ({
                 <div className="christmas-font-head">{data.title}</div>
                 <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]  ">
                   <div className="product-price christmas-font text-black">
-                    {data.price?.calculated_price}
+                    {/* {data.price?.calculated_price} */}
+                              {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
                   </div>
                   {typeof percentSale === "number" && percentSale > 0 && (
                     <>

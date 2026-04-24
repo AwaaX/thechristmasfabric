@@ -8,7 +8,6 @@ import Image from "next/image"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import DynamicImage from "./DynamicImage"
 
-
 SwiperCore.use([Navigation, Thumbs])
 
 const SwhProductDetails = ({ data: productMain, region }) => {
@@ -113,7 +112,7 @@ const SwhProductDetails = ({ data: productMain, region }) => {
               setOpenPopupImg(false)
             }}
           >
-            <Icon.X className="text-3xl text-white" />
+            <Icon.X className="text-3xl text-black" />
           </span>
           <Swiper
             spaceBetween={0}

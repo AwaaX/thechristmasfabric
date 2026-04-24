@@ -1,6 +1,7 @@
 "use client"
 
 import { addToCart } from "@lib/data/cart"
+import { getProductReviews } from "@lib/data/products"
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { useWishlist } from "@lib/context/wishlist-context"
 import { HttpTypes } from "@medusajs/types"
@@ -14,6 +15,7 @@ import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import parse from "html-react-parser"
+import { Star, StarSolid } from "@medusajs/icons"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -231,6 +233,8 @@ export default function ProductActions({
 }: ProductActionsProps) {
   const [options, setOptions] = useState<Record<string, string>>({})
   const [isAdding, setIsAdding] = useState(false)
+  const [reviewRating, setReviewRating] = useState(0)
+  const [reviewCount, setReviewCount] = useState(0)
   const [quantity, setQuantity] = useState(1) // State to manage the quantity
   const [showAlert, setShowAlert] = useState(false) // State to manage alert visibility
   // State to track if the user manually changed the gender
@@ -240,8 +244,29 @@ export default function ProductActions({
   const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
   const countryCode = useParams().countryCode as string
 
-
   const variants = product.variants ?? []
+
+  useEffect(() => {
+    if (!product?.id) {
+      setReviewRating(0)
+      setReviewCount(0)
+      return
+    }
+
+    getProductReviews({
+      productId: product.id,
+      limit: 1,
+      offset: 0,
+    })
+      .then(({ average_rating, count }) => {
+        setReviewRating(Math.round(average_rating || 0))
+        setReviewCount(count || 0)
+      })
+      .catch(() => {
+        setReviewRating(0)
+        setReviewCount(0)
+      })
+  }, [product?.id])
 
   // initialize the option state
   useEffect(() => {
@@ -337,7 +362,7 @@ export default function ProductActions({
     if (!variant?.id || quantity <= 0) return null
 
     setIsAdding(true)
-    
+
     await addToCart({
       variantId: variant?.id,
       quantity,
@@ -526,7 +551,23 @@ export default function ProductActions({
               </div>
             </div>
           </div>
-          <ProductPrice product={product} variant={variant} region={region} />
+          <div className="flex items-center justify-between gap-3">
+            <ProductPrice product={product} variant={variant} region={region} />
+            <div className="flex items-center gap-x-2">
+              <div className="flex gap-x-1">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <span key={index}>
+                    {index < reviewRating ? (
+                      <StarSolid className="text-ui-tag-orange-icon" />
+                    ) : (
+                      <Star />
+                    )}
+                  </span>
+                ))}
+              </div>
+              <span className="text-sm text-ui-fg-subtle">({reviewCount})</span>
+            </div>
+          </div>
           <div
             className="text-[16px] font-normal text-christmasText"
             data-testid="product-description"
