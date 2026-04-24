@@ -23,13 +23,27 @@ export default function ProductPrice({
 
   return (
     <div className="flex flex-col text-ui-fg-base">
-      <span
+      {/* <span
         className={clx("text-xl-semi", {
           "text-ui-fg-interactive": selectedPrice.price_type === "sale",
         })}
       >
         {!variant && "From "}
         <span
+          data-testid="product-price"
+          data-value={selectedPrice.calculated_price_number}
+        >
+          {selectedPrice.calculated_price}
+        </span>
+      </span> */}
+            <span
+        className={clx("text-sm  font-normal", {
+          "text-ui-fg-interactive": selectedPrice.price_type === "sale",
+        })}
+      >
+        {!variant && "From "}
+        <span
+        className="text-2xl  font-normal"
           data-testid="product-price"
           data-value={selectedPrice.calculated_price_number}
         >

@@ -9,25 +9,18 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import { signup } from "@lib/data/customer"
 
 type Props = {
+  redirectTo: string
   setCurrentView: (view: LOGIN_VIEW) => void
 }
 
-const Register = ({ setCurrentView }: Props) => {
+const Register = ({ redirectTo, setCurrentView }: Props) => {
   const [message, formAction] = useActionState(signup, null)
 
   return (
-    <div
-      className="max-w-sm flex flex-col items-center"
-      data-testid="register-page"
-    >
-      <h1 className="text-large-semi uppercase mb-6">
-        Become a Medusa Store Member
-      </h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your Medusa Store Member profile, and get access to an enhanced
-        shopping experience.
-      </p>
+     <div className="max-w-[570px] w-full flex flex-col items-start bg-white border p-[30px] shadow-[0_0_30px_0_rgba(0,0,0,.05)]" data-testid="register-page">
+      <h1 className="text-large-semi text-[24px] font-medium mb-6">Register here </h1>
       <form className="w-full flex flex-col" action={formAction}>
+        <input type="hidden" name="redirect_to" value={redirectTo} />
         <div className="flex flex-col w-full gap-y-2">
           <Input
             label="First name"
@@ -51,13 +44,13 @@ const Register = ({ setCurrentView }: Props) => {
             autoComplete="email"
             data-testid="email-input"
           />
-          <Input
+          {/* <Input
             label="Phone"
             name="phone"
             type="tel"
             autoComplete="tel"
             data-testid="phone-input"
-          />
+          /> */}
           <Input
             label="Password"
             name="password"
@@ -68,28 +61,31 @@ const Register = ({ setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
-        <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Medusa Store&apos;s{" "}
+           <div>
+        <input type="checkbox" required /> 
+        <span className="text-center text-[15px] font-normal ml-3 mt-6 mx-auto">
+          I agree to Store&apos;s{" "}
           <LocalizedClientLink
-            href="/content/privacy-policy"
+            href="/privacy-policy"
             className="underline"
           >
             Privacy Policy
           </LocalizedClientLink>{" "}
           and{" "}
           <LocalizedClientLink
-            href="/content/terms-of-use"
+            href="/legal-notice"
             className="underline"
           >
             Terms of Use
           </LocalizedClientLink>
           .
         </span>
-        <SubmitButton className="w-full mt-6" data-testid="register-button">
+        </div>
+        <SubmitButton className="w-full mt-6 border hover:border-black px-[25px] min-h-[45px] rounded-[5px] flex items-center justify-center  hover:bg-black hover:text-white duration-300 ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)] bg-black text-white" data-testid="register-button">
           Join
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
+       <span className="text-center text-[15px] font-normal hover:text-christmasText duration-200 ease-in-out mt-6 mx-auto">
         Already a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}

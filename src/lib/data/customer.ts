@@ -15,6 +15,20 @@ import {
   setAuthToken,
 } from "./cookies"
 
+const getSafeRedirectPath = (formData: FormData) => {
+  const redirectTo = formData.get("redirect_to")
+
+  if (
+    typeof redirectTo === "string" &&
+    redirectTo.startsWith("/") &&
+    !redirectTo.startsWith("//")
+  ) {
+    return redirectTo
+  }
+
+  return "/"
+}
+
 export const retrieveCustomer =
   async (): Promise<HttpTypes.StoreCustomer | null> => {
     const authHeaders = await getAuthHeaders()
@@ -61,6 +75,7 @@ export const updateCustomer = async (body: HttpTypes.StoreUpdateCustomer) => {
 
 export async function signup(_currentState: unknown, formData: FormData) {
   const password = formData.get("password") as string
+  const redirectTo = getSafeRedirectPath(formData)
   const customerForm = {
     email: formData.get("email") as string,
     first_name: formData.get("first_name") as string,
@@ -80,11 +95,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
       ...(await getAuthHeaders()),
     }
 
-    const { customer: createdCustomer } = await sdk.store.customer.create(
-      customerForm,
-      {},
-      headers
-    )
+    await sdk.store.customer.create(customerForm, {}, headers)
 
     const loginToken = await sdk.auth.login("customer", "emailpass", {
       email: customerForm.email,
@@ -98,7 +109,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
 
     await transferCart()
 
-    return createdCustomer
+    redirect(redirectTo)
   } catch (error: any) {
     return error.toString()
   }
@@ -107,6 +118,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
 export async function login(_currentState: unknown, formData: FormData) {
   const email = formData.get("email") as string
   const password = formData.get("password") as string
+  const redirectTo = getSafeRedirectPath(formData)
 
   try {
     await sdk.auth
@@ -125,6 +137,8 @@ export async function login(_currentState: unknown, formData: FormData) {
   } catch (error: any) {
     return error.toString()
   }
+
+  redirect(redirectTo)
 }
 
 export async function signout(countryCode: string) {

@@ -2,18 +2,16 @@
 
 import { addToCart } from "@lib/data/cart"
 import { useIntersection } from "@lib/hooks/use-in-view"
-import { buildProductAnalyticsItem } from "@lib/util/ga4"
-import { trackGAEvent } from "@lib/util/ga4-client"
+import { useWishlist } from "@lib/context/wishlist-context"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import { Button, clx } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
-import WishlistButton from "../wishlist-button"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import parse from "html-react-parser"
 
@@ -238,10 +236,12 @@ export default function ProductActions({
   // State to track if the user manually changed the gender
   const [isManualGenderSelection, setManualGenderSelection] = useState(false)
 
+  const router = useRouter()
+  const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
   const countryCode = useParams().countryCode as string
 
 
-  const variants = product.variants
+  const variants = product.variants ?? []
 
   // initialize the option state
   useEffect(() => {
@@ -448,6 +448,33 @@ export default function ProductActions({
     }
   }, [quantity, variant])
 
+  const wishlistVariantId =
+    variant?.id ??
+    (variants.length === 1 && variants[0]?.id ? variants[0].id : undefined)
+
+  const isWishlistSaved = isInWishlist(wishlistVariantId)
+  const isWishlistLoading = isPending(wishlistVariantId)
+  const wishlistLabel = !hasCustomer
+    ? "Sign In To Save"
+    : !wishlistVariantId
+    ? "Select Variant To Save"
+    : isWishlistSaved
+    ? "Remove From Wishlist"
+    : "Add To Wishlist"
+
+  const handleWishlistToggle = async () => {
+    if (!hasCustomer) {
+      router.push(`/${countryCode}/account/wishlist`)
+      return
+    }
+
+    if (!wishlistVariantId || isWishlistLoading) {
+      return
+    }
+
+    await toggleWishlist(wishlistVariantId)
+  }
+
   return (
     <>
       <div id="product-info">
@@ -462,12 +489,40 @@ export default function ProductActions({
             {/* Add to WishList */}
             <div className="">
               <div
-                className={`add-wishlist-btn tag-action-ctrl w-[42px] h-[42px] flex items-center justify-center rounded-full border bg-white hover:bg-black hover:text-white hover:border-black duration-300 relative  ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)]`}
+                aria-label={wishlistLabel}
+                aria-pressed={isWishlistSaved}
+                className={clx(
+                  "add-wishlist-btn tag-action-ctrl w-[42px] h-[42px] flex items-center justify-center rounded-full border bg-white hover:bg-black hover:text-white hover:border-black duration-300 relative ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)]",
+                  {
+                    active: isWishlistSaved,
+                    "cursor-progress opacity-70": isWishlistLoading,
+                    "cursor-not-allowed opacity-60":
+                      hasCustomer && !wishlistVariantId,
+                  }
+                )}
+                data-testid="product-actions-wishlist-toggle"
+                onClick={handleWishlistToggle}
+                onKeyDown={async (event) => {
+                  if (event.key !== "Enter" && event.key !== " ") {
+                    return
+                  }
+
+                  event.preventDefault()
+                  await handleWishlistToggle()
+                }}
+                role="button"
+                tabIndex={0}
               >
                 <div className="tag-action-swh bg-black text-white caption2 ">
-                  Add To Wishlist
+                  {wishlistLabel}
                 </div>
-                <Icon.StarIcon size={24} />
+                <Icon.Star
+                  className={clx({
+                    "text-white": isWishlistSaved,
+                  })}
+                  size={24}
+                  weight={isWishlistSaved ? "fill" : "regular"}
+                />
               </div>
             </div>
           </div>
@@ -500,7 +555,7 @@ export default function ProductActions({
       </div>
       <div className="flex flex-col gap-y-4" ref={actionsRef}>
         <div>
-          {product.variants.length > 1 && (
+          {variants.length > 1 && (
             <div className="flex flex-col gap-y-4">
               {(product.options || []).map((option) => {
                 return (

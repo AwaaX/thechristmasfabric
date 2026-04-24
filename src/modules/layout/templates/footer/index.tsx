@@ -1,5 +1,3 @@
-
-
 import { listRegions } from "@lib/data/regions"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { getTranslations } from "next-intl/server"
@@ -12,15 +10,13 @@ import Image from "next/image"
 import Link from "next/link"
 import NewsLetterEmail from "@modules/common/components/news-letter-email"
 
-
 export default async function Footer() {
-  
   const regions = await listRegions().then((regions) => regions)
   const t = await getTranslations("Footer")
   const usefulLinks = [
     {
       name: t("Main.Col2.link1"),
-      path: "/wishlist",
+      path: "/account/wishlist",
     },
     {
       name: t("Main.Col2.link2"),
@@ -39,7 +35,7 @@ export default async function Footer() {
       path: "/account",
     },
   ]
-  
+
   const InfoLinks = [
     {
       name: t("Main.Col3.link1"),
@@ -66,7 +62,6 @@ export default async function Footer() {
       path: "/privacy-policy",
     },
   ]
-
 
   return (
     // Footer outer container

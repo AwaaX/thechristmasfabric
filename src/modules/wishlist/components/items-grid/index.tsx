@@ -6,6 +6,7 @@ import { Button } from "@medusajs/ui"
 import Thumbnail from "@modules/products/components/thumbnail"
 import ProductPrice from "@modules/products/components/product-price"
 import WishlistButton from "@modules/products/components/wishlist-button"
+import SwhProductPreview from "@modules/common/components/swh/SwhProductPreview"
 
 type WishlistItemsGridProps = {
   countryCode: string
@@ -42,7 +43,7 @@ export default function WishlistItemsGrid({
   }
 
   return (
-    <ul className="grid grid-cols-1 small:grid-cols-2 gap-6" data-testid="wishlist-items-grid">
+    <ul className="grid grid-cols-1 small:grid-cols-3 gap-6" data-testid="wishlist-items-grid">
       {items.map((item) => {
         const href = getProductHref(countryCode, item)
         const variantTitle =
@@ -55,7 +56,7 @@ export default function WishlistItemsGrid({
             key={item.itemId}
             className="rounded-2xl border border-gray-200 p-4 small:p-6 bg-white"
           >
-            <div className="flex flex-col gap-y-4">
+            {/* <div className="flex flex-col gap-y-4">
               {href ? (
                 <Link href={href} className="block">
                   <Thumbnail
@@ -113,7 +114,13 @@ export default function WishlistItemsGrid({
                   </div>
                 )}
               </div>
-            </div>
+            </div> */}
+             <SwhProductPreview data={item.product} type="grid" />
+                     {variantTitle && (
+                  <p className="text-small-regular text-ui-fg-subtle">
+                    Variant: {variantTitle}
+                  </p>
+                )}
           </li>
         )
       })}

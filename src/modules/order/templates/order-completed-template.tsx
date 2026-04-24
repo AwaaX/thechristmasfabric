@@ -34,7 +34,7 @@ export default async function OrderCompletedTemplate({
       <div className="content-container flex flex-col justify-center items-center gap-y-10 max-w-4xl h-full w-full">
         {isOnboarding && <OnboardingCta orderId={order.id} />}
         <div
-          className="flex flex-col gap-4 max-w-4xl h-full bg-white w-full py-10"
+          className="flex flex-col gap-4 max-w-4xl h-full  w-full py-10 bg-white border p-[30px] shadow-[0_0_30px_0_rgba(0,0,0,.05)]"
           data-testid="order-complete-container"
         >
           <Heading

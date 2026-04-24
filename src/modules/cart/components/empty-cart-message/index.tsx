@@ -1,24 +1,36 @@
 import { Heading, Text } from "@medusajs/ui"
 
 import InteractiveLink from "@modules/common/components/interactive-link"
-
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import Image from "next/image"
+import emptycart from "@lib/img/cart/empty-cart.png"
 const EmptyCartMessage = () => {
   return (
-    <div className="py-48 px-2 flex flex-col justify-center items-start" data-testid="empty-cart-message">
-      <Heading
-        level="h1"
-        className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
-      >
-        Cart
-      </Heading>
-      <Text className="text-base-regular mt-4 mb-6 max-w-[32rem]">
-        You don&apos;t have anything in your cart. Let&apos;s change that, use
-        the link below to start browsing our products.
-      </Text>
+    <div>
+    <div className="flex py-16 flex-col gap-y-2 items-center justify-center">
+
+     <div className="w-[250px]">
+      <Image src={emptycart} alt={"site-logo"} />
+     </div>
+
+
+      <div className="body1 font-medium">Your basket is currently empty</div>
+      <div className="text-[16px] font-normal text-christmasText text-center px-5">You may check out all the available products and buy some in the shop.</div>
+
+
+    {/* CTA Button */}
       <div>
-        <InteractiveLink href="/store">Explore products</InteractiveLink>
+      <LocalizedClientLink
+        href={"/christmas-pyjamas"}
+        className="swh-btn bg-black text-white text-[16px] font-normal mt-4"
+      >
+        Return to Shop
+      </LocalizedClientLink>
       </div>
+
+
     </div>
+  </div>
   )
 }
 

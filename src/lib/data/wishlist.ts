@@ -27,14 +27,47 @@ export type WishlistDisplayItem = {
   variantTitle: string | null
 }
 
-export const retrieveWishlist = async (): Promise<StoreWishlist | null> => {
+type RetrieveWishlistOptions = {
+  createIfMissing?: boolean
+}
+
+type WishlistResponse = {
+  wishlist?: StoreWishlist
+}
+
+const createWishlist = async (): Promise<StoreWishlist> => {
+  const authHeaders = await getAuthHeaders()
+
+  if (!("authorization" in authHeaders)) {
+    throw new Error("You must be logged in to use the wishlist.")
+  }
+
+  return sdk.client
+    .fetch<WishlistResponse | StoreWishlist>(`/store/customers/me/wishlists`, {
+      method: "POST",
+      headers: authHeaders,
+      cache: "no-store",
+    })
+    .then((response) => {
+      if ("wishlist" in response && response.wishlist) {
+        return response.wishlist
+      }
+
+      return response as StoreWishlist
+    })
+    .catch(medusaError)
+}
+
+export const retrieveWishlist = async ({
+  createIfMissing = false,
+}: RetrieveWishlistOptions = {}): Promise<StoreWishlist | null> => {
   const authHeaders = await getAuthHeaders()
 
   if (!("authorization" in authHeaders)) {
     return null
   }
 
-  return sdk.client
+  const wishlist = await sdk.client
     .fetch<{ wishlist: StoreWishlist }>(`/store/customers/me/wishlists`, {
       method: "GET",
       headers: authHeaders,
@@ -42,6 +75,22 @@ export const retrieveWishlist = async (): Promise<StoreWishlist | null> => {
     })
     .then(({ wishlist }) => wishlist)
     .catch(() => null)
+
+  if (wishlist || !createIfMissing) {
+    return wishlist
+  }
+
+  return createWishlist()
+}
+
+const ensureWishlist = async (): Promise<StoreWishlist> => {
+  const wishlist = await retrieveWishlist({ createIfMissing: true })
+
+  if (!wishlist) {
+    throw new Error("Unable to create a wishlist for this customer.")
+  }
+
+  return wishlist
 }
 
 export const addWishlistItem = async (variantId: string): Promise<StoreWishlist> => {
@@ -50,6 +99,8 @@ export const addWishlistItem = async (variantId: string): Promise<StoreWishlist>
   if (!("authorization" in authHeaders)) {
     throw new Error("You must be logged in to use the wishlist.")
   }
+
+  await ensureWishlist()
 
   return sdk.client
     .fetch<{ wishlist: StoreWishlist }>(`/store/customers/me/wishlists/items`, {
@@ -94,6 +145,8 @@ export const createWishlistShareLink = async (): Promise<WishlistShareResponse> 
   if (!("authorization" in authHeaders)) {
     throw new Error("You must be logged in to share the wishlist.")
   }
+
+  await ensureWishlist()
 
   return sdk.client
     .fetch<WishlistShareResponse>(`/store/customers/me/wishlists/share`, {

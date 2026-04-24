@@ -7,10 +7,11 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import WishlistNavLink from "@modules/layout/components/wishlist-nav-link"
 import SearchModal from "@modules/search/components/modal"
 import { getTranslations } from "next-intl/server"
 import Link from "next/link"
-import { FaInstagram, FaRegStar, FaRegUser, FaTiktok } from "react-icons/fa"
+import { FaInstagram, FaRegUser, FaTiktok } from "react-icons/fa"
 import { IoSearch } from "react-icons/io5"
 import Image from "next/image"
 import sitelogo from "@lib/img/sitelogo.svg"
@@ -19,7 +20,6 @@ import MobileMenu from "./MobileMenu"
 import CountrySelect from "@modules/layout/components/country-select"
 import { ArrowRightMini } from "@medusajs/icons"
 import SwhRegionSelect from "@modules/common/components/swh/SwhRegionSelect"
-
 
 export default async function Nav() {
   const top = await getTranslations("NavBar.Top")
@@ -135,19 +135,7 @@ export default async function Nav() {
               )}
 
               {/* WishList */}
-              <LocalizedClientLink
-                className="hover:text-hoverGray text-black font-medium duration-300 ease-in-out text-[24px]  relative tag-action-ctrl max-md:hidden"
-                href="/wishlist"
-                data-testid="nav-cart-link"
-              >
-                <FaRegStar />
-                <div className="tag-action-swh bg-black text-white caption2 ">
-                  {main("Wishlist")}
-                </div>
-                <span className="w-5 h-5 rounded-full bg-christmas text-white font-bold text-xs flex items-center justify-center absolute -top-3 -right-3">
-                  0
-                </span>
-              </LocalizedClientLink>
+              <WishlistNavLink label={main("Wishlist")} />
 
               {/* Cart */}
               <CartButton />

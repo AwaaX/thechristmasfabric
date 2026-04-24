@@ -152,7 +152,7 @@ const MobileMenu = () => {
             </ul>
 
             <LocalizedClientLink
-              href="/wishlist"
+              href="/account/wishlist"
               onClick={closeMenu}
               className="flex justify-start gap-2 p-4 border-b border-gray-200"
             >

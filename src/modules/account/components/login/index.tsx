@@ -6,22 +6,18 @@ import Input from "@modules/common/components/input"
 import { useActionState } from "react"
 
 type Props = {
+  redirectTo: string
   setCurrentView: (view: LOGIN_VIEW) => void
 }
 
-const Login = ({ setCurrentView }: Props) => {
+const Login = ({ redirectTo, setCurrentView }: Props) => {
   const [message, formAction] = useActionState(login, null)
 
   return (
-    <div
-      className="max-w-sm w-full flex flex-col items-center"
-      data-testid="login-page"
-    >
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
-        Sign in to access an enhanced shopping experience.
-      </p>
+    <div className="max-w-[570px] w-full flex flex-col items-start bg-white border p-[30px] shadow-[0_0_30px_0_rgba(0,0,0,.05)]" data-testid="login-page">
+      <h1 className="text-large-semi text-[24px] font-medium mb-6">Sign In</h1>
       <form className="w-full" action={formAction}>
+        <input type="hidden" name="redirect_to" value={redirectTo} />
         <div className="flex flex-col w-full gap-y-2">
           <Input
             label="Email"
@@ -46,14 +42,14 @@ const Login = ({ setCurrentView }: Props) => {
           Sign in
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
+       <span className="text-center text-[15px] font-normal hover:text-christmasText duration-200 ease-in-out mt-6 mx-auto">
         Not a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
           className="underline"
           data-testid="register-button"
         >
-          Join us
+          Register
         </button>
         .
       </span>

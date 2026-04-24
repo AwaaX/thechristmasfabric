@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import { notFound } from "next/navigation"
 
 import { retrieveCustomer } from "@lib/data/customer"
 import {
@@ -23,7 +22,7 @@ export default async function AccountWishlistPage({
   const customer = await retrieveCustomer().catch(() => null)
 
   if (!customer) {
-    notFound()
+    return null
   }
 
   const wishlist = await retrieveWishlist()

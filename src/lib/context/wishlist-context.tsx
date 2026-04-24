@@ -13,6 +13,7 @@ type WishlistContextValue = {
   isPending: (variantId?: string | null) => boolean
   removeFromWishlist: (variantId: string) => Promise<boolean>
   toggleWishlist: (variantId: string) => Promise<boolean>
+  wishlistCount: number
 }
 
 type WishlistProviderProps = {
@@ -147,6 +148,7 @@ export const WishlistProvider = ({
           Boolean(variantId && pendingVariantIds.has(variantId)),
         removeFromWishlist,
         toggleWishlist,
+        wishlistCount: wishlistItemIdsByVariantId.size,
       }}
     >
       {children}

@@ -1,28 +1,32 @@
 "use client"
 
-import React from "react"
-import * as Icon from "@phosphor-icons/react/dist/ssr"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import DynamicImage from "./DynamicImage"
+import SwhWishlistToggle, { type SwhProductPreviewData } from "./SwhWishlistToggle"
 
+type SwhSliderProductPreviewProps = {
+  data: SwhProductPreviewData
+  type: "grid" | "list"
+}
 
-const SwhSliderProductPreview = ({ data, type }) => {
-  const OriginalPrice = data.price
-    ? parseFloat(data.price.original_price.replace(/,/g, "").substring(1))
+const SwhSliderProductPreview = ({
+  data,
+  type,
+}: SwhSliderProductPreviewProps) => {
+  const originalPriceText = data.price?.original_price
+  const salePriceText = data.price?.calculated_price
+  const originalPrice = originalPriceText
+    ? parseFloat(originalPriceText.replace(/,/g, "").substring(1))
     : null
-  const SalePrice = data.price
-    ? parseFloat(data.price.calculated_price.replace(/,/g, "").substring(1))
+  const salePrice = salePriceText
+    ? parseFloat(salePriceText.replace(/,/g, "").substring(1))
     : null
 
-  let percentSale =
-    OriginalPrice && SalePrice
-      ? Math.floor(100 - (SalePrice / OriginalPrice) * 100)
+  const percentSale =
+    originalPrice !== null && salePrice !== null
+      ? Math.floor(100 - (salePrice / originalPrice) * 100)
       : null
 
-  let categorytitle =
-    data?.categories?.length > 0
-      ? data.categories[0].handle || "category"
-      : "category"
   return (
     <>
       <LocalizedClientLink
@@ -35,14 +39,12 @@ const SwhSliderProductPreview = ({ data, type }) => {
               <div className="product-thumb bg-white relative overflow-hidden rounded-2xl">
                 {/* Add to WishList */}
                 <div className="list-action-right absolute top-3 right-3 max-lg:hidden">
-                  <div
-                    className={`add-wishlist-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative `}
-                  >
-                    <div className="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm">
-                      Add To Wishlist
-                    </div>
-                    <Icon.StarIcon size={18} />
-                  </div>
+                  <SwhWishlistToggle
+                    className="add-wishlist-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative"
+                    iconSize={18}
+                    product={data}
+                    tooltipClassName="tag-action bg-black text-white caption2 px-1.5 py-0.5 rounded-sm"
+                  />
                 </div>
 
                 {/* Thumb Image */}
@@ -72,7 +74,7 @@ const SwhSliderProductPreview = ({ data, type }) => {
                   <div className="product-price christmas-font text-black">
                     {data.price?.calculated_price}
                   </div>
-                  {percentSale > 0 && (
+                  {typeof percentSale === "number" && percentSale > 0 && (
                     <>
                       <div className="product-origin-price caption1 text-secondary2">
                         <del>{data.price?.original_price}</del>
@@ -136,7 +138,7 @@ const SwhSliderProductPreview = ({ data, type }) => {
                     <div className="product-price text-title">
                       {data.price?.calculated_price}
                     </div>
-                    {percentSale > 0 && (
+                    {typeof percentSale === "number" && percentSale > 0 && (
                       <>
                         <div className="product-origin-price caption1 text-secondary2">
                           <del>{data.price?.original_price}</del>
@@ -168,14 +170,12 @@ const SwhSliderProductPreview = ({ data, type }) => {
 
                     {/* Add to WishList */}
                     <div className="">
-                      <div
-                        className={`add-wishlist-btn tag-action-ctrl w-[42px] h-[42px] flex items-center justify-center rounded-full bg-white duration-300 relative  ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)]`}
-                      >
-                        <div className="tag-action-swh bg-black text-white caption2 ">
-                          Add To Wishlist
-                        </div>
-                        <Icon.Star size={24} />
-                      </div>
+                      <SwhWishlistToggle
+                        className="add-wishlist-btn tag-action-ctrl w-[42px] h-[42px] flex items-center justify-center rounded-full bg-white duration-300 relative ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)]"
+                        iconSize={24}
+                        product={data}
+                        tooltipClassName="tag-action-swh bg-black text-white caption2"
+                      />
                     </div>
                   </div>
                 </div>

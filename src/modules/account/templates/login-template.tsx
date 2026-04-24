@@ -10,15 +10,19 @@ export enum LOGIN_VIEW {
   REGISTER = "register",
 }
 
-const LoginTemplate = () => {
+type LoginTemplateProps = {
+  redirectTo: string
+}
+
+const LoginTemplate = ({ redirectTo }: LoginTemplateProps) => {
   const [currentView, setCurrentView] = useState("sign-in")
 
   return (
-    <div className="w-full flex justify-start px-8 py-8">
+   <div className="w-full flex justify-center px-8 py-8">
       {currentView === "sign-in" ? (
-        <Login setCurrentView={setCurrentView} />
+        <Login redirectTo={redirectTo} setCurrentView={setCurrentView} />
       ) : (
-        <Register setCurrentView={setCurrentView} />
+        <Register redirectTo={redirectTo} setCurrentView={setCurrentView} />
       )}
     </div>
   )
