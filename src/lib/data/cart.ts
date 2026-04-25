@@ -1,7 +1,10 @@
 "use server"
 
 import { sdk } from "@lib/config"
-import medusaError from "@lib/util/medusa-error"
+import {
+  isMedusaEntityNotFoundError,
+  throwNormalizedMedusaError,
+} from "@lib/util/medusa-error"
 import { HttpTypes } from "@medusajs/types"
 import { revalidateTag } from "next/cache"
 import { redirect } from "next/navigation"
@@ -10,11 +13,84 @@ import {
   getCacheOptions,
   getCacheTag,
   getCartId,
+  removeAuthToken,
   removeCartId,
   setCartId,
 } from "./cookies"
 import { getRegion } from "./regions"
 import { getLocale, updateLocale } from "@lib/data/locale-actions"
+
+const revalidateCartState = async () => {
+  const cartCacheTag = await getCacheTag("carts")
+  revalidateTag(cartCacheTag)
+
+  const fulfillmentCacheTag = await getCacheTag("fulfillment")
+  revalidateTag(fulfillmentCacheTag)
+}
+
+const clearCartState = async () => {
+  await removeCartId()
+  await revalidateCartState()
+}
+
+const clearCustomerState = async () => {
+  await removeAuthToken()
+
+  const customerCacheTag = await getCacheTag("customers")
+  revalidateTag(customerCacheTag)
+}
+
+const isStaleCartSessionError = (error: unknown) =>
+  isMedusaEntityNotFoundError(error, "cart") ||
+  isMedusaEntityNotFoundError(error, "customer")
+
+const addLineItemToCart = async ({
+  cartId,
+  quantity,
+  variantId,
+}: {
+  cartId: string
+  quantity: number
+  variantId: string
+}) => {
+  const headers = {
+    ...(await getAuthHeaders()),
+  }
+
+  await sdk.store.cart.createLineItem(
+    cartId,
+    {
+      variant_id: variantId,
+      quantity,
+    },
+    {},
+    headers
+  )
+
+  await revalidateCartState()
+}
+
+const addVariantToCurrentCart = async ({
+  countryCode,
+  quantity,
+  variantId,
+}: {
+  countryCode: string
+  quantity: number
+  variantId: string
+}) => {
+  const cart = await getOrSetCart(countryCode)
+
+  if (!cart) {
+    throw new Error("Error retrieving or creating cart")
+  }
+
+  await addLineItemToCart({
+    cartId: cart.id,
+    quantity,
+    variantId,
+  })
+}
 
 /**
  * Retrieves a cart by its ID. If no ID is provided, it will use the cart ID from the cookies.
@@ -111,7 +187,7 @@ export async function updateCart(data: HttpTypes.StoreUpdateCart) {
 
       return cart
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 }
 
 export async function addToCart({
@@ -127,34 +203,46 @@ export async function addToCart({
     throw new Error("Missing variant ID when adding to cart")
   }
 
-  const cart = await getOrSetCart(countryCode)
-
-  if (!cart) {
-    throw new Error("Error retrieving or creating cart")
-  }
-
-  const headers = {
-    ...(await getAuthHeaders()),
-  }
-
-  await sdk.store.cart
-    .createLineItem(
-      cart.id,
-      {
-        variant_id: variantId,
-        quantity,
-      },
-      {},
-      headers
-    )
-    .then(async () => {
-      const cartCacheTag = await getCacheTag("carts")
-      revalidateTag(cartCacheTag)
-
-      const fulfillmentCacheTag = await getCacheTag("fulfillment")
-      revalidateTag(fulfillmentCacheTag)
+  try {
+    await addVariantToCurrentCart({
+      countryCode,
+      quantity,
+      variantId,
     })
-    .catch(medusaError)
+    return
+  } catch (error) {
+    if (!isStaleCartSessionError(error)) {
+      throwNormalizedMedusaError(error)
+    }
+  }
+
+  await clearCartState()
+
+  try {
+    await addVariantToCurrentCart({
+      countryCode,
+      quantity,
+      variantId,
+    })
+    return
+  } catch (error) {
+    if (!isMedusaEntityNotFoundError(error, "customer")) {
+      throwNormalizedMedusaError(error)
+    }
+  }
+
+  await clearCustomerState()
+  await clearCartState()
+
+  try {
+    await addVariantToCurrentCart({
+      countryCode,
+      quantity,
+      variantId,
+    })
+  } catch (error) {
+    throwNormalizedMedusaError(error)
+  }
 }
 
 export async function updateLineItem({
@@ -187,7 +275,7 @@ export async function updateLineItem({
       const fulfillmentCacheTag = await getCacheTag("fulfillment")
       revalidateTag(fulfillmentCacheTag)
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 }
 
 export async function deleteLineItem(lineId: string) {
@@ -214,7 +302,7 @@ export async function deleteLineItem(lineId: string) {
       const fulfillmentCacheTag = await getCacheTag("fulfillment")
       revalidateTag(fulfillmentCacheTag)
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 }
 
 export async function setShippingMethod({
@@ -234,7 +322,7 @@ export async function setShippingMethod({
       const cartCacheTag = await getCacheTag("carts")
       revalidateTag(cartCacheTag)
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 }
 
 export async function initiatePaymentSession(
@@ -252,7 +340,7 @@ export async function initiatePaymentSession(
       revalidateTag(cartCacheTag)
       return resp
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 }
 
 export async function applyPromotions(codes: string[]) {
@@ -275,7 +363,7 @@ export async function applyPromotions(codes: string[]) {
       const fulfillmentCacheTag = await getCacheTag("fulfillment")
       revalidateTag(fulfillmentCacheTag)
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 }
 
 export async function applyGiftCard(code: string) {
@@ -409,7 +497,7 @@ export async function placeOrder(cartId?: string) {
       revalidateTag(cartCacheTag)
       return cartRes
     })
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 
   if (cartRes?.type === "order") {
     const countryCode =

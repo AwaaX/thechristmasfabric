@@ -1,7 +1,10 @@
 "use server"
 
 import { sdk } from "@lib/config"
-import medusaError from "@lib/util/medusa-error"
+import {
+  isMedusaEntityNotFoundError,
+  throwNormalizedMedusaError,
+} from "@lib/util/medusa-error"
 import { HttpTypes } from "@medusajs/types"
 import { revalidateTag } from "next/cache"
 import { redirect } from "next/navigation"
@@ -65,7 +68,7 @@ export const updateCustomer = async (body: HttpTypes.StoreUpdateCustomer) => {
   const updateRes = await sdk.store.customer
     .update(body, {}, headers)
     .then(({ customer }) => customer)
-    .catch(medusaError)
+    .catch(throwNormalizedMedusaError)
 
   const cacheTag = await getCacheTag("customers")
   revalidateTag(cacheTag)
@@ -166,7 +169,26 @@ export async function transferCart() {
 
   const headers = await getAuthHeaders()
 
-  await sdk.store.cart.transferCart(cartId, {}, headers)
+  try {
+    await sdk.store.cart.transferCart(cartId, {}, headers)
+  } catch (error) {
+    if (
+      isMedusaEntityNotFoundError(error, "cart") ||
+      isMedusaEntityNotFoundError(error, "customer")
+    ) {
+      await removeCartId()
+
+      const cartCacheTag = await getCacheTag("carts")
+      revalidateTag(cartCacheTag)
+
+      const fulfillmentCacheTag = await getCacheTag("fulfillment")
+      revalidateTag(fulfillmentCacheTag)
+
+      return
+    }
+
+    throwNormalizedMedusaError(error)
+  }
 
   const cartCacheTag = await getCacheTag("carts")
   revalidateTag(cartCacheTag)

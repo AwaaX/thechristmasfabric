@@ -363,13 +363,15 @@ export default function ProductActions({
 
     setIsAdding(true)
 
-    await addToCart({
-      variantId: variant?.id,
-      quantity,
-      countryCode,
-    })
-
-    setIsAdding(false)
+    try {
+      await addToCart({
+        variantId: variant.id,
+        quantity,
+        countryCode,
+      })
+    } finally {
+      setIsAdding(false)
+    }
   }
 
   // Memoize the selected gender option ID
