@@ -8,7 +8,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 import WishlistNavLink from "@modules/layout/components/wishlist-nav-link"
-import SearchModal from "@modules/search/components/modal"
+
 import { getTranslations } from "next-intl/server"
 import Link from "next/link"
 import { FaInstagram, FaRegUser, FaTiktok } from "react-icons/fa"
@@ -120,7 +120,7 @@ export default async function Nav() {
               </LocalizedClientLink>
 
               {/* Search */}
-              {process.env.FEATURE_SEARCH_ENABLED && (
+              
                 <LocalizedClientLink
                   className="hover:text-hoverGray text-black font-medium duration-300 ease-in-out text-[20px] md:text-[24px]  relative tag-action-ctrl"
                   href="/search"
@@ -132,7 +132,7 @@ export default async function Nav() {
                     {main("Search")}
                   </div>
                 </LocalizedClientLink>
-              )}
+              
 
               {/* WishList */}
               <WishlistNavLink label={main("Wishlist")} />
@@ -171,7 +171,7 @@ export default async function Nav() {
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <SearchModal />
+            {/* <SearchModal /> */}
             <div className="hidden small:flex items-center gap-x-6 h-full">
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"

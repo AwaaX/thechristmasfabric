@@ -144,7 +144,8 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
 
                   <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
                     <div className="product-price text-title">
-                      {data.price?.calculated_price}
+                      {/* {data.price?.calculated_price} */}
+                        {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
                     </div>
                     {typeof percentSale === "number" && percentSale > 0 && (
                       <>
