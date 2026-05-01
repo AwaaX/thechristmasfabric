@@ -73,9 +73,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           
           `}
         </Script>
+        <SpeedInsights />
       </body>
       {gaId && <GoogleAnalytics gaId={gaId} />}
-      <SpeedInsights />
     </html>
   )
 }
