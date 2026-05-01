@@ -77,7 +77,7 @@ export default async function Nav() {
             {/* <div className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300">
              <p>USA</p> <FaGlobe className="text-base" />
            </div> */}
-            {/* <SwhRegionSelect regions={regions} /> */}
+            <SwhRegionSelect regions={regions} />
           </div>
         </div>
       </div>
@@ -120,19 +120,18 @@ export default async function Nav() {
               </LocalizedClientLink>
 
               {/* Search */}
-              
-                <LocalizedClientLink
-                  className="hover:text-hoverGray text-black font-medium duration-300 ease-in-out text-[20px] md:text-[24px]  relative tag-action-ctrl"
-                  href="/search"
-                  scroll={false}
-                  data-testid="nav-search-link"
-                >
-                  <IoSearch />
-                  <div className="tag-action-swh bg-black text-white caption2 ">
-                    {main("Search")}
-                  </div>
-                </LocalizedClientLink>
-              
+
+              <LocalizedClientLink
+                className="hover:text-hoverGray text-black font-medium duration-300 ease-in-out text-[20px] md:text-[24px]  relative tag-action-ctrl"
+                href="/search"
+                scroll={false}
+                data-testid="nav-search-link"
+              >
+                <IoSearch />
+                <div className="tag-action-swh bg-black text-white caption2 ">
+                  {main("Search")}
+                </div>
+              </LocalizedClientLink>
 
               {/* WishList */}
               <WishlistNavLink label={main("Wishlist")} />

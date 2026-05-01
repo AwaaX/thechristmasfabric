@@ -73,7 +73,9 @@ const customTranslationFields = locale ? `*custom_translation.${locale}` : "*cus
           ...queryParams,
         },
         headers,
-        next,
+        next:{
+          revalidate: 5
+        },
         cache: "force-cache",
       }
     )

@@ -101,7 +101,7 @@ const SwhWishlistToggle = ({
       tabIndex={0}
     >
       <div className={tooltipClassName}>{label}</div>
-      <Icon.Star
+      <Icon.StarIcon
         className={clx({
           "text-white": isSaved,
         })}

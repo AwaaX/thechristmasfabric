@@ -16,6 +16,7 @@ import MobileActions from "./mobile-actions"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import parse from "html-react-parser"
 import { Star, StarSolid } from "@medusajs/icons"
+import { getDefaultProductVariant } from "@lib/util/product"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -475,9 +476,12 @@ export default function ProductActions({
     }
   }, [quantity, variant])
 
-  const wishlistVariantId =
-    variant?.id ??
-    (variants.length === 1 && variants[0]?.id ? variants[0].id : undefined)
+  // const wishlistVariantId =
+  //   variant?.id ??
+  //   (variants.length === 1 && variants[0]?.id ? variants[0].id : undefined)
+
+    const defaultVariant = getDefaultProductVariant(product)
+    const wishlistVariantId = defaultVariant?.id
 
   const isWishlistSaved = isInWishlist(wishlistVariantId)
   const isWishlistLoading = isPending(wishlistVariantId)

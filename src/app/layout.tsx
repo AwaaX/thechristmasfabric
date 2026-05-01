@@ -7,7 +7,7 @@ import { NextIntlClientProvider } from "next-intl"
 import Script from "next/script"
 import "styles/styles.scss"
 import ProgressBarProviders from "@modules/common/components/swh/ProgressBarProvider"
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const jost = Jost({
   subsets: ["latin"],
   display: "swap",
@@ -75,6 +75,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         </Script>
       </body>
       {gaId && <GoogleAnalytics gaId={gaId} />}
+      <SpeedInsights />
     </html>
   )
 }

@@ -162,7 +162,7 @@ export async function fetchTrackingByOrder(
 
   try {
     const params = new URLSearchParams({
-      order_id: orderId.trim(),
+      display_id: orderId.trim(),
       email: email.trim(),
     })
 
