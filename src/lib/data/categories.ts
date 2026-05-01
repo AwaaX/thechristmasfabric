@@ -56,5 +56,5 @@ export const getCategoryByHandle = async (categoryHandle: string[]) => {
         cache: "force-cache",
       }
     )
-    .then(({ product_categories }) => product_categories)
+    .then(({ product_categories }) => product_categories[0])
 }

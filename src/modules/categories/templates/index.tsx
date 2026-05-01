@@ -87,7 +87,7 @@ export default function CategoryTemplate({
           <PaginatedProducts
             sortBy={sort}
             page={pageNumber}
-            categoryId={category.id}
+            categoryId={category?.id}
             countryCode={countryCode}
           />
     //     </Suspense>
