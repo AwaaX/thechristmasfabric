@@ -29,7 +29,7 @@ export const retrieveVariant = async (
           fields: "*images",
         },
         headers,
-        next,
+        next: { revalidate: 5 },
         cache: "force-cache",
       }
     )

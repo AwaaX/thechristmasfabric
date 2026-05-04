@@ -121,7 +121,7 @@ export async function retrieveCart(cartId?: string, fields?: string) {
         fields,
       },
       headers,
-      next,
+      next: { revalidate: 5 },
       cache: "force-cache",
     })
     .then(({ cart }: { cart: HttpTypes.StoreCart }) => cart)
@@ -562,7 +562,7 @@ export async function listCartOptions() {
     shipping_options: HttpTypes.StoreCartShippingOption[]
   }>("/store/shipping-options", {
     query: { cart_id: cartId },
-    next,
+    next: { revalidate: 5 },
     headers,
     cache: "force-cache",
   })

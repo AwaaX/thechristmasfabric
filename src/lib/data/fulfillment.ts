@@ -22,7 +22,7 @@ export const listCartShippingMethods = async (cartId: string) => {
           cart_id: cartId,
         },
         headers,
-        next,
+        next: { revalidate: 5 },
         cache: "force-cache",
       }
     )
@@ -58,7 +58,7 @@ export const calculatePriceForShippingOption = async (
         method: "POST",
         body,
         headers,
-        next,
+        next: { revalidate: 5 },
       }
     )
     .then(({ shipping_option }) => shipping_option)

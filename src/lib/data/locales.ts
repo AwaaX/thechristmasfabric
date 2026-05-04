@@ -20,7 +20,7 @@ export const listLocales = async (): Promise<Locale[] | null> => {
   return sdk.client
     .fetch<{ locales: Locale[] }>(`/store/locales`, {
       method: "GET",
-      next,
+      next: { revalidate: 5 },
       cache: "force-cache",
     })
     .then(({ locales }) => locales)

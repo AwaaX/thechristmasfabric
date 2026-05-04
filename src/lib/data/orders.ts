@@ -22,7 +22,7 @@ export const retrieveOrder = async (id: string) => {
           "*payment_collections.payments,*items,*items.metadata,*items.variant,*items.product",
       },
       headers,
-      next,
+      next: { revalidate: 5 },
       cache: "force-cache",
     })
     .then(({ order }) => order)
@@ -53,7 +53,7 @@ export const listOrders = async (
         ...filters,
       },
       headers,
-      next,
+      next: { revalidate: 5 },
       cache: "force-cache",
     })
     .then(({ orders }) => orders)

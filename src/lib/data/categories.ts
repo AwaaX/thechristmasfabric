@@ -25,7 +25,9 @@ export const listCategories = async (query?: Record<string, any>) => {
           limit,
           ...query,
         },
-        next,
+        next: {
+          revalidate: 5,
+        },
         cache: "force-cache",
       }
     )
@@ -52,7 +54,7 @@ export const getCategoryByHandle = async (categoryHandle: string[]) => {
           fields: `*category_children, *products,${customTranslationFields}`,
           handle,
         },
-        next,
+        next: { revalidate: 5 },
         cache: "force-cache",
       }
     )

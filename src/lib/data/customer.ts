@@ -53,7 +53,7 @@ export const retrieveCustomer =
           fields: "*orders",
         },
         headers,
-        next,
+        next: { revalidate: 5 },
         cache: "force-cache",
       })
       .then(({ customer }) => customer)
