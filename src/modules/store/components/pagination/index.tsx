@@ -1,7 +1,8 @@
 "use client"
 
 import { clx } from "@medusajs/ui"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePathname, useSearchParams } from "next/navigation"
 
 export function Pagination({
   page,
@@ -12,7 +13,7 @@ export function Pagination({
   totalPages: number
   'data-testid'?: string
 }) {
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
 

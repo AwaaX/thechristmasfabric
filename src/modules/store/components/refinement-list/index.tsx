@@ -1,6 +1,7 @@
 "use client"
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePathname, useSearchParams } from "next/navigation"
 import { useCallback } from "react"
 
 import SortProducts, { SortOptions } from "./sort-products"
@@ -12,7 +13,7 @@ type RefinementListProps = {
 }
 
 const RefinementList = ({ sortBy, 'data-testid': dataTestId }: RefinementListProps) => {
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
 

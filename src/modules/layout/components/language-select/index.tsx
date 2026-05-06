@@ -7,8 +7,8 @@ import {
   ListboxOptions,
   Transition,
 } from "@headlessui/react"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { Fragment, useEffect, useMemo, useState, useTransition } from "react"
-import { useRouter } from "next/navigation"
 import ReactCountryFlag from "react-country-flag"
 
 import { StateType } from "@lib/hooks/use-toggle-state"
@@ -75,7 +75,7 @@ const LanguageSelect = ({
 }: LanguageSelectProps) => {
   const [current, setCurrent] = useState<LanguageOption | undefined>(undefined)
   const [isPending, startTransition] = useTransition()
-  const router = useRouter()
+  const router = usePageLoaderRouter()
 
   const { state, close } = toggleState
 

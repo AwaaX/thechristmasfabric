@@ -8,9 +8,10 @@ import { CheckCircleSolid, Loader } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { Button, clx, Heading, Text } from "@medusajs/ui"
 import ErrorMessage from "@modules/checkout/components/error-message"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import Divider from "@modules/common/components/divider"
 import MedusaRadio from "@modules/common/components/radio"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
 const PICKUP_OPTION_ON = "__PICKUP_ON"
@@ -65,7 +66,7 @@ const Shipping: React.FC<ShippingProps> = ({
   )
 
   const searchParams = useSearchParams()
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const pathname = usePathname()
 
   const isOpen = searchParams.get("step") === "delivery"

@@ -9,8 +9,9 @@ import ErrorMessage from "@modules/checkout/components/error-message"
 import PaymentContainer, {
   StripeCardContainer,
 } from "@modules/checkout/components/payment-container"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import Divider from "@modules/common/components/divider"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
 
 const Payment = ({
@@ -33,7 +34,7 @@ const Payment = ({
   )
 
   const searchParams = useSearchParams()
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const pathname = usePathname()
 
   const isOpen = searchParams.get("step") === "payment"

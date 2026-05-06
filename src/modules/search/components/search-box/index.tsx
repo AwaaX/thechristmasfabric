@@ -1,6 +1,5 @@
 import { XMarkMini } from "@medusajs/icons"
 import { FormEvent } from "react"
-import { useRouter } from "next/navigation"
 
 import SearchBoxWrapper, {
   ControlledSearchBoxProps,
@@ -72,8 +71,6 @@ const ControlledSearchBox = ({
 }
 
 const SearchBox = () => {
-  const router = useRouter()
-
   return (
     <SearchBoxWrapper>
       {(props) => {

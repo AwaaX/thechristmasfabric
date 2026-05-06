@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import {
   ChangeEvent,
   FormEvent,
@@ -38,7 +38,7 @@ const SearchBoxWrapper = ({
   const [value, setValue] = useState(query)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const router = useRouter()
+  const router = usePageLoaderRouter()
 
   const onReset = () => {
     setValue("")

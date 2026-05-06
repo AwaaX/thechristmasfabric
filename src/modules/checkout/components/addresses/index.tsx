@@ -2,12 +2,13 @@
 
 import { setAddresses } from "@lib/data/cart"
 import compareAddresses from "@lib/util/compare-addresses"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { CheckCircleSolid } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { Heading, Text, useToggleState } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import Spinner from "@modules/common/icons/spinner"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { useActionState } from "react"
 import BillingAddress from "../billing_address"
 import ErrorMessage from "../error-message"
@@ -22,7 +23,7 @@ const Addresses = ({
   customer: HttpTypes.StoreCustomer | null
 }) => {
   const searchParams = useSearchParams()
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const pathname = usePathname()
 
   const isOpen = searchParams.get("step") === "address"

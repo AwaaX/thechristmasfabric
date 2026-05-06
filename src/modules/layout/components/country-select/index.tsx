@@ -11,6 +11,7 @@ import { Fragment, useEffect, useMemo, useState } from "react"
 import ReactCountryFlag from "react-country-flag"
 
 import { StateType } from "@lib/hooks/use-toggle-state"
+import { usePageLoader } from "@modules/common/components/swh/ProgressBarProvider"
 import { useParams, usePathname } from "next/navigation"
 import { updateRegion } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
@@ -35,6 +36,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
 
   const { countryCode } = useParams()
   const currentPath = usePathname().split(`/${countryCode}`)[1]
+  const { startPageLoader } = usePageLoader()
 
   const { state, close } = toggleState
 
@@ -59,6 +61,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
   }, [options, countryCode])
 
   const handleChange = (option: CountryOption) => {
+    startPageLoader()
     updateRegion(option.country, currentPath)
     close()
   }

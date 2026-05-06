@@ -4,12 +4,13 @@ import { addToCart } from "@lib/data/cart"
 import { getProductReviews } from "@lib/data/products"
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { useWishlist } from "@lib/context/wishlist-context"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { HttpTypes } from "@medusajs/types"
 import { Button, clx } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
@@ -241,7 +242,7 @@ export default function ProductActions({
   // State to track if the user manually changed the gender
   const [isManualGenderSelection, setManualGenderSelection] = useState(false)
 
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
   const countryCode = useParams().countryCode as string
 

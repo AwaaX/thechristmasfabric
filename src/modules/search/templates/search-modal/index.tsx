@@ -1,7 +1,7 @@
 "use client"
 
 import { InstantSearch } from "react-instantsearch-hooks-web"
-import { useRouter } from "next/navigation"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { MagnifyingGlassMini } from "@medusajs/icons"
 
 
@@ -12,7 +12,7 @@ import { useEffect, useRef } from "react"
 import { SEARCH_INDEX_NAME, searchClient } from "@lib/config"
 
 export default function SearchModal() {
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const searchRef = useRef(null)
 
   // close modal on outside click

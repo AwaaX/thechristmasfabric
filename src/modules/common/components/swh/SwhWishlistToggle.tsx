@@ -1,11 +1,12 @@
 "use client"
 
 import { useWishlist } from "@lib/context/wishlist-context"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { getDefaultProductVariant } from "@lib/util/product"
 import { HttpTypes } from "@medusajs/types"
 import { clx } from "@medusajs/ui"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import type { KeyboardEvent, MouseEvent } from "react"
 
 export type SwhProductPreviewData = HttpTypes.StoreProduct & {
@@ -29,7 +30,7 @@ const SwhWishlistToggle = ({
   tooltipClassName,
 }: SwhWishlistToggleProps) => {
   const params = useParams()
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
 
   const defaultVariant = getDefaultProductVariant(product)

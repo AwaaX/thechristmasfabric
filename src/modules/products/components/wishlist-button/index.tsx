@@ -1,9 +1,9 @@
 "use client"
 
 import { useWishlist } from "@lib/context/wishlist-context"
+import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { Heart } from "@medusajs/icons"
 import { Button, clx } from "@medusajs/ui"
-import { useRouter } from "next/navigation"
 
 type WishlistButtonProps = {
   className?: string
@@ -22,7 +22,7 @@ export default function WishlistButton({
   unavailableLabel = "Select a variant to save",
   variantId,
 }: WishlistButtonProps) {
-  const router = useRouter()
+  const router = usePageLoaderRouter()
   const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
 
   if (!hasCustomer) {
