@@ -1,13 +1,8 @@
 import { sdk } from "@lib/config"
 import { HttpTypes } from "@medusajs/types"
-import { getCacheOptions } from "./cookies"
 import { getLocale } from "./locale-actions"
 
 export const listCategories = async (query?: Record<string, any>) => {
-  const next = {
-    ...(await getCacheOptions("categories")),
-  }
-
   const limit = query?.limit || 100
 
   const locale = await getLocale()
@@ -37,9 +32,6 @@ export const listCategories = async (query?: Record<string, any>) => {
 export const getCategoryByHandle = async (categoryHandle: string[]) => {
   const handle = `${categoryHandle.join("/")}`
 
-  const next = {
-    ...(await getCacheOptions("categories")),
-  }
   const locale = await getLocale()
 
   const customTranslationFields = locale

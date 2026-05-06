@@ -1,13 +1,81 @@
 import { HttpTypes } from "@medusajs/types"
 import { NextRequest, NextResponse } from "next/server"
+import { defaultLocale, locales } from "./i18n/routing"
 
 const BACKEND_URL = process.env.MEDUSA_BACKEND_URL
 const PUBLISHABLE_API_KEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY
 const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "us"
+const LOCALE_COOKIE_NAME = "_medusa_locale"
 
 const regionMapCache = {
   regionMap: new Map<string, HttpTypes.StoreRegion>(),
   regionMapUpdated: Date.now(),
+}
+
+const localeSet = new Set<string>(locales)
+
+const localeByCountryCode = locales.reduce<Record<string, string>>(
+  (acc, locale) => {
+    const [, region] = locale.split("-")
+
+    if (region) {
+      acc[region] = locale
+    }
+
+    return acc
+  },
+  {}
+)
+
+const getLocaleFromUrl = (pathname: string, countryCode?: string) => {
+  const segments = pathname.split("/").filter(Boolean)
+  const lastSegment = segments.at(1)?.toLowerCase()
+
+  if (lastSegment) {
+    const localeFromSlug = locales.find((locale) =>
+      lastSegment.endsWith(`-${locale}`)
+    )
+
+    if (localeFromSlug) {
+      return localeFromSlug
+    }
+  }
+
+  if (countryCode) {
+    const normalizedCountryCode = countryCode.toLowerCase()
+
+    if (localeSet.has(normalizedCountryCode)) {
+      return normalizedCountryCode
+    }
+
+    return localeByCountryCode[normalizedCountryCode] ?? defaultLocale
+  }
+
+  return defaultLocale
+}
+
+const applyLocaleCookie = (
+  request: NextRequest,
+  response: NextResponse,
+  countryCode?: string
+) => {
+  const resolvedLocale = getLocaleFromUrl(request.nextUrl.pathname, countryCode)
+  const currentLocale = request.cookies.get(LOCALE_COOKIE_NAME)?.value
+
+  if (
+    resolvedLocale &&
+    localeSet.has(resolvedLocale) &&
+    resolvedLocale !== currentLocale
+  ) {
+    response.cookies.set(LOCALE_COOKIE_NAME, resolvedLocale, {
+      maxAge: 60 * 60 * 24 * 365,
+      httpOnly: false,
+      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production",
+    })
+  }
+
+  return response
 }
 
 async function getRegionMap(cacheId: string) {
@@ -121,7 +189,7 @@ export async function middleware(request: NextRequest) {
 
   // if one of the country codes is in the url and the cache id is set, return next
   if (urlHasCountryCode && cacheIdCookie) {
-    return NextResponse.next()
+    return applyLocaleCookie(request, NextResponse.next(), countryCode)
   }
 
   // if one of the country codes is in the url and the cache id is not set, set the cache id and redirect
@@ -130,7 +198,7 @@ export async function middleware(request: NextRequest) {
       maxAge: 60 * 60 * 24,
     })
 
-    return response
+    return applyLocaleCookie(request, response, countryCode)
   }
 
   // check if the url is a static asset
@@ -155,7 +223,7 @@ export async function middleware(request: NextRequest) {
     )
   }
 
-  return response
+  return applyLocaleCookie(request, response, countryCode)
 }
 
 export const config = {

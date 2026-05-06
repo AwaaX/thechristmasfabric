@@ -1,45 +1,27 @@
 import { defineRouting } from "next-intl/routing"
 import { createNavigation } from "next-intl/navigation"
 
-export const routing = defineRouting({
-  // A list of all locales that are supported
-  locales: [
-    "es-es", // Spanish (Spain)
-    "de-de", // German (Germany)
-    "it-it", // Italian (Italy)
-    "nl-nl", // Dutch (Netherlands)
-    "sv-se", // Swedish (Sweden)
-    "en-us", // English (United States)
-    "en-ca", // English (Canada)
-    "en-au", // English (Australia)
-    "en-ie", // English (Ireland)
-    "en-gb", // English (United Kingdom)
-  ],
+export const locales = [
+  "es-es", // Spanish (Spain)
+  "de-de", // German (Germany)
+  "it-it", // Italian (Italy)
+  "nl-nl", // Dutch (Netherlands)
+  "sv-se", // Swedish (Sweden)
+  "en-us", // English (United States)
+  "en-ca", // English (Canada)
+  "en-au", // English (Australia)
+  "en-ie", // English (Ireland)
+  "en-gb", // English (United Kingdom)
+] as const
 
-  // Used when no locale matches
-  defaultLocale: "en-gb",
+export const defaultLocale = "en-gb"
 
-  // The `pathnames` object holds pairs of internal and
-  // external paths. Based on the locale, the external
-  // paths are rewritten to the shared, internal ones.
-  pathnames: {
+export const pathnames = {
     // If all locales use the same pathname, a single
     // external path can be used for all locales
     "/": "/",
     "/checkout": "/checkout",
     "/order/confirmed/[id]": "/order/confirmed/[id]",
-    "/christmas-pyjamas": {
-      "es-es": "/pijamas-de-navidad", // Spanish (Spain)
-      "de-de": "/weihnachtspyjamas", // German (Germany)
-      "it-it": "/pigiama-di-natale", // Italian (Italy)
-      "nl-nl": "/kerst-pyjama's", // Dutch (Netherlands)
-      "sv-se": "/julpyjamas", // Swedish (Sweden)
-      "en-us": "/christmas-pyjamas", // English (United States)
-      "en-ca": "/christmas-pyjamas", // English (Canada)
-      "en-au": "/christmas-pyjamas", // English (Australia)
-      "en-ie": "/christmas-pyjamas", // English (Ireland)
-      "en-gb": "/christmas-pyjamas", // English (United Kingdom)
-    },
     "/christmas-pyjamas/[category]/[handle]/[pid]": {
       "es-es": "/pijamas-de-navidad/[category]/[handle]/[pid]", // Spanish (Spain)
       "de-de": "/weihnachtspyjamas/[category]/[handle]/[pid]", // German (Germany)
@@ -77,18 +59,42 @@ export const routing = defineRouting({
       "en-gb": "/search", // English (United Kingdom)
     },
     "/christmas-pyjamas": {
-      "es-es": "/tienda", // Spanish (Spain)
-      "de-de": "/christmas-pyjamas", // German (Germany)
-      "it-it": "/negozio", // Italian (Italy)
-      "nl-nl": "/winkel", // Dutch (Netherlands)
-      "sv-se": "/butik", // Swedish (Sweden)
+      "es-es": "/pijamas-de-navidad", // Spanish (Spain)
+      "de-de": "/weihnachtspyjamas", // German (Germany)
+      "it-it": "/pigiama-di-natale", // Italian (Italy)
+      "nl-nl": "/kerst-pyjama's", // Dutch (Netherlands)
+      "sv-se": "/julpyjamas", // Swedish (Sweden)
       "en-us": "/christmas-pyjamas", // English (United States)
       "en-ca": "/christmas-pyjamas", // English (Canada)
       "en-au": "/christmas-pyjamas", // English (Australia)
       "en-ie": "/christmas-pyjamas", // English (Ireland)
       "en-gb": "/christmas-pyjamas", // English (United Kingdom)
     },
-  },
+    // "/christmas-pyjamas": {
+    //   "es-es": "/tienda", // Spanish (Spain)
+    //   "de-de": "/christmas-pyjamas", // German (Germany)
+    //   "it-it": "/negozio", // Italian (Italy)
+    //   "nl-nl": "/winkel", // Dutch (Netherlands)
+    //   "sv-se": "/butik", // Swedish (Sweden)
+    //   "en-us": "/christmas-pyjamas", // English (United States)
+    //   "en-ca": "/christmas-pyjamas", // English (Canada)
+    //   "en-au": "/christmas-pyjamas", // English (Australia)
+    //   "en-ie": "/christmas-pyjamas", // English (Ireland)
+    //   "en-gb": "/christmas-pyjamas", // English (United Kingdom)
+    // },
+}
+
+export const routing = defineRouting({
+  // A list of all locales that are supported
+  locales: [...locales],
+
+  // Used when no locale matches
+  defaultLocale,
+
+  // The `pathnames` object holds pairs of internal and
+  // external paths. Based on the locale, the external
+  // paths are rewritten to the shared, internal ones.
+  pathnames,
 })
 
 // Lightweight wrappers around Next.js' navigation APIs
