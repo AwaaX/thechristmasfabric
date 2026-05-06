@@ -6,6 +6,7 @@ import { HttpTypes } from "@medusajs/types"
 import { Button } from "@medusajs/ui"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
 import React, { useState } from "react"
+import { useTranslations } from "next-intl"
 import ErrorMessage from "../error-message"
 
 type PaymentButtonProps = {
@@ -17,6 +18,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
   cart,
   "data-testid": dataTestId,
 }) => {
+  const t = useTranslations("Checkout.Payment")
   const notReady =
     !cart ||
     !cart.shipping_address ||
@@ -40,7 +42,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
         <ManualTestPaymentButton notReady={notReady} data-testid={dataTestId} />
       )
     default:
-      return <Button disabled>Select a payment method</Button>
+      return <Button disabled>{t("selectMethod")}</Button>
   }
 }
 

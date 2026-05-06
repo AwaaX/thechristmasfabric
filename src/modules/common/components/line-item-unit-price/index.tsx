@@ -1,6 +1,9 @@
+"use client"
+
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
 import { clx } from "@medusajs/ui"
+import { useTranslations } from "next-intl"
 
 type LineItemUnitPriceProps = {
   item: HttpTypes.StoreCartLineItem | HttpTypes.StoreOrderLineItem
@@ -13,11 +16,14 @@ const LineItemUnitPrice = ({
   style = "default",
   currencyCode,
 }: LineItemUnitPriceProps) => {
+  const t = useTranslations("Common.Price")
   const { total, original_total } = item
-  const hasReducedPrice = total < original_total
+  const currentTotal = total ?? 0
+  const originalTotal = original_total ?? 0
+  const hasReducedPrice = currentTotal < originalTotal
 
   const percentage_diff = Math.round(
-    ((original_total - total) / original_total) * 100
+    originalTotal > 0 ? ((originalTotal - currentTotal) / originalTotal) * 100 : 0
   )
 
   return (
@@ -26,14 +32,14 @@ const LineItemUnitPrice = ({
         <>
           <p>
             {style === "default" && (
-              <span className="text-ui-fg-muted">Original: </span>
+              <span className="text-ui-fg-muted">{t("original")} </span>
             )}
             <span
               className="line-through"
               data-testid="product-unit-original-price"
             >
               {convertToLocale({
-                amount: original_total / item.quantity,
+                amount: originalTotal / item.quantity,
                 currency_code: currencyCode,
               })}
             </span>
@@ -50,7 +56,7 @@ const LineItemUnitPrice = ({
         data-testid="product-unit-price"
       >
         {convertToLocale({
-          amount: total / item.quantity,
+          amount: currentTotal / item.quantity,
           currency_code: currencyCode,
         })}
       </span>

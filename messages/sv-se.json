@@ -1,4 +1,3 @@
-
 {
   "NavBar": {
     "Top": {
@@ -25,6 +24,9 @@
         "Search": "Sök",
         "Wishlist": "Önskelista",
         "Cart": "Varukorg"
+      },
+      "MobileMenu": {
+        "menu": "Meny"
       }
     }
   },
@@ -147,6 +149,376 @@
       "txt4": " Tack för att du anmält dig till nyhetsbrevet! Vi",
       "txt5": "hör av oss snart.",
       "Placeholder": "Din e-post"
+    }
+  },
+  "Metadata": {
+    "NotFound": {
+      "title": "404",
+      "description": "Sidan hittades inte"
+    },
+    "Home": {
+      "title": "Hem | The Christmas Fabric",
+      "description": "Kliv in i projektet och köp fantastiska pyjamasar och originalkläder för julen och denna vintersäsong från The Christmas Fabric"
+    },
+    "Checkout": {
+      "title": "Kassa | The Christmas Fabric",
+      "description": "Granska din varukorg, frakt och betalningsuppgifter för att slutföra din beställning."
+    },
+    "SearchResults": {
+      "title": "Sökresultat för {query} | The Christmas Fabric",
+      "description": "Utforska produkter som matchar {query}."
+    },
+    "Cart": {
+      "title": "Varukorg | The Christmas Fabric",
+      "description": "Granska produkterna som för närvarande finns i din varukorg."
+    },
+    "Wishlist": {
+      "Shared": {
+        "title": "Delad önskelista | The Christmas Fabric",
+        "description": "Bläddra i en önskelista som har delats med dig."
+      }
+    },
+    "Account": {
+      "Login": {
+        "title": "Logga in | The Christmas Fabric",
+        "description": "Logga in på ditt konto hos The Christmas Fabric."
+      },
+      "Wishlist": {
+        "title": "Önskelista | The Christmas Fabric",
+        "description": "Produkter som sparats i din önskelista."
+      },
+      "Orders": {
+        "title": "Beställningar | The Christmas Fabric",
+        "description": "Översikt över dina tidigare beställningar."
+      },
+      "Profile": {
+        "title": "Profil | The Christmas Fabric",
+        "description": "Visa och redigera dina profiluppgifter."
+      },
+      "Addresses": {
+        "title": "Adresser | The Christmas Fabric",
+        "description": "Visa och uppdatera dina sparade adresser."
+      },
+      "Overview": {
+        "title": "Konto | The Christmas Fabric",
+        "description": "Översikt över din kontoaktivitet."
+      },
+      "LoginWishlist": {
+        "title": "Logga in för att se önskelistan | The Christmas Fabric",
+        "description": "Logga in för att få tillgång till din önskelista."
+      }
+    },
+    "OrderConfirmed": {
+      "title": "Beställning bekräftad | The Christmas Fabric",
+      "description": "Ditt köp genomfördes."
+    }
+  },
+  "Common": {
+    "NotFound": {
+      "heading": "Sidan hittades inte",
+      "description": "Sidan du försökte komma åt finns inte.",
+      "cta": "Gå till startsidan"
+    },
+    "Price": {
+      "from": "Från",
+      "original": "Ordinarie:"
+    }
+  },
+  "Account": {
+    "Login": {
+      "heading": "Logga in",
+      "email": "E-post",
+      "emailTitle": "Ange en giltig e-postadress.",
+      "password": "Lösenord",
+      "submit": "Logga in",
+      "registerPrompt": "Inte medlem?",
+      "registerCta": "Registrera dig"
+    },
+    "Register": {
+      "heading": "Registrera dig här",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "email": "E-post",
+      "password": "Lösenord",
+      "consentPrefix": "Jag godkänner butikens",
+      "privacyPolicy": "integritetspolicy",
+      "and": "och",
+      "termsOfUse": "användarvillkor",
+      "submit": "Gå med",
+      "signInPrompt": "Redan medlem?",
+      "signInCta": "Logga in"
+    },
+    "Nav": {
+      "hello": "Hej {name}",
+      "account": "Konto",
+      "overview": "Översikt",
+      "profile": "Profil",
+      "addresses": "Adresser",
+      "wishlist": "Önskelista",
+      "orders": "Beställningar",
+      "logout": "Logga ut"
+    },
+    "Overview": {
+      "hello": "Hej {name}",
+      "signedInAs": "Inloggad som:",
+      "profile": "Profil",
+      "completed": "Klar",
+      "addresses": "Adresser",
+      "saved": "Sparade",
+      "recentOrders": "Senaste beställningar",
+      "datePlaced": "Beställningsdatum",
+      "orderNumber": "Beställningsnummer",
+      "totalAmount": "Totalt belopp",
+      "goToOrder": "Gå till beställning #{id}",
+      "noRecentOrders": "Inga senaste beställningar"
+    },
+    "OrderOverview": {
+      "emptyTitle": "Här finns inget att se",
+      "emptyDescription": "Du har inga beställningar ännu, låt oss ändra på det :)",
+      "continueShopping": "Fortsätt handla"
+    },
+    "Pages": {
+      "Wishlist": {
+        "heading": "Önskelista",
+        "description": "Granska sparade produkter, ta bort artiklar eller dela din önskelista.",
+        "emptyMessage": "Du har inte lagt till några produkter i din önskelista ännu."
+      },
+      "Orders": {
+        "heading": "Beställningar",
+        "description": "Visa dina tidigare beställningar och deras status. Du kan även skapa returer eller byten om det behövs."
+      },
+      "Profile": {
+        "heading": "Profil",
+        "description": "Visa och uppdatera din profilinformation, inklusive namn, e-post och telefonnummer. Du kan också uppdatera din faktureringsadress eller ändra ditt lösenord."
+      },
+      "Addresses": {
+        "heading": "Leveransadresser",
+        "description": "Visa och uppdatera dina leveransadresser. Du kan lägga till hur många du vill. Sparade adresser blir tillgängliga i kassan."
+      }
+    },
+    "ProfilePassword": {
+      "notImplemented": "Lösenordsuppdatering är inte implementerad",
+      "password": "Lösenord",
+      "hidden": "Lösenordet visas inte av säkerhetsskäl",
+      "oldPassword": "Gammalt lösenord",
+      "newPassword": "Nytt lösenord",
+      "confirmPassword": "Bekräfta lösenord"
+    }
+  },
+  "Cart": {
+    "Items": {
+      "heading": "Varukorg",
+      "item": "Artikel",
+      "quantity": "Antal",
+      "price": "Pris",
+      "total": "Totalt"
+    },
+    "Summary": {
+      "heading": "Sammanfattning",
+      "checkout": "Gå till kassan"
+    },
+    "Empty": {
+      "heading": "Din varukorg är för närvarande tom",
+      "description": "Du kan titta på alla tillgängliga produkter och köpa något i butiken.",
+      "cta": "Tillbaka till butiken"
+    },
+    "Dropdown": {
+      "heading": "Varukorg",
+      "quantity": "Antal",
+      "remove": "Ta bort",
+      "subtotal": "Delsumma",
+      "excludingTaxes": "(exkl. moms)",
+      "goToCart": "Gå till varukorg",
+      "empty": "Din shoppingpåse är tom.",
+      "goToProductsSrOnly": "Gå till produktsidan",
+      "explore": "Utforska produkter"
+    },
+    "Totals": {
+      "subtotalExcluding": "Delsumma (exkl. frakt och skatter)",
+      "shipping": "Frakt",
+      "discount": "Rabatt",
+      "taxes": "Skatter",
+      "total": "Totalt"
+    },
+    "NotFound": {
+      "heading": "Sidan hittades inte",
+      "description": "Varukorgen du försökte komma åt finns inte. Rensa dina cookies och försök igen.",
+      "cta": "Gå till startsidan"
+    }
+  },
+  "Search": {
+    "Results": {
+      "heading": "Sökresultat för:",
+      "clear": "Rensa",
+      "noResults": "Inga resultat."
+    },
+    "Box": {
+      "placeholder": "Sök produkter..."
+    },
+    "ShowAll": {
+      "noResults": "Inga resultat hittades.",
+      "showingFirst": "Visar de första {count} resultaten.",
+      "viewAll": "Visa alla"
+    }
+  },
+  "Wishlist": {
+    "SharedPage": {
+      "heading": "Delad önskelista",
+      "description": "Bläddra bland produkterna som sparats i denna delade önskelista.",
+      "emptyMessage": "Den här önskelistan har inga sparade produkter."
+    },
+    "ShareButton": {
+      "successTitle": "Länk kopierad",
+      "successDescription": "Alla med den här länken kan se din önskelista.",
+      "errorTitle": "Fel",
+      "errorDescription": "Det går inte att skapa en delningslänk just nu.",
+      "button": "Dela önskelista",
+      "label": "Delningslänk"
+    },
+    "ItemsGrid": {
+      "variant": "Variant"
+    },
+    "Button": {
+      "add": "Lägg till i önskelistan",
+      "remove": "Ta bort från önskelistan",
+      "unavailable": "Välj en variant att spara"
+    }
+  },
+  "Order": {
+    "Summary": {
+      "heading": "Ordersammanfattning",
+      "subtotal": "Delsumma",
+      "discount": "Rabatt",
+      "giftCard": "Presentkort",
+      "shipping": "Frakt",
+      "taxes": "Skatter",
+      "total": "Totalt"
+    },
+    "Help": {
+      "heading": "Behöver du hjälp?",
+      "contact": "Kontakt",
+      "returns": "Returer och byten"
+    },
+    "Completed": {
+      "heading": "Tack!",
+      "description": "Din beställning har lagts framgångsrikt.",
+      "summary": "Sammanfattning"
+    },
+    "Details": {
+      "heading": "Beställningsdetaljer",
+      "back": "Tillbaka till översikten"
+    },
+    "Shipping": {
+      "heading": "Leverans",
+      "address": "Leveransadress",
+      "contact": "Kontakt",
+      "method": "Metod"
+    }
+  },
+  "Store": {
+    "Sort": {
+      "title": "Sortera efter",
+      "created_at": "Senaste nyheter",
+      "price_asc": "Pris: lågt till högt",
+      "price_desc": "Pris: högt till lågt"
+    }
+  },
+  "Product": {
+    "Actions": {
+      "signInToSave": "Logga in för att spara",
+      "selectVariantToSave": "Välj en variant att spara",
+      "removeFromWishlist": "Ta bort från önskelistan",
+      "addToWishlist": "Lägg till i önskelistan",
+      "quantity": "Antal:",
+      "selectVariant": "Välj variant",
+      "outOfStock": "Slut i lager",
+      "addToCart": "Lägg i varukorg",
+      "selectVariantError": "* Välj en variant för att fortsätta",
+      "inventoryAlert": "Just nu finns endast {quantity} artikel/artiklar tillgängliga!",
+      "estimatedDeliveryLabel": "Beräknad leverans:",
+      "estimatedDeliveryText": "Ditt paket kommer fram inom 3-5 arbetsdagar till ditt utlämningsställe eller hem till dig.",
+      "selectOptions": "Välj alternativ"
+    },
+    "Tabs": {
+      "sizeGuide": "Storleksguide",
+      "deliveryInformation": "Leveransinformation",
+      "material": "Material",
+      "countryOfOrigin": "Ursprungsland",
+      "type": "Typ",
+      "weight": "Vikt",
+      "dimensions": "Mått",
+      "shippingBullet1": "Din beställning skickas inom mindre än 24 timmar från måndag till lördag (med undantag för helgdagar)",
+      "shippingBullet2": "Fri spårbar leverans inom 5 dagar från köp på £65, 70€ eller $80 (hemleverans)",
+      "shippingBullet3": "Standardleverans med spårning 4-5 dagar för 4,90£ (hemleverans)",
+      "shippingBullet4": "Följ ditt paket enkelt via e-post och på webbplatsen",
+      "sizeGuideDescription": "Våra pyjamasar har elastisk midja och passar bra oavsett din midjestorlek. Tveksam? Kontakta oss.",
+      "sizesSuffix": " storlekar:",
+      "hide": "Dölj",
+      "show": "Visa",
+      "measurementGuideTitle": "Hur tar du dina mått?",
+      "measurementGuideDescription": "Klicka här för att följa The Christmas Fabrics guide och ta dina mått enkelt hemma utan misstag"
+    },
+    "Reviews": {
+      "errorTitle": "Fel",
+      "requiredFields": "Fyll i obligatoriska fält.",
+      "successTitle": "Klart",
+      "successDescription": "Din recension har skickats och väntar på godkännande.",
+      "submitError": "Ett fel uppstod när din recension skickades. Försök igen senare.",
+      "addReview": "Lägg till en recension",
+      "title": "Titel",
+      "content": "Innehåll",
+      "rating": "Betyg",
+      "submit": "Skicka"
+    }
+  },
+  "Tracking": {
+    "Page": {
+      "heading": "Spåra min beställning",
+      "trackingNumber": "Spårningsnummer",
+      "lastUpdate": "Senaste uppdatering:",
+      "descriptionLabel": "Beskrivning:",
+      "location": "Plats:",
+      "route": "Rutt:",
+      "history": "Historik",
+      "orderFoundNoTracking": "Beställningen hittades, men det finns ännu inga spårningsuppgifter tillgängliga.",
+      "orderPrompt": "Ange ditt ordernummer och din e-postadress för att spåra din beställning:",
+      "trackingPrompt": "Ange spårningsnumret du fick i fraktbekräftelsen för att spåra din beställning",
+      "orderId": "Order-ID",
+      "orderNumberPlaceholder": "Ordernummer",
+      "orderEmail": "Order-e-post",
+      "emailPlaceholder": "E-postadress",
+      "trackingNumberLabel": "Spårningsnummer",
+      "trackingNumberPlaceholder": "Beställningens spårningsnummer",
+      "trackOrder": "Spåra beställning",
+      "tracking": "Spårar...",
+      "orderLabel": "Beställning:",
+      "tabs": {
+        "orderDetails": "Orderdetaljer",
+        "trackingNumbers": "Spårningsnummer"
+      },
+      "milestones": {
+        "infoReceived": "Information mottagen",
+        "pickedUp": "Upphämtad",
+        "departure": "Avresa",
+        "arrival": "Ankomst",
+        "availableForPickup": "Tillgänglig för upphämtning",
+        "outForDelivery": "Ute för leverans",
+        "delivered": "Levererad"
+      },
+      "statuses": {
+        "Delivered": "Levererad",
+        "InTransit": "På väg",
+        "PickedUp": "Upphämtad",
+        "Exception": "Avvikelse",
+        "Returning": "Returneras",
+        "Returned": "Returnerad",
+        "Unknown": "Okänd"
+      }
+    }
+  },
+  "Checkout": {
+    "Payment": {
+      "selectMethod": "Välj en betalningsmetod"
     }
   }
 }

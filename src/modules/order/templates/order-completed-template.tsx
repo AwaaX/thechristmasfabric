@@ -11,6 +11,7 @@ import ShippingDetails from "@modules/order/components/shipping-details"
 import PaymentDetails from "@modules/order/components/payment-details"
 import { HttpTypes } from "@medusajs/types"
 import { buildOrderAnalyticsPayload } from "@lib/util/ga4"
+import { getTranslations } from "next-intl/server"
 
 type OrderCompletedTemplateProps = {
   order: HttpTypes.StoreOrder
@@ -19,6 +20,7 @@ type OrderCompletedTemplateProps = {
 export default async function OrderCompletedTemplate({
   order,
 }: OrderCompletedTemplateProps) {
+  const t = await getTranslations("Order.Completed")
   const cookies = await nextCookies()
   const purchaseAnalyticsPayload = buildOrderAnalyticsPayload(order)
 
@@ -41,12 +43,12 @@ export default async function OrderCompletedTemplate({
             level="h1"
             className="flex flex-col gap-y-3 text-ui-fg-base text-3xl mb-4"
           >
-            <span>Thank you!</span>
-            <span>Your order was placed successfully.</span>
+            <span>{t("heading")}</span>
+            <span>{t("description")}</span>
           </Heading>
           <OrderDetails order={order} />
           <Heading level="h2" className="flex flex-row text-3xl-regular">
-            Summary
+            {t("summary")}
           </Heading>
           <Items order={order} />
           <CartTotals totals={order} />

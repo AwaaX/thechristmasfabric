@@ -7,6 +7,7 @@ import Thumbnail from "@modules/products/components/thumbnail"
 import ProductPrice from "@modules/products/components/product-price"
 import WishlistButton from "@modules/products/components/wishlist-button"
 import SwhProductPreview from "@modules/common/components/swh/SwhProductPreview"
+import { useTranslations } from "next-intl"
 
 type WishlistItemsGridProps = {
   countryCode: string
@@ -34,6 +35,8 @@ export default function WishlistItemsGrid({
   interactive = false,
   items,
 }: WishlistItemsGridProps) {
+  const t = useTranslations("Wishlist.ItemsGrid")
+
   if (!items.length) {
     return (
       <div className="border border-gray-200 rounded-2xl px-6 py-12 text-center text-ui-fg-subtle">
@@ -118,7 +121,7 @@ export default function WishlistItemsGrid({
              <SwhProductPreview data={item.product} type="grid" />
                      {variantTitle && (
                   <p className="text-small-regular text-ui-fg-subtle">
-                    Variant: {variantTitle}
+                    {t("variant")}: {variantTitle}
                   </p>
                 )}
           </li>

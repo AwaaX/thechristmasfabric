@@ -8,19 +8,30 @@ import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
 import { useMemo, useState } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { useTranslations } from "next-intl"
 
 type ProductTabsProps = {
   product: HttpTypes.StoreProduct
 }
 
+type SizeGuideTableData = string[][]
+
+type SizeGuide = {
+  data: {
+    table_id: string
+    table_data: SizeGuideTableData
+  }
+}
+
 const ProductTabs = ({ product }: ProductTabsProps) => {
+  const t = useTranslations("Product.Tabs")
   const tabs = [
     {
-      label: "Size guide",
-      component: <SizeGuideTab sizeguides={product.sizeguides} />,
+      label: t("sizeGuide"),
+      component: <SizeGuideTab sizeguides={(product as any).sizeguides ?? []} />,
     },
     {
-      label: "Delivery information",
+      label: t("deliveryInformation"),
       component: <ShippingInfoTab />,
     },
     // {
@@ -52,30 +63,32 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 }
 
 const ProductInfoTab = ({ product }: ProductTabsProps) => {
+  const t = useTranslations("Product.Tabs")
+
   return (
     <div className="text-small-regular py-8">
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Material</span>
+            <span className="font-semibold">{t("material")}</span>
             <p>{product.material ? product.material : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Country of origin</span>
+            <span className="font-semibold">{t("countryOfOrigin")}</span>
             <p>{product.origin_country ? product.origin_country : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Type</span>
+            <span className="font-semibold">{t("type")}</span>
             <p>{product.type ? product.type.value : "-"}</p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Weight</span>
+            <span className="font-semibold">{t("weight")}</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Dimensions</span>
+            <span className="font-semibold">{t("dimensions")}</span>
             <p>
               {product.length && product.width && product.height
                 ? `${product.length}L x ${product.width}W x ${product.height}H`
@@ -89,32 +102,29 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
 }
 
 const ShippingInfoTab = () => {
+  const t = useTranslations("Product.Tabs")
+
   return (
     <div className="text-small-regular py-8">
       <div className="grid grid-cols-1 gap-y-8">
         <ul className="text-[16px] font-normal text-christmasText list-disc pl-8">
-          <li>
-            Shipment of your order in less than 24 hours from Monday to Saturday
-            (excluding public holidays)
-          </li>
-          <li>
-            Free 5-day tracked delivery from &pound;65, 70&euro; or $80 purchase
-            (at home)
-          </li>
-          <li>Standard tracked delivery 4-5 days at 4,90&pound; (at home)</li>
-          <li>Track your package easily by e-mail and on the website</li>
+          <li>{t("shippingBullet1")}</li>
+          <li>{t("shippingBullet2")}</li>
+          <li>{t("shippingBullet3")}</li>
+          <li>{t("shippingBullet4")}</li>
         </ul>
       </div>
     </div>
   )
 }
 
-const SizeGuideTab = ({ sizeguides }) => {
-  const [openSizeGuide, setOpenSizeGuide] = useState<boolean>(false)
-  const [visibleIndex, setVisibleIndex] = useState(null)
+const SizeGuideTab = ({ sizeguides }: { sizeguides: SizeGuide[] }) => {
+  const t = useTranslations("Product.Tabs")
+  const [, setOpenSizeGuide] = useState<boolean>(false)
+  const [visibleIndex, setVisibleIndex] = useState<number | null>(null)
 
   const structuredSizeGuides = useMemo(() => {
-    return sizeguides.map((guide) => {
+    return sizeguides.map((guide: SizeGuide) => {
       const table = guide.data
       // Extract the title from the table_id
       const title = table.table_id.split("-").slice(-2, -1)[0]
@@ -126,7 +136,7 @@ const SizeGuideTab = ({ sizeguides }) => {
     })
   }, [sizeguides]) // Recalculate when inputData changes
 
-  const toggleTable = (index) => {
+  const toggleTable = (index: number) => {
     // Toggle visibility: set the index to the clicked one or null if already open
     setVisibleIndex(visibleIndex === index ? null : index)
   }
@@ -141,19 +151,18 @@ const SizeGuideTab = ({ sizeguides }) => {
     <div className="text-small-regular py-8">
       <div className="grid grid-cols-1 gap-y-8">
         <p className="text-[16px] font-normal text-christmasText">
-          Our pyjamas have an elastic waistband and will fit you well whatever
-          your waist size. Any doubts? Contact us.
+          {t("sizeGuideDescription")}
         </p>
         <ul className="text-[16px] font-normal text-black flex flex-col gap-4">
           {structuredSizeGuides.map((guide, index) => (
             <li key={index}>
               {guide.title.charAt(0).toUpperCase() + guide.title.slice(1)}
-              &apos;s sizes :{" "}
+              {t("sizesSuffix")}{" "}
               <span
                 onClick={() => toggleTable(index)}
                 className="underline hover:text-hoverGray duration-200 ease-in-out cursor-pointer"
               >
-                {visibleIndex === index ? "Hide" : "Show"}
+                {visibleIndex === index ? t("hide") : t("show")}
               </span>
               {visibleIndex === index && (
                 <div className="">
@@ -167,11 +176,9 @@ const SizeGuideTab = ({ sizeguides }) => {
           href={"/measurement-guide"}
           className="text-[16px] font-normal text-christmasText border border-dashed border-black p-2"
         >
-          How to take your measurements?{" "}
+          {t("measurementGuideTitle")}{" "}
           <span className="hover:text-hoverGray duration-200 ease-in-out cursor-pointer">
-            {" "}
-            Click here to follow The Christmas Fabric guide and take your
-            measurements easily at home without making mistakes
+            {t("measurementGuideDescription")}
           </span>
         </LocalizedClientLink>
       </div>
@@ -180,14 +187,14 @@ const SizeGuideTab = ({ sizeguides }) => {
   )
 }
 
-const SizeGuideTable = ({ tableData }) => {
+const SizeGuideTable = ({ tableData }: { tableData: SizeGuideTableData }) => {
   return (
     <div id="size-guides-container" className="mt-4 w-full">
       <table className="size-guide-table border border-black  text-sm w-full table-auto">
         {/* {tableData.options?.table_head && ( */}
         <thead className="text-xs text-white uppercase bg-black">
           <tr>
-            {tableData[0].map((header, index) => {
+            {tableData[0].map((header: string, index: number) => {
               // Check if the current header is "#colspan#"
               if (header === "#colspan#") {
                 return null // Skip rendering the colspan indicator
@@ -215,9 +222,9 @@ const SizeGuideTable = ({ tableData }) => {
         </thead>
         {/* )} */}
         <tbody>
-          {tableData.slice(1).map((row, rowIndex) => (
+          {tableData.slice(1).map((row: string[], rowIndex: number) => (
             <tr key={rowIndex} className="bg-white hover:bg-gray-50">
-              {row.map((cell, cellIndex) => (
+              {row.map((cell: string, cellIndex: number) => (
                 <td key={cellIndex} className=" py-1">
                   {cell}
                 </td>

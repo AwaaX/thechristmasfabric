@@ -2,13 +2,13 @@ import { retrieveOrder } from "@lib/data/orders"
 import OrderCompletedTemplate from "@modules/order/templates/order-completed-template"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
 type Props = {
   params: Promise<{ id: string }>
 }
-export const metadata: Metadata = {
-  title: "Order Confirmed",
-  description: "You purchase was successful",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.OrderConfirmed")
 }
 
 export default async function OrderConfirmedPage(props: Props) {

@@ -18,6 +18,7 @@ import * as Icon from "@phosphor-icons/react/dist/ssr"
 import parse from "html-react-parser"
 import { Star, StarSolid } from "@medusajs/icons"
 import { getDefaultProductVariant } from "@lib/util/product"
+import { useTranslations } from "next-intl"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -233,6 +234,7 @@ export default function ProductActions({
   region,
   disabled,
 }: ProductActionsProps) {
+  const t = useTranslations("Product.Actions")
   const [options, setOptions] = useState<Record<string, string>>({})
   const [isAdding, setIsAdding] = useState(false)
   const [reviewRating, setReviewRating] = useState(0)
@@ -247,6 +249,7 @@ export default function ProductActions({
   const countryCode = useParams().countryCode as string
 
   const variants = product.variants ?? []
+  const productOptions = product.options || []
 
   useEffect(() => {
     if (!product?.id) {
@@ -274,12 +277,12 @@ export default function ProductActions({
   useEffect(() => {
     const optionObj: Record<string, string> = {}
 
-    for (const option of product.options || []) {
+    for (const option of productOptions) {
       Object.assign(optionObj, { [option.id]: undefined })
     }
 
     setOptions(optionObj)
-  }, [product])
+  }, [productOptions])
 
   // memoized record of the product's variants
   const variantRecord = useMemo(() => {
@@ -291,7 +294,10 @@ export default function ProductActions({
       const temp: Record<string, string> = {}
 
       for (const option of variant?.options) {
-        // console.log("option", option)
+        if (!option.option_id) {
+          continue
+        }
+
         temp[option.option_id] = option.value
       }
       // console.log("temp", temp)
@@ -327,7 +333,7 @@ export default function ProductActions({
     // setOptions({ ...options, ...update })
     setOptions((prevOptions) => {
       // Check if gender is being updated in the provided options
-      if (update[selectedGenderId]) {
+      if (selectedGenderId && update[selectedGenderId]) {
         setManualGenderSelection(true) // Mark as manually selected
       }
       return { ...prevOptions, ...update } // Update options
@@ -378,19 +384,19 @@ export default function ProductActions({
 
   // Memoize the selected gender option ID
   const selectedGenderId = useMemo(() => {
-    const genderOption = product.options.find(
+    const genderOption = productOptions.find(
       (option) => option.title.toLowerCase() === "gender"
     )
     return genderOption ? genderOption.id : null
-  }, [product.options])
+  }, [productOptions])
 
   // Memoize the selected gender option ID
   const selectedSizeId = useMemo(() => {
-    const sizeOption = product.options.find(
+    const sizeOption = productOptions.find(
       (option) => option.title.toLowerCase() === "size"
     )
     return sizeOption ? sizeOption.id : null
-  }, [product.options])
+  }, [productOptions])
 
   // Memoize the selected gender based on the selectedGenderId
   const selectedGender = useMemo(() => {
@@ -406,6 +412,10 @@ export default function ProductActions({
 
   // Memoize the available variants based on the selected gender ID
   const availableVariants = useMemo(() => {
+    if (!selectedGenderId) {
+      return []
+    }
+
     return Object.values(variantRecord).filter(
       (variant) => variant[selectedGenderId] === selectedGender
     )
@@ -413,7 +423,15 @@ export default function ProductActions({
 
   // Memoize the unique sizes from the available variants
   const uniqueSizes = useMemo(() => {
-    return new Set(availableVariants.map((variant) => variant[selectedSizeId]))
+    if (!selectedSizeId) {
+      return new Set<string>()
+    }
+
+    return new Set(
+      availableVariants
+        .map((variant) => variant[selectedSizeId])
+        .filter((value): value is string => !!value)
+    )
   }, [availableVariants, selectedSizeId])
 
   // Memoize the selected size based on the selectedSizeId
@@ -424,6 +442,10 @@ export default function ProductActions({
 
   // Update available genders when a size is selected
   const availableGenders = useMemo(() => {
+    if (!selectedSizeId) {
+      return []
+    }
+
     return Object.values(variantRecord).filter(
       (variant) => variant[selectedSizeId] === selectedSize
     )
@@ -431,7 +453,11 @@ export default function ProductActions({
 
   // Automatically select gender if only one valid option exists for the size
   useEffect(() => {
-    if (!isManualGenderSelection && availableGenders.length === 1) {
+    if (
+      selectedGenderId &&
+      !isManualGenderSelection &&
+      availableGenders.length === 1
+    ) {
       const singleGender = availableGenders[0][selectedGenderId]
       if (singleGender && singleGender !== selectedGender) {
         updateOptions({ [selectedGenderId]: singleGender })
@@ -451,7 +477,7 @@ export default function ProductActions({
     if (variant) {
       // If inventory is managed and quantity is less than available inventory, increment
       if (variant?.manage_inventory) {
-        if (quantity < variant?.inventory_quantity) {
+        if (quantity < (variant?.inventory_quantity ?? 0)) {
           setQuantity((prevQuantity) => prevQuantity + 1)
         }
       } else {
@@ -487,12 +513,12 @@ export default function ProductActions({
   const isWishlistSaved = isInWishlist(wishlistVariantId)
   const isWishlistLoading = isPending(wishlistVariantId)
   const wishlistLabel = !hasCustomer
-    ? "Sign In To Save"
+    ? t("signInToSave")
     : !wishlistVariantId
-    ? "Select Variant To Save"
+    ? t("selectVariantToSave")
     : isWishlistSaved
-    ? "Remove From Wishlist"
-    : "Add To Wishlist"
+    ? t("removeFromWishlist")
+    : t("addToWishlist")
 
   const handleWishlistToggle = async () => {
     if (!hasCustomer) {
@@ -559,7 +585,7 @@ export default function ProductActions({
             </div>
           </div>
           <div className="flex items-center justify-between gap-3">
-            <ProductPrice product={product} variant={variant} region={region} />
+            <ProductPrice product={product} variant={variant} />
             <div className="flex items-center gap-x-2">
               <div className="flex gap-x-1">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -605,7 +631,7 @@ export default function ProductActions({
         <div>
           {variants.length > 1 && (
             <div className="flex flex-col gap-y-4">
-              {(product.options || []).map((option) => {
+              {productOptions.map((option) => {
                 return (
                   <div key={option.id}>
                     <OptionSelect
@@ -625,7 +651,7 @@ export default function ProductActions({
           )}
         </div>
 
-        <div className="text-[16px] font-medium">Quantity:</div>
+        <div className="text-[16px] font-medium">{t("quantity")}</div>
         <div className="choose-quantity flex items-center lg:justify-between gap-5 gap-y-3 mb-6">
           <div className="quantity-block md:p-3 max-md:py-1.5 max-md:px-3 flex items-center justify-between rounded-lg  sm:w-[180px] w-[120px] flex-shrink-0 bg-christmasBgGray">
             <Icon.MinusIcon
@@ -649,27 +675,30 @@ export default function ProductActions({
             data-testid="add-product-button"
           >
             {!variant
-              ? "Select variant"
+              ? t("selectVariant")
               : !inStock
-              ? "Out of stock"
-              : "Add to cart"}
+              ? t("outOfStock")
+              : t("addToCart")}
           </Button>
         </div>
         {!variant && (
-          <p className="text-red">* Please select some variant to proceed</p>
+          <p className="text-red">{t("selectVariantError")}</p>
         )}
         {showAlert && (
           <div className="bg-red text-white p-4 rounded-md mb-4">
-            Curently Only {variant?.inventory_quantity} quantity available!
+            {t("inventoryAlert", {
+              quantity: variant?.inventory_quantity ?? 0,
+            })}
           </div>
         )}
         <Divider />
 
         <div>
-          <span className="text-[18px] font-medium">Estimated Delivery:</span>
+          <span className="text-[18px] font-medium">
+            {t("estimatedDeliveryLabel")}
+          </span>
           <span className="text-[16px] font-normal text-christmasText ml-3">
-            Your package will arrive in 3-5 business days at your pick up
-            location or in the comfort of your home.
+            {t("estimatedDeliveryText")}
           </span>
         </div>
 

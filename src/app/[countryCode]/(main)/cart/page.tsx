@@ -3,10 +3,10 @@ import { retrieveCustomer } from "@lib/data/customer"
 import CartTemplate from "@modules/cart/templates"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
-export const metadata: Metadata = {
-  title: "Cart",
-  description: "View your cart",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.Cart")
 }
 
 export default async function Cart() {

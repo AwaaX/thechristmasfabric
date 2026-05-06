@@ -24,6 +24,9 @@
         "Search": "Search",
         "Wishlist": "Wishlist",
         "Cart": "Cart"
+      },
+      "MobileMenu": {
+        "menu": "Menu"
       }
     }
   },
@@ -146,6 +149,376 @@
       "txt4": "Thanks for signing up for the newsletter! We",
       "txt5": "ll be in touch soon.",
       "Placeholder": "Your Email"
+    }
+  },
+  "Metadata": {
+    "NotFound": {
+      "title": "404",
+      "description": "Page not found"
+    },
+    "Home": {
+      "title": "Home | The Christmas Fabric",
+      "description": "Get into the project and buy awesome pyjamas and original wear for Christmas and this winter season from The Christmas Fabric"
+    },
+    "Checkout": {
+      "title": "Checkout | The Christmas Fabric",
+      "description": "Review your cart, shipping, and payment details to complete your order."
+    },
+    "SearchResults": {
+      "title": "Search results for {query} | The Christmas Fabric",
+      "description": "Explore products matching {query}."
+    },
+    "Cart": {
+      "title": "Cart | The Christmas Fabric",
+      "description": "Review the products currently in your cart."
+    },
+    "Wishlist": {
+      "Shared": {
+        "title": "Shared wishlist | The Christmas Fabric",
+        "description": "Browse a wishlist that has been shared with you."
+      }
+    },
+    "Account": {
+      "Login": {
+        "title": "Sign in | The Christmas Fabric",
+        "description": "Sign in to your The Christmas Fabric account."
+      },
+      "Wishlist": {
+        "title": "Wishlist | The Christmas Fabric",
+        "description": "Products saved to your wishlist."
+      },
+      "Orders": {
+        "title": "Orders | The Christmas Fabric",
+        "description": "Overview of your previous orders."
+      },
+      "Profile": {
+        "title": "Profile | The Christmas Fabric",
+        "description": "View and edit your profile details."
+      },
+      "Addresses": {
+        "title": "Addresses | The Christmas Fabric",
+        "description": "View and update your saved addresses."
+      },
+      "Overview": {
+        "title": "Account | The Christmas Fabric",
+        "description": "Overview of your account activity."
+      },
+      "LoginWishlist": {
+        "title": "Sign in to view wishlist | The Christmas Fabric",
+        "description": "Sign in to access your wishlist."
+      }
+    },
+    "OrderConfirmed": {
+      "title": "Order confirmed | The Christmas Fabric",
+      "description": "Your purchase was successful."
+    }
+  },
+  "Common": {
+    "NotFound": {
+      "heading": "Page not found",
+      "description": "The page you tried to access does not exist.",
+      "cta": "Go to frontpage"
+    },
+    "Price": {
+      "from": "From",
+      "original": "Original:"
+    }
+  },
+  "Account": {
+    "Login": {
+      "heading": "Sign In",
+      "email": "Email",
+      "emailTitle": "Enter a valid email address.",
+      "password": "Password",
+      "submit": "Sign in",
+      "registerPrompt": "Not a member?",
+      "registerCta": "Register"
+    },
+    "Register": {
+      "heading": "Register here",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "consentPrefix": "I agree to the store's",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfUse": "Terms of Use",
+      "submit": "Join",
+      "signInPrompt": "Already a member?",
+      "signInCta": "Sign in"
+    },
+    "Nav": {
+      "hello": "Hello {name}",
+      "account": "Account",
+      "overview": "Overview",
+      "profile": "Profile",
+      "addresses": "Addresses",
+      "wishlist": "Wishlist",
+      "orders": "Orders",
+      "logout": "Log out"
+    },
+    "Overview": {
+      "hello": "Hello {name}",
+      "signedInAs": "Signed in as:",
+      "profile": "Profile",
+      "completed": "Completed",
+      "addresses": "Addresses",
+      "saved": "Saved",
+      "recentOrders": "Recent orders",
+      "datePlaced": "Date placed",
+      "orderNumber": "Order number",
+      "totalAmount": "Total amount",
+      "goToOrder": "Go to order #{id}",
+      "noRecentOrders": "No recent orders"
+    },
+    "OrderOverview": {
+      "emptyTitle": "Nothing to see here",
+      "emptyDescription": "You don't have any orders yet, let us change that :)",
+      "continueShopping": "Continue shopping"
+    },
+    "Pages": {
+      "Wishlist": {
+        "heading": "Wishlist",
+        "description": "Review saved products, remove items, or share your wishlist.",
+        "emptyMessage": "You have not added any products to your wishlist yet."
+      },
+      "Orders": {
+        "heading": "Orders",
+        "description": "View your previous orders and their status. You can also create returns or exchanges for your orders if needed."
+      },
+      "Profile": {
+        "heading": "Profile",
+        "description": "View and update your profile information, including your name, email, and phone number. You can also update your billing address, or change your password."
+      },
+      "Addresses": {
+        "heading": "Shipping Addresses",
+        "description": "View and update your shipping addresses, you can add as many as you like. Saving your addresses will make them available during checkout."
+      }
+    },
+    "ProfilePassword": {
+      "notImplemented": "Password update is not implemented",
+      "password": "Password",
+      "hidden": "The password is not shown for security reasons",
+      "oldPassword": "Old password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password"
+    }
+  },
+  "Cart": {
+    "Items": {
+      "heading": "Cart",
+      "item": "Item",
+      "quantity": "Quantity",
+      "price": "Price",
+      "total": "Total"
+    },
+    "Summary": {
+      "heading": "Summary",
+      "checkout": "Go to checkout"
+    },
+    "Empty": {
+      "heading": "Your basket is currently empty",
+      "description": "You may check out all the available products and buy some in the shop.",
+      "cta": "Return to Shop"
+    },
+    "Dropdown": {
+      "heading": "Cart",
+      "quantity": "Quantity",
+      "remove": "Remove",
+      "subtotal": "Subtotal",
+      "excludingTaxes": "(excl. taxes)",
+      "goToCart": "Go to cart",
+      "empty": "Your shopping bag is empty.",
+      "goToProductsSrOnly": "Go to all products page",
+      "explore": "Explore products"
+    },
+    "Totals": {
+      "subtotalExcluding": "Subtotal (excl. shipping and taxes)",
+      "shipping": "Shipping",
+      "discount": "Discount",
+      "taxes": "Taxes",
+      "total": "Total"
+    },
+    "NotFound": {
+      "heading": "Page not found",
+      "description": "The cart you tried to access does not exist. Clear your cookies and try again.",
+      "cta": "Go to frontpage"
+    }
+  },
+  "Search": {
+    "Results": {
+      "heading": "Search Results for:",
+      "clear": "Clear",
+      "noResults": "No results."
+    },
+    "Box": {
+      "placeholder": "Search products..."
+    },
+    "ShowAll": {
+      "noResults": "No results found.",
+      "showingFirst": "Showing the first {count} results.",
+      "viewAll": "View all"
+    }
+  },
+  "Wishlist": {
+    "SharedPage": {
+      "heading": "Shared wishlist",
+      "description": "Browse the products saved in this shared wishlist.",
+      "emptyMessage": "This wishlist does not have any saved products."
+    },
+    "ShareButton": {
+      "successTitle": "Share link copied",
+      "successDescription": "Anyone with this link can view your wishlist.",
+      "errorTitle": "Error",
+      "errorDescription": "Unable to generate a share link right now.",
+      "button": "Share wishlist",
+      "label": "Share link"
+    },
+    "ItemsGrid": {
+      "variant": "Variant"
+    },
+    "Button": {
+      "add": "Add to wishlist",
+      "remove": "Remove from wishlist",
+      "unavailable": "Select a variant to save"
+    }
+  },
+  "Order": {
+    "Summary": {
+      "heading": "Order Summary",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "giftCard": "Gift card",
+      "shipping": "Shipping",
+      "taxes": "Taxes",
+      "total": "Total"
+    },
+    "Help": {
+      "heading": "Need help?",
+      "contact": "Contact",
+      "returns": "Returns & Exchanges"
+    },
+    "Completed": {
+      "heading": "Thank you!",
+      "description": "Your order was placed successfully.",
+      "summary": "Summary"
+    },
+    "Details": {
+      "heading": "Order details",
+      "back": "Back to overview"
+    },
+    "Shipping": {
+      "heading": "Delivery",
+      "address": "Shipping Address",
+      "contact": "Contact",
+      "method": "Method"
+    }
+  },
+  "Store": {
+    "Sort": {
+      "title": "Sort by",
+      "created_at": "Latest Arrivals",
+      "price_asc": "Price: Low to High",
+      "price_desc": "Price: High to Low"
+    }
+  },
+  "Product": {
+    "Actions": {
+      "signInToSave": "Sign In To Save",
+      "selectVariantToSave": "Select Variant To Save",
+      "removeFromWishlist": "Remove From Wishlist",
+      "addToWishlist": "Add To Wishlist",
+      "quantity": "Quantity:",
+      "selectVariant": "Select variant",
+      "outOfStock": "Out of stock",
+      "addToCart": "Add to cart",
+      "selectVariantError": "* Please select a variant to proceed",
+      "inventoryAlert": "Currently only {quantity} item(s) available!",
+      "estimatedDeliveryLabel": "Estimated Delivery:",
+      "estimatedDeliveryText": "Your package will arrive in 3-5 business days at your pick up location or in the comfort of your home.",
+      "selectOptions": "Select Options"
+    },
+    "Tabs": {
+      "sizeGuide": "Size guide",
+      "deliveryInformation": "Delivery information",
+      "material": "Material",
+      "countryOfOrigin": "Country of origin",
+      "type": "Type",
+      "weight": "Weight",
+      "dimensions": "Dimensions",
+      "shippingBullet1": "Shipment of your order in less than 24 hours from Monday to Saturday (excluding public holidays)",
+      "shippingBullet2": "Free 5-day tracked delivery from £65, 70€ or $80 purchase (at home)",
+      "shippingBullet3": "Standard tracked delivery 4-5 days at 4,90£ (at home)",
+      "shippingBullet4": "Track your package easily by e-mail and on the website",
+      "sizeGuideDescription": "Our pyjamas have an elastic waistband and will fit you well whatever your waist size. Any doubts? Contact us.",
+      "sizesSuffix": "'s sizes:",
+      "hide": "Hide",
+      "show": "Show",
+      "measurementGuideTitle": "How to take your measurements?",
+      "measurementGuideDescription": "Click here to follow The Christmas Fabric guide and take your measurements easily at home without making mistakes"
+    },
+    "Reviews": {
+      "errorTitle": "Error",
+      "requiredFields": "Please fill in required fields.",
+      "successTitle": "Success",
+      "successDescription": "Your review has been submitted and is awaiting approval.",
+      "submitError": "An error occurred while submitting your review. Please try again later.",
+      "addReview": "Add a review",
+      "title": "Title",
+      "content": "Content",
+      "rating": "Rating",
+      "submit": "Submit"
+    }
+  },
+  "Tracking": {
+    "Page": {
+      "heading": "Track my order",
+      "trackingNumber": "Tracking Number",
+      "lastUpdate": "Last update:",
+      "descriptionLabel": "Description:",
+      "location": "Location:",
+      "route": "Route:",
+      "history": "History",
+      "orderFoundNoTracking": "Order found, but no tracking details are available yet.",
+      "orderPrompt": "To track your order, enter your order number and email address:",
+      "trackingPrompt": "To track your order, please enter the tracking number you received in the shipping confirmation email",
+      "orderId": "Order ID",
+      "orderNumberPlaceholder": "Order Number",
+      "orderEmail": "Order Email",
+      "emailPlaceholder": "Email Address",
+      "trackingNumberLabel": "Tracking Number",
+      "trackingNumberPlaceholder": "Order Tracking Number",
+      "trackOrder": "Track Order",
+      "tracking": "Tracking...",
+      "orderLabel": "Order:",
+      "tabs": {
+        "orderDetails": "Order Details",
+        "trackingNumbers": "Tracking Numbers"
+      },
+      "milestones": {
+        "infoReceived": "Info Received",
+        "pickedUp": "Picked Up",
+        "departure": "Departure",
+        "arrival": "Arrival",
+        "availableForPickup": "Available for Pickup",
+        "outForDelivery": "Out for Delivery",
+        "delivered": "Delivered"
+      },
+      "statuses": {
+        "Delivered": "Delivered",
+        "InTransit": "In Transit",
+        "PickedUp": "Picked Up",
+        "Exception": "Exception",
+        "Returning": "Returning",
+        "Returned": "Returned",
+        "Unknown": "Unknown"
+      }
+    }
+  },
+  "Checkout": {
+    "Payment": {
+      "selectMethod": "Select a payment method"
     }
   }
 }

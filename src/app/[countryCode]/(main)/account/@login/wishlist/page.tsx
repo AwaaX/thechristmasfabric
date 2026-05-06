@@ -1,10 +1,10 @@
 import { Metadata } from "next"
 
 import LoginTemplate from "@modules/account/templates/login-template"
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
-export const metadata: Metadata = {
-  title: "Sign in to view wishlist",
-  description: "Sign in to access your wishlist.",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.Account.LoginWishlist")
 }
 
 export default async function WishlistLogin({

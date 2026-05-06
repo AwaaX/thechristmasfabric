@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
 import Hero from "@modules/home/components/hero"
 import CountDownSection from "@modules/home/components/countdown-section"
@@ -11,10 +11,8 @@ import QuickLookSection from "@modules/home/components/quick-look-section"
 import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
-export const metadata: Metadata = {
-  title: "Home - The Christmas Fabric",
-  description:
-    "Get into the project and buy awesome pyjamas and original wear for Christmas and this winter season from The Christmas Fabric",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.Home")
 }
 
 export default async function Home(props: {

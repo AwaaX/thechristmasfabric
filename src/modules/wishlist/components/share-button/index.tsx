@@ -4,6 +4,7 @@ import { generateWishlistShareUrl } from "@lib/data/wishlist"
 import { Link } from "@medusajs/icons"
 import { Button, Input, Label, toast } from "@medusajs/ui"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 type WishlistShareButtonProps = {
   countryCode: string
@@ -16,6 +17,7 @@ export default function WishlistShareButton({
 }: WishlistShareButtonProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [shareUrl, setShareUrl] = useState("")
+  const t = useTranslations("Wishlist.ShareButton")
 
   const handleShare = async () => {
     setIsLoading(true)
@@ -27,15 +29,15 @@ export default function WishlistShareButton({
 
       await navigator.clipboard.writeText(nextShareUrl)
 
-      toast.success("Share link copied", {
-        description: "Anyone with this link can view your wishlist.",
+      toast.success(t("successTitle"), {
+        description: t("successDescription"),
       })
     } catch (error) {
-      toast.error("Error", {
+      toast.error(t("errorTitle"), {
         description:
           error instanceof Error
             ? error.message
-            : "Unable to generate a share link right now.",
+            : t("errorDescription"),
       })
     } finally {
       setIsLoading(false)
@@ -54,12 +56,12 @@ export default function WishlistShareButton({
       >
         <span className="flex items-center gap-x-2">
           <Link />
-          <span>Share wishlist</span>
+          <span>{t("button")}</span>
         </span>
       </Button>
       {shareUrl && (
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="wishlist-share-url">Share link</Label>
+          <Label htmlFor="wishlist-share-url">{t("label")}</Label>
           <Input id="wishlist-share-url" readOnly value={shareUrl} />
         </div>
       )}

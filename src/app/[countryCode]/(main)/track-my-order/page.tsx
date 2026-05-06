@@ -8,16 +8,7 @@ import {
   TrackingResult,
 } from "@lib/data/tracking"
 import clsx from "clsx"
-
-const MILESTONES = [
-  { key: "InfoReceived", label: "Info Received" },
-  { key: "PickedUp", label: "Picked Up" },
-  { key: "Departure", label: "Departure" },
-  { key: "Arrival", label: "Arrival" },
-  { key: "AvailableForPickup", label: "Available for Pickup" },
-  { key: "OutForDelivery", label: "Out for Delivery" },
-  { key: "Delivered", label: "Delivered" },
-]
+import { useTranslations } from "next-intl"
 
 const STATUS_COLORS: Record<string, string> = {
   Delivered: "bg-green-100 text-green-700",
@@ -45,6 +36,8 @@ function formatDate(iso: string | null) {
 
 function StatusBadge({ status }: { status: string }) {
   const cls = STATUS_COLORS[status] ?? "bg-gray-100 text-gray-700"
+  const t = useTranslations("Tracking.Page.statuses")
+
   return (
     <span
       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium ${cls}`}
@@ -52,7 +45,7 @@ function StatusBadge({ status }: { status: string }) {
       {status === "Delivered" && <Icon.CheckCircle size={16} weight="fill" />}
       {status === "InTransit" && <Icon.Truck size={16} weight="fill" />}
       {status === "Exception" && <Icon.WarningCircle size={16} weight="fill" />}
-      {status}
+      {t.has(status) ? t(status) : status}
     </span>
   )
 }
@@ -60,15 +53,17 @@ function StatusBadge({ status }: { status: string }) {
 function MilestoneTimeline({
   milestones,
   currentStatus,
+  steps,
 }: {
   milestones: TrackingResult["milestone"]
   currentStatus: string
+  steps: { key: string; label: string }[]
 }) {
-  const activeIndex = MILESTONES.findIndex((m) => m.key === currentStatus)
+  const activeIndex = steps.findIndex((m) => m.key === currentStatus)
 
   return (
     <div className="flex items-start justify-between w-full overflow-x-auto py-4 gap-0">
-      {MILESTONES.map((step, i) => {
+      {steps.map((step, i) => {
         const data = milestones.find((m) => m.key_stage === step.key)
         const isDone = i <= activeIndex
         const isCurrent = step.key === currentStatus
@@ -103,7 +98,7 @@ function MilestoneTimeline({
                   <span className="text-[10px] font-bold">{i + 1}</span>
                 )}
               </div>
-              {i < MILESTONES.length - 1 && (
+              {i < steps.length - 1 && (
                 <div
                   className={clsx(
                     "flex-1 h-[2px]",
@@ -138,7 +133,14 @@ function MilestoneTimeline({
   )
 }
 
-function TrackingDetails({ item }: { item: TrackingResult }) {
+function TrackingDetails({
+  item,
+  steps,
+}: {
+  item: TrackingResult
+  steps: { key: string; label: string }[]
+}) {
+  const t = useTranslations("Tracking.Page")
   const events = item.tracking?.providers?.flatMap((p) => p.events) ?? []
   const provider = item.tracking?.providers?.[0]?.provider
   const status = item.latest_status?.status || "Unknown"
@@ -148,7 +150,7 @@ function TrackingDetails({ item }: { item: TrackingResult }) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">
-            Tracking Number
+            {t("trackingNumber")}
           </p>
           <p className="text-lg font-semibold">{item.tracking_number}</p>
         </div>
@@ -168,21 +170,23 @@ function TrackingDetails({ item }: { item: TrackingResult }) {
       <MilestoneTimeline
         milestones={item.milestone ?? []}
         currentStatus={status}
+        steps={steps}
       />
 
       <div className="text-[15px]">
         <div>
-          <strong>Last update:</strong>{" "}
+          <strong>{t("lastUpdate")}</strong>{" "}
           {formatDate(item.latest_event?.time_iso || null)}
         </div>
         <div>
-          <strong>Description:</strong> {item.latest_event?.description || "-"}
+          <strong>{t("descriptionLabel")}</strong>{" "}
+          {item.latest_event?.description || "-"}
         </div>
         <div>
-          <strong>Location:</strong> {item.latest_event?.location || "-"}
+          <strong>{t("location")}</strong> {item.latest_event?.location || "-"}
         </div>
         <div>
-          <strong>Route:</strong>{" "}
+          <strong>{t("route")}</strong>{" "}
           {item.shipping_info?.shipper_address?.country || "-"} to{" "}
           {item.shipping_info?.recipient_address?.country || "-"}
         </div>
@@ -191,7 +195,7 @@ function TrackingDetails({ item }: { item: TrackingResult }) {
       {events.length > 0 && (
         <div>
           <p className="text-xs text-gray-400 uppercase tracking-wide mb-2">
-            History
+            {t("history")}
           </p>
           <ol className="relative border-l border-gray-200 ml-3 flex flex-col gap-0">
             {events.map((ev, i) => (
@@ -221,6 +225,7 @@ function TrackingDetails({ item }: { item: TrackingResult }) {
 }
 
 const OrderTracking = () => {
+  const t = useTranslations("Tracking.Page")
   const [selectedTab, setSelectedTab] = useState(0)
   const [trackingNumber, setTrackingNumber] = useState("")
   const [orderId, setOrderId] = useState("")
@@ -231,6 +236,15 @@ const OrderTracking = () => {
   const [orderResult, setOrderResult] = useState<
     (OrderTrackingResponse & { success: true }) | null
   >(null)
+  const steps = [
+    { key: "InfoReceived", label: t("milestones.infoReceived") },
+    { key: "PickedUp", label: t("milestones.pickedUp") },
+    { key: "Departure", label: t("milestones.departure") },
+    { key: "Arrival", label: t("milestones.arrival") },
+    { key: "AvailableForPickup", label: t("milestones.availableForPickup") },
+    { key: "OutForDelivery", label: t("milestones.outForDelivery") },
+    { key: "Delivered", label: t("milestones.delivered") },
+  ]
 
   const resetState = () => {
     setError(null)
@@ -269,7 +283,7 @@ const OrderTracking = () => {
       }
 
       if (!list.length) {
-        setError("Order found, but no tracking details are available yet.")
+        setError(t("orderFoundNoTracking"))
       }
 
       setTrackingResults(list)
@@ -297,7 +311,7 @@ const OrderTracking = () => {
         <div className="container">
           <div className="content-main flex flex-col items-center justify-center">
             <div className="text-[42px] leading-[55px] font-normal text-center">
-              Track my order
+              {t("heading")}
             </div>
             <div className="left md:w-1/2 w-full border border-gray-300 bg-surface mt-4 md:mt-7">
               <div className="flex justify-around ">
@@ -312,7 +326,7 @@ const OrderTracking = () => {
                     resetState()
                   }}
                 >
-                  Order Details
+                  {t("tabs.orderDetails")}
                 </div>
                 <div
                   className={`${
@@ -325,7 +339,7 @@ const OrderTracking = () => {
                     resetState()
                   }}
                 >
-                  Tracking Numbers
+                  {t("tabs.trackingNumbers")}
                 </div>
               </div>
 
@@ -338,28 +352,27 @@ const OrderTracking = () => {
                 {selectedTab === 0 && (
                   <>
                     <div className="mt-2 ">
-                      To track your order, enter your order number and email
-                      address:
+                      {t("orderPrompt")}
                     </div>
                     <div className="email mt-8">
-                      <label htmlFor="order-id">Order ID</label>
+                      <label htmlFor="order-id">{t("orderId")}</label>
                       <input
                         className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
                         id="order-id"
                         type="text"
-                        placeholder="Order Number"
+                        placeholder={t("orderNumberPlaceholder")}
                         value={orderId}
                         onChange={(e) => setOrderId(e.target.value)}
                         required
                       />
                     </div>
                     <div className="billing mt-8">
-                      <label htmlFor="order-email">Order Email</label>
+                      <label htmlFor="order-email">{t("orderEmail")}</label>
                       <input
                         className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
                         id="order-email"
                         type="email"
-                        placeholder="Email Address"
+                        placeholder={t("emailPlaceholder")}
                         value={orderEmail}
                         onChange={(e) => setOrderEmail(e.target.value)}
                         required
@@ -371,7 +384,7 @@ const OrderTracking = () => {
                         type="submit"
                         disabled={isPending}
                       >
-                        {isPending ? "Tracking..." : "Track Order"}
+                        {isPending ? t("tracking") : t("trackOrder")}
                       </button>
                     </div>
                   </>
@@ -380,16 +393,15 @@ const OrderTracking = () => {
                 {selectedTab === 1 && (
                   <>
                     <div className="mt-2 ">
-                      To track your order, please enter the tracking number you
-                      received in the shipping confirmation email
+                      {t("trackingPrompt")}
                     </div>
                     <div className="billing mt-8">
-                      <label htmlFor="tracking-number">Tracking Number</label>
+                      <label htmlFor="tracking-number">{t("trackingNumberLabel")}</label>
                       <input
                         className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
                         id="tracking-number"
                         type="text"
-                        placeholder="Order Tracking Number"
+                        placeholder={t("trackingNumberPlaceholder")}
                         value={trackingNumber}
                         onChange={(e) => setTrackingNumber(e.target.value)}
                         required
@@ -401,7 +413,7 @@ const OrderTracking = () => {
                         type="submit"
                         disabled={isPending}
                       >
-                        {isPending ? "Tracking..." : "Track Order"}
+                        {isPending ? t("tracking") : t("trackOrder")}
                       </button>
                     </div>
                   </>
@@ -414,7 +426,7 @@ const OrderTracking = () => {
             {orderResult?.success && (
               <div className="md:w-1/2 w-full mt-4 text-[14px] text-gray-600">
                 <p>
-                  Order:{" "}
+                  {t("orderLabel")}{" "}
                   <strong>
                     #
                     {orderResult.order.custom_display_id ??
@@ -430,6 +442,7 @@ const OrderTracking = () => {
                   <TrackingDetails
                     key={`${item.tracking_number}-${index}`}
                     item={item}
+                    steps={steps}
                   />
                 ))}
               </div>

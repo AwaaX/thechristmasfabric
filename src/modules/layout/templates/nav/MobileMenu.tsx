@@ -8,37 +8,42 @@ import { FaRegStar, FaRegUser } from "react-icons/fa"
 import NavMenu from "@modules/layout/components/nav-menu"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { IoChevronDown, IoChevronUp } from "react-icons/io5"
+import { useTranslations } from "next-intl"
+
 const MobileMenu = () => {
+  const navMenu = useTranslations("NavBar.Main.NavMenu")
+  const iconMenu = useTranslations("NavBar.Main.IconMenu")
+  const mobileMenu = useTranslations("NavBar.Main.MobileMenu")
   const navlinks = [
     {
-      name: "Matching pyjamas",
+      name: navMenu("Matching pyjamas"),
       handle: "/christmas-pyjamas/matching-couples",
     },
     {
-      name: "Family pyjamas",
+      name: navMenu("Family pyjamas"),
       handle: "/christmas-pyjamas/family",
     },
     {
-      name: "Customer service",
+      name: navMenu("Customer service"),
       handle: "/customer-service",
     },
   ]
 
   const subMenuLinks = [
     {
-      name: "baby size available",
+      name: navMenu("baby"),
       handle: "baby",
     },
     {
-      name: "kid size available",
+      name: navMenu("kid"),
       handle: "kid-girl-boy",
     },
     {
-      name: "women size available",
+      name: navMenu("women"),
       handle: "women-lady",
     },
     {
-      name: "men size available",
+      name: navMenu("men"),
       handle: "mens",
     },
   ]
@@ -101,7 +106,7 @@ const MobileMenu = () => {
             className="fixed top-0 left-0 w-64 h-[100dvh] bg-white shadow-lg border-r border-gray-200 flex flex-col"
           >
             <div className="flex justify-between p-4 border-b border-gray-200">
-              <h3 className="text-lg font-semibold">Menu</h3>
+              <h3 className="text-lg font-semibold">{mobileMenu("menu")}</h3>
               <RxCross2
                 className="text-2xl cursor-pointer"
                 onClick={closeMenu}
@@ -115,7 +120,7 @@ const MobileMenu = () => {
                   onClick={closeMenu}
                   className=" text-[16px] text-black"
                 >
-                  All Pyjamas
+                  {navMenu("all pyjamas")}
                 </LocalizedClientLink>
                 <button onClick={toggleSubmenu} className="text-xl">
                   {submenuOpen ? <IoChevronUp /> : <IoChevronDown />}
@@ -157,7 +162,7 @@ const MobileMenu = () => {
               className="flex justify-start gap-2 p-4 border-b border-gray-200"
             >
               <FaRegStar className="text-2xl cursor-pointer" />
-              <h3 className="text-lg font-semibold">Wishlist</h3>
+              <h3 className="text-lg font-semibold">{iconMenu("Wishlist")}</h3>
             </LocalizedClientLink>
             <LocalizedClientLink
               href="/account"
@@ -165,7 +170,7 @@ const MobileMenu = () => {
               className="flex justify-start gap-2 p-4 "
             >
               <FaRegUser className="text-2xl cursor-pointer" />
-              <h3 className="text-lg font-semibold">Account</h3>
+              <h3 className="text-lg font-semibold">{iconMenu("Account")}</h3>
             </LocalizedClientLink>
           </Popover.Panel>
         </Transition>

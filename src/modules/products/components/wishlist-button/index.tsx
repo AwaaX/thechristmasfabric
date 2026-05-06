@@ -4,6 +4,7 @@ import { useWishlist } from "@lib/context/wishlist-context"
 import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { Heart } from "@medusajs/icons"
 import { Button, clx } from "@medusajs/ui"
+import { useTranslations } from "next-intl"
 
 type WishlistButtonProps = {
   className?: string
@@ -19,11 +20,12 @@ export default function WishlistButton({
   disabled = false,
   mode = "full",
   refreshOnToggle = false,
-  unavailableLabel = "Select a variant to save",
+  unavailableLabel,
   variantId,
 }: WishlistButtonProps) {
   const router = usePageLoaderRouter()
   const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
+  const t = useTranslations("Wishlist.Button")
 
   if (!hasCustomer) {
     return null
@@ -33,6 +35,7 @@ export default function WishlistButton({
   const isLoading = isPending(variantId)
   const isUnavailable = !variantId
   const isDisabled = disabled || isLoading
+  const fallbackUnavailableLabel = unavailableLabel || t("unavailable")
 
   const handleClick = async () => {
     if (!variantId) {
@@ -54,7 +57,7 @@ export default function WishlistButton({
     return (
       <button
         type="button"
-        aria-label={isSaved ? "Remove from wishlist" : "Add to wishlist"}
+        aria-label={isSaved ? t("remove") : t("add")}
         className={clx(
           "inline-flex h-10 w-10 items-center justify-center rounded-full border border-ui-border-base bg-white/90 text-ui-fg-base shadow-elevation-card-rest transition-colors hover:text-rose-600 disabled:cursor-not-allowed disabled:opacity-60",
           {
@@ -88,10 +91,10 @@ export default function WishlistButton({
         <Heart />
         <span>
           {isSaved
-            ? "Remove from wishlist"
+            ? t("remove")
             : variantId
-            ? "Add to wishlist"
-            : unavailableLabel}
+            ? t("add")
+            : fallbackUnavailableLabel}
         </span>
       </span>
     </Button>

@@ -32,7 +32,7 @@ const DiscoverySection = () => {
     {
       heading: t("Item3.heading"),
       brief: t("Item3.brief"),
-      title: t("item3.title"),
+      title: t("Item3.title"),
       picture: productImg3,
       quantity: "27",
       handle: "/christmas-pyjamas/matching-couples",

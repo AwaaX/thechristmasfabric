@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { getTranslations } from "next-intl/server"
 
 import { retrieveCustomer } from "@lib/data/customer"
 import {
@@ -7,10 +8,10 @@ import {
 } from "@lib/data/wishlist"
 import WishlistShareButton from "@modules/wishlist/components/share-button"
 import WishlistItemsGrid from "@modules/wishlist/components/items-grid"
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
-export const metadata: Metadata = {
-  title: "Wishlist",
-  description: "Products saved to your wishlist.",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.Account.Wishlist")
 }
 
 export default async function AccountWishlistPage({
@@ -19,6 +20,7 @@ export default async function AccountWishlistPage({
   params: Promise<{ countryCode: string }>
 }) {
   const { countryCode } = await params
+  const t = await getTranslations("Account.Pages.Wishlist")
   const customer = await retrieveCustomer().catch(() => null)
 
   if (!customer) {
@@ -35,9 +37,9 @@ export default async function AccountWishlistPage({
     <div className="flex flex-col gap-y-8" data-testid="account-wishlist-page">
       <div className="flex flex-col gap-y-4 small:flex-row small:items-start small:justify-between">
         <div className="flex flex-col gap-y-2">
-          <h1 className="text-2xl-semi">Wishlist</h1>
+          <h1 className="text-2xl-semi">{t("heading")}</h1>
           <p className="text-base-regular text-ui-fg-subtle">
-            Review saved products, remove items, or share your wishlist.
+            {t("description")}
           </p>
         </div>
         <WishlistShareButton
@@ -47,7 +49,7 @@ export default async function AccountWishlistPage({
       </div>
       <WishlistItemsGrid
         countryCode={countryCode}
-        emptyMessage="You have not added any products to your wishlist yet."
+        emptyMessage={t("emptyMessage")}
         interactive
         items={items}
       />
