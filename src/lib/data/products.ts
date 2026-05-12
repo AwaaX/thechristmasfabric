@@ -143,6 +143,43 @@ export const listProductsWithSort = async ({
   }
 }
 
+export const getLocalizedProductHandle = async ({
+  currentHandle,
+  sourceCountryCode,
+  targetCountryCode,
+  locale
+}: {
+  currentHandle: string
+  sourceCountryCode: string
+  targetCountryCode: string
+  locale: string
+}) => {
+  debugger;
+  const currentProduct = await listProducts({
+    countryCode: sourceCountryCode,
+    queryParams: {
+      handle: currentHandle,
+      fields: "id",
+      limit: 1,
+    },
+  }).then(({ response }) => response.products[0])
+
+  if (!currentProduct?.id) {
+    return null
+  }
+
+  const localizedProduct = await listProducts({
+    countryCode: targetCountryCode,
+    queryParams: {
+      id: [currentProduct.id],
+      fields: "handle,custom_translation",
+      limit: 1,
+    },
+  }).then(({ response }) => response.products[0])
+
+  return localizedProduct?.custom_translation?.[locale]?.handle ?? localizedProduct?.custom_translation?.[targetCountryCode]?.handle ?? null;
+}
+
 
 export const getProductReviews = async ({
   productId,
