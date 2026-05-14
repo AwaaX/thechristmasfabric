@@ -1,5 +1,8 @@
 import { Metadata } from "next"
-import { getLocalizedMetadata } from "@lib/util/metadata"
+import {
+  buildHreflangAlternates,
+  getLocalizedMetadata,
+} from "@lib/util/metadata"
 
 import Hero from "@modules/home/components/hero"
 import CountDownSection from "@modules/home/components/countdown-section"
@@ -12,7 +15,11 @@ import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export async function generateMetadata(): Promise<Metadata> {
-  return getLocalizedMetadata("Metadata.Home")
+  const alternates = await buildHreflangAlternates(
+    (_, countryCode) => `/${countryCode}`
+  )
+
+  return getLocalizedMetadata("Metadata.Home", undefined, alternates)
 }
 
 export default async function Home(props: {

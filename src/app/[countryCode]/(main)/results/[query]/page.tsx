@@ -1,5 +1,9 @@
 import { Metadata } from "next"
-import { getLocalizedMetadata } from "@lib/util/metadata"
+import {
+  buildHreflangAlternates,
+  getLocalizedMetadata,
+} from "@lib/util/metadata"
+import { pathnames } from "i18n/routing"
 
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import { search } from "@modules/search/actions"
@@ -14,9 +18,37 @@ type Params = {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  return getLocalizedMetadata("Metadata.SearchResults", {
-    query: decodeURIComponent(params.query),
+  const query = decodeURIComponent(params.query)
+  const alternates = await buildHreflangAlternates((locale) => {
+    const route = pathnames["/results/[query]"] as
+      | string
+      | Record<string, string>
+    const [, localizedCountryCode] = locale.split("-")
+
+    if (typeof route === "string") {
+      return `/${localizedCountryCode}/${route.replace(
+        "[query]",
+        encodeURIComponent(query)
+      )}`
+    }
+
+    const localizedPath = route[locale as keyof typeof route] ?? route["en-gb"]
+
+    return localizedPath
+      ? `/${localizedCountryCode}/${localizedPath.replace(
+          "[query]",
+          encodeURIComponent(query)
+        )}`
+      : null
   })
+
+  return getLocalizedMetadata(
+    "Metadata.SearchResults",
+    {
+      query,
+    },
+    alternates
+  )
 }
 
 export default async function SearchResults({ params, searchParams }: Params) {

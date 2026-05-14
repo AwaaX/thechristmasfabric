@@ -5,6 +5,8 @@ import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
 import SwhBreadCrumbsProductPage from "@modules/common/components/swh/SwhBreadCrumbsProductPage"
+import { buildHreflangAlternates } from "@lib/util/metadata"
+import { getLocalizedProductHandle } from "@lib/data/products"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -88,6 +90,24 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     notFound()
   }
 
+  const alternates = await buildHreflangAlternates(
+    async (locale, countryCode) => {
+      const localizedHandle =
+        locale === "en-gb"
+          ? handle
+          : await getLocalizedProductHandle({
+              currentHandle: handle,
+              sourceCountryCode: params.countryCode,
+              targetCountryCode: countryCode,
+              locale,
+            })
+
+      return localizedHandle
+        ? `/${countryCode}/products/${localizedHandle}`
+        : null
+    }
+  )
+
   return {
     title: `${product.title} | Medusa Store`,
     description: `${product.title}`,
@@ -96,6 +116,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },
+    alternates,
   }
 }
 

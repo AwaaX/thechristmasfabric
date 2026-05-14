@@ -2,10 +2,12 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { getCategoryByHandle, listCategories } from "@lib/data/categories"
+import { getLocalizedCategoryHandle } from "@lib/data/categories"
 import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
 import CategoryTemplate from "@modules/categories/templates"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
+import { buildHreflangAlternates } from "@lib/util/metadata"
 
 type Props = {
   params: Promise<{ category: string[]; countryCode: string }>
@@ -51,11 +53,30 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
     const description = productCategory.description ?? `${title} category.`
 
+    const currentHandle = params.category.join("/")
+    const alternates = await buildHreflangAlternates(
+      async (locale, countryCode) => {
+        const localizedHandle =
+          locale === "en-gb"
+            ? currentHandle
+            : await getLocalizedCategoryHandle({
+                currentHandle,
+                locale,
+                targetCountryCode: countryCode,
+              })
+
+        return localizedHandle
+          ? `/${countryCode}/categories/${localizedHandle}`
+          : null
+      }
+    )
+
     return {
       title: `${title} | Medusa Store`,
       description,
       alternates: {
         canonical: `${params.category.join("/")}`,
+        languages: alternates.languages,
       },
     }
   } catch (error) {
