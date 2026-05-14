@@ -7,9 +7,10 @@ import CheckoutForm from "@modules/checkout/templates/checkout-form"
 import CheckoutSummary from "@modules/checkout/templates/checkout-summary"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
-export const metadata: Metadata = {
-  title: "Checkout",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.Checkout")
 }
 
 export default async function Checkout() {

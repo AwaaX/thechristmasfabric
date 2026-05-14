@@ -24,6 +24,9 @@
         "Search": "Cerca",
         "Wishlist": "Lista dei desideri",
         "Cart": "Carrello"
+      },
+      "MobileMenu": {
+        "menu": "Menu"
       }
     }
   },
@@ -146,6 +149,376 @@
       "txt4": "Grazie per esserti iscritto alla newsletter! Ti",
       "txt5": "contatteremo presto.",
       "Placeholder": "La tua email"
+    }
+  },
+  "Metadata": {
+    "NotFound": {
+      "title": "404",
+      "description": "Pagina non trovata"
+    },
+    "Home": {
+      "title": "Home | The Christmas Fabric",
+      "description": "Entra nel progetto e acquista fantastici pigiami e abbigliamento originale per il Natale e questa stagione invernale da The Christmas Fabric"
+    },
+    "Checkout": {
+      "title": "Checkout | The Christmas Fabric",
+      "description": "Controlla carrello, spedizione e pagamento per completare il tuo ordine."
+    },
+    "SearchResults": {
+      "title": "Risultati di ricerca per {query} | The Christmas Fabric",
+      "description": "Esplora i prodotti che corrispondono a {query}."
+    },
+    "Cart": {
+      "title": "Carrello | The Christmas Fabric",
+      "description": "Controlla i prodotti attualmente presenti nel tuo carrello."
+    },
+    "Wishlist": {
+      "Shared": {
+        "title": "Lista dei desideri condivisa | The Christmas Fabric",
+        "description": "Esplora una lista dei desideri condivisa con te."
+      }
+    },
+    "Account": {
+      "Login": {
+        "title": "Accedi | The Christmas Fabric",
+        "description": "Accedi al tuo account The Christmas Fabric."
+      },
+      "Wishlist": {
+        "title": "Lista dei desideri | The Christmas Fabric",
+        "description": "Prodotti salvati nella tua lista dei desideri."
+      },
+      "Orders": {
+        "title": "Ordini | The Christmas Fabric",
+        "description": "Panoramica dei tuoi ordini precedenti."
+      },
+      "Profile": {
+        "title": "Profilo | The Christmas Fabric",
+        "description": "Visualizza e modifica i dettagli del tuo profilo."
+      },
+      "Addresses": {
+        "title": "Indirizzi | The Christmas Fabric",
+        "description": "Visualizza e aggiorna i tuoi indirizzi salvati."
+      },
+      "Overview": {
+        "title": "Account | The Christmas Fabric",
+        "description": "Panoramica dell’attività del tuo account."
+      },
+      "LoginWishlist": {
+        "title": "Accedi per vedere la lista dei desideri | The Christmas Fabric",
+        "description": "Accedi per visualizzare la tua lista dei desideri."
+      }
+    },
+    "OrderConfirmed": {
+      "title": "Ordine confermato | The Christmas Fabric",
+      "description": "Il tuo acquisto è andato a buon fine."
+    }
+  },
+  "Common": {
+    "NotFound": {
+      "heading": "Pagina non trovata",
+      "description": "La pagina che hai provato ad aprire non esiste.",
+      "cta": "Vai alla homepage"
+    },
+    "Price": {
+      "from": "Da",
+      "original": "Originale:"
+    }
+  },
+  "Account": {
+    "Login": {
+      "heading": "Accedi",
+      "email": "Email",
+      "emailTitle": "Inserisci un indirizzo email valido.",
+      "password": "Password",
+      "submit": "Accedi",
+      "registerPrompt": "Non sei ancora registrato?",
+      "registerCta": "Registrati"
+    },
+    "Register": {
+      "heading": "Registrati qui",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Email",
+      "password": "Password",
+      "consentPrefix": "Accetto la",
+      "privacyPolicy": "Privacy Policy",
+      "and": "e i",
+      "termsOfUse": "Termini di utilizzo",
+      "submit": "Unisciti",
+      "signInPrompt": "Hai già un account?",
+      "signInCta": "Accedi"
+    },
+    "Nav": {
+      "hello": "Ciao {name}",
+      "account": "Account",
+      "overview": "Panoramica",
+      "profile": "Profilo",
+      "addresses": "Indirizzi",
+      "wishlist": "Lista dei desideri",
+      "orders": "Ordini",
+      "logout": "Esci"
+    },
+    "Overview": {
+      "hello": "Ciao {name}",
+      "signedInAs": "Accesso effettuato come:",
+      "profile": "Profilo",
+      "completed": "Completato",
+      "addresses": "Indirizzi",
+      "saved": "Salvati",
+      "recentOrders": "Ordini recenti",
+      "datePlaced": "Data ordine",
+      "orderNumber": "Numero ordine",
+      "totalAmount": "Importo totale",
+      "goToOrder": "Vai all’ordine #{id}",
+      "noRecentOrders": "Nessun ordine recente"
+    },
+    "OrderOverview": {
+      "emptyTitle": "Non c’è nulla da vedere qui",
+      "emptyDescription": "Non hai ancora ordini, rimediamo subito :)",
+      "continueShopping": "Continua lo shopping"
+    },
+    "Pages": {
+      "Wishlist": {
+        "heading": "Lista dei desideri",
+        "description": "Controlla i prodotti salvati, rimuovi articoli o condividi la tua lista dei desideri.",
+        "emptyMessage": "Non hai ancora aggiunto prodotti alla tua lista dei desideri."
+      },
+      "Orders": {
+        "heading": "Ordini",
+        "description": "Visualizza i tuoi ordini precedenti e il loro stato. Se necessario, puoi anche creare resi o cambi."
+      },
+      "Profile": {
+        "heading": "Profilo",
+        "description": "Visualizza e aggiorna le informazioni del tuo profilo, inclusi nome, email e numero di telefono. Puoi anche aggiornare l’indirizzo di fatturazione o cambiare la password."
+      },
+      "Addresses": {
+        "heading": "Indirizzi di spedizione",
+        "description": "Visualizza e aggiorna i tuoi indirizzi di spedizione. Puoi aggiungerne quanti vuoi. Salvandoli, saranno disponibili durante il checkout."
+      }
+    },
+    "ProfilePassword": {
+      "notImplemented": "L’aggiornamento della password non è implementato",
+      "password": "Password",
+      "hidden": "La password non viene mostrata per motivi di sicurezza",
+      "oldPassword": "Vecchia password",
+      "newPassword": "Nuova password",
+      "confirmPassword": "Conferma password"
+    }
+  },
+  "Cart": {
+    "Items": {
+      "heading": "Carrello",
+      "item": "Articolo",
+      "quantity": "Quantità",
+      "price": "Prezzo",
+      "total": "Totale"
+    },
+    "Summary": {
+      "heading": "Riepilogo",
+      "checkout": "Vai al checkout"
+    },
+    "Empty": {
+      "heading": "Il tuo carrello è attualmente vuoto",
+      "description": "Puoi consultare tutti i prodotti disponibili e acquistarne alcuni nel negozio.",
+      "cta": "Torna al negozio"
+    },
+    "Dropdown": {
+      "heading": "Carrello",
+      "quantity": "Quantità",
+      "remove": "Rimuovi",
+      "subtotal": "Subtotale",
+      "excludingTaxes": "(IVA esclusa)",
+      "goToCart": "Vai al carrello",
+      "empty": "La tua borsa della spesa è vuota.",
+      "goToProductsSrOnly": "Vai alla pagina di tutti i prodotti",
+      "explore": "Esplora i prodotti"
+    },
+    "Totals": {
+      "subtotalExcluding": "Subtotale (spedizione e tasse escluse)",
+      "shipping": "Spedizione",
+      "discount": "Sconto",
+      "taxes": "Tasse",
+      "total": "Totale"
+    },
+    "NotFound": {
+      "heading": "Pagina non trovata",
+      "description": "Il carrello che hai provato ad aprire non esiste. Cancella i cookie e riprova.",
+      "cta": "Vai alla homepage"
+    }
+  },
+  "Search": {
+    "Results": {
+      "heading": "Risultati di ricerca per:",
+      "clear": "Cancella",
+      "noResults": "Nessun risultato."
+    },
+    "Box": {
+      "placeholder": "Cerca prodotti..."
+    },
+    "ShowAll": {
+      "noResults": "Nessun risultato trovato.",
+      "showingFirst": "Mostriamo i primi {count} risultati.",
+      "viewAll": "Vedi tutto"
+    }
+  },
+  "Wishlist": {
+    "SharedPage": {
+      "heading": "Lista dei desideri condivisa",
+      "description": "Sfoglia i prodotti salvati in questa lista dei desideri condivisa.",
+      "emptyMessage": "Questa lista dei desideri non contiene prodotti salvati."
+    },
+    "ShareButton": {
+      "successTitle": "Link copiato",
+      "successDescription": "Chiunque abbia questo link può vedere la tua lista dei desideri.",
+      "errorTitle": "Errore",
+      "errorDescription": "Impossibile generare un link di condivisione in questo momento.",
+      "button": "Condividi lista dei desideri",
+      "label": "Link di condivisione"
+    },
+    "ItemsGrid": {
+      "variant": "Variante"
+    },
+    "Button": {
+      "add": "Aggiungi alla lista dei desideri",
+      "remove": "Rimuovi dalla lista dei desideri",
+      "unavailable": "Seleziona una variante da salvare"
+    }
+  },
+  "Order": {
+    "Summary": {
+      "heading": "Riepilogo ordine",
+      "subtotal": "Subtotale",
+      "discount": "Sconto",
+      "giftCard": "Carta regalo",
+      "shipping": "Spedizione",
+      "taxes": "Tasse",
+      "total": "Totale"
+    },
+    "Help": {
+      "heading": "Hai bisogno di aiuto?",
+      "contact": "Contatto",
+      "returns": "Resi e cambi"
+    },
+    "Completed": {
+      "heading": "Grazie!",
+      "description": "Il tuo ordine è stato effettuato con successo.",
+      "summary": "Riepilogo"
+    },
+    "Details": {
+      "heading": "Dettagli ordine",
+      "back": "Torna alla panoramica"
+    },
+    "Shipping": {
+      "heading": "Consegna",
+      "address": "Indirizzo di spedizione",
+      "contact": "Contatto",
+      "method": "Metodo"
+    }
+  },
+  "Store": {
+    "Sort": {
+      "title": "Ordina per",
+      "created_at": "Ultimi arrivi",
+      "price_asc": "Prezzo: dal più basso al più alto",
+      "price_desc": "Prezzo: dal più alto al più basso"
+    }
+  },
+  "Product": {
+    "Actions": {
+      "signInToSave": "Accedi per salvare",
+      "selectVariantToSave": "Seleziona una variante da salvare",
+      "removeFromWishlist": "Rimuovi dalla lista dei desideri",
+      "addToWishlist": "Aggiungi alla lista dei desideri",
+      "quantity": "Quantità:",
+      "selectVariant": "Seleziona variante",
+      "outOfStock": "Esaurito",
+      "addToCart": "Aggiungi al carrello",
+      "selectVariantError": "* Seleziona una variante per continuare",
+      "inventoryAlert": "Attualmente sono disponibili solo {quantity} pezzi!",
+      "estimatedDeliveryLabel": "Consegna stimata:",
+      "estimatedDeliveryText": "Il tuo pacco arriverà in 3-5 giorni lavorativi presso il tuo punto di ritiro o comodamente a casa tua.",
+      "selectOptions": "Seleziona opzioni"
+    },
+    "Tabs": {
+      "sizeGuide": "Guida alle taglie",
+      "deliveryInformation": "Informazioni sulla consegna",
+      "material": "Materiale",
+      "countryOfOrigin": "Paese di origine",
+      "type": "Tipo",
+      "weight": "Peso",
+      "dimensions": "Dimensioni",
+      "shippingBullet1": "Spedizione del tuo ordine in meno di 24 ore dal lunedì al sabato (esclusi i giorni festivi)",
+      "shippingBullet2": "Consegna gratuita tracciata in 5 giorni a partire da un acquisto di £65, 70€ o $80 (a domicilio)",
+      "shippingBullet3": "Consegna standard tracciata 4-5 giorni a 4,90£ (a domicilio)",
+      "shippingBullet4": "Segui facilmente il tuo pacco via e-mail e sul sito web",
+      "sizeGuideDescription": "I nostri pigiami hanno una vita elastica e ti vestiranno bene qualunque sia la tua misura. Hai dubbi? Contattaci.",
+      "sizesSuffix": " taglie:",
+      "hide": "Nascondi",
+      "show": "Mostra",
+      "measurementGuideTitle": "Come prendere le misure?",
+      "measurementGuideDescription": "Clicca qui per seguire la guida di The Christmas Fabric e prendere facilmente le tue misure a casa senza errori"
+    },
+    "Reviews": {
+      "errorTitle": "Errore",
+      "requiredFields": "Compila i campi obbligatori.",
+      "successTitle": "Successo",
+      "successDescription": "La tua recensione è stata inviata ed è in attesa di approvazione.",
+      "submitError": "Si è verificato un errore durante l’invio della recensione. Riprova più tardi.",
+      "addReview": "Aggiungi una recensione",
+      "title": "Titolo",
+      "content": "Contenuto",
+      "rating": "Valutazione",
+      "submit": "Invia"
+    }
+  },
+  "Tracking": {
+    "Page": {
+      "heading": "Traccia il mio ordine",
+      "trackingNumber": "Numero di tracciamento",
+      "lastUpdate": "Ultimo aggiornamento:",
+      "descriptionLabel": "Descrizione:",
+      "location": "Posizione:",
+      "route": "Percorso:",
+      "history": "Cronologia",
+      "orderFoundNoTracking": "Ordine trovato, ma i dettagli di tracciamento non sono ancora disponibili.",
+      "orderPrompt": "Per tracciare il tuo ordine, inserisci il numero d’ordine e l’indirizzo email:",
+      "trackingPrompt": "Per tracciare il tuo ordine, inserisci il numero di tracciamento ricevuto nell’e-mail di conferma spedizione",
+      "orderId": "ID ordine",
+      "orderNumberPlaceholder": "Numero ordine",
+      "orderEmail": "Email ordine",
+      "emailPlaceholder": "Indirizzo email",
+      "trackingNumberLabel": "Numero di tracciamento",
+      "trackingNumberPlaceholder": "Numero di tracciamento ordine",
+      "trackOrder": "Traccia ordine",
+      "tracking": "Tracciamento...",
+      "orderLabel": "Ordine:",
+      "tabs": {
+        "orderDetails": "Dettagli ordine",
+        "trackingNumbers": "Numeri di tracciamento"
+      },
+      "milestones": {
+        "infoReceived": "Informazioni ricevute",
+        "pickedUp": "Ritirato",
+        "departure": "Partenza",
+        "arrival": "Arrivo",
+        "availableForPickup": "Disponibile per il ritiro",
+        "outForDelivery": "In consegna",
+        "delivered": "Consegnato"
+      },
+      "statuses": {
+        "Delivered": "Consegnato",
+        "InTransit": "In transito",
+        "PickedUp": "Ritirato",
+        "Exception": "Eccezione",
+        "Returning": "Reso in corso",
+        "Returned": "Restituito",
+        "Unknown": "Sconosciuto"
+      }
+    }
+  },
+  "Checkout": {
+    "Payment": {
+      "selectMethod": "Seleziona un metodo di pagamento"
     }
   }
 }

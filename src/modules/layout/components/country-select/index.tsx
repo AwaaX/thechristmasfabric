@@ -14,8 +14,11 @@ import { StateType } from "@lib/hooks/use-toggle-state"
 import { usePageLoader } from "@modules/common/components/swh/ProgressBarProvider"
 import { useParams, usePathname } from "next/navigation"
 import { updateRegion } from "@lib/data/cart"
+import { getLocalizedProductHandle } from "@lib/data/products"
+import { getLocalizedCategoryHandle } from "@lib/data/categories"
 import { HttpTypes } from "@medusajs/types"
 import { IoIosArrowDown } from "react-icons/io"
+import { localeByCountryCode } from "@lib/util/locale"
 
 type CountryOption = {
   country: string
@@ -29,10 +32,7 @@ type CountrySelectProps = {
 }
 
 const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
-  const [current, setCurrent] = useState<
-    | { country: string | undefined; region: string; label: string | undefined }
-    | undefined
-  >(undefined)
+  const [current, setCurrent] = useState<CountryOption | undefined>(undefined)
 
   const { countryCode } = useParams()
   const currentPath = usePathname().split(`/${countryCode}`)[1]
@@ -60,9 +60,53 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
     }
   }, [options, countryCode])
 
-  const handleChange = (option: CountryOption) => {
+  const localizedCategoryPrefixes = [
+    "christmas-pyjamas",
+    "pijamas-de-navidad",
+    "weihnachtspyjamas",
+    "pigiama-di-natale",
+    "kerst-pyjama's",
+    "julpyjamas",
+  ]
+
+  const handleChange = async (option: CountryOption) => {
     startPageLoader()
-    updateRegion(option.country, currentPath)
+
+    const pathSegments = currentPath.split("/").filter(Boolean)
+    let nextPath = currentPath
+    const locale = localeByCountryCode[option.country]
+
+    if (pathSegments[0] === "products" && pathSegments[1]) {
+      const localizedHandle = await getLocalizedProductHandle({
+        currentHandle: pathSegments[1],
+        sourceCountryCode: countryCode as string,
+        targetCountryCode: option.country,
+        locale,
+      })
+      nextPath = localizedHandle
+        ? `/products/${localizedHandle}`
+        : `/christmas-pyjamas`
+    } else if (
+      localizedCategoryPrefixes.includes(pathSegments[0] ?? "") &&
+      pathSegments[1]
+    ) {
+      const localizedHandle = locale
+        ? await getLocalizedCategoryHandle({
+            currentHandle: pathSegments[1],
+            locale,
+            targetCountryCode: option.country,
+          })
+        : null
+
+      nextPath =
+        localizedHandle != null
+          ? `/christmas-pyjamas/${localizedHandle}`
+          : `/christmas-pyjamas`
+    } else if (localizedCategoryPrefixes.includes(pathSegments[0] ?? "")) {
+      nextPath = "/christmas-pyjamas"
+    }
+
+    await updateRegion(option.country, nextPath)
     close()
   }
 
@@ -94,18 +138,18 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
             </span>
           )}
         </ListboxButton>
-          <div className="flex absolute right-0 w-full min-w-[180px]">
+        <div className="flex absolute right-0 w-full min-w-[180px]">
           <Transition
             show={state}
             as={Fragment}
-              enter="transition ease-in duration-150"
+            enter="transition ease-in duration-150"
             enterFrom="opacity-0 translate-y-10"
             enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-10"
           >
-               <ListboxOptions
+            <ListboxOptions
               className="absolute -top-[calc(100%-8px)] left-0 xsmall:left-auto xsmall:right-0 max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar rounded-rounded w-full"
               static
             >

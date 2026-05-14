@@ -52,3 +52,29 @@ export const getCategoryByHandle = async (categoryHandle: string[]) => {
     )
     .then(({ product_categories }) => product_categories[0])
 }
+
+export const getLocalizedCategoryHandle = async ({
+  currentHandle,
+  locale,
+  targetCountryCode,
+}: {
+  currentHandle: string
+  locale: string
+  targetCountryCode: string
+}) => {
+  const category = await sdk.client
+    .fetch<HttpTypes.StoreProductCategoryListResponse>(
+      `/store/product-categories`,
+      {
+        query: {
+          fields: "handle,custom_translation",
+          handle: currentHandle,
+        },
+        next: { revalidate: 5 },
+        cache: "force-cache",
+      }
+    )
+    .then(({ product_categories }) => product_categories[0])
+
+  return category?.custom_translation?.[locale]?.handle ?? category?.custom_translation?.[targetCountryCode]?.handle ?? category?.handle ?? null
+}

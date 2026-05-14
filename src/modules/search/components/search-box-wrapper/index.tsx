@@ -8,9 +8,10 @@ import {
   useState,
 } from "react"
 import { UseSearchBoxProps, useSearchBox } from "react-instantsearch-hooks-web"
+import { useTranslations } from "next-intl"
 
 export type ControlledSearchBoxProps = React.ComponentProps<"div"> & {
-  inputRef: RefObject<HTMLInputElement>
+  inputRef: RefObject<HTMLInputElement | null>
   onChange(event: ChangeEvent): void
   onReset(event: FormEvent): void
   onSubmit?(event: FormEvent): void
@@ -21,9 +22,10 @@ export type ControlledSearchBoxProps = React.ComponentProps<"div"> & {
 type SearchBoxProps = {
   children: (state: {
     value: string
-    inputRef: RefObject<HTMLInputElement>
+    inputRef: RefObject<HTMLInputElement | null>
     onChange: (event: ChangeEvent<HTMLInputElement>) => void
     onReset: () => void
+    onSubmit: () => void
     placeholder: string
   }) => React.ReactNode
   placeholder?: string
@@ -31,9 +33,10 @@ type SearchBoxProps = {
 
 const SearchBoxWrapper = ({
   children,
-  placeholder = "Search products...",
+  placeholder,
   ...rest
 }: SearchBoxProps) => {
+  const t = useTranslations("Search.Box")
   const { query, refine } = useSearchBox(rest)
   const [value, setValue] = useState(query)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -84,7 +87,7 @@ const SearchBoxWrapper = ({
     onChange,
     onSubmit,
     onReset,
-    placeholder,
+    placeholder: placeholder || t("placeholder"),
   }
 
   return children(state) as React.ReactElement

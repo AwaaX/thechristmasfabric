@@ -7,6 +7,7 @@ import ErrorMessage from "@modules/checkout/components/error-message"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { signup } from "@lib/data/customer"
+import { useTranslations } from "next-intl"
 
 type Props = {
   redirectTo: string
@@ -15,29 +16,32 @@ type Props = {
 
 const Register = ({ redirectTo, setCurrentView }: Props) => {
   const [message, formAction] = useActionState(signup, null)
+  const t = useTranslations("Account.Register")
 
   return (
      <div className="max-w-[570px] w-full flex flex-col items-start bg-white border p-[30px] shadow-[0_0_30px_0_rgba(0,0,0,.05)]" data-testid="register-page">
-      <h1 className="text-large-semi text-[24px] font-medium mb-6">Register here </h1>
+      <h1 className="text-large-semi text-[24px] font-medium mb-6">
+        {t("heading")}
+      </h1>
       <form className="w-full flex flex-col" action={formAction}>
         <input type="hidden" name="redirect_to" value={redirectTo} />
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
+            label={t("firstName")}
             name="first_name"
             required
             autoComplete="given-name"
             data-testid="first-name-input"
           />
           <Input
-            label="Last name"
+            label={t("lastName")}
             name="last_name"
             required
             autoComplete="family-name"
             data-testid="last-name-input"
           />
           <Input
-            label="Email"
+            label={t("email")}
             name="email"
             required
             type="email"
@@ -52,7 +56,7 @@ const Register = ({ redirectTo, setCurrentView }: Props) => {
             data-testid="phone-input"
           /> */}
           <Input
-            label="Password"
+            label={t("password")}
             name="password"
             required
             type="password"
@@ -61,37 +65,37 @@ const Register = ({ redirectTo, setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
-           <div>
+        <div>
         <input type="checkbox" required /> 
         <span className="text-center text-[15px] font-normal ml-3 mt-6 mx-auto">
-          I agree to Store&apos;s{" "}
+          {t("consentPrefix")}{" "}
           <LocalizedClientLink
             href="/privacy-policy"
             className="underline"
           >
-            Privacy Policy
+            {t("privacyPolicy")}
           </LocalizedClientLink>{" "}
-          and{" "}
+          {t("and")}{" "}
           <LocalizedClientLink
             href="/legal-notice"
             className="underline"
           >
-            Terms of Use
+            {t("termsOfUse")}
           </LocalizedClientLink>
           .
         </span>
         </div>
         <SubmitButton className="w-full mt-6 border hover:border-black px-[25px] min-h-[45px] rounded-[5px] flex items-center justify-center  hover:bg-black hover:text-white duration-300 ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)] bg-black text-white" data-testid="register-button">
-          Join
+          {t("submit")}
         </SubmitButton>
       </form>
-       <span className="text-center text-[15px] font-normal hover:text-christmasText duration-200 ease-in-out mt-6 mx-auto">
-        Already a member?{" "}
+      <span className="text-center text-[15px] font-normal hover:text-christmasText duration-200 ease-in-out mt-6 mx-auto">
+        {t("signInPrompt")}{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          {t("signInCta")}
         </button>
         .
       </span>

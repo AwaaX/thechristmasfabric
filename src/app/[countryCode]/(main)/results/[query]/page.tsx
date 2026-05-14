@@ -1,15 +1,9 @@
 import { Metadata } from "next"
-
-
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import { search } from "@modules/search/actions"
 import SearchResultsTemplate from "@modules/search/templates/search-results-template"
-
-export const metadata: Metadata = {
-  title: "Search",
-  description: "Explore all of our products.",
-}
 
 type Params = {
   params: { query: string; countryCode: string }
@@ -17,6 +11,12 @@ type Params = {
     sortBy?: SortOptions
     page?: string
   }
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.SearchResults", {
+    query: decodeURIComponent(params.query),
+  })
 }
 
 export default async function SearchResults({ params, searchParams }: Params) {

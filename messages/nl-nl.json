@@ -24,6 +24,9 @@
         "Search": "Zoeken",
         "Wishlist": "Verlanglijst",
         "Cart": "Winkelwagen"
+      },
+      "MobileMenu": {
+        "menu": "Menu"
       }
     }
   },
@@ -146,6 +149,376 @@
       "txt4": " Bedankt voor het aanmelden voor de nieuwsbrief! We",
       "txt5": "houden binnenkort contact.",
       "Placeholder": "Uw e-mail"
+    }
+  },
+  "Metadata": {
+    "NotFound": {
+      "title": "404",
+      "description": "Pagina niet gevonden"
+    },
+    "Home": {
+      "title": "Home | The Christmas Fabric",
+      "description": "Doe mee aan het project en koop geweldige pyjama's en originele kleding voor Kerstmis en dit winterseizoen bij The Christmas Fabric"
+    },
+    "Checkout": {
+      "title": "Afrekenen | The Christmas Fabric",
+      "description": "Controleer je winkelwagen, verzending en betaalgegevens om je bestelling af te ronden."
+    },
+    "SearchResults": {
+      "title": "Zoekresultaten voor {query} | The Christmas Fabric",
+      "description": "Ontdek producten die passen bij {query}."
+    },
+    "Cart": {
+      "title": "Winkelwagen | The Christmas Fabric",
+      "description": "Bekijk de producten die momenteel in je winkelwagen zitten."
+    },
+    "Wishlist": {
+      "Shared": {
+        "title": "Gedeelde verlanglijst | The Christmas Fabric",
+        "description": "Bekijk een verlanglijst die met je is gedeeld."
+      }
+    },
+    "Account": {
+      "Login": {
+        "title": "Inloggen | The Christmas Fabric",
+        "description": "Log in op je The Christmas Fabric-account."
+      },
+      "Wishlist": {
+        "title": "Verlanglijst | The Christmas Fabric",
+        "description": "Producten opgeslagen op je verlanglijst."
+      },
+      "Orders": {
+        "title": "Bestellingen | The Christmas Fabric",
+        "description": "Overzicht van je eerdere bestellingen."
+      },
+      "Profile": {
+        "title": "Profiel | The Christmas Fabric",
+        "description": "Bekijk en bewerk je profielgegevens."
+      },
+      "Addresses": {
+        "title": "Adressen | The Christmas Fabric",
+        "description": "Bekijk en update je opgeslagen adressen."
+      },
+      "Overview": {
+        "title": "Account | The Christmas Fabric",
+        "description": "Overzicht van je accountactiviteit."
+      },
+      "LoginWishlist": {
+        "title": "Log in om je verlanglijst te bekijken | The Christmas Fabric",
+        "description": "Log in om toegang te krijgen tot je verlanglijst."
+      }
+    },
+    "OrderConfirmed": {
+      "title": "Bestelling bevestigd | The Christmas Fabric",
+      "description": "Je aankoop is succesvol voltooid."
+    }
+  },
+  "Common": {
+    "NotFound": {
+      "heading": "Pagina niet gevonden",
+      "description": "De pagina die je probeerde te openen bestaat niet.",
+      "cta": "Ga naar de homepage"
+    },
+    "Price": {
+      "from": "Vanaf",
+      "original": "Origineel:"
+    }
+  },
+  "Account": {
+    "Login": {
+      "heading": "Inloggen",
+      "email": "E-mailadres",
+      "emailTitle": "Voer een geldig e-mailadres in.",
+      "password": "Wachtwoord",
+      "submit": "Inloggen",
+      "registerPrompt": "Nog geen lid?",
+      "registerCta": "Registreren"
+    },
+    "Register": {
+      "heading": "Registreer hier",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "consentPrefix": "Ik ga akkoord met het",
+      "privacyPolicy": "Privacybeleid",
+      "and": "en de",
+      "termsOfUse": "Gebruiksvoorwaarden",
+      "submit": "Aanmelden",
+      "signInPrompt": "Al lid?",
+      "signInCta": "Inloggen"
+    },
+    "Nav": {
+      "hello": "Hallo {name}",
+      "account": "Account",
+      "overview": "Overzicht",
+      "profile": "Profiel",
+      "addresses": "Adressen",
+      "wishlist": "Verlanglijst",
+      "orders": "Bestellingen",
+      "logout": "Uitloggen"
+    },
+    "Overview": {
+      "hello": "Hallo {name}",
+      "signedInAs": "Ingelogd als:",
+      "profile": "Profiel",
+      "completed": "Voltooid",
+      "addresses": "Adressen",
+      "saved": "Opgeslagen",
+      "recentOrders": "Recente bestellingen",
+      "datePlaced": "Besteld op",
+      "orderNumber": "Bestelnummer",
+      "totalAmount": "Totaalbedrag",
+      "goToOrder": "Ga naar bestelling #{id}",
+      "noRecentOrders": "Geen recente bestellingen"
+    },
+    "OrderOverview": {
+      "emptyTitle": "Hier is niets te zien",
+      "emptyDescription": "Je hebt nog geen bestellingen, laten we daar verandering in brengen :)",
+      "continueShopping": "Verder winkelen"
+    },
+    "Pages": {
+      "Wishlist": {
+        "heading": "Verlanglijst",
+        "description": "Bekijk opgeslagen producten, verwijder items of deel je verlanglijst.",
+        "emptyMessage": "Je hebt nog geen producten aan je verlanglijst toegevoegd."
+      },
+      "Orders": {
+        "heading": "Bestellingen",
+        "description": "Bekijk je eerdere bestellingen en hun status. Indien nodig kun je ook retouren of omruilingen aanvragen."
+      },
+      "Profile": {
+        "heading": "Profiel",
+        "description": "Bekijk en werk je profielgegevens bij, waaronder je naam, e-mailadres en telefoonnummer. Je kunt ook je factuuradres bijwerken of je wachtwoord wijzigen."
+      },
+      "Addresses": {
+        "heading": "Verzendadressen",
+        "description": "Bekijk en update je verzendadressen. Je kunt er zoveel toevoegen als je wilt. Opgeslagen adressen zijn beschikbaar tijdens het afrekenen."
+      }
+    },
+    "ProfilePassword": {
+      "notImplemented": "Het bijwerken van het wachtwoord is niet geïmplementeerd",
+      "password": "Wachtwoord",
+      "hidden": "Het wachtwoord wordt om veiligheidsredenen niet getoond",
+      "oldPassword": "Oud wachtwoord",
+      "newPassword": "Nieuw wachtwoord",
+      "confirmPassword": "Bevestig wachtwoord"
+    }
+  },
+  "Cart": {
+    "Items": {
+      "heading": "Winkelwagen",
+      "item": "Artikel",
+      "quantity": "Aantal",
+      "price": "Prijs",
+      "total": "Totaal"
+    },
+    "Summary": {
+      "heading": "Overzicht",
+      "checkout": "Ga naar afrekenen"
+    },
+    "Empty": {
+      "heading": "Je winkelmand is momenteel leeg",
+      "description": "Je kunt alle beschikbare producten bekijken en iets kopen in de winkel.",
+      "cta": "Terug naar de winkel"
+    },
+    "Dropdown": {
+      "heading": "Winkelwagen",
+      "quantity": "Aantal",
+      "remove": "Verwijderen",
+      "subtotal": "Subtotaal",
+      "excludingTaxes": "(excl. btw)",
+      "goToCart": "Ga naar winkelwagen",
+      "empty": "Je boodschappentas is leeg.",
+      "goToProductsSrOnly": "Ga naar alle producten",
+      "explore": "Producten bekijken"
+    },
+    "Totals": {
+      "subtotalExcluding": "Subtotaal (excl. verzending en belastingen)",
+      "shipping": "Verzending",
+      "discount": "Korting",
+      "taxes": "Belastingen",
+      "total": "Totaal"
+    },
+    "NotFound": {
+      "heading": "Pagina niet gevonden",
+      "description": "De winkelwagen die je probeerde te openen bestaat niet. Wis je cookies en probeer het opnieuw.",
+      "cta": "Ga naar de homepage"
+    }
+  },
+  "Search": {
+    "Results": {
+      "heading": "Zoekresultaten voor:",
+      "clear": "Wissen",
+      "noResults": "Geen resultaten."
+    },
+    "Box": {
+      "placeholder": "Zoek producten..."
+    },
+    "ShowAll": {
+      "noResults": "Geen resultaten gevonden.",
+      "showingFirst": "De eerste {count} resultaten worden getoond.",
+      "viewAll": "Alles bekijken"
+    }
+  },
+  "Wishlist": {
+    "SharedPage": {
+      "heading": "Gedeelde verlanglijst",
+      "description": "Bekijk de producten die zijn opgeslagen in deze gedeelde verlanglijst.",
+      "emptyMessage": "Deze verlanglijst bevat geen opgeslagen producten."
+    },
+    "ShareButton": {
+      "successTitle": "Link gekopieerd",
+      "successDescription": "Iedereen met deze link kan je verlanglijst bekijken.",
+      "errorTitle": "Fout",
+      "errorDescription": "Er kan op dit moment geen deellink worden gegenereerd.",
+      "button": "Verlanglijst delen",
+      "label": "Deellink"
+    },
+    "ItemsGrid": {
+      "variant": "Variant"
+    },
+    "Button": {
+      "add": "Toevoegen aan verlanglijst",
+      "remove": "Verwijderen van verlanglijst",
+      "unavailable": "Selecteer een variant om op te slaan"
+    }
+  },
+  "Order": {
+    "Summary": {
+      "heading": "Besteloverzicht",
+      "subtotal": "Subtotaal",
+      "discount": "Korting",
+      "giftCard": "Cadeaubon",
+      "shipping": "Verzending",
+      "taxes": "Belastingen",
+      "total": "Totaal"
+    },
+    "Help": {
+      "heading": "Hulp nodig?",
+      "contact": "Contact",
+      "returns": "Retouren en omruilingen"
+    },
+    "Completed": {
+      "heading": "Bedankt!",
+      "description": "Je bestelling is succesvol geplaatst.",
+      "summary": "Overzicht"
+    },
+    "Details": {
+      "heading": "Bestelgegevens",
+      "back": "Terug naar overzicht"
+    },
+    "Shipping": {
+      "heading": "Levering",
+      "address": "Verzendadres",
+      "contact": "Contact",
+      "method": "Methode"
+    }
+  },
+  "Store": {
+    "Sort": {
+      "title": "Sorteren op",
+      "created_at": "Nieuwste items",
+      "price_asc": "Prijs: laag naar hoog",
+      "price_desc": "Prijs: hoog naar laag"
+    }
+  },
+  "Product": {
+    "Actions": {
+      "signInToSave": "Log in om op te slaan",
+      "selectVariantToSave": "Selecteer een variant om op te slaan",
+      "removeFromWishlist": "Verwijderen van verlanglijst",
+      "addToWishlist": "Toevoegen aan verlanglijst",
+      "quantity": "Aantal:",
+      "selectVariant": "Selecteer variant",
+      "outOfStock": "Niet op voorraad",
+      "addToCart": "Toevoegen aan winkelwagen",
+      "selectVariantError": "* Selecteer een variant om door te gaan",
+      "inventoryAlert": "Er zijn momenteel slechts {quantity} stuk(s) beschikbaar!",
+      "estimatedDeliveryLabel": "Geschatte levering:",
+      "estimatedDeliveryText": "Je pakket arriveert binnen 3-5 werkdagen op je afhaalpunt of gewoon bij je thuis.",
+      "selectOptions": "Opties selecteren"
+    },
+    "Tabs": {
+      "sizeGuide": "Maattabel",
+      "deliveryInformation": "Leveringsinformatie",
+      "material": "Materiaal",
+      "countryOfOrigin": "Land van herkomst",
+      "type": "Type",
+      "weight": "Gewicht",
+      "dimensions": "Afmetingen",
+      "shippingBullet1": "Verzending van je bestelling in minder dan 24 uur van maandag tot zaterdag (uitgezonderd feestdagen)",
+      "shippingBullet2": "Gratis 5-daagse levering met tracking vanaf een aankoop van £65, 70€ of $80 (thuis)",
+      "shippingBullet3": "Standaardlevering met tracking 4-5 dagen voor 4,90£ (thuis)",
+      "shippingBullet4": "Volg je pakket eenvoudig per e-mail en op de website",
+      "sizeGuideDescription": "Onze pyjama’s hebben een elastische tailleband en passen goed, ongeacht je taillemaat. Twijfel je? Neem contact met ons op.",
+      "sizesSuffix": " maten:",
+      "hide": "Verbergen",
+      "show": "Tonen",
+      "measurementGuideTitle": "Hoe neem je je maten op?",
+      "measurementGuideDescription": "Klik hier om de gids van The Christmas Fabric te volgen en thuis eenvoudig je maten op te nemen zonder fouten"
+    },
+    "Reviews": {
+      "errorTitle": "Fout",
+      "requiredFields": "Vul de verplichte velden in.",
+      "successTitle": "Gelukt",
+      "successDescription": "Je beoordeling is ingediend en wacht op goedkeuring.",
+      "submitError": "Er is een fout opgetreden bij het verzenden van je beoordeling. Probeer het later opnieuw.",
+      "addReview": "Een beoordeling toevoegen",
+      "title": "Titel",
+      "content": "Inhoud",
+      "rating": "Beoordeling",
+      "submit": "Verzenden"
+    }
+  },
+  "Tracking": {
+    "Page": {
+      "heading": "Mijn bestelling volgen",
+      "trackingNumber": "Trackingnummer",
+      "lastUpdate": "Laatste update:",
+      "descriptionLabel": "Beschrijving:",
+      "location": "Locatie:",
+      "route": "Route:",
+      "history": "Geschiedenis",
+      "orderFoundNoTracking": "Bestelling gevonden, maar er zijn nog geen trackinggegevens beschikbaar.",
+      "orderPrompt": "Voer je bestelnummer en e-mailadres in om je bestelling te volgen:",
+      "trackingPrompt": "Voer het trackingnummer in dat je in de verzendbevestiging hebt ontvangen om je bestelling te volgen",
+      "orderId": "Bestel-ID",
+      "orderNumberPlaceholder": "Bestelnummer",
+      "orderEmail": "Bestel-e-mail",
+      "emailPlaceholder": "E-mailadres",
+      "trackingNumberLabel": "Trackingnummer",
+      "trackingNumberPlaceholder": "Trackingnummer van bestelling",
+      "trackOrder": "Bestelling volgen",
+      "tracking": "Bezig met volgen...",
+      "orderLabel": "Bestelling:",
+      "tabs": {
+        "orderDetails": "Bestelgegevens",
+        "trackingNumbers": "Trackingnummers"
+      },
+      "milestones": {
+        "infoReceived": "Informatie ontvangen",
+        "pickedUp": "Opgehaald",
+        "departure": "Vertrek",
+        "arrival": "Aankomst",
+        "availableForPickup": "Beschikbaar om af te halen",
+        "outForDelivery": "Onderweg voor bezorging",
+        "delivered": "Bezorgd"
+      },
+      "statuses": {
+        "Delivered": "Bezorgd",
+        "InTransit": "Onderweg",
+        "PickedUp": "Opgehaald",
+        "Exception": "Uitzondering",
+        "Returning": "Wordt geretourneerd",
+        "Returned": "Geretourneerd",
+        "Unknown": "Onbekend"
+      }
+    }
+  },
+  "Checkout": {
+    "Payment": {
+      "selectMethod": "Selecteer een betaalmethode"
     }
   }
 }

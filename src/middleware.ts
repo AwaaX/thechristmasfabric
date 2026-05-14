@@ -1,6 +1,7 @@
 import { HttpTypes } from "@medusajs/types"
 import { NextRequest, NextResponse } from "next/server"
 import { defaultLocale, locales } from "./i18n/routing"
+import { localeByCountryCode } from "@lib/util/locale"
 
 const BACKEND_URL = process.env.MEDUSA_BACKEND_URL
 const PUBLISHABLE_API_KEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY
@@ -14,18 +15,6 @@ const regionMapCache = {
 
 const localeSet = new Set<string>(locales)
 
-const localeByCountryCode = locales.reduce<Record<string, string>>(
-  (acc, locale) => {
-    const [, region] = locale.split("-")
-
-    if (region) {
-      acc[region] = locale
-    }
-
-    return acc
-  },
-  {}
-)
 
 const getLocaleFromUrl = (pathname: string, countryCode?: string) => {
   const segments = pathname.split("/").filter(Boolean)

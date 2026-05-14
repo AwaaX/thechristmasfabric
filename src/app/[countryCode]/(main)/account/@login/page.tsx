@@ -1,10 +1,10 @@
 import { Metadata } from "next"
 
 import LoginTemplate from "@modules/account/templates/login-template"
+import { getLocalizedMetadata } from "@lib/util/metadata"
 
-export const metadata: Metadata = {
-  title: "Sign in",
-  description: "Sign in to your Medusa Store account.",
+export async function generateMetadata(): Promise<Metadata> {
+  return getLocalizedMetadata("Metadata.Account.Login")
 }
 
 export default async function Login({

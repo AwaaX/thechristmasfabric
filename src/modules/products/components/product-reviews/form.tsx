@@ -8,12 +8,14 @@ import { HttpTypes } from "@medusajs/types"
 import { Button, Input, Label, Textarea, toast, Toaster } from "@medusajs/ui"
 import { Star, StarSolid } from "@medusajs/icons"
 import { addProductReview } from "../../../../lib/data/products"
+import { useTranslations } from "next-intl"
 
 type ProductReviewsFormProps = {
   productId: string
 }
 
 export default function ProductReviewsForm({ productId }: ProductReviewsFormProps) {
+  const t = useTranslations("Product.Reviews")
   const [customer, setCustomer] = useState<HttpTypes.StoreCustomer | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [showForm, setShowForm] = useState(false)
@@ -35,8 +37,8 @@ export default function ProductReviewsForm({ productId }: ProductReviewsFormProp
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (!content || !rating) {
-      toast.error("Error", {
-        description: "Please fill in required fields.",
+      toast.error(t("errorTitle"), {
+        description: t("requiredFields"),
       })
       return
     }
@@ -55,12 +57,12 @@ export default function ProductReviewsForm({ productId }: ProductReviewsFormProp
       setTitle("")
       setContent("")
       setRating(0)
-      toast.success("Success", {
-        description: "Your review has been submitted and is awaiting approval.",
+      toast.success(t("successTitle"), {
+        description: t("successDescription"),
       })
     }).catch(() => {
-      toast.error("Error", {
-        description: "An error occurred while submitting your review. Please try again later.",
+      toast.error(t("errorTitle"), {
+        description: t("submitError"),
       })
     }).finally(() => {
       setIsLoading(false)
@@ -71,27 +73,27 @@ export default function ProductReviewsForm({ productId }: ProductReviewsFormProp
   <div className="product-page-constraint mt-8">
     {!showForm && (
       <div className="flex justify-center">
-        <Button variant="secondary" onClick={() => setShowForm(true)}>Add a review</Button>
+        <Button variant="secondary" onClick={() => setShowForm(true)}>{t("addReview")}</Button>
       </div>
     )}
     {showForm && (
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col gap-y-2">
           <span className="text-xl-regular text-ui-fg-base">
-          Add a review
-        </span>
+            {t("addReview")}
+          </span>
         
         <form onSubmit={handleSubmit} className="flex flex-col gap-y-4">
           <div className="flex flex-col gap-y-2">
-            <Label>Title</Label>
-            <Input name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
+            <Label>{t("title")}</Label>
+            <Input name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder={t("title")} />
           </div>
           <div className="flex flex-col gap-y-2">
-            <Label>Content</Label>
-            <Textarea name="content" value={content} onChange={(e) => setContent(e.target.value)} placeholder="Content" />
+            <Label>{t("content")}</Label>
+            <Textarea name="content" value={content} onChange={(e) => setContent(e.target.value)} placeholder={t("content")} />
           </div>
           <div className="flex flex-col gap-y-2">
-            <Label>Rating</Label>
+            <Label>{t("rating")}</Label>
             <div className="flex gap-x-1">
               {Array.from({ length: 5 }).map((_, index) => (
                 <Button key={index} variant="transparent" onClick={(e) => {
@@ -103,7 +105,7 @@ export default function ProductReviewsForm({ productId }: ProductReviewsFormProp
               ))}
             </div>
           </div>
-          <Button type="submit" disabled={isLoading} variant="primary">Submit</Button>
+          <Button type="submit" disabled={isLoading} variant="primary">{t("submit")}</Button>
         </form>
         </div>
       </div>
