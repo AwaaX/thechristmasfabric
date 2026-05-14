@@ -19,6 +19,8 @@ import parse from "html-react-parser"
 import { Star, StarSolid } from "@medusajs/icons"
 import { getDefaultProductVariant } from "@lib/util/product"
 import { useTranslations } from "next-intl"
+import { buildProductAnalyticsItem } from "@lib/util/ga4"
+import { trackGAEvent } from "@lib/util/ga4-client"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -377,6 +379,18 @@ export default function ProductActions({
         quantity,
         countryCode,
       })
+
+      const gaItem = buildProductAnalyticsItem({
+        product,
+        quantity,
+        variantId: variant.id,
+      })
+
+      trackGAEvent("add_to_cart", {
+        currency: region.currency_code?.toUpperCase(),
+        value: gaItem.price,
+        items: [gaItem],
+      })
     } finally {
       setIsAdding(false)
     }
@@ -507,8 +521,8 @@ export default function ProductActions({
   //   variant?.id ??
   //   (variants.length === 1 && variants[0]?.id ? variants[0].id : undefined)
 
-    const defaultVariant = getDefaultProductVariant(product)
-    const wishlistVariantId = defaultVariant?.id
+  const defaultVariant = getDefaultProductVariant(product)
+  const wishlistVariantId = defaultVariant?.id
 
   const isWishlistSaved = isInWishlist(wishlistVariantId)
   const isWishlistLoading = isPending(wishlistVariantId)
@@ -681,9 +695,7 @@ export default function ProductActions({
               : t("addToCart")}
           </Button>
         </div>
-        {!variant && (
-          <p className="text-red">{t("selectVariantError")}</p>
-        )}
+        {!variant && <p className="text-red">{t("selectVariantError")}</p>}
         {showAlert && (
           <div className="bg-red text-white p-4 rounded-md mb-4">
             {t("inventoryAlert", {

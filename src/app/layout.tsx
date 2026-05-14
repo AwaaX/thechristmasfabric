@@ -33,6 +33,18 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang={locale || ""} data-mode="light">
+      <head>
+        <meta
+          name="adopt-website-id"
+          content="6d183e5e-44e9-4089-8a91-c0a4ff2d853a"
+        />
+
+        <Script
+          src="//tag.goadopt.io/injector.js?website_code=6d183e5e-44e9-4089-8a91-c0a4ff2d853a"
+          strategy="beforeInteractive"
+          className="adopt-injector"
+        />
+      </head>
       <body className={jost.variable}>
         <script
           type="application/ld+json"
@@ -40,7 +52,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         />
         <main className="relative">
           {" "}
-          <NextIntlClientProvider><ProgressBarProviders>{props.children}</ProgressBarProviders></NextIntlClientProvider>
+          <NextIntlClientProvider>
+            <ProgressBarProviders>{props.children}</ProgressBarProviders>
+          </NextIntlClientProvider>
         </main>
         <Script id="show-hide-header" strategy="beforeInteractive">
           {`
