@@ -1,5 +1,5 @@
 import { listProducts } from "@lib/data/products"
-import { buildProductListAnalyticsItems } from "@lib/util/ga4"
+import { buildProductListEcommercePayload } from "@lib/analytics"
 import { HttpTypes } from "@medusajs/types"
 import { Text } from "@medusajs/ui"
 
@@ -32,13 +32,10 @@ export default async function ProductRail({
     <div className="content-container py-12 small:py-24">
       <AnalyticsEvent
         eventName="view_item_list"
-        params={{
-          item_list_name: collection.title,
-          items: buildProductListAnalyticsItems({
-            listName: collection.title,
-            products: pricedProducts,
-          }),
-        }}
+        ecommerce={buildProductListEcommercePayload({
+          listName: collection.title,
+          products: pricedProducts,
+        })}
       />
       <div className="flex justify-between mb-8">
         <Text className="txt-xlarge">{collection.title}</Text>

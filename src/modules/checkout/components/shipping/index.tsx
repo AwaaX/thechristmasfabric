@@ -1,6 +1,7 @@
 "use client"
 
 import { Radio, RadioGroup } from "@headlessui/react"
+import { buildCartEcommercePayload, trackEcommerceEvent } from "@lib/analytics"
 import { setShippingMethod } from "@lib/data/cart"
 import { calculatePriceForShippingOption } from "@lib/data/fulfillment"
 import { convertToLocale } from "@lib/util/money"
@@ -19,10 +20,21 @@ const PICKUP_OPTION_OFF = "__PICKUP_OFF"
 
 type ShippingProps = {
   cart: HttpTypes.StoreCart
-  availableShippingMethods: HttpTypes.StoreCartShippingOption[] | null
+  availableShippingMethods: ShippingOptionWithDetails[] | null
 }
 
-function formatAddress(address: HttpTypes.StoreCartAddress) {
+type ShippingOptionWithDetails = HttpTypes.StoreCartShippingOption & {
+  service_zone?: {
+    fulfillment_set?: {
+      type?: string | null
+      location?: {
+        address?: HttpTypes.StoreCartAddress | null
+      } | null
+    } | null
+  } | null
+}
+
+function formatAddress(address?: HttpTypes.StoreCartAddress | null) {
   if (!address) {
     return ""
   }
@@ -80,6 +92,10 @@ const Shipping: React.FC<ShippingProps> = ({
   )
 
   const hasPickupOptions = !!_pickupMethods?.length
+  const allShippingMethods = [
+    ...(_shippingMethods ?? []),
+    ...(_pickupMethods ?? []),
+  ]
 
   useEffect(() => {
     setIsLoadingPrices(true)
@@ -112,6 +128,22 @@ const Shipping: React.FC<ShippingProps> = ({
   }
 
   const handleSubmit = () => {
+    const selectedShippingMethod = allShippingMethods.find(
+      (method) => method.id === shippingMethodId
+    )
+    const selectedShippingAmount =
+      selectedShippingMethod?.price_type === "calculated"
+        ? calculatedPricesMap[selectedShippingMethod.id]
+        : selectedShippingMethod?.amount
+
+    trackEcommerceEvent(
+      "add_shipping_info",
+      buildCartEcommercePayload(cart, {
+        shipping: selectedShippingAmount,
+        shipping_tier: selectedShippingMethod?.name,
+      })
+    )
+
     router.push(pathname + "?step=payment", { scroll: false })
   }
 

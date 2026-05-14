@@ -1,6 +1,6 @@
 import { listProductsWithSort } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
-import { buildProductListAnalyticsItems } from "@lib/util/ga4"
+import { buildProductListEcommercePayload } from "@lib/analytics"
 import AnalyticsEvent from "@modules/analytics/components/event"
 import SwhProductsPage from "@modules/common/components/swh/SwhProductsPage"
 import ProductPreview from "@modules/products/components/product-preview"
@@ -74,13 +74,10 @@ export default async function PaginatedProducts({
     <>
       <AnalyticsEvent
         eventName="view_item_list"
-        params={{
-          item_list_name: listName,
-          items: buildProductListAnalyticsItems({
-            listName,
-            products,
-          }),
-        }}
+        ecommerce={buildProductListEcommercePayload({
+          listName,
+          products,
+        })}
       />
       {/* <ul
         className="grid grid-cols-2 w-full small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8"

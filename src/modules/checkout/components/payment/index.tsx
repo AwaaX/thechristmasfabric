@@ -1,6 +1,7 @@
 "use client"
 
 import { RadioGroup } from "@headlessui/react"
+import { buildCartEcommercePayload, trackEcommerceEvent } from "@lib/analytics"
 import { isStripeLike, paymentInfoMap } from "@lib/constants"
 import { initiatePaymentSession } from "@lib/data/cart"
 import { CheckCircleSolid, CreditCard } from "@medusajs/icons"
@@ -87,6 +88,17 @@ const Payment = ({
       }
 
       if (!shouldInputCard) {
+        const paymentType = paidByGiftcard
+          ? "gift_card"
+          : paymentInfoMap[selectedPaymentMethod]?.title || selectedPaymentMethod
+
+        trackEcommerceEvent(
+          "add_payment_info",
+          buildCartEcommercePayload(cart, {
+            payment_type: paymentType,
+          })
+        )
+
         return router.push(
           pathname + "?" + createQueryString("step", "review"),
           {

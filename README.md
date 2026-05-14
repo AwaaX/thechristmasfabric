@@ -110,6 +110,17 @@ NEXT_PUBLIC_STRIPE_KEY=<your-stripe-public-key>
 
 You'll also need to setup the integrations in your Medusa server. See the [Medusa documentation](https://docs.medusajs.com) for more information on how to configure [Stripe](https://docs.medusajs.com/resources/commerce-modules/payment/payment-provider/stripe#main).
 
+# Analytics
+
+This storefront sends ecommerce events from Next.js to a Web Google Tag Manager container.
+Configure your Web GTM container to forward those events to your Stape server-side GTM endpoint, and let the server container fan them out to GA4, Meta CAPI, Google Ads, and other destinations.
+
+Add your Web GTM container ID to `.env.local`:
+
+```shell
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+```
+
 # Resources
 
 ## Learn more about Medusa

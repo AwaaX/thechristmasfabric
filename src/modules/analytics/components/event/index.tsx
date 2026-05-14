@@ -2,17 +2,21 @@
 
 import { useEffect, useRef } from "react"
 
-import { trackGAEvent } from "@lib/util/ga4-client"
+import {
+  type AnalyticsEcommercePayload,
+  type EcommerceEventName,
+  trackEcommerceEvent,
+} from "@lib/analytics"
 
 type AnalyticsEventProps = {
-  eventName: string
-  params: Record<string, unknown>
+  eventName: EcommerceEventName
+  ecommerce: AnalyticsEcommercePayload
   storageKey?: string
 }
 
 export default function AnalyticsEvent({
   eventName,
-  params,
+  ecommerce,
   storageKey,
 }: AnalyticsEventProps) {
   const hasFiredRef = useRef(false)
@@ -27,14 +31,14 @@ export default function AnalyticsEvent({
       return
     }
 
-    trackGAEvent(eventName, params)
+    trackEcommerceEvent(eventName, ecommerce)
 
     if (storageKey) {
       window.sessionStorage.setItem(storageKey, "1")
     }
 
     hasFiredRef.current = true
-  }, [eventName, params, storageKey])
+  }, [ecommerce, eventName, storageKey])
 
   return null
 }

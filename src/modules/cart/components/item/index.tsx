@@ -1,5 +1,10 @@
 "use client"
 
+import {
+  buildLineItemAnalyticsItem,
+  getAnalyticsValue,
+  trackEcommerceEvent,
+} from "@lib/analytics"
 import { Table, Text, clx } from "@medusajs/ui"
 import { updateLineItem } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
@@ -25,19 +30,39 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
   const [error, setError] = useState<string | null>(null)
 
   const changeQuantity = async (quantity: number) => {
+    const quantityDelta = quantity - item.quantity
+
+    if (quantityDelta === 0) {
+      return
+    }
+
     setError(null)
     setUpdating(true)
 
-    await updateLineItem({
-      lineId: item.id,
-      quantity,
-    })
-      .catch((err) => {
-        setError(err.message)
+    try {
+      await updateLineItem({
+        lineId: item.id,
+        quantity,
       })
-      .finally(() => {
-        setUpdating(false)
+
+      const analyticsItem = buildLineItemAnalyticsItem({
+        item,
+        quantity: Math.abs(quantityDelta),
       })
+
+      trackEcommerceEvent(
+        quantityDelta > 0 ? "add_to_cart" : "remove_from_cart",
+        {
+          currency: currencyCode?.toUpperCase(),
+          value: getAnalyticsValue([analyticsItem]),
+          items: [analyticsItem],
+        }
+      )
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setUpdating(false)
+    }
   }
 
   // TODO: Update this to grab the actual max inventory
@@ -75,7 +100,12 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
       {type === "full" && (
         <Table.Cell>
           <div className="flex gap-2 items-center w-28">
-            <DeleteButton id={item.id} data-testid="product-delete-button" />
+            <DeleteButton
+              id={item.id}
+              item={item}
+              currencyCode={currencyCode}
+              data-testid="product-delete-button"
+            />
             <CartItemSelect
               value={item.quantity}
               onChange={(value) => changeQuantity(parseInt(value.target.value))}

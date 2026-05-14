@@ -1,6 +1,6 @@
 import { getLocale } from "@lib/data/locale-actions"
 import { getBaseURL } from "@lib/util/env"
-import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleTagManager } from "@next/third-parties/google"
 import { Metadata } from "next"
 import { Jost } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
@@ -28,7 +28,7 @@ const jsonLd = {
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID
   const locale = await getLocale()
 
   return (
@@ -117,8 +117,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           `}
         </Script>
         <SpeedInsights />
+        {/* Next.js pushes ecommerce events to the browser GTM dataLayer.
+            Configure Web GTM to forward them to your Stape server-side GTM endpoint. */}
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
       </body>
-      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }

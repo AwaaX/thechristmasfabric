@@ -1,14 +1,26 @@
+"use client"
+
+import {
+  buildLineItemAnalyticsItem,
+  getAnalyticsValue,
+  trackEcommerceEvent,
+} from "@lib/analytics"
 import { deleteLineItem } from "@lib/data/cart"
+import { HttpTypes } from "@medusajs/types"
 import { Spinner, Trash } from "@medusajs/icons"
 import { clx } from "@medusajs/ui"
 import { useState } from "react"
 
 const DeleteButton = ({
   id,
+  item,
+  currencyCode,
   children,
   className,
 }: {
   id: string
+  item?: HttpTypes.StoreCartLineItem
+  currencyCode?: string
   children?: React.ReactNode
   className?: string
 }) => {
@@ -16,9 +28,24 @@ const DeleteButton = ({
 
   const handleDelete = async (id: string) => {
     setIsDeleting(true)
-    await deleteLineItem(id).catch((err) => {
+
+    try {
+      await deleteLineItem(id)
+
+      if (item) {
+        const analyticsItem = buildLineItemAnalyticsItem({
+          item,
+        })
+
+        trackEcommerceEvent("remove_from_cart", {
+          currency: currencyCode?.toUpperCase(),
+          value: getAnalyticsValue([analyticsItem]),
+          items: [analyticsItem],
+        })
+      }
+    } catch {
       setIsDeleting(false)
-    })
+    }
   }
 
   return (

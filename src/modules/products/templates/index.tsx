@@ -1,5 +1,9 @@
 import React, { Suspense } from "react"
 
+import {
+  buildProductAnalyticsItem,
+  getAnalyticsValue,
+} from "@lib/analytics"
 import AnalyticsEvent from "@modules/analytics/components/event"
 import ImageGallery from "@modules/products/components/image-gallery"
 import ProductActions from "@modules/products/components/product-actions"
@@ -10,8 +14,6 @@ import ProductInfo from "@modules/products/templates/product-info"
 import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
 import { HttpTypes } from "@medusajs/types"
-
-import { buildProductAnalyticsItem } from "@lib/util/ga4"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import ProductReviews from "../components/product-reviews"
 import SwhProductDetails from "@modules/common/components/swh/SwhProductDetails"
@@ -44,9 +46,9 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
     <>
       <AnalyticsEvent
         eventName="view_item"
-        params={{
+        ecommerce={{
           currency: region.currency_code?.toUpperCase(),
-          value: productAnalyticsItem.price,
+          value: getAnalyticsValue([productAnalyticsItem]),
           items: [productAnalyticsItem],
         }}
       />
