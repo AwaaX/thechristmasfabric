@@ -40,6 +40,34 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         />
 
         <Script
+          id="goadopt-fetch-proxy"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Intercept XMLHttpRequest
+              const originalOpen = XMLHttpRequest.prototype.open;
+              XMLHttpRequest.prototype.open = function(method, url, ...args) {
+                if (typeof url === 'string' && url.includes('disclaimer-api.goadopt.io')) {
+                  url = url.replace('https://disclaimer-api.goadopt.io/api/', '/api/goadopt-proxy?path=');
+                }
+                return originalOpen.call(this, method, url, ...args);
+              };
+
+              // Intercept fetch
+              const originalFetch = window.fetch;
+              window.fetch = function(...args) {
+                let url = args[0];
+                if (typeof url === 'string' && url.includes('disclaimer-api.goadopt.io')) {
+                  url = url.replace('https://disclaimer-api.goadopt.io/api/', '/api/goadopt-proxy?path=');
+                  args[0] = url;
+                }
+                return originalFetch.apply(this, args);
+              };
+            `,
+          }}
+        />
+
+        <Script
           src="//tag.goadopt.io/injector.js?website_code=6d183e5e-44e9-4089-8a91-c0a4ff2d853a"
           strategy="beforeInteractive"
           className="adopt-injector"
