@@ -5,7 +5,7 @@ export const localeByCountryCode = locales.reduce<Record<string, string>>(
     const [, region] = locale.split("-")
 
     if (region) {
-      acc[region] = locale
+      acc[region.toLowerCase()] = locale
     }
 
     return acc

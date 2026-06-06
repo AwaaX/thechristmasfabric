@@ -57,7 +57,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     const alternates = await buildHreflangAlternates(
       async (locale, countryCode) => {
         const localizedHandle =
-          locale === "en-gb"
+          locale === "en-GB"
             ? currentHandle
             : await getLocalizedCategoryHandle({
                 currentHandle,

@@ -431,7 +431,7 @@ export default function ProductActions({
             {product.subtitle && parse(product.subtitle)}
             {/* {localizedProduct.shortDescription} */}
             {/* {parse(localizedProduct?.subTitle)} */}
-            {/* {parse(product.metadata?.["en-us_short_description"] as string)} */}
+            {/* {parse(product.metadata?.["en-US_short_description"] as string)} */}
             {/* <ShowMoreText
               lines={3}
               more={"showmore"}
@@ -441,7 +441,7 @@ export default function ProductActions({
               expanded={false}
               truncatedEndingComponent={" ... "}
             >
-              {parse(product.metadata?.["en-us_short_description"] as string)}
+              {parse(product.metadata?.["en-US_short_description"] as string)}
             </ShowMoreText> */}
             {/* A beautiful set of red, grey and black checked Christmas pajamas for
             the whole family, couples, kids and babies. You will find on this
