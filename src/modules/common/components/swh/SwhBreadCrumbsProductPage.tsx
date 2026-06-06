@@ -1,8 +1,10 @@
 import React from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
+import { useTranslations } from "next-intl"
 
 const SwhBreadCrumbsProductPage = ({ title, path, params, localizedTitle }) => {
+  const t = useTranslations("Common.Breadcrumbs")
   const path_title = path?.replace(/-/g, " ")
   const formatted_title = params?.category
     ? decodeURIComponent(params.category).replace(/-/g, " ")
@@ -15,9 +17,9 @@ const SwhBreadCrumbsProductPage = ({ title, path, params, localizedTitle }) => {
       <div className="breadcrumb-main  overflow-hidden">
         <div className="container  relative">
           <div className="link flex items-center justify-center gap-2 py-[7px] flex-wrap">
-            <LocalizedClientLink href={"/"}>Home</LocalizedClientLink>
+            <LocalizedClientLink href={"/"}>{t("home")}</LocalizedClientLink>
             <Icon.CaretRightIcon size={14} className="text-secondary2" />
-            <LocalizedClientLink href={"/"}>Products</LocalizedClientLink>
+            <LocalizedClientLink href={"/"}>{t("products")}</LocalizedClientLink>
             {path && (
               <>
                 <Icon.CaretRightIcon size={14} className="text-secondary2" />

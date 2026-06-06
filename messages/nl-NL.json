@@ -28,6 +28,10 @@
       "MobileMenu": {
         "menu": "Menu"
       }
+    },
+    "LanguageSelect": {
+      "label": "Taal:",
+      "default": "Standaard"
     }
   },
   "HomePage": {
@@ -50,7 +54,10 @@
     },
     "Reviews": {
       "text1": "Ze delen liefde met mooie pyjama's",
-      "text2": "Recensies van onze geliefde community"
+      "text2": "Recensies van onze geliefde community",
+      "fromShop": "van {shop}",
+      "customerReviews": "Klantbeoordelingen",
+      "fromAddress": "Uit {address}"
     },
     "Services": {
       "card1": {
@@ -222,7 +229,12 @@
     "Price": {
       "from": "Vanaf",
       "original": "Origineel:"
-    }
+    },
+    "Breadcrumbs": {
+      "home": "Home",
+      "products": "Producten"
+    },
+    "thumbnailAlt": "Miniatuur"
   },
   "Account": {
     "Login": {
@@ -303,6 +315,58 @@
       "oldPassword": "Oud wachtwoord",
       "newPassword": "Nieuw wachtwoord",
       "confirmPassword": "Bevestig wachtwoord"
+    },
+    "AddressForm": {
+      "newAddress": "Nieuw adres",
+      "addAddress": "Adres toevoegen",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "company": "Bedrijf",
+      "address": "Adres",
+      "apartment": "Appartement, suite, enz.",
+      "postalCode": "Postcode",
+      "city": "Stad",
+      "provinceState": "Provincie / staat",
+      "country": "Land",
+      "phone": "Telefoon",
+      "cancel": "Annuleren",
+      "save": "Opslaan",
+      "edit": "Bewerken",
+      "remove": "Verwijderen",
+      "editAddress": "Adres bewerken"
+    },
+    "BillingAddress": {
+      "billingAddress": "Factuuradres",
+      "noBillingAddress": "Geen factuuradres",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "company": "Bedrijf",
+      "phone": "Telefoon",
+      "address": "Adres",
+      "apartment": "Appartement, suite, enz.",
+      "postalCode": "Postcode",
+      "city": "Stad",
+      "province": "Provincie"
+    },
+    "ProfileName": {
+      "name": "Naam",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam"
+    },
+    "ProfileEmail": {
+      "email": "E-mail"
+    },
+    "ProfilePhone": {
+      "phone": "Telefoon"
+    },
+    "TransferRequest": {
+      "heading": "Bestellingsoverdrachten",
+      "promptLine1": "Kun je de bestelling die je zoekt niet vinden?",
+      "promptLine2": "Koppel een bestelling aan je account.",
+      "orderIdPlaceholder": "Bestel-ID",
+      "requestTransfer": "Overdracht aanvragen",
+      "successRequested": "Overdracht voor bestelling {id} aangevraagd",
+      "successEmailSent": "E-mail met overdrachtsverzoek verzonden naar {email}"
     }
   },
   "Cart": {
@@ -331,7 +395,25 @@
       "goToCart": "Ga naar winkelwagen",
       "empty": "Je boodschappentas is leeg.",
       "goToProductsSrOnly": "Ga naar alle producten",
-      "explore": "Producten bekijken"
+      "explore": "Producten bekijken",
+      "shoppingBasket": "Winkelmandje",
+      "note": "Notitie",
+      "coupon": "Coupon",
+      "subtotalExclTax": "Subtotaal (excl. btw)",
+      "taxes": "Belastingen",
+      "totalInclTax": "Totaal (incl. btw)",
+      "checkout": "Afrekenen",
+      "viewBasket": "Mandje bekijken",
+      "notePlaceholder": "Voeg speciale instructies voor je bestelling toe...",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "addCouponCode": "Een couponcode toevoegen",
+      "enterCode": "Voer code in",
+      "discountCode": "Kortingscode",
+      "apply": "Toepassen",
+      "emptyHeading": "Je mandje is momenteel leeg",
+      "emptyDescription": "Je kunt alle beschikbare producten bekijken en er enkele in de winkel kopen.",
+      "returnToShop": "Terug naar de winkel"
     },
     "Totals": {
       "subtotalExcluding": "Subtotaal (excl. verzending en belastingen)",
@@ -382,6 +464,19 @@
       "add": "Toevoegen aan verlanglijst",
       "remove": "Verwijderen van verlanglijst",
       "unavailable": "Selecteer een variant om op te slaan"
+    },
+    "Toggle": {
+      "add": "Toevoegen aan verlanglijst",
+      "remove": "Verwijderen uit verlanglijst",
+      "signIn": "Log in om op te slaan"
+    },
+    "Toast": {
+      "savedTitle": "Opgeslagen",
+      "savedDescription": "Artikel toegevoegd aan je verlanglijst.",
+      "removedTitle": "Verwijderd",
+      "removedDescription": "Artikel verwijderd uit je verlanglijst.",
+      "errorTitle": "Fout",
+      "errorDescription": "Er is een fout opgetreden bij het bijwerken van je verlanglijst."
     }
   },
   "Order": {
@@ -421,7 +516,9 @@
       "created_at": "Nieuwste items",
       "price_asc": "Prijs: laag naar hoog",
       "price_desc": "Prijs: hoog naar laag"
-    }
+    },
+    "showingResults": "{from}–{to} van {total} resultaten worden weergegeven",
+    "filters": "Filters"
   },
   "Product": {
     "Actions": {
@@ -468,7 +565,20 @@
       "title": "Titel",
       "content": "Inhoud",
       "rating": "Beoordeling",
-      "submit": "Verzenden"
+      "submit": "Verzenden",
+      "heading": "Productbeoordelingen",
+      "description": "Ontdek wat onze klanten over dit product zeggen.",
+      "count": "{count} beoordelingen",
+      "loadMore": "Meer beoordelingen laden"
+    },
+    "Related": {
+      "heading": "Gerelateerde producten",
+      "description": "Misschien wil je deze producten ook bekijken."
+    },
+    "Onboarding": {
+      "success": "Je demoproduct is succesvol aangemaakt! 🎉",
+      "description": "Je kunt je winkel nu verder instellen in de admin.",
+      "continue": "Doorgaan met instellen in admin"
     }
   },
   "Tracking": {
@@ -518,12 +628,34 @@
   },
   "Checkout": {
     "Payment": {
-      "selectMethod": "Selecteer een betaalmethode"
+      "selectMethod": "Selecteer een betaalmethode",
+      "title": "Betaling",
+      "edit": "Bewerken",
+      "method": "Betaalmethode",
+      "giftCard": "Cadeaukaart",
+      "enterCardDetails": "Kaartgegevens invoeren",
+      "continueToReview": "Doorgaan naar controle",
+      "details": "Betalingsgegevens",
+      "anotherStep": "Er verschijnt nog een stap"
     },
     "Layout": {
       "backToCart": "Terug naar winkelwagen",
       "back": "Terug",
       "store": "The Christmas Fabric"
+    },
+    "ShippingAddress": {
+      "savedAddressesPrompt": "Hoi {name}, wil je een van je opgeslagen adressen gebruiken?",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "address": "Adres",
+      "company": "Bedrijf",
+      "postalCode": "Postcode",
+      "city": "Stad",
+      "stateProvince": "Staat / Provincie",
+      "billingSameAsShipping": "Factuuradres gelijk aan verzendadres",
+      "email": "E-mail",
+      "emailTitle": "Voer een geldig e-mailadres in.",
+      "phone": "Telefoon"
     }
   },
   "StaticPages": {

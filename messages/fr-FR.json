@@ -28,6 +28,10 @@
       "MobileMenu": {
         "menu": "Menu"
       }
+    },
+    "LanguageSelect": {
+      "label": "Langue :",
+      "default": "Par défaut"
     }
   },
   "HomePage": {
@@ -50,7 +54,10 @@
     },
     "Reviews": {
       "text1": "Ils partagent l'amour avec de magnifiques pyjamas",
-      "text2": "Avis de notre chère communauté"
+      "text2": "Avis de notre chère communauté",
+      "fromShop": "de {shop}",
+      "customerReviews": "Avis clients",
+      "fromAddress": "De {address}"
     },
     "Services": {
       "card1": {
@@ -222,7 +229,12 @@
     "Price": {
       "from": "À partir de",
       "original": "Original :"
-    }
+    },
+    "Breadcrumbs": {
+      "home": "Accueil",
+      "products": "Produits"
+    },
+    "thumbnailAlt": "Vignette"
   },
   "Account": {
     "Login": {
@@ -303,6 +315,58 @@
       "oldPassword": "Ancien mot de passe",
       "newPassword": "Nouveau mot de passe",
       "confirmPassword": "Confirmer le mot de passe"
+    },
+    "AddressForm": {
+      "newAddress": "Nouvelle adresse",
+      "addAddress": "Ajouter une adresse",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "company": "Entreprise",
+      "address": "Adresse",
+      "apartment": "Appartement, suite, etc.",
+      "postalCode": "Code postal",
+      "city": "Ville",
+      "provinceState": "Province / État",
+      "country": "Pays",
+      "phone": "Téléphone",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "edit": "Modifier",
+      "remove": "Supprimer",
+      "editAddress": "Modifier l'adresse"
+    },
+    "BillingAddress": {
+      "billingAddress": "Adresse de facturation",
+      "noBillingAddress": "Aucune adresse de facturation",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "company": "Entreprise",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "apartment": "Appartement, suite, etc.",
+      "postalCode": "Code postal",
+      "city": "Ville",
+      "province": "Province"
+    },
+    "ProfileName": {
+      "name": "Nom",
+      "firstName": "Prénom",
+      "lastName": "Nom"
+    },
+    "ProfileEmail": {
+      "email": "E-mail"
+    },
+    "ProfilePhone": {
+      "phone": "Téléphone"
+    },
+    "TransferRequest": {
+      "heading": "Transferts de commande",
+      "promptLine1": "Vous ne trouvez pas la commande recherchée ?",
+      "promptLine2": "Associez une commande à votre compte.",
+      "orderIdPlaceholder": "ID de commande",
+      "requestTransfer": "Demander le transfert",
+      "successRequested": "Transfert demandé pour la commande {id}",
+      "successEmailSent": "E-mail de demande de transfert envoyé à {email}"
     }
   },
   "Cart": {
@@ -331,7 +395,25 @@
       "goToCart": "Voir le panier",
       "empty": "Votre sac est vide.",
       "goToProductsSrOnly": "Aller à la page de tous les produits",
-      "explore": "Découvrir les produits"
+      "explore": "Découvrir les produits",
+      "shoppingBasket": "Panier",
+      "note": "Note",
+      "coupon": "Coupon",
+      "subtotalExclTax": "Sous-total (hors taxes)",
+      "taxes": "Taxes",
+      "totalInclTax": "Total (taxes incluses)",
+      "checkout": "Passer à la caisse",
+      "viewBasket": "Voir le panier",
+      "notePlaceholder": "Ajoutez des instructions spéciales pour votre commande...",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "addCouponCode": "Ajouter un code promo",
+      "enterCode": "Saisir le code",
+      "discountCode": "Code de réduction",
+      "apply": "Appliquer",
+      "emptyHeading": "Votre panier est actuellement vide",
+      "emptyDescription": "Vous pouvez consulter tous les produits disponibles et en acheter dans la boutique.",
+      "returnToShop": "Retourner à la boutique"
     },
     "Totals": {
       "subtotalExcluding": "Sous-total (hors livraison et taxes)",
@@ -382,6 +464,19 @@
       "add": "Ajouter à la liste de souhaits",
       "remove": "Retirer de la liste de souhaits",
       "unavailable": "Sélectionnez une variante à enregistrer"
+    },
+    "Toggle": {
+      "add": "Ajouter à la liste de souhaits",
+      "remove": "Retirer de la liste de souhaits",
+      "signIn": "Connectez-vous pour enregistrer"
+    },
+    "Toast": {
+      "savedTitle": "Enregistré",
+      "savedDescription": "Article ajouté à votre liste de souhaits.",
+      "removedTitle": "Retiré",
+      "removedDescription": "Article retiré de votre liste de souhaits.",
+      "errorTitle": "Erreur",
+      "errorDescription": "Une erreur s'est produite lors de la mise à jour de votre liste de souhaits."
     }
   },
   "Order": {
@@ -421,7 +516,9 @@
       "created_at": "Nouveautés",
       "price_asc": "Prix : du plus bas au plus élevé",
       "price_desc": "Prix : du plus élevé au plus bas"
-    }
+    },
+    "showingResults": "Affichage de {from} à {to} sur {total} résultats",
+    "filters": "Filtres"
   },
   "Product": {
     "Actions": {
@@ -468,7 +565,20 @@
       "title": "Titre",
       "content": "Contenu",
       "rating": "Note",
-      "submit": "Envoyer"
+      "submit": "Envoyer",
+      "heading": "Avis sur le produit",
+      "description": "Découvrez ce que nos clients disent de ce produit.",
+      "count": "{count} avis",
+      "loadMore": "Charger plus d'avis"
+    },
+    "Related": {
+      "heading": "Produits associés",
+      "description": "Vous pourriez aussi vouloir découvrir ces produits."
+    },
+    "Onboarding": {
+      "success": "Votre produit de démonstration a été créé avec succès ! 🎉",
+      "description": "Vous pouvez maintenant continuer à configurer votre boutique dans l'administration.",
+      "continue": "Continuer la configuration dans l'admin"
     }
   },
   "Tracking": {
@@ -518,12 +628,34 @@
   },
   "Checkout": {
     "Payment": {
-      "selectMethod": "Sélectionnez un mode de paiement"
+      "selectMethod": "Sélectionnez un mode de paiement",
+      "title": "Paiement",
+      "edit": "Modifier",
+      "method": "Mode de paiement",
+      "giftCard": "Carte cadeau",
+      "enterCardDetails": "Saisir les détails de la carte",
+      "continueToReview": "Continuer vers la vérification",
+      "details": "Détails du paiement",
+      "anotherStep": "Une autre étape apparaîtra"
     },
     "Layout": {
       "backToCart": "Retour au panier",
       "back": "Retour",
       "store": "The Christmas Fabric"
+    },
+    "ShippingAddress": {
+      "savedAddressesPrompt": "Bonjour {name}, souhaitez-vous utiliser l'une de vos adresses enregistrées ?",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "address": "Adresse",
+      "company": "Entreprise",
+      "postalCode": "Code postal",
+      "city": "Ville",
+      "stateProvince": "État / Région",
+      "billingSameAsShipping": "Adresse de facturation identique à l'adresse de livraison",
+      "email": "E-mail",
+      "emailTitle": "Saisissez une adresse e-mail valide.",
+      "phone": "Téléphone"
     }
   },
   "StaticPages": {

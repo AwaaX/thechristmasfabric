@@ -4,6 +4,7 @@ import { getProductReviews } from "../../../../lib/data/products"
 import { Star, StarSolid } from "@medusajs/icons"
 import { StoreProductReview } from "../../../../types/global"
 import { Button } from "@medusajs/ui"
+import { useTranslations } from "next-intl"
 import { useState, useEffect } from "react"
 import ProductReviewsForm from "./form"
 type ProductReviewsProps = {
@@ -13,6 +14,7 @@ type ProductReviewsProps = {
 export default function ProductReviews({
   productId,
 }: ProductReviewsProps) {
+  const t = useTranslations("Product.Reviews")
   const [page, setPage] = useState(1)
   const defaultLimit = 10
   const [reviews, setReviews] = useState<StoreProductReview[]>([])
@@ -68,10 +70,10 @@ return (
   <div className="product-page-constraint">
     <div className="flex flex-col items-center text-center mb-16">
       <span className="text-base-regular text-gray-600 mb-6">
-        Product Reviews
+        {t("heading")}
       </span>
       <p className="text-2xl-regular text-ui-fg-base max-w-lg">
-        See what our customers are saying about this product.
+        {t("description")}
       </p>
       <div className="flex gap-x-2 justify-center items-center">
         <div className="flex gap-x-2">
@@ -86,7 +88,7 @@ return (
           ))}
         </div>
         <span className="text-base-regular text-gray-600">
-          {count} reviews
+          {t("count", { count })}
         </span>
       </div>
     </div>
@@ -100,7 +102,7 @@ return (
     {hasMoreReviews && (
       <div className="flex justify-center mt-8">
         <Button variant="secondary" onClick={() => setPage(page + 1)}>
-          Load more reviews
+          {t("loadMore")}
         </Button>
       </div>
     )}

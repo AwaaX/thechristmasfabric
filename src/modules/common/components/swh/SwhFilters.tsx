@@ -1,5 +1,6 @@
 import React from "react"
 import Slider from "rc-slider"
+import { getTranslations } from "next-intl/server"
 import { notFound } from "next/navigation"
 import SwhCategoryFilter from "@modules/layout/components/swh-category-filter"
 import { listCategories } from "@lib/data/categories"
@@ -27,9 +28,11 @@ const SwhFilters = async ({ params }) => {
     notFound()
   }
 
+  const t = await getTranslations("Store")
+
   return (
     <div className="sidebar lg:w-1/4 md:w-1/3 w-full md:pr-12">
-      <div className="text-[34px] font-[400]">Filters</div>
+      <div className="text-[34px] font-[400]">{t("filters")}</div>
 
       <SwhCategoryFilter categories={product_categories} params={params} />
 

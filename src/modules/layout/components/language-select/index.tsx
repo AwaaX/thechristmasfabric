@@ -8,6 +8,7 @@ import {
   Transition,
 } from "@headlessui/react"
 import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { useTranslations } from "next-intl"
 import { Fragment, useEffect, useMemo, useState, useTransition } from "react"
 import ReactCountryFlag from "react-country-flag"
 
@@ -73,6 +74,7 @@ const LanguageSelect = ({
   locales,
   currentLocale,
 }: LanguageSelectProps) => {
+  const t = useTranslations("NavBar.LanguageSelect")
   const [current, setCurrent] = useState<LanguageOption | undefined>(undefined)
   const [isPending, startTransition] = useTransition()
   const router = usePageLoaderRouter()
@@ -80,6 +82,11 @@ const LanguageSelect = ({
   const { state, close } = toggleState
 
   const options = useMemo(() => {
+    const defaultOption: LanguageOption = {
+      ...DEFAULT_OPTION,
+      name: t("default"),
+      localizedName: t("default"),
+    }
     const localeOptions = locales.map((locale) => ({
       code: locale.code,
       name: locale.name,
@@ -90,8 +97,8 @@ const LanguageSelect = ({
       ),
       countryCode: getCountryCodeFromLocale(locale.code),
     }))
-    return [DEFAULT_OPTION, ...localeOptions]
-  }, [locales, currentLocale])
+    return [defaultOption, ...localeOptions]
+  }, [locales, currentLocale, t])
 
   useEffect(() => {
     if (currentLocale) {
@@ -128,7 +135,7 @@ const LanguageSelect = ({
       >
         <ListboxButton className="py-1 w-full">
           <div className="txt-compact-small flex items-start gap-x-2">
-            <span>Language:</span>
+            <span>{t("label")}</span>
             {current && (
               <span className="txt-compact-small flex items-center gap-x-2">
                 {current.countryCode && (

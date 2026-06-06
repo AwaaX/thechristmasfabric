@@ -28,6 +28,10 @@
       "MobileMenu": {
         "menu": "Meny"
       }
+    },
+    "LanguageSelect": {
+      "label": "Språk:",
+      "default": "Standard"
     }
   },
   "HomePage": {
@@ -50,7 +54,10 @@
     },
     "Reviews": {
       "text1": "De delar kärlek med vackra pyjamas",
-      "text2": "Recensioner från vår kära community"
+      "text2": "Recensioner från vår kära community",
+      "fromShop": "från {shop}",
+      "customerReviews": "Kundrecensioner",
+      "fromAddress": "Från {address}"
     },
     "Services": {
       "card1": {
@@ -222,7 +229,12 @@
     "Price": {
       "from": "Från",
       "original": "Ordinarie:"
-    }
+    },
+    "Breadcrumbs": {
+      "home": "Hem",
+      "products": "Produkter"
+    },
+    "thumbnailAlt": "Miniatyr"
   },
   "Account": {
     "Login": {
@@ -303,6 +315,58 @@
       "oldPassword": "Gammalt lösenord",
       "newPassword": "Nytt lösenord",
       "confirmPassword": "Bekräfta lösenord"
+    },
+    "AddressForm": {
+      "newAddress": "Ny adress",
+      "addAddress": "Lägg till adress",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "company": "Företag",
+      "address": "Adress",
+      "apartment": "Lägenhet, svit osv.",
+      "postalCode": "Postnummer",
+      "city": "Stad",
+      "provinceState": "Provins / delstat",
+      "country": "Land",
+      "phone": "Telefon",
+      "cancel": "Avbryt",
+      "save": "Spara",
+      "edit": "Redigera",
+      "remove": "Ta bort",
+      "editAddress": "Redigera adress"
+    },
+    "BillingAddress": {
+      "billingAddress": "Faktureringsadress",
+      "noBillingAddress": "Ingen faktureringsadress",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "company": "Företag",
+      "phone": "Telefon",
+      "address": "Adress",
+      "apartment": "Lägenhet, svit osv.",
+      "postalCode": "Postnummer",
+      "city": "Stad",
+      "province": "Region"
+    },
+    "ProfileName": {
+      "name": "Namn",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn"
+    },
+    "ProfileEmail": {
+      "email": "E-post"
+    },
+    "ProfilePhone": {
+      "phone": "Telefon"
+    },
+    "TransferRequest": {
+      "heading": "Orderöverföringar",
+      "promptLine1": "Hittar du inte ordern du letar efter?",
+      "promptLine2": "Koppla en order till ditt konto.",
+      "orderIdPlaceholder": "Order-ID",
+      "requestTransfer": "Begär överföring",
+      "successRequested": "Överföring begärd för order {id}",
+      "successEmailSent": "E-post med överföringsbegäran skickad till {email}"
     }
   },
   "Cart": {
@@ -331,7 +395,25 @@
       "goToCart": "Gå till varukorg",
       "empty": "Din shoppingpåse är tom.",
       "goToProductsSrOnly": "Gå till produktsidan",
-      "explore": "Utforska produkter"
+      "explore": "Utforska produkter",
+      "shoppingBasket": "Varukorg",
+      "note": "Anteckning",
+      "coupon": "Kupong",
+      "subtotalExclTax": "Delsumma (exkl. moms)",
+      "taxes": "Moms",
+      "totalInclTax": "Totalt (inkl. moms)",
+      "checkout": "Till kassan",
+      "viewBasket": "Visa varukorg",
+      "notePlaceholder": "Lägg till särskilda instruktioner för din beställning...",
+      "save": "Spara",
+      "cancel": "Avbryt",
+      "addCouponCode": "Lägg till en kupongkod",
+      "enterCode": "Ange kod",
+      "discountCode": "Rabattkod",
+      "apply": "Använd",
+      "emptyHeading": "Din varukorg är för närvarande tom",
+      "emptyDescription": "Du kan titta på alla tillgängliga produkter och köpa några i butiken.",
+      "returnToShop": "Tillbaka till butiken"
     },
     "Totals": {
       "subtotalExcluding": "Delsumma (exkl. frakt och skatter)",
@@ -382,6 +464,19 @@
       "add": "Lägg till i önskelistan",
       "remove": "Ta bort från önskelistan",
       "unavailable": "Välj en variant att spara"
+    },
+    "Toggle": {
+      "add": "Lägg till i önskelistan",
+      "remove": "Ta bort från önskelistan",
+      "signIn": "Logga in för att spara"
+    },
+    "Toast": {
+      "savedTitle": "Sparad",
+      "savedDescription": "Artikel tillagd i din önskelista.",
+      "removedTitle": "Borttagen",
+      "removedDescription": "Artikel borttagen från din önskelista.",
+      "errorTitle": "Fel",
+      "errorDescription": "Ett fel uppstod när din önskelista uppdaterades."
     }
   },
   "Order": {
@@ -421,7 +516,9 @@
       "created_at": "Senaste nyheter",
       "price_asc": "Pris: lågt till högt",
       "price_desc": "Pris: högt till lågt"
-    }
+    },
+    "showingResults": "Visar {from}–{to} av {total} resultat",
+    "filters": "Filter"
   },
   "Product": {
     "Actions": {
@@ -468,7 +565,20 @@
       "title": "Titel",
       "content": "Innehåll",
       "rating": "Betyg",
-      "submit": "Skicka"
+      "submit": "Skicka",
+      "heading": "Produktrecensioner",
+      "description": "Se vad våra kunder säger om den här produkten.",
+      "count": "{count} recensioner",
+      "loadMore": "Ladda fler recensioner"
+    },
+    "Related": {
+      "heading": "Relaterade produkter",
+      "description": "Du kanske också vill kolla in dessa produkter."
+    },
+    "Onboarding": {
+      "success": "Din demoprodukt har skapats! 🎉",
+      "description": "Du kan nu fortsätta att konfigurera din butik i adminpanelen.",
+      "continue": "Fortsätt konfigurationen i admin"
     }
   },
   "Tracking": {
@@ -518,12 +628,34 @@
   },
   "Checkout": {
     "Payment": {
-      "selectMethod": "Välj en betalningsmetod"
+      "selectMethod": "Välj en betalningsmetod",
+      "title": "Betalning",
+      "edit": "Redigera",
+      "method": "Betalningsmetod",
+      "giftCard": "Presentkort",
+      "enterCardDetails": "Ange kortuppgifter",
+      "continueToReview": "Fortsätt till granskning",
+      "details": "Betalningsuppgifter",
+      "anotherStep": "Ytterligare ett steg visas"
     },
     "Layout": {
       "backToCart": "Tillbaka till kundvagnen",
       "back": "Tillbaka",
       "store": "The Christmas Fabric"
+    },
+    "ShippingAddress": {
+      "savedAddressesPrompt": "Hej {name}, vill du använda en av dina sparade adresser?",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "address": "Adress",
+      "company": "Företag",
+      "postalCode": "Postnummer",
+      "city": "Stad",
+      "stateProvince": "Stat / Region",
+      "billingSameAsShipping": "Faktureringsadress samma som leveransadress",
+      "email": "E-post",
+      "emailTitle": "Ange en giltig e-postadress.",
+      "phone": "Telefon"
     }
   },
   "StaticPages": {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { TestimonialType } from 'types/global'
 import Rate from '@modules/common/components/swh/Rate'
@@ -11,12 +12,13 @@ interface TestimonialProps {
 }
 
 const TestimonialItem: React.FC<TestimonialProps> = ({ data, type }) => {
+    const t = useTranslations("HomePage.Reviews")
     return (
         <>
             {type === "style-one" ? (
                 <div className="testimonial-item style-one h-full">
                     <div className="testimonial-main bg-white p-8  h-full">
-                        <div className="text-button name mb-4">{data.name} <span className='christmas-font text-black'>from {data.shop}</span> </div>
+                        <div className="text-button name mb-4">{data.name} <span className='christmas-font text-black'>{t("fromShop", { shop: data.shop ?? "" })}</span> </div>
                         <Rate currentRate={data.star} size={18} />
                         <div className="desc mt-2 christmas-font">{data.description}</div>
                     </div>
@@ -27,7 +29,7 @@ const TestimonialItem: React.FC<TestimonialProps> = ({ data, type }) => {
                         <div className="testimonial-item style-four h-full">
                             <div className="testimonial-main h-full">
                                 <Rate currentRate={data.star} size={14} />
-                                <div className="text-button-uppercase text-secondary mt-4">Customer reviews</div>
+                                <div className="text-button-uppercase text-secondary mt-4">{t("customerReviews")}</div>
                                 <div className="heading4 normal-case desc font-normal mt-2">{data.description}</div>
                                 <div className="text-button name mt-4">{data.name}</div>
                                 <div className="caption2 text-secondary2 date">{data.date}</div>
@@ -39,11 +41,11 @@ const TestimonialItem: React.FC<TestimonialProps> = ({ data, type }) => {
                                 <div className="testimonial-item style-six h-full">
                                     <div className="testimonial-main h-full">
                                         <Rate currentRate={data.star} size={14} />
-                                        <div className="text-button-uppercase text-secondary mt-4">Customer reviews</div>
+                                        <div className="text-button-uppercase text-secondary mt-4">{t("customerReviews")}</div>
                                         <div className="heading4 normal-case desc font-normal mt-2">{data.description}</div>
                                         <div className="flex items-center gap-3 mt-4">
                                             <div className="text-button name">{data.name}</div>
-                                            <div className="caption1 date text-secondary2">From {data.address}</div>
+                                            <div className="caption1 date text-secondary2">{t("fromAddress", { address: data.address ?? "" })}</div>
                                         </div>
                                     </div>
                                 </div>

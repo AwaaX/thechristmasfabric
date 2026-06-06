@@ -3,6 +3,7 @@
 import { addWishlistItem, removeWishlistItem } from "@lib/data/wishlist"
 import { getWishlistItemIdMap } from "@lib/util/wishlist"
 import { Toaster, toast } from "@medusajs/ui"
+import { useTranslations } from "next-intl"
 import React, { createContext, useContext, useEffect, useState } from "react"
 import { StoreWishlist } from "types/global"
 
@@ -29,6 +30,7 @@ export const WishlistProvider = ({
   initialHasCustomer,
   initialWishlist,
 }: WishlistProviderProps) => {
+  const t = useTranslations("Wishlist.Toast")
   const [wishlistItemIdsByVariantId, setWishlistItemIdsByVariantId] = useState(
     () => getWishlistItemIdMap(initialWishlist)
   )
@@ -65,17 +67,15 @@ export const WishlistProvider = ({
 
       syncWishlist(wishlist)
 
-      toast.success("Saved", {
-        description: "Item added to your wishlist.",
+      toast.success(t("savedTitle"), {
+        description: t("savedDescription"),
       })
 
       return true
     } catch (error) {
-      toast.error("Error", {
+      toast.error(t("errorTitle"), {
         description:
-          error instanceof Error
-            ? error.message
-            : "An error occurred while updating your wishlist.",
+          error instanceof Error ? error.message : t("errorDescription"),
       })
 
       return false
@@ -106,17 +106,15 @@ export const WishlistProvider = ({
 
       syncWishlist(wishlist)
 
-      toast.success("Removed", {
-        description: "Item removed from your wishlist.",
+      toast.success(t("removedTitle"), {
+        description: t("removedDescription"),
       })
 
       return true
     } catch (error) {
-      toast.error("Error", {
+      toast.error(t("errorTitle"), {
         description:
-          error instanceof Error
-            ? error.message
-            : "An error occurred while updating your wishlist.",
+          error instanceof Error ? error.message : t("errorDescription"),
       })
 
       return false

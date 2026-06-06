@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Pagination } from "@modules/store/components/pagination"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import RefinementList from "@modules/store/components/refinement-list"
@@ -10,20 +11,7 @@ import AnimatedContainer from "./AnimatedContainer"
 import animation from "@lib/util/animation"
 // import { useSearchParams } from "next/navigation"
 
-const sortOptions = [
-  {
-    value: "created_at",
-    label: "Latest Arrivals",
-  },
-  {
-    value: "price_asc",
-    label: "Price: Low to High",
-  },
-  {
-    value: "price_desc",
-    label: "Price: High to Low",
-  },
-]
+const sortOptions = ["created_at", "price_asc", "price_desc"]
 
 const gridColsMap: Record<number, string> = {
   2: "lg:grid-cols-2",
@@ -40,6 +28,8 @@ const SwhProductsPage = ({
   totalProducts,
   productsPerPage,
 }) => {
+  const t = useTranslations("Store")
+  const tSort = useTranslations("Store.Sort")
   const [layoutCol, setLayoutCol] = useState<number | null>(4)
   const [layoutType, setLayoutType] = useState<string>("grid")
   const [isSortFilterOpen, setIsSortFilterOpen] = useState(false)
@@ -52,15 +42,18 @@ const SwhProductsPage = ({
   const FromProductNo = 12 * (page - 1)
   const ToProductNo = products.length + 12 * (page - 1)
 
-  const selectedOption = sortOptions.find((o) => o.value === sortBy)
-  const selectedValue = selectedOption ? selectedOption.label : null // or some default value
+  const selectedValue = sortOptions.includes(sortBy) ? tSort(sortBy) : null
 
   return (
     <>
       <div className="filter-heading flex items-center justify-between gap-5 flex-wrap">
         <div className="left flex has-line items-center flex-wrap gap-5">
           <div className="total-product text-secondary body1">
-            Showing {FromProductNo}–{ToProductNo} of {totalProducts} results
+            {t("showingResults", {
+              from: FromProductNo,
+              to: ToProductNo,
+              total: totalProducts,
+            })}
           </div>
         </div>
         <div className="right flex items-center gap-3">

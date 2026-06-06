@@ -28,6 +28,10 @@
       "MobileMenu": {
         "menu": "Menu"
       }
+    },
+    "LanguageSelect": {
+      "label": "Language:",
+      "default": "Default"
     }
   },
   "HomePage": {
@@ -50,7 +54,10 @@
     },
     "Reviews": {
       "text1": "They share love with beautiful pyjamas",
-      "text2": "Reviews from our dear community"
+      "text2": "Reviews from our dear community",
+      "fromShop": "from {shop}",
+      "customerReviews": "Customer reviews",
+      "fromAddress": "From {address}"
     },
     "Services": {
       "card1": {
@@ -222,7 +229,12 @@
     "Price": {
       "from": "From",
       "original": "Original:"
-    }
+    },
+    "Breadcrumbs": {
+      "home": "Home",
+      "products": "Products"
+    },
+    "thumbnailAlt": "Thumbnail"
   },
   "Account": {
     "Login": {
@@ -303,6 +315,58 @@
       "oldPassword": "Old password",
       "newPassword": "New password",
       "confirmPassword": "Confirm password"
+    },
+    "AddressForm": {
+      "newAddress": "New address",
+      "addAddress": "Add address",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company",
+      "address": "Address",
+      "apartment": "Apartment, suite, etc.",
+      "postalCode": "Postal code",
+      "city": "City",
+      "provinceState": "Province / State",
+      "country": "Country",
+      "phone": "Phone",
+      "cancel": "Cancel",
+      "save": "Save",
+      "edit": "Edit",
+      "remove": "Remove",
+      "editAddress": "Edit address"
+    },
+    "BillingAddress": {
+      "billingAddress": "Billing address",
+      "noBillingAddress": "No billing address",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company",
+      "phone": "Phone",
+      "address": "Address",
+      "apartment": "Apartment, suite, etc.",
+      "postalCode": "Postal code",
+      "city": "City",
+      "province": "Province"
+    },
+    "ProfileName": {
+      "name": "Name",
+      "firstName": "First name",
+      "lastName": "Last name"
+    },
+    "ProfileEmail": {
+      "email": "Email"
+    },
+    "ProfilePhone": {
+      "phone": "Phone"
+    },
+    "TransferRequest": {
+      "heading": "Order transfers",
+      "promptLine1": "Can't find the order you are looking for?",
+      "promptLine2": "Connect an order to your account.",
+      "orderIdPlaceholder": "Order ID",
+      "requestTransfer": "Request transfer",
+      "successRequested": "Transfer for order {id} requested",
+      "successEmailSent": "Transfer request email sent to {email}"
     }
   },
   "Cart": {
@@ -331,7 +395,25 @@
       "goToCart": "Go to cart",
       "empty": "Your shopping bag is empty.",
       "goToProductsSrOnly": "Go to all products page",
-      "explore": "Explore products"
+      "explore": "Explore products",
+      "shoppingBasket": "Shopping Basket",
+      "note": "Note",
+      "coupon": "Coupon",
+      "subtotalExclTax": "Subtotal (excl. tax)",
+      "taxes": "Taxes",
+      "totalInclTax": "Total (Incl. tax)",
+      "checkout": "Checkout",
+      "viewBasket": "View Basket",
+      "notePlaceholder": "Add special instructions for your order...",
+      "save": "Save",
+      "cancel": "Cancel",
+      "addCouponCode": "Add A Coupon Code",
+      "enterCode": "Enter Code",
+      "discountCode": "Discount code",
+      "apply": "Apply",
+      "emptyHeading": "Your basket is currently empty",
+      "emptyDescription": "You may check out all the available products and buy some in the shop.",
+      "returnToShop": "Return to Shop"
     },
     "Totals": {
       "subtotalExcluding": "Subtotal (excl. shipping and taxes)",
@@ -382,6 +464,19 @@
       "add": "Add to wishlist",
       "remove": "Remove from wishlist",
       "unavailable": "Select a variant to save"
+    },
+    "Toggle": {
+      "add": "Add To Wishlist",
+      "remove": "Remove From Wishlist",
+      "signIn": "Sign In To Save"
+    },
+    "Toast": {
+      "savedTitle": "Saved",
+      "savedDescription": "Item added to your wishlist.",
+      "removedTitle": "Removed",
+      "removedDescription": "Item removed from your wishlist.",
+      "errorTitle": "Error",
+      "errorDescription": "An error occurred while updating your wishlist."
     }
   },
   "Order": {
@@ -421,7 +516,9 @@
       "created_at": "Latest Arrivals",
       "price_asc": "Price: Low to High",
       "price_desc": "Price: High to Low"
-    }
+    },
+    "showingResults": "Showing {from}–{to} of {total} results",
+    "filters": "Filters"
   },
   "Product": {
     "Actions": {
@@ -468,7 +565,20 @@
       "title": "Title",
       "content": "Content",
       "rating": "Rating",
-      "submit": "Submit"
+      "submit": "Submit",
+      "heading": "Product Reviews",
+      "description": "See what our customers are saying about this product.",
+      "count": "{count} reviews",
+      "loadMore": "Load more reviews"
+    },
+    "Related": {
+      "heading": "Related products",
+      "description": "You might also want to check out these products."
+    },
+    "Onboarding": {
+      "success": "Your demo product was successfully created! 🎉",
+      "description": "You can now continue setting up your store in the admin.",
+      "continue": "Continue setup in admin"
     }
   },
   "Tracking": {
@@ -518,12 +628,34 @@
   },
   "Checkout": {
     "Payment": {
-      "selectMethod": "Select a payment method"
+      "selectMethod": "Select a payment method",
+      "title": "Payment",
+      "edit": "Edit",
+      "method": "Payment method",
+      "giftCard": "Gift card",
+      "enterCardDetails": "Enter card details",
+      "continueToReview": "Continue to review",
+      "details": "Payment details",
+      "anotherStep": "Another step will appear"
     },
     "Layout": {
       "backToCart": "Back to shopping cart",
       "back": "Back",
       "store": "The Christmas Fabric"
+    },
+    "ShippingAddress": {
+      "savedAddressesPrompt": "Hi {name}, do you want to use one of your saved addresses?",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "address": "Address",
+      "company": "Company",
+      "postalCode": "Postal code",
+      "city": "City",
+      "stateProvince": "State / Province",
+      "billingSameAsShipping": "Billing address same as shipping address",
+      "email": "Email",
+      "emailTitle": "Enter a valid email address.",
+      "phone": "Phone"
     }
   },
   "StaticPages": {
