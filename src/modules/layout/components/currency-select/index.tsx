@@ -61,16 +61,16 @@ const CurrencySelect = ({
 
   // Map to link locales to the metadata keys in product
   const localeMap: { [key: string]: string } = {
-    "es-es": "es",
-    "de-de": "de",
-    "it-it": "it",
-    "nl-nl": "nl",
-    "sv-se": "sv",
-    "en-us": "en-us",
-    "en-ca": "en-ca",
-    "en-au": "en-au",
-    "en-ie": "en-ie",
-    "en-gb": "en-gb",
+    "es-ES": "es",
+    "de-DE": "de",
+    "it-IT": "it",
+    "nl-NL": "nl",
+    "sv-SE": "sv",
+    "en-US": "en-US",
+    "en-CA": "en-CA",
+    "en-AU": "en-AU",
+    "en-IE": "en-IE",
+    "en-GB": "en-GB",
   }
 
   const options: CurrencyOption[] | undefined = useMemo(() => {

@@ -160,7 +160,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                   </div>
 
                   <div className="text-secondary desc mt-5 max-sm:hidden">
-                    {/* {parse(data?.metadata?.["en-gb_short_description"]) ||
+                    {/* {parse(data?.metadata?.["en-GB_short_description"]) ||
                       "No Description Found"} */}
                     {parse(data.subtitle)}
                   </div>

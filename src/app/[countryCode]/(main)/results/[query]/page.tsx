@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       )}`
     }
 
-    const localizedPath = route[locale as keyof typeof route] ?? route["en-gb"]
+    const localizedPath = route[locale as keyof typeof route] ?? route["en-GB"]
 
     return localizedPath
       ? `/${localizedCountryCode}/${localizedPath.replace(
