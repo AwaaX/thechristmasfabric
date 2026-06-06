@@ -154,7 +154,6 @@ export const getLocalizedProductHandle = async ({
   targetCountryCode: string
   locale: string
 }) => {
-  debugger;
   const currentProduct = await listProducts({
     countryCode: sourceCountryCode,
     queryParams: {
