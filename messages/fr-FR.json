@@ -101,6 +101,9 @@
       "item3": {
         "title": "Pyjamas de Noël assortis pour couples"
       }
+    },
+    "ProductRail": {
+      "viewAll": "Tout voir"
     }
   },
   "Footer": {
@@ -153,8 +156,10 @@
       "txt1": "J'accepte les",
       "txt2": "conditions générales",
       "txt3": "la protection des données",
+      "and": "et",
       "txt4": "Merci pour votre inscription à la newsletter ! Nous",
       "txt5": "vous contacterons bientôt.",
+      "successMessage": "Merci pour votre inscription à la newsletter ! Nous vous contacterons bientôt.",
       "Placeholder": "Votre e-mail"
     }
   },
@@ -367,6 +372,18 @@
       "requestTransfer": "Demander le transfert",
       "successRequested": "Transfert demandé pour la commande {id}",
       "successEmailSent": "E-mail de demande de transfert envoyé à {email}"
+    },
+    "AccountInfo": {
+      "defaultError": "Une erreur est survenue, veuillez réessayer",
+      "cancel": "Annuler",
+      "edit": "Modifier",
+      "updatedSuccessfully": "{label} mis à jour avec succès",
+      "saveChanges": "Enregistrer les modifications"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# article} other {# articles}}",
+      "more": "de plus",
+      "seeDetails": "Voir les détails"
     }
   },
   "Cart": {
@@ -426,6 +443,16 @@
       "heading": "Page introuvable",
       "description": "Le panier auquel vous avez essayé d’accéder n’existe pas. Effacez vos cookies puis réessayez.",
       "cta": "Aller à la page d’accueil"
+    },
+    "SignInPrompt": {
+      "heading": "Vous avez déjà un compte ?",
+      "description": "Connectez-vous pour une meilleure expérience.",
+      "cta": "Se connecter"
+    },
+    "MismatchBanner": {
+      "message": "Une erreur s'est produite lors du transfert de votre panier",
+      "runAgain": "Relancer le transfert",
+      "transferring": "Transfert en cours.."
     }
   },
   "Search": {
@@ -479,6 +506,15 @@
       "errorDescription": "Une erreur s'est produite lors de la mise à jour de votre liste de souhaits."
     }
   },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Débloquez la livraison gratuite",
+      "unlocked": "Livraison gratuite débloquée !",
+      "remaining": "Plus que {amount}",
+      "viewCart": "Voir le panier",
+      "viewProducts": "Voir les produits"
+    }
+  },
   "Order": {
     "Summary": {
       "heading": "Récapitulatif de commande",
@@ -501,13 +537,61 @@
     },
     "Details": {
       "heading": "Détails de la commande",
-      "back": "Retour à la vue d’ensemble"
+      "back": "Retour à la vue d’ensemble",
+      "confirmationDetails": "Nous avons envoyé les détails de confirmation de la commande à <email>{email}</email>.",
+      "orderDate": "Date de commande :",
+      "orderNumber": "Numéro de commande :",
+      "orderStatus": "Statut de la commande :",
+      "paymentStatus": "Statut du paiement :",
+      "statuses": {
+        "not_fulfilled": "Non exécutée",
+        "partially_fulfilled": "Partiellement exécutée",
+        "fulfilled": "Exécutée",
+        "partially_shipped": "Partiellement expédiée",
+        "shipped": "Expédiée",
+        "partially_delivered": "Partiellement livrée",
+        "delivered": "Livrée",
+        "canceled": "Annulée",
+        "not_paid": "Non payée",
+        "awaiting": "En attente",
+        "authorized": "Autorisée",
+        "partially_authorized": "Partiellement autorisée",
+        "captured": "Capturée",
+        "partially_captured": "Partiellement capturée",
+        "partially_refunded": "Partiellement remboursée",
+        "refunded": "Remboursée",
+        "requires_action": "Action requise"
+      }
     },
     "Shipping": {
       "heading": "Livraison",
       "address": "Adresse de livraison",
       "contact": "Contact",
       "method": "Méthode"
+    },
+    "Payment": {
+      "title": "Paiement",
+      "method": "Mode de paiement",
+      "details": "Détails du paiement",
+      "paidAt": "{amount} payé le {date}"
+    },
+    "TransferPage": {
+      "heading": "Demande de transfert pour la commande {id}",
+      "intro": "Vous avez reçu une demande de transfert de propriété de votre commande ({id}). Si vous acceptez cette demande, vous pouvez approuver le transfert en cliquant sur le bouton ci-dessous.",
+      "permissions": "Si vous acceptez, le nouveau propriétaire prendra en charge toutes les responsabilités et autorisations associées à cette commande.",
+      "noAction": "Si vous ne reconnaissez pas cette demande ou souhaitez conserver la propriété, aucune autre action n'est requise."
+    },
+    "TransferAccept": {
+      "successHeading": "Commande transférée !",
+      "successText": "La commande {id} a été transférée avec succès au nouveau propriétaire.",
+      "errorText": "Une erreur s'est produite lors de l'acceptation du transfert. Veuillez réessayer.",
+      "errorMessage": "Message d'erreur : {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Commande transférée avec succès !",
+      "declineSuccess": "Transfert de commande refusé avec succès !",
+      "accept": "Accepter le transfert",
+      "decline": "Refuser le transfert"
     }
   },
   "Store": {
@@ -579,6 +663,11 @@
       "success": "Votre produit de démonstration a été créé avec succès ! 🎉",
       "description": "Vous pouvez maintenant continuer à configurer votre boutique dans l'administration.",
       "continue": "Continuer la configuration dans l'admin"
+    },
+    "Preview": {
+      "selectOption": "Sélectionner une option",
+      "inStock": "En stock",
+      "sliderDescription": "Voici les pyjamas Merry Grinchmas, une idée amusante de pyjama de Noël pour célébrer votre Grinchmas seul ou à plusieurs. Adaptés aux familles, couples, enfants et..."
     }
   },
   "Tracking": {
@@ -636,7 +725,8 @@
       "enterCardDetails": "Saisir les détails de la carte",
       "continueToReview": "Continuer vers la vérification",
       "details": "Détails du paiement",
-      "anotherStep": "Une autre étape apparaîtra"
+      "anotherStep": "Une autre étape apparaîtra",
+      "placeOrder": "Passer la commande"
     },
     "Layout": {
       "backToCart": "Retour au panier",
@@ -655,7 +745,51 @@
       "billingSameAsShipping": "Adresse de facturation identique à l'adresse de livraison",
       "email": "E-mail",
       "emailTitle": "Saisissez une adresse e-mail valide.",
-      "phone": "Téléphone"
+      "phone": "Téléphone",
+      "chooseAddress": "Choisir une adresse"
+    },
+    "Addresses": {
+      "shippingAddress": "Adresse de livraison",
+      "billingAddress": "Adresse de facturation",
+      "contact": "Contact",
+      "edit": "Modifier",
+      "continueToDelivery": "Continuer vers la livraison",
+      "billingSameAsDelivery": "Les adresses de facturation et de livraison sont identiques."
+    },
+    "Shipping": {
+      "delivery": "Livraison",
+      "edit": "Modifier",
+      "shippingMethod": "Mode de livraison",
+      "deliveryPrompt": "Comment souhaitez-vous recevoir votre commande ?",
+      "pickupOrder": "Retirer votre commande",
+      "store": "Magasin",
+      "storePrompt": "Choisissez un magasin près de chez vous",
+      "continueToPayment": "Continuer vers le paiement",
+      "method": "Mode"
+    },
+    "Review": {
+      "heading": "Vérification",
+      "confirmation": "En cliquant sur le bouton Passer la commande, vous confirmez avoir lu, compris et accepté nos Conditions d’utilisation, Conditions de vente et Politique de retour, et reconnaissez avoir lu la Politique de confidentialité de The Christmas Fabric."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Ajouter un ou plusieurs codes promotionnels",
+      "apply": "Appliquer",
+      "promotionsApplied": "Promotion(s) appliquée(s) :",
+      "removeDiscount": "Retirer le code de réduction de la commande"
+    },
+    "Summary": {
+      "heading": "Dans votre panier"
+    },
+    "PaymentTest": {
+      "attention": "Attention :",
+      "testingOnly": "À des fins de test uniquement."
+    },
+    "PaymentMethods": {
+      "creditCard": "Carte de crédit",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Paiement manuel"
     }
   },
   "StaticPages": {

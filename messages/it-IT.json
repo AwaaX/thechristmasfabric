@@ -101,6 +101,9 @@
       "item3": {
         "title": "Pigiami di Natale coordinati per coppie"
       }
+    },
+    "ProductRail": {
+      "viewAll": "Vedi tutto"
     }
   },
   "Footer": {
@@ -153,8 +156,10 @@
       "txt1": "Accetto i",
       "txt2": "termini e condizioni",
       "txt3": "la protezione dei dati",
+      "and": "e",
       "txt4": "Grazie per esserti iscritto alla newsletter! Ti",
       "txt5": "contatteremo presto.",
+      "successMessage": "Grazie per esserti iscritto alla newsletter! Ti contatteremo presto.",
       "Placeholder": "La tua email"
     }
   },
@@ -367,6 +372,18 @@
       "requestTransfer": "Richiedi trasferimento",
       "successRequested": "Trasferimento richiesto per l'ordine {id}",
       "successEmailSent": "Email di richiesta di trasferimento inviata a {email}"
+    },
+    "AccountInfo": {
+      "defaultError": "Si è verificato un errore, riprova",
+      "cancel": "Annulla",
+      "edit": "Modifica",
+      "updatedSuccessfully": "{label} aggiornato correttamente",
+      "saveChanges": "Salva modifiche"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# articolo} other {# articoli}}",
+      "more": "altri",
+      "seeDetails": "Vedi dettagli"
     }
   },
   "Cart": {
@@ -426,6 +443,16 @@
       "heading": "Pagina non trovata",
       "description": "Il carrello che hai provato ad aprire non esiste. Cancella i cookie e riprova.",
       "cta": "Vai alla homepage"
+    },
+    "SignInPrompt": {
+      "heading": "Hai già un account?",
+      "description": "Accedi per un'esperienza migliore.",
+      "cta": "Accedi"
+    },
+    "MismatchBanner": {
+      "message": "Qualcosa è andato storto durante il trasferimento del tuo carrello",
+      "runAgain": "Esegui di nuovo il trasferimento",
+      "transferring": "Trasferimento in corso.."
     }
   },
   "Search": {
@@ -479,6 +506,15 @@
       "errorDescription": "Si è verificato un errore durante l'aggiornamento della tua lista dei desideri."
     }
   },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Sblocca la spedizione gratuita",
+      "unlocked": "Spedizione gratuita sbloccata!",
+      "remaining": "Ti mancano solo {amount}",
+      "viewCart": "Visualizza carrello",
+      "viewProducts": "Visualizza prodotti"
+    }
+  },
   "Order": {
     "Summary": {
       "heading": "Riepilogo ordine",
@@ -501,13 +537,61 @@
     },
     "Details": {
       "heading": "Dettagli ordine",
-      "back": "Torna alla panoramica"
+      "back": "Torna alla panoramica",
+      "confirmationDetails": "Abbiamo inviato i dettagli di conferma dell'ordine a <email>{email}</email>.",
+      "orderDate": "Data dell'ordine:",
+      "orderNumber": "Numero ordine:",
+      "orderStatus": "Stato dell'ordine:",
+      "paymentStatus": "Stato del pagamento:",
+      "statuses": {
+        "not_fulfilled": "Non evaso",
+        "partially_fulfilled": "Parzialmente evaso",
+        "fulfilled": "Evaso",
+        "partially_shipped": "Parzialmente spedito",
+        "shipped": "Spedito",
+        "partially_delivered": "Parzialmente consegnato",
+        "delivered": "Consegnato",
+        "canceled": "Annullato",
+        "not_paid": "Non pagato",
+        "awaiting": "In attesa",
+        "authorized": "Autorizzato",
+        "partially_authorized": "Parzialmente autorizzato",
+        "captured": "Acquisito",
+        "partially_captured": "Parzialmente acquisito",
+        "partially_refunded": "Parzialmente rimborsato",
+        "refunded": "Rimborsato",
+        "requires_action": "Azione richiesta"
+      }
     },
     "Shipping": {
       "heading": "Consegna",
       "address": "Indirizzo di spedizione",
       "contact": "Contatto",
       "method": "Metodo"
+    },
+    "Payment": {
+      "title": "Pagamento",
+      "method": "Metodo di pagamento",
+      "details": "Dettagli del pagamento",
+      "paidAt": "{amount} pagato il {date}"
+    },
+    "TransferPage": {
+      "heading": "Richiesta di trasferimento per l'ordine {id}",
+      "intro": "Hai ricevuto una richiesta per trasferire la proprietà del tuo ordine ({id}). Se accetti questa richiesta, puoi approvare il trasferimento facendo clic sul pulsante qui sotto.",
+      "permissions": "Se accetti, il nuovo proprietario assumerà tutte le responsabilità e i permessi associati a questo ordine.",
+      "noAction": "Se non riconosci questa richiesta o desideri mantenere la proprietà, non è richiesta alcuna ulteriore azione."
+    },
+    "TransferAccept": {
+      "successHeading": "Ordine trasferito!",
+      "successText": "L'ordine {id} è stato trasferito con successo al nuovo proprietario.",
+      "errorText": "Si è verificato un errore durante l'accettazione del trasferimento. Riprova.",
+      "errorMessage": "Messaggio di errore: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Ordine trasferito con successo!",
+      "declineSuccess": "Trasferimento dell'ordine rifiutato con successo!",
+      "accept": "Accetta trasferimento",
+      "decline": "Rifiuta trasferimento"
     }
   },
   "Store": {
@@ -579,6 +663,11 @@
       "success": "Il tuo prodotto demo è stato creato con successo! 🎉",
       "description": "Ora puoi continuare a configurare il tuo negozio nel pannello di amministrazione.",
       "continue": "Continua la configurazione nell'admin"
+    },
+    "Preview": {
+      "selectOption": "Seleziona opzione",
+      "inStock": "Disponibile",
+      "sliderDescription": "Ecco i pigiami Merry Grinchmas, una divertente idea di pigiama natalizio per celebrare il tuo Grinchmas da solo o in compagnia. Adatti a famiglie, coppie, bambini e..."
     }
   },
   "Tracking": {
@@ -636,7 +725,8 @@
       "enterCardDetails": "Inserisci i dati della carta",
       "continueToReview": "Continua alla revisione",
       "details": "Dettagli del pagamento",
-      "anotherStep": "Apparirà un altro passaggio"
+      "anotherStep": "Apparirà un altro passaggio",
+      "placeOrder": "Effettua ordine"
     },
     "Layout": {
       "backToCart": "Torna al carrello",
@@ -655,7 +745,51 @@
       "billingSameAsShipping": "Indirizzo di fatturazione uguale a quello di spedizione",
       "email": "Email",
       "emailTitle": "Inserisci un indirizzo email valido.",
-      "phone": "Telefono"
+      "phone": "Telefono",
+      "chooseAddress": "Scegli un indirizzo"
+    },
+    "Addresses": {
+      "shippingAddress": "Indirizzo di spedizione",
+      "billingAddress": "Indirizzo di fatturazione",
+      "contact": "Contatto",
+      "edit": "Modifica",
+      "continueToDelivery": "Continua alla consegna",
+      "billingSameAsDelivery": "L'indirizzo di fatturazione e quello di consegna coincidono."
+    },
+    "Shipping": {
+      "delivery": "Consegna",
+      "edit": "Modifica",
+      "shippingMethod": "Metodo di spedizione",
+      "deliveryPrompt": "Come vuoi ricevere il tuo ordine?",
+      "pickupOrder": "Ritira il tuo ordine",
+      "store": "Negozio",
+      "storePrompt": "Scegli un negozio vicino a te",
+      "continueToPayment": "Continua al pagamento",
+      "method": "Metodo"
+    },
+    "Review": {
+      "heading": "Revisione",
+      "confirmation": "Cliccando sul pulsante Effettua ordine, confermi di aver letto, compreso e accettato i nostri Termini di utilizzo, Termini di vendita e Politica sui resi, e dichiari di aver letto l'Informativa sulla privacy di The Christmas Fabric."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Aggiungi codice/i promozionale/i",
+      "apply": "Applica",
+      "promotionsApplied": "Promozione/i applicata/e:",
+      "removeDiscount": "Rimuovi il codice sconto dall'ordine"
+    },
+    "Summary": {
+      "heading": "Nel tuo carrello"
+    },
+    "PaymentTest": {
+      "attention": "Attenzione:",
+      "testingOnly": "Solo a scopo di test."
+    },
+    "PaymentMethods": {
+      "creditCard": "Carta di credito",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Pagamento manuale"
     }
   },
   "StaticPages": {

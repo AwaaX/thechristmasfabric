@@ -101,6 +101,9 @@
       "item3": {
         "title": "Weihnachts-Pyjamas für Paare und im Partnerlook"
       }
+    },
+    "ProductRail": {
+      "viewAll": "Alle anzeigen"
     }
   },
   "Footer": {
@@ -153,8 +156,10 @@
       "txt1": "Ich akzeptiere die",
       "txt2": "Allgemeinen Geschäftsbedingungen",
       "txt3": "den Datenschutz",
+      "and": "und",
       "txt4": "Danke, dass Sie sich für den Newsletter angemeldet haben! Wir",
       "txt5": "werden uns bald bei Ihnen melden.",
+      "successMessage": "Danke, dass Sie sich für den Newsletter angemeldet haben! Wir werden uns bald bei Ihnen melden.",
       "Placeholder": "Ihre E-Mail"
     }
   },
@@ -367,6 +372,18 @@
       "requestTransfer": "Übertragung anfordern",
       "successRequested": "Übertragung für Bestellung {id} angefordert",
       "successEmailSent": "Übertragungsanfrage-E-Mail an {email} gesendet"
+    },
+    "AccountInfo": {
+      "defaultError": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "updatedSuccessfully": "{label} wurde erfolgreich aktualisiert",
+      "saveChanges": "Änderungen speichern"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# Artikel} other {# Artikel}}",
+      "more": "mehr",
+      "seeDetails": "Details ansehen"
     }
   },
   "Cart": {
@@ -426,6 +443,16 @@
       "heading": "Seite nicht gefunden",
       "description": "Der Warenkorb, den Sie aufrufen wollten, existiert nicht. Löschen Sie Ihre Cookies und versuchen Sie es erneut.",
       "cta": "Zur Startseite"
+    },
+    "SignInPrompt": {
+      "heading": "Haben Sie bereits ein Konto?",
+      "description": "Melden Sie sich an, um ein besseres Erlebnis zu haben.",
+      "cta": "Anmelden"
+    },
+    "MismatchBanner": {
+      "message": "Beim Übertragen deines Warenkorbs ist etwas schiefgelaufen",
+      "runAgain": "Übertragung erneut ausführen",
+      "transferring": "Übertragung läuft.."
     }
   },
   "Search": {
@@ -479,6 +506,15 @@
       "errorDescription": "Beim Aktualisieren deiner Wunschliste ist ein Fehler aufgetreten."
     }
   },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Kostenlosen Versand freischalten",
+      "unlocked": "Kostenloser Versand freigeschaltet!",
+      "remaining": "Nur noch {amount}",
+      "viewCart": "Warenkorb ansehen",
+      "viewProducts": "Produkte ansehen"
+    }
+  },
   "Order": {
     "Summary": {
       "heading": "Bestellübersicht",
@@ -501,13 +537,61 @@
     },
     "Details": {
       "heading": "Bestelldetails",
-      "back": "Zurück zur Übersicht"
+      "back": "Zurück zur Übersicht",
+      "confirmationDetails": "Wir haben die Bestellbestätigung an <email>{email}</email> gesendet.",
+      "orderDate": "Bestelldatum:",
+      "orderNumber": "Bestellnummer:",
+      "orderStatus": "Bestellstatus:",
+      "paymentStatus": "Zahlungsstatus:",
+      "statuses": {
+        "not_fulfilled": "Nicht erfüllt",
+        "partially_fulfilled": "Teilweise erfüllt",
+        "fulfilled": "Erfüllt",
+        "partially_shipped": "Teilweise versendet",
+        "shipped": "Versendet",
+        "partially_delivered": "Teilweise geliefert",
+        "delivered": "Geliefert",
+        "canceled": "Storniert",
+        "not_paid": "Nicht bezahlt",
+        "awaiting": "Ausstehend",
+        "authorized": "Autorisiert",
+        "partially_authorized": "Teilweise autorisiert",
+        "captured": "Erfasst",
+        "partially_captured": "Teilweise erfasst",
+        "partially_refunded": "Teilweise erstattet",
+        "refunded": "Erstattet",
+        "requires_action": "Aktion erforderlich"
+      }
     },
     "Shipping": {
       "heading": "Lieferung",
       "address": "Lieferadresse",
       "contact": "Kontakt",
       "method": "Methode"
+    },
+    "Payment": {
+      "title": "Zahlung",
+      "method": "Zahlungsmethode",
+      "details": "Zahlungsdetails",
+      "paidAt": "{amount} bezahlt am {date}"
+    },
+    "TransferPage": {
+      "heading": "Übertragungsanfrage für Bestellung {id}",
+      "intro": "Sie haben eine Anfrage erhalten, das Eigentum an Ihrer Bestellung ({id}) zu übertragen. Wenn Sie dieser Anfrage zustimmen, können Sie die Übertragung genehmigen, indem Sie auf die Schaltfläche unten klicken.",
+      "permissions": "Wenn Sie zustimmen, übernimmt der neue Eigentümer alle Verantwortlichkeiten und Berechtigungen, die mit dieser Bestellung verbunden sind.",
+      "noAction": "Wenn Sie diese Anfrage nicht erkennen oder das Eigentum behalten möchten, ist keine weitere Aktion erforderlich."
+    },
+    "TransferAccept": {
+      "successHeading": "Bestellung übertragen!",
+      "successText": "Die Bestellung {id} wurde erfolgreich an den neuen Eigentümer übertragen.",
+      "errorText": "Beim Akzeptieren der Übertragung ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      "errorMessage": "Fehlermeldung: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Bestellung erfolgreich übertragen!",
+      "declineSuccess": "Bestellübertragung erfolgreich abgelehnt!",
+      "accept": "Übertragung annehmen",
+      "decline": "Übertragung ablehnen"
     }
   },
   "Store": {
@@ -579,6 +663,11 @@
       "success": "Dein Demo-Produkt wurde erfolgreich erstellt! 🎉",
       "description": "Du kannst die Einrichtung deines Shops jetzt im Admin-Bereich fortsetzen.",
       "continue": "Einrichtung im Admin fortsetzen"
+    },
+    "Preview": {
+      "selectOption": "Option auswählen",
+      "inStock": "Auf Lager",
+      "sliderDescription": "Hier sind die Merry Grinchmas-Pyjamas, eine lustige Weihnachts-Pyjama-Idee, um Grinchmas allein oder mit anderen zu feiern. Geeignet für Familien, Paare, Kinder und..."
     }
   },
   "Tracking": {
@@ -636,7 +725,8 @@
       "enterCardDetails": "Kartendaten eingeben",
       "continueToReview": "Weiter zur Überprüfung",
       "details": "Zahlungsdetails",
-      "anotherStep": "Ein weiterer Schritt wird angezeigt"
+      "anotherStep": "Ein weiterer Schritt wird angezeigt",
+      "placeOrder": "Bestellung aufgeben"
     },
     "Layout": {
       "backToCart": "Zurück zum Warenkorb",
@@ -655,7 +745,51 @@
       "billingSameAsShipping": "Rechnungsadresse identisch mit Lieferadresse",
       "email": "E-Mail",
       "emailTitle": "Gib eine gültige E-Mail-Adresse ein.",
-      "phone": "Telefon"
+      "phone": "Telefon",
+      "chooseAddress": "Adresse auswählen"
+    },
+    "Addresses": {
+      "shippingAddress": "Lieferadresse",
+      "billingAddress": "Rechnungsadresse",
+      "contact": "Kontakt",
+      "edit": "Bearbeiten",
+      "continueToDelivery": "Weiter zur Lieferung",
+      "billingSameAsDelivery": "Rechnungs- und Lieferadresse sind identisch."
+    },
+    "Shipping": {
+      "delivery": "Lieferung",
+      "edit": "Bearbeiten",
+      "shippingMethod": "Versandart",
+      "deliveryPrompt": "Wie möchten Sie Ihre Bestellung erhalten?",
+      "pickupOrder": "Bestellung abholen",
+      "store": "Filiale",
+      "storePrompt": "Wählen Sie eine Filiale in Ihrer Nähe",
+      "continueToPayment": "Weiter zur Zahlung",
+      "method": "Methode"
+    },
+    "Review": {
+      "heading": "Überprüfung",
+      "confirmation": "Mit einem Klick auf die Schaltfläche Bestellung aufgeben bestätigen Sie, dass Sie unsere Nutzungsbedingungen, Verkaufsbedingungen und Rückgaberichtlinie gelesen, verstanden und akzeptiert haben und die Datenschutzerklärung von The Christmas Fabric gelesen haben."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Aktionscode(s) hinzufügen",
+      "apply": "Anwenden",
+      "promotionsApplied": "Angewendete Aktion(en):",
+      "removeDiscount": "Rabattcode aus der Bestellung entfernen"
+    },
+    "Summary": {
+      "heading": "In Ihrem Warenkorb"
+    },
+    "PaymentTest": {
+      "attention": "Achtung:",
+      "testingOnly": "Nur zu Testzwecken."
+    },
+    "PaymentMethods": {
+      "creditCard": "Kreditkarte",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Manuelle Zahlung"
     }
   },
   "StaticPages": {

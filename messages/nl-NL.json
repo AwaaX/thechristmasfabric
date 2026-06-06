@@ -101,6 +101,9 @@
       "item3": {
         "title": "Matchende en koppels kerstpyjama's"
       }
+    },
+    "ProductRail": {
+      "viewAll": "Alles bekijken"
     }
   },
   "Footer": {
@@ -153,8 +156,10 @@
       "txt1": "Ik accepteer de",
       "txt2": "algemene voorwaarden",
       "txt3": " gegevensbescherming",
+      "and": "en",
       "txt4": " Bedankt voor het aanmelden voor de nieuwsbrief! We",
       "txt5": "houden binnenkort contact.",
+      "successMessage": "Bedankt voor het aanmelden voor de nieuwsbrief! We houden binnenkort contact.",
       "Placeholder": "Uw e-mail"
     }
   },
@@ -367,6 +372,18 @@
       "requestTransfer": "Overdracht aanvragen",
       "successRequested": "Overdracht voor bestelling {id} aangevraagd",
       "successEmailSent": "E-mail met overdrachtsverzoek verzonden naar {email}"
+    },
+    "AccountInfo": {
+      "defaultError": "Er is een fout opgetreden, probeer het opnieuw",
+      "cancel": "Annuleren",
+      "edit": "Bewerken",
+      "updatedSuccessfully": "{label} succesvol bijgewerkt",
+      "saveChanges": "Wijzigingen opslaan"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# artikel} other {# artikelen}}",
+      "more": "meer",
+      "seeDetails": "Details bekijken"
     }
   },
   "Cart": {
@@ -426,6 +443,16 @@
       "heading": "Pagina niet gevonden",
       "description": "De winkelwagen die je probeerde te openen bestaat niet. Wis je cookies en probeer het opnieuw.",
       "cta": "Ga naar de homepage"
+    },
+    "SignInPrompt": {
+      "heading": "Heb je al een account?",
+      "description": "Log in voor een betere ervaring.",
+      "cta": "Inloggen"
+    },
+    "MismatchBanner": {
+      "message": "Er ging iets mis bij het overdragen van je winkelmandje",
+      "runAgain": "Overdracht opnieuw uitvoeren",
+      "transferring": "Bezig met overdragen.."
     }
   },
   "Search": {
@@ -479,6 +506,15 @@
       "errorDescription": "Er is een fout opgetreden bij het bijwerken van je verlanglijst."
     }
   },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Gratis verzending ontgrendelen",
+      "unlocked": "Gratis verzending ontgrendeld!",
+      "remaining": "Nog maar {amount} te gaan",
+      "viewCart": "Winkelwagen bekijken",
+      "viewProducts": "Producten bekijken"
+    }
+  },
   "Order": {
     "Summary": {
       "heading": "Besteloverzicht",
@@ -501,13 +537,61 @@
     },
     "Details": {
       "heading": "Bestelgegevens",
-      "back": "Terug naar overzicht"
+      "back": "Terug naar overzicht",
+      "confirmationDetails": "We hebben de bestelbevestiging gestuurd naar <email>{email}</email>.",
+      "orderDate": "Besteldatum:",
+      "orderNumber": "Bestelnummer:",
+      "orderStatus": "Bestelstatus:",
+      "paymentStatus": "Betaalstatus:",
+      "statuses": {
+        "not_fulfilled": "Niet vervuld",
+        "partially_fulfilled": "Gedeeltelijk vervuld",
+        "fulfilled": "Vervuld",
+        "partially_shipped": "Gedeeltelijk verzonden",
+        "shipped": "Verzonden",
+        "partially_delivered": "Gedeeltelijk geleverd",
+        "delivered": "Geleverd",
+        "canceled": "Geannuleerd",
+        "not_paid": "Niet betaald",
+        "awaiting": "In afwachting",
+        "authorized": "Geautoriseerd",
+        "partially_authorized": "Gedeeltelijk geautoriseerd",
+        "captured": "Geïncasseerd",
+        "partially_captured": "Gedeeltelijk geïncasseerd",
+        "partially_refunded": "Gedeeltelijk terugbetaald",
+        "refunded": "Terugbetaald",
+        "requires_action": "Actie vereist"
+      }
     },
     "Shipping": {
       "heading": "Levering",
       "address": "Verzendadres",
       "contact": "Contact",
       "method": "Methode"
+    },
+    "Payment": {
+      "title": "Betaling",
+      "method": "Betaalmethode",
+      "details": "Betalingsgegevens",
+      "paidAt": "{amount} betaald op {date}"
+    },
+    "TransferPage": {
+      "heading": "Overdrachtsverzoek voor bestelling {id}",
+      "intro": "Je hebt een verzoek ontvangen om het eigendom van je bestelling ({id}) over te dragen. Als je akkoord gaat met dit verzoek, kun je de overdracht goedkeuren door op de onderstaande knop te klikken.",
+      "permissions": "Als je accepteert, neemt de nieuwe eigenaar alle verantwoordelijkheden en rechten over die bij deze bestelling horen.",
+      "noAction": "Als je dit verzoek niet herkent of het eigendom wilt behouden, is er geen verdere actie nodig."
+    },
+    "TransferAccept": {
+      "successHeading": "Bestelling overgedragen!",
+      "successText": "Bestelling {id} is succesvol overgedragen aan de nieuwe eigenaar.",
+      "errorText": "Er is een fout opgetreden bij het accepteren van de overdracht. Probeer het opnieuw.",
+      "errorMessage": "Foutmelding: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Bestelling succesvol overgedragen!",
+      "declineSuccess": "Overdracht van bestelling succesvol geweigerd!",
+      "accept": "Overdracht accepteren",
+      "decline": "Overdracht weigeren"
     }
   },
   "Store": {
@@ -579,6 +663,11 @@
       "success": "Je demoproduct is succesvol aangemaakt! 🎉",
       "description": "Je kunt je winkel nu verder instellen in de admin.",
       "continue": "Doorgaan met instellen in admin"
+    },
+    "Preview": {
+      "selectOption": "Optie selecteren",
+      "inStock": "Op voorraad",
+      "sliderDescription": "Dit zijn de Merry Grinchmas-pyjama's, een leuk kerstpyjama-idee om je Grinchmas alleen of samen met anderen te vieren. Geschikt voor gezinnen, koppels, kinderen en..."
     }
   },
   "Tracking": {
@@ -636,7 +725,8 @@
       "enterCardDetails": "Kaartgegevens invoeren",
       "continueToReview": "Doorgaan naar controle",
       "details": "Betalingsgegevens",
-      "anotherStep": "Er verschijnt nog een stap"
+      "anotherStep": "Er verschijnt nog een stap",
+      "placeOrder": "Bestelling plaatsen"
     },
     "Layout": {
       "backToCart": "Terug naar winkelwagen",
@@ -655,7 +745,51 @@
       "billingSameAsShipping": "Factuuradres gelijk aan verzendadres",
       "email": "E-mail",
       "emailTitle": "Voer een geldig e-mailadres in.",
-      "phone": "Telefoon"
+      "phone": "Telefoon",
+      "chooseAddress": "Kies een adres"
+    },
+    "Addresses": {
+      "shippingAddress": "Verzendadres",
+      "billingAddress": "Factuuradres",
+      "contact": "Contact",
+      "edit": "Bewerken",
+      "continueToDelivery": "Doorgaan naar levering",
+      "billingSameAsDelivery": "Factuur- en afleveradres zijn hetzelfde."
+    },
+    "Shipping": {
+      "delivery": "Levering",
+      "edit": "Bewerken",
+      "shippingMethod": "Verzendmethode",
+      "deliveryPrompt": "Hoe wil je je bestelling laten bezorgen?",
+      "pickupOrder": "Je bestelling ophalen",
+      "store": "Winkel",
+      "storePrompt": "Kies een winkel bij jou in de buurt",
+      "continueToPayment": "Doorgaan naar betaling",
+      "method": "Methode"
+    },
+    "Review": {
+      "heading": "Controleren",
+      "confirmation": "Door op de knop Bestelling plaatsen te klikken, bevestig je dat je onze Gebruiksvoorwaarden, Verkoopvoorwaarden en Retourbeleid hebt gelezen, begrepen en geaccepteerd, en dat je het Privacybeleid van The Christmas Fabric hebt gelezen."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Promotiecode(s) toevoegen",
+      "apply": "Toepassen",
+      "promotionsApplied": "Toegepaste promotie(s):",
+      "removeDiscount": "Kortingscode uit bestelling verwijderen"
+    },
+    "Summary": {
+      "heading": "In je winkelwagen"
+    },
+    "PaymentTest": {
+      "attention": "Let op:",
+      "testingOnly": "Alleen voor testdoeleinden."
+    },
+    "PaymentMethods": {
+      "creditCard": "Creditcard",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Handmatige betaling"
     }
   },
   "StaticPages": {

@@ -24,6 +24,7 @@ const Payment = ({
   availablePaymentMethods: any[]
 }) => {
   const t = useTranslations("Checkout.Payment")
+  const tm = useTranslations("Checkout.PaymentMethods")
   const activeSession = cart.payment_collection?.payment_sessions?.find(
     (paymentSession: any) => paymentSession.status === "pending"
   )
@@ -226,8 +227,9 @@ const Payment = ({
                   className="txt-medium text-ui-fg-subtle"
                   data-testid="payment-method-summary"
                 >
-                  {paymentInfoMap[activeSession?.provider_id]?.title ||
-                    activeSession?.provider_id}
+                  {paymentInfoMap[activeSession?.provider_id]?.title
+                    ? tm(paymentInfoMap[activeSession?.provider_id].title)
+                    : activeSession?.provider_id}
                 </Text>
               </div>
               <div className="flex flex-col w-1/3">

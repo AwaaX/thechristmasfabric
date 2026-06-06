@@ -1,21 +1,20 @@
 "use client"
-import React, { useState } from "react"
+import { useState } from "react"
 import { HiOutlineEnvelope } from "react-icons/hi2"
 import { IoMdArrowForward } from "react-icons/io"
 import LocalizedClientLink from "../localized-client-link"
 import { TailSpin } from "react-loader-spinner"
-import { AnyMxRecord } from "dns"
 import { useTranslations } from "next-intl"
 
 const NewsLetterEmail = ({
-  placeholder = "Your Email",
+  placeholder = "",
   className = "",
   isFooter = true,
 }) => {
   const [email, setEmail] = useState("")
   const [sending, setSending] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-  const t = useTranslations("Footer")
+  const t = useTranslations("Footer.NewsLetter")
   const handleSubscribe = (event: any) => {
     event.preventDefault()
     setSending(true)
@@ -41,7 +40,7 @@ const NewsLetterEmail = ({
               required
               type="email"
               className="flex-1 text-[15px] placeholder:text-black px-4 outline-none"
-              placeholder={t("NewsLetter.Placeholder")}
+              placeholder={placeholder || t("Placeholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -74,19 +73,19 @@ const NewsLetterEmail = ({
             <input type="checkbox" required={!isFooter} />
             {/* Text */}
             <p className="max-md:flex max-md:items-center max-md:justify-start max-md:gap-1 max-md:whitespace-nowrap max-md:flex-wrap">
-              {t("NewsLetter.txt1")}{" "}
+              {t("txt1")}{" "}
               <LocalizedClientLink
                 href="/"
                 className="cursor-pointer underline-gap whitespace-nowrap"
               >
-                {t("NewsLetter.txt2")}
+                {t("txt2")}
               </LocalizedClientLink>{" "}
-              and{" "}
+              {t("and")}{" "}
               <LocalizedClientLink
                 href="/"
                 className="cursor-pointer underline-gap whitespace-nowrap"
               >
-                {t("NewsLetter.txt3")}
+                {t("txt3")}
               </LocalizedClientLink>
             </p>
           </div>
@@ -96,7 +95,7 @@ const NewsLetterEmail = ({
       {submitted && (
         <div className={`${isFooter ? "text-[#666]" : "text-white"}`}>
           {/* Thank you Message */}
-          {t("NewsLetter.txt4")}&apos;{t("NewsLetter.txt5")}
+          {t("successMessage")}
         </div>
       )}
     </div>

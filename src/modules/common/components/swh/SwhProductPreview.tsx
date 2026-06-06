@@ -8,6 +8,7 @@ import SwhWishlistToggle, {
 import parse from "html-react-parser"
 import PreviewPrice from "@modules/products/components/product-preview/price"
 import { getProductPrice } from "@lib/util/get-product-price"
+import { useTranslations } from "next-intl"
 
 type SwhProductPreviewProps = {
   data: SwhProductPreviewData
@@ -15,6 +16,7 @@ type SwhProductPreviewProps = {
 }
 
 const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
+  const t = useTranslations("Product.Preview")
     const { cheapestPrice,highestPrice } = getProductPrice({
       product: data,
     })
@@ -82,7 +84,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                       e.stopPropagation()
                     }}
                   >
-                    Select Option
+                    {t("selectOption")}
                   </div>
                 </div>
               </div>
@@ -174,7 +176,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                         e.stopPropagation()
                       }}
                     >
-                      Select Option
+                      {t("selectOption")}
                     </div>
 
                     {/* Add to WishList */}

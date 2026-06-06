@@ -101,6 +101,9 @@
       "item3": {
         "title": "Matchande och par julpyjamas"
       }
+    },
+    "ProductRail": {
+      "viewAll": "Visa alla"
     }
   },
   "Footer": {
@@ -153,8 +156,10 @@
       "txt1": "Jag accepterar",
       "txt2": "villkoren",
       "txt3": "dataskyddet",
+      "and": "och",
       "txt4": " Tack för att du anmält dig till nyhetsbrevet! Vi",
       "txt5": "hör av oss snart.",
+      "successMessage": "Tack för att du anmält dig till nyhetsbrevet! Vi hör av oss snart.",
       "Placeholder": "Din e-post"
     }
   },
@@ -367,6 +372,18 @@
       "requestTransfer": "Begär överföring",
       "successRequested": "Överföring begärd för order {id}",
       "successEmailSent": "E-post med överföringsbegäran skickad till {email}"
+    },
+    "AccountInfo": {
+      "defaultError": "Ett fel uppstod, försök igen",
+      "cancel": "Avbryt",
+      "edit": "Redigera",
+      "updatedSuccessfully": "{label} har uppdaterats",
+      "saveChanges": "Spara ändringar"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# artikel} other {# artiklar}}",
+      "more": "fler",
+      "seeDetails": "Se detaljer"
     }
   },
   "Cart": {
@@ -426,6 +443,16 @@
       "heading": "Sidan hittades inte",
       "description": "Varukorgen du försökte komma åt finns inte. Rensa dina cookies och försök igen.",
       "cta": "Gå till startsidan"
+    },
+    "SignInPrompt": {
+      "heading": "Har du redan ett konto?",
+      "description": "Logga in för en bättre upplevelse.",
+      "cta": "Logga in"
+    },
+    "MismatchBanner": {
+      "message": "Något gick fel när vi försökte överföra din varukorg",
+      "runAgain": "Kör överföringen igen",
+      "transferring": "Överför.."
     }
   },
   "Search": {
@@ -479,6 +506,15 @@
       "errorDescription": "Ett fel uppstod när din önskelista uppdaterades."
     }
   },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Lås upp fri frakt",
+      "unlocked": "Fri frakt upplåst!",
+      "remaining": "Endast {amount} kvar",
+      "viewCart": "Visa kundvagn",
+      "viewProducts": "Visa produkter"
+    }
+  },
   "Order": {
     "Summary": {
       "heading": "Ordersammanfattning",
@@ -501,13 +537,61 @@
     },
     "Details": {
       "heading": "Beställningsdetaljer",
-      "back": "Tillbaka till översikten"
+      "back": "Tillbaka till översikten",
+      "confirmationDetails": "Vi har skickat orderbekräftelsen till <email>{email}</email>.",
+      "orderDate": "Orderdatum:",
+      "orderNumber": "Ordernummer:",
+      "orderStatus": "Orderstatus:",
+      "paymentStatus": "Betalningsstatus:",
+      "statuses": {
+        "not_fulfilled": "Inte uppfylld",
+        "partially_fulfilled": "Delvis uppfylld",
+        "fulfilled": "Uppfylld",
+        "partially_shipped": "Delvis skickad",
+        "shipped": "Skickad",
+        "partially_delivered": "Delvis levererad",
+        "delivered": "Levererad",
+        "canceled": "Avbruten",
+        "not_paid": "Inte betald",
+        "awaiting": "Väntar",
+        "authorized": "Auktoriserad",
+        "partially_authorized": "Delvis auktoriserad",
+        "captured": "Fångad",
+        "partially_captured": "Delvis fångad",
+        "partially_refunded": "Delvis återbetald",
+        "refunded": "Återbetald",
+        "requires_action": "Åtgärd krävs"
+      }
     },
     "Shipping": {
       "heading": "Leverans",
       "address": "Leveransadress",
       "contact": "Kontakt",
       "method": "Metod"
+    },
+    "Payment": {
+      "title": "Betalning",
+      "method": "Betalningsmetod",
+      "details": "Betalningsdetaljer",
+      "paidAt": "{amount} betald den {date}"
+    },
+    "TransferPage": {
+      "heading": "Överföringsbegäran för order {id}",
+      "intro": "Du har fått en begäran om att överföra ägarskapet för din order ({id}). Om du godkänner denna begäran kan du godkänna överföringen genom att klicka på knappen nedan.",
+      "permissions": "Om du accepterar tar den nya ägaren över allt ansvar och alla behörigheter som är kopplade till denna order.",
+      "noAction": "Om du inte känner igen denna begäran eller vill behålla ägarskapet krävs ingen ytterligare åtgärd."
+    },
+    "TransferAccept": {
+      "successHeading": "Order överförd!",
+      "successText": "Order {id} har överförts till den nya ägaren.",
+      "errorText": "Ett fel uppstod när överföringen skulle accepteras. Försök igen.",
+      "errorMessage": "Felmeddelande: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Order överförd!",
+      "declineSuccess": "Orderöverföring nekad!",
+      "accept": "Acceptera överföring",
+      "decline": "Neka överföring"
     }
   },
   "Store": {
@@ -579,6 +663,11 @@
       "success": "Din demoprodukt har skapats! 🎉",
       "description": "Du kan nu fortsätta att konfigurera din butik i adminpanelen.",
       "continue": "Fortsätt konfigurationen i admin"
+    },
+    "Preview": {
+      "selectOption": "Välj alternativ",
+      "inStock": "I lager",
+      "sliderDescription": "Här är Merry Grinchmas-pyjamasarna, en rolig julpyjamasidé för att fira din Grinchmas ensam eller tillsammans med andra. Passar familjer, par, barn och..."
     }
   },
   "Tracking": {
@@ -636,7 +725,8 @@
       "enterCardDetails": "Ange kortuppgifter",
       "continueToReview": "Fortsätt till granskning",
       "details": "Betalningsuppgifter",
-      "anotherStep": "Ytterligare ett steg visas"
+      "anotherStep": "Ytterligare ett steg visas",
+      "placeOrder": "Lägg beställning"
     },
     "Layout": {
       "backToCart": "Tillbaka till kundvagnen",
@@ -655,7 +745,51 @@
       "billingSameAsShipping": "Faktureringsadress samma som leveransadress",
       "email": "E-post",
       "emailTitle": "Ange en giltig e-postadress.",
-      "phone": "Telefon"
+      "phone": "Telefon",
+      "chooseAddress": "Välj en adress"
+    },
+    "Addresses": {
+      "shippingAddress": "Leveransadress",
+      "billingAddress": "Faktureringsadress",
+      "contact": "Kontakt",
+      "edit": "Redigera",
+      "continueToDelivery": "Fortsätt till leverans",
+      "billingSameAsDelivery": "Fakturerings- och leveransadressen är densamma."
+    },
+    "Shipping": {
+      "delivery": "Leverans",
+      "edit": "Redigera",
+      "shippingMethod": "Leveransmetod",
+      "deliveryPrompt": "Hur vill du få din beställning levererad?",
+      "pickupOrder": "Hämta din beställning",
+      "store": "Butik",
+      "storePrompt": "Välj en butik nära dig",
+      "continueToPayment": "Fortsätt till betalning",
+      "method": "Metod"
+    },
+    "Review": {
+      "heading": "Granska",
+      "confirmation": "Genom att klicka på knappen Lägg beställning bekräftar du att du har läst, förstått och accepterat våra användarvillkor, försäljningsvillkor och returpolicy samt att du har läst The Christmas Fabrics integritetspolicy."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Lägg till kampanjkod(er)",
+      "apply": "Använd",
+      "promotionsApplied": "Tillämpade kampanjer:",
+      "removeDiscount": "Ta bort rabattkod från beställningen"
+    },
+    "Summary": {
+      "heading": "I din varukorg"
+    },
+    "PaymentTest": {
+      "attention": "Observera:",
+      "testingOnly": "Endast i testsyfte."
+    },
+    "PaymentMethods": {
+      "creditCard": "Kreditkort",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Manuell betalning"
     }
   },
   "StaticPages": {

@@ -101,6 +101,9 @@
       "item3": {
         "title": "Matching and couples Christmas pyjamas"
       }
+    },
+    "ProductRail": {
+      "viewAll": "View all"
     }
   },
   "Footer": {
@@ -153,8 +156,10 @@
       "txt1": "I accept the",
       "txt2": "terms & conditions",
       "txt3": " the data protection",
+      "and": "and",
       "txt4": " Thanks for signing up for the newsletter! We",
       "txt5": "ll be in touch soon.",
+      "successMessage": "Thanks for signing up for the newsletter! We'll be in touch soon.",
       "Placeholder": "Your Email"
     }
   },
@@ -367,6 +372,18 @@
       "requestTransfer": "Request transfer",
       "successRequested": "Transfer for order {id} requested",
       "successEmailSent": "Transfer request email sent to {email}"
+    },
+    "AccountInfo": {
+      "defaultError": "An error occurred, please try again",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "updatedSuccessfully": "{label} updated successfully",
+      "saveChanges": "Save changes"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# item} other {# items}}",
+      "more": "more",
+      "seeDetails": "See details"
     }
   },
   "Cart": {
@@ -426,6 +443,16 @@
       "heading": "Page not found",
       "description": "The cart you tried to access does not exist. Clear your cookies and try again.",
       "cta": "Go to frontpage"
+    },
+    "SignInPrompt": {
+      "heading": "Already have an account?",
+      "description": "Sign in for a better experience.",
+      "cta": "Sign in"
+    },
+    "MismatchBanner": {
+      "message": "Something went wrong when we tried to transfer your cart",
+      "runAgain": "Run transfer again",
+      "transferring": "Transferring.."
     }
   },
   "Search": {
@@ -479,6 +506,15 @@
       "errorDescription": "An error occurred while updating your wishlist."
     }
   },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Unlock Free Shipping",
+      "unlocked": "Free Shipping unlocked!",
+      "remaining": "Only {amount} away",
+      "viewCart": "View cart",
+      "viewProducts": "View products"
+    }
+  },
   "Order": {
     "Summary": {
       "heading": "Order Summary",
@@ -501,13 +537,61 @@
     },
     "Details": {
       "heading": "Order details",
-      "back": "Back to overview"
+      "back": "Back to overview",
+      "confirmationDetails": "We have sent the order confirmation details to <email>{email}</email>.",
+      "orderDate": "Order date:",
+      "orderNumber": "Order number:",
+      "orderStatus": "Order status:",
+      "paymentStatus": "Payment status:",
+      "statuses": {
+        "not_fulfilled": "Not fulfilled",
+        "partially_fulfilled": "Partially fulfilled",
+        "fulfilled": "Fulfilled",
+        "partially_shipped": "Partially shipped",
+        "shipped": "Shipped",
+        "partially_delivered": "Partially delivered",
+        "delivered": "Delivered",
+        "canceled": "Canceled",
+        "not_paid": "Not paid",
+        "awaiting": "Awaiting",
+        "authorized": "Authorized",
+        "partially_authorized": "Partially authorized",
+        "captured": "Captured",
+        "partially_captured": "Partially captured",
+        "partially_refunded": "Partially refunded",
+        "refunded": "Refunded",
+        "requires_action": "Requires action"
+      }
     },
     "Shipping": {
       "heading": "Delivery",
       "address": "Shipping Address",
       "contact": "Contact",
       "method": "Method"
+    },
+    "Payment": {
+      "title": "Payment",
+      "method": "Payment method",
+      "details": "Payment details",
+      "paidAt": "{amount} paid at {date}"
+    },
+    "TransferPage": {
+      "heading": "Transfer request for order {id}",
+      "intro": "You've received a request to transfer ownership of your order ({id}). If you agree to this request, you can approve the transfer by clicking the button below.",
+      "permissions": "If you accept, the new owner will take over all responsibilities and permissions associated with this order.",
+      "noAction": "If you do not recognize this request or wish to retain ownership, no further action is required."
+    },
+    "TransferAccept": {
+      "successHeading": "Order transfered!",
+      "successText": "Order {id} has been successfully transfered to the new owner.",
+      "errorText": "There was an error accepting the transfer. Please try again.",
+      "errorMessage": "Error message: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Order transferred successfully!",
+      "declineSuccess": "Order transfer declined successfully!",
+      "accept": "Accept transfer",
+      "decline": "Decline transfer"
     }
   },
   "Store": {
@@ -579,6 +663,11 @@
       "success": "Your demo product was successfully created! 🎉",
       "description": "You can now continue setting up your store in the admin.",
       "continue": "Continue setup in admin"
+    },
+    "Preview": {
+      "selectOption": "Select Option",
+      "inStock": "In Stock",
+      "sliderDescription": "Here are the Merry Grinchmas pajamas, a fun Christmas pajama idea to celebrate your Grinchmas alone or with others. Suitable for families, couples, children, and..."
     }
   },
   "Tracking": {
@@ -636,7 +725,8 @@
       "enterCardDetails": "Enter card details",
       "continueToReview": "Continue to review",
       "details": "Payment details",
-      "anotherStep": "Another step will appear"
+      "anotherStep": "Another step will appear",
+      "placeOrder": "Place order"
     },
     "Layout": {
       "backToCart": "Back to shopping cart",
@@ -655,7 +745,51 @@
       "billingSameAsShipping": "Billing address same as shipping address",
       "email": "Email",
       "emailTitle": "Enter a valid email address.",
-      "phone": "Phone"
+      "phone": "Phone",
+      "chooseAddress": "Choose an address"
+    },
+    "Addresses": {
+      "shippingAddress": "Shipping Address",
+      "billingAddress": "Billing Address",
+      "contact": "Contact",
+      "edit": "Edit",
+      "continueToDelivery": "Continue to delivery",
+      "billingSameAsDelivery": "Billing and delivery address are the same."
+    },
+    "Shipping": {
+      "delivery": "Delivery",
+      "edit": "Edit",
+      "shippingMethod": "Shipping method",
+      "deliveryPrompt": "How would you like your order delivered?",
+      "pickupOrder": "Pick up your order",
+      "store": "Store",
+      "storePrompt": "Choose a store near you",
+      "continueToPayment": "Continue to payment",
+      "method": "Method"
+    },
+    "Review": {
+      "heading": "Review",
+      "confirmation": "By clicking the Place Order button, you confirm that you have read, understand and accept our Terms of Use, Terms of Sale and Returns Policy and acknowledge that you have read The Christmas Fabric's Privacy Policy."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Add Promotion Code(s)",
+      "apply": "Apply",
+      "promotionsApplied": "Promotion(s) applied:",
+      "removeDiscount": "Remove discount code from order"
+    },
+    "Summary": {
+      "heading": "In your Cart"
+    },
+    "PaymentTest": {
+      "attention": "Attention:",
+      "testingOnly": "For testing purposes only."
+    },
+    "PaymentMethods": {
+      "creditCard": "Credit card",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Manual Payment"
     }
   },
   "StaticPages": {
