@@ -61,6 +61,7 @@ const nextConfig = {
         : []),
     ],
   },
+  output: "standalone",
 }
 
 module.exports = withNextIntl(nextConfig);
