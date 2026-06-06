@@ -114,18 +114,21 @@ export async function retrieveCart(cartId?: string, fields?: string) {
     ...(await getCacheOptions("carts")),
   }
 
-  return await sdk.client
-    .fetch<HttpTypes.StoreCartResponse>(`/store/carts/${id}`, {
-      method: "GET",
-      query: {
-        fields,
-      },
-      headers,
-      next: { revalidate: 5 },
-      cache: "force-cache",
-    })
-    .then(({ cart }: { cart: HttpTypes.StoreCart }) => cart)
-    .catch(() => null)
+  try {
+    return await sdk.client
+      .fetch<HttpTypes.StoreCartResponse>(`/store/carts/${id}`, {
+        method: "GET",
+        query: {
+          fields,
+        },
+        headers,
+        next: { revalidate: 5 },
+        cache: "force-cache",
+      })
+      .then(({ cart }: { cart: HttpTypes.StoreCart }) => cart)
+  } catch {
+    return null
+  }
 }
 
 export async function getOrSetCart(countryCode: string) {

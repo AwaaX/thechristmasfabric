@@ -23,6 +23,7 @@ import Image from "next/image"
 import { head } from "lodash"
 import emptycart from "@lib/img/cart/empty-cart.png"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
+import { getCheckoutStep } from "@modules/cart/templates/summary"
 
 const CartDropdown = ({
   cart: cartState,
@@ -47,6 +48,8 @@ const CartDropdown = ({
     cartState?.items?.reduce((acc, item) => {
       return acc + item.quantity
     }, 0) || 0
+
+  const step = cartState ? getCheckoutStep(cartState) : "address"
 
     console.log(cartState)
     const taxTotal=cartState?.tax_total ?? 0
@@ -361,7 +364,7 @@ const CartDropdown = ({
                   <div className="block-button text-center p-6">
                     <div>
                       <LocalizedClientLink
-                        href={"/checkout"}
+                        href={"/checkout?step=" + step}
                         className="swh-btn bg-black text-white text-[16px] font-normal"
                         onClick={() => setCartDropdownOpen(false)}
                       >

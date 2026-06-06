@@ -65,7 +65,7 @@ const SwhCatSliderUI = ({ categories }) => {
                           </div>
                           <div className="trending-name text-center mt-5 duration-500">
                             <div className="text-title">{c.name}</div>
-                            <div className="caption2">{i + 7} items</div>
+                            <div className="caption2">{c.products?.length ?? 0} items</div>
                           </div>
                         </LocalizedClientLink>
                       </SwiperSlide>
