@@ -519,6 +519,182 @@
   "Checkout": {
     "Payment": {
       "selectMethod": "Välj en betalningsmetod"
+    },
+    "Layout": {
+      "backToCart": "Tillbaka till kundvagnen",
+      "back": "Tillbaka",
+      "store": "The Christmas Fabric"
+    }
+  },
+  "StaticPages": {
+    "PrivacyPolicy": {
+      "title": "Integritetspolicy",
+      "breadcrumbHome": "Hem",
+      "body": "<p>AVSNITT 1 - INSAMLADE PERSONUPPGIFTER</p><p>Nar du gor ett kop i var butik, som en del av var kop- och saljprocess, samlar vi in de personuppgifter du tillhandahaller, sasom ditt namn, din adress och din e-postadress.</p><p>Nar du surfar i var butik tar vi ocksa automatiskt emot din dators IP-adress, vilket gor att vi kan fa mer information om den webblasare och det operativsystem du anvander.</p><p>E-postmarknadsforing (om tillampligt): Med ditt tillstand kan vi skicka e-post till dig om var butik, nya produkter och andra uppdateringar.</p><p>AVSNITT 2 - SAMTYCKE</p><p>Hur far ni mitt samtycke?</p><p>Nar du ger oss dina personuppgifter for att slutföra en transaktion, verifiera ditt kreditkort, lagga en order, boka en leverans eller returnera ett kop, antar vi att du samtycker till att vi samlar in och anvander dina uppgifter endast for detta andamal.</p><p>Om vi ber dig lamna personuppgifter av nagot annat skal, till exempel for marknadsforingsandamal, kommer vi att be dig direkt om ditt uttryckliga samtycke eller ge dig mojlighet att avboja.</p><p>Hur aterkallar jag mitt samtycke? Du kan nar som helst andra ditt samtycke genom att <a href=\"#\">klicka har och redigera ditt samtycke</a>.</p><p>Om du, efter att ha gett oss ditt samtycke, andrar dig och inte langre samtycker till att vi kontaktar dig, samlar in dina uppgifter eller lamnar ut dem, kan du meddela oss genom att kontakta oss pa customer@thechristmasfabric.com eller via post till SAS OVOORO, foretaget som driver thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Frankrike</p><p>AVSNITT 3 - UTLAMNING</p><p>Vi kan lamna ut dina personuppgifter om vi ar skyldiga att gora det enligt lag eller om du bryter mot vara Allmanna villkor.</p><p>AVSNITT 4 - VARD</p><p>Var butik ar vard hos Kinsta Inc. De tillhandahaller den onlineplattform som gor det mojligt for oss att salja vara tjanster och produkter till dig.</p><p>Dina uppgifter lagras i Kinsta Inc:s datalagringssystem och databaser. Dina uppgifter sparas pa en saker server som skyddas av en brandvagg.</p><p>Betalning:</p><p>Vid onlinekop pa noel-shop.com lagras ingen kreditkortsinformation. Din kreditkortsinformation anvands sakert av tredjepartstjanster for att behandla din betalning. Av sakerhetsskal krypteras uppgifterna i enlighet med Payment Card Industry Data Security Standard (PCI-DSS). Informationen om din koptransaktion sparas sa lange som behovs for att slutföra din order av tredjepartstjanster som PayPal, Stripe eller Mollie.</p><p>Alla direkta betalningsgateways uppfyller PCI-DSS-standarden, som hanteras av PCI Security Standards Council, ett gemensamt initiativ av foretag som Visa, MasterCard, American Express och Discover.</p><p>Kraven i PCI-DSS-standarden sakerstaller saker behandling av kreditkortsuppgifter av var butik och vara tjansteleverantorer.</p><p>AVSNITT 5 - TJANSTER SOM TILLHANDAHALLS AV TREDJE PART</p><p>I allmanhet kommer de tredjepartsleverantorer vi anvander endast att samla in, anvanda och lamna ut dina uppgifter i den utstrackning som behovs for att de ska kunna utfora de tjanster de tillhandahaller oss.</p><p>Vissa tredjepartsleverantorer, sasom betalningsgateways och andra betalningstransaktionsbehandlare, har dock egna integritetspolicyer for den information vi maste lamna till dem for dina koptransaktioner.</p><p>For dessa leverantorer rekommenderar vi att du laser deras integritetspolicyer noggrant sa att du forstar hur de kommer att hantera dina personuppgifter.</p><p>Kom ihag att vissa leverantorer kan vara belagna, eller ha anlaggningar, i en annan jurisdiktion an du eller vi. Om du gar vidare med en transaktion som kraver tjanster fran en tredjepartsleverantor kan dina uppgifter omfattas av lagarna i den jurisdiktion dar leverantoren finns eller dar dess anlaggningar finns.</p><p>Om du till exempel befinner dig i Kanada och din transaktion behandlas via en betalningsgateway i USA kan de uppgifter som anvandes for att slutföra transaktionen lamnas ut enligt amerikansk lag, inklusive Patriot Act.</p><p>Nar du lamnar var butikswebbplats eller omdirigeras till en webbplats eller applikation fran tredje part omfattas du inte langre av denna Integritetspolicy eller av Forsaljnings- och anvandningsvillkoren for var webbplats.</p><p>Lankar</p><p>Du kan lamna var webbplats genom att klicka pa vissa lankar pa var webbplats. Vi tar inget ansvar for dessa andra webbplatsers integritetspraxis och rekommenderar att du laser deras integritetspolicyer noggrant.</p><p>AVSNITT 6 - SAKERHET</p><p>For att skydda dina personuppgifter vidtar vi rimliga forsiktighetsatgarder och foljer branschens basta praxis for att sakerstalla att de inte forloras, missbrukas, koms at, lamnas ut, andras eller forstors pa ett olampligt satt.</p><p>AVSNITT 7 - ALDER FOR SAMTYCKE</p><p>Genom att anvanda denna webbplats intygar du att du ar minst myndig i din delstat eller provins dar du bor och att du har gett oss ditt samtycke till att lata minderariga under din omsorg anvanda denna webbplats.</p><p>AVSNITT 8 - ANDRINGAR AV DENNA INTEGRITETSPOLICY</p><p>Vi forbehaller oss ratten att andra denna Integritetspolicy nar som helst, sa granska den ofta. Andringar och fortydliganden trader i kraft omedelbart nar de publiceras pa webbplatsen. Om vi gor andringar i innehållet i denna policy kommer vi att meddela dig har att den har uppdaterats, sa att du vet vilka uppgifter vi samlar in, hur vi anvander dem och under vilka omstandigheter, om nagra, vi lamnar ut dem.</p><p>Om var butik forvarvas av eller slas samman med ett annat foretag kan dina uppgifter overforas till de nya agarna sa att vi kan fortsatta salja produkter till dig.</p><p>FRAGOR OCH KONTAKTINFORMATION</p><p>Om du vill fa tillgang till, korrigera, andra eller radera personuppgifter vi har om dig, lamna in ett klagomal eller helt enkelt fa mer information, kontakta vart integritetsombud pa customer@thechristmasfabric.com eller via post till huvudkontoret for SAS OVOORO, som driver thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Frankrike</p>"
+    },
+    "MeasurementGuide": {
+      "intro": {
+        "eyebrow": "En enkel guide för att undvika misstag",
+        "title": "Ta dina mått",
+        "paragraph1": "Kläderna från The Christmas Fabric tillverkas efter ett internationellt genomsnitt eftersom vi vill att de ska kunna bäras av alla. Därför hjälper dina mått dig att välja rätt storlek. Om du till exempel vanligtvis använder L kan vissa modeller passa dig bättre i storlek M.",
+        "paragraph2": "När du har tagit dina mått kan du jämföra dem direkt med storleksguiden på den produktsida du väljer. Våra produkter kan ha liknande eller olika storleksguider."
+      },
+      "withoutTape": {
+        "eyebrow": "Använd ett snöre",
+        "title": "Mäta utan måttband",
+        "description": "Inga problem. Om du inte har ett måttband kan du använda ett snöre eller kanten på en lång handduk för att mäta byst, midja, höfter och mer. För sedan över snörets eller handdukens längd till en linjal för att få längden i cm eller tum."
+      },
+      "guideTitle": "Visa guiden för",
+      "options": {
+        "men": "Herr",
+        "women": "Dam",
+        "child": "Barn",
+        "baby": "Baby"
+      },
+      "imageAlt": "Illustration av måttguiden",
+      "measurements": [
+        {
+          "primaryLabel": "A - Byst, bystomkrets:",
+          "primaryText": "Mät runt bysten. Alla storleksguider från The Christmas Fabric visar bystmåttet. Det används mycket ofta i våra storleksguider.",
+          "secondaryLabel": "Överdelens längd:",
+          "secondaryText": "Mät från fördjupningen vid halsens bas ned till bäckenet. Det används mycket ofta i våra storleksguider."
+        },
+        {
+          "primaryLabel": "B - Midja, midjeomkrets:",
+          "primaryText": "Mät runt midjan. Det används ofta i våra storleksguider.",
+          "secondaryLabel": "Nederdelens längd:",
+          "secondaryText": "Mät från bäckenet ned till ankeln. Det används mycket ofta i våra storleksguider."
+        },
+        {
+          "primaryLabel": "C - Höfter, höftomkrets:",
+          "primaryText": "Mät runt höfterna. Det används ibland i våra storleksguider."
+        },
+        {
+          "primaryLabel": "D - Innerbenslängd:",
+          "primaryText": "Mät från grenen ned till ankeln utan att böja benet. Det används mer sällan i våra storleksguider."
+        }
+      ]
+    },
+    "ReturnAndRefund": {
+      "title": "Retur och återbetalning",
+      "breadcrumbHome": "Hem",
+      "body": "<p>Vår policy gäller i 14 dagar från leveransdagen. Om 14 dagar har gått sedan leveransdagen kan vi tyvärr inte erbjuda dig återbetalning eller byte.</p><p>För att kvalificera dig för en kostnadsfri retur måste artikeln returneras för byte, vara oanvänd och i samma skick som du fick den. Den måste också vara i originalförpackningen.</p><p>För att undvika missbruk tillämpas en returavgift på 10 USD$ endast när kunden begär återbetalning och beställningen motsvarar kundens förväntningar på de artiklar som motiverade köpet på www.thechristmasfabric.com.</p><p>Kunden måste vid retur av produkten kontrollera att tillbehören, om sådana finns, är kompletta och att förpackningen är originalförpackningen. Om kunden inte gör detta kan en avgift dras från återbetalningen för att täcka den uppkomna förlusten:<br>- Skadad eller saknad originalförpackning: 10 USD$.<br>- Saknade tillbehör: 20 % av det totala återbetalningsbeloppet, eller priset på tillbehöret om det visas på webbplatsen.</p><p>Om artikeln inte returneras i originalskick, är skadad, fläckig, icke-fungerande eller försämrad, och detta hindrar att den säljs igen, kan ingen återbetalning ges.</p><p>Många typer av produkter kan inte returneras. Färskvaror som livsmedel, blommor eller tidskrifter kan inte returneras. Vi accepterar inte heller intima eller sanitära produkter, farliga produkter eller brandfarliga gaser eller vätskor.</p><p>Andra artiklar som inte kan returneras:</p><p>Presentkort<br>Nedladdningsbar programvara<br>Vissa hälso- och personvårdsprodukter<br>För att göra en retur måste du visa upp ett kvitto eller köpbevis.</p><p>Returnera inte ditt köp till tillverkaren.</p><p>Det finns vissa situationer där endast en partiell återbetalning beviljas, om tillämpligt:</p><p>Böcker med tydliga tecken på användning.<br>CD, DVD, VHS-band, programvara, videospel, kassett eller vinylskiva som har öppnats.<br>Varje artikel som inte är i originalskick, är skadad eller saknar delar av skäl som inte beror på ett fel från vår sida.<br>Varje artikel som returneras mer än 30 dagar efter leverans.</p><p>Återbetalningar, om tillämpligt<br>När vi har tagit emot och kontrollerat den returnerade artikeln skickar vi ett e-postmeddelande för att bekräfta att vi har tagit emot den. Vi informerar dig också om vårt beslut att godkänna eller avslå din begäran om återbetalning.<br>Om din begäran godkänns kommer återbetalningen att behandlas och en kreditering automatiskt att göras till ditt kreditkort eller ursprungliga betalningssätt inom högst 2 till 3 dagar, exklusive helger och helgdagar.</p><p>Försenade eller saknade återbetalningar, om tillämpligt<br>Om du ännu inte har fått din återbetalning, kontrollera följande steg innan du kontaktar webbplatsen via e-post:<br>- Kontrollera att återbetalningen inte pågår på ditt bankkonto eller är planerad att komma på ett angivet datum.<br>- Kontakta din bank för att få information om de tider som gäller för överföringar mellan bankkonton som inte tillhör samma bank.<br><br>Om du efter att ha slutfört alla dessa steg fortfarande inte har fått din återbetalning, eller inte känner till din banks tidsram eller datumet då återbetalningen tas emot, kontakta oss på customer@thechristmasfabric.com.</p><p>Reavaror, om tillämpligt<br>Endast artiklar till ordinarie pris kan återbetalas. Tyvärr är reavaror inte återbetalningsbara.</p><p>Retur på grund av funktionsfel</p><p>En artikel som returneras på grund av funktionsfel omfattas av vårt kostnadsfria returerbjudande, och kunden betalar inga avgifter. Om vårt team inte upptäcker något funktionsfel efter flera tester och kontroller av kundservice, sker returleveransen till kunden på kundens bekostnad. Detta hjälper oss att undvika missbruk av returer och uppmanar kunden att kontrollera att produkten verkligen har ett funktionsfel och att en retur till kundservice är nödvändig före byte.</p><p>Byten</p><p>Vi ersätter endast en artikel om den är defekt eller skadad när kunden tar emot den. Kunden har 3 dagar från leveransdagen på sig att anmäla ett problem. Efter denna tid anser vi att artikeln har använts och inte längre kan bytas. För byte, skicka ett e-postmeddelande till customer@thechristmasfabric.com.</p><p>Artikeln måste vara ny, oanvänd, otvättad, i originalförpackningen och med alla etiketter kvar.</p><p>Din artikel ska skickas till adressen för företaget som driver www.thechristmasfabric.com:<br>SAS OVOORO<br>19 Allée de Brienne<br>Toulouse<br>31000<br>Frankrike</p><p>Gåvor<br>Om den returnerade artikeln identifierades som en gåva vid köptillfället och skickades direkt till dig, får du ett presenttillgodohavande motsvarande värdet av din retur. När vi har tagit emot den returnerade artikeln skickas ett presentkort till dig per post. Returfraktkostnader för gåvor täcks inte.</p><p>Frakt<br>För att returnera en produkt måste du skicka den till huvudkontoret för SAS OVOORO, företaget som driver www.thechristmasfabric.com: SAS OVOORO, 19 Allée de Brienne, Toulouse, 31000, Frankrike.</p><p>Behandlingstider<br>Beroende på var du bor kan tiden det tar att få din utbytta produkt variera.</p><p>När din produkt har tagits emot på huvudkontoret tar vi 3 till 5 arbetsdagar för att kontrollera den och fatta ett beslut, som meddelas dig via e-post till den adress du angav när du beställde.</p><p>Om returkostnaderna för återleverans till kunden bärs av SAS OVOORO, företaget som driver www.thechristmasfabric.com, kan leveranstiden variera mellan 3 och 5 dagar.</p><p>Om kostnaden för returfrakt till kunden betalas av kunden varierar leveranstiden beroende på den metod kunden föredrar.</p><p>Om du skickar en artikel värd mer än 100 USD$ och ansvarar för returfraktkostnaderna bör du överväga att använda en frakttjänst som gör det möjligt att spåra försändelsen eller köpa fraktförsäkring. Vi garanterar inte att vi får den artikel du returnerar om ett problem uppstår.</p>"
+    },
+    "TermsOfDelivery": {
+      "title": "Leveransvillkor",
+      "breadcrumbHome": "Hem",
+      "body": "<p>PRODUKTERNA skickas till den eller de leveransadresser som KUNDEN anger under beställningsprocessen.</p><p>Leveranstid för utskick</p><p>Tidsfristerna för att förbereda en beställning och därefter utfärda fakturan, innan PRODUKTER som finns i lager skickas, anges på WEBBPLATSEN. Dessa tidsfrister inkluderar inte helger eller helgdagar.</p><p>Ett e-postmeddelande skickas automatiskt till KUNDEN när PRODUKTERNA skickas, förutsatt att e-postadressen i registreringsformuläret är korrekt.</p><p>Leveranstid och kostnader</p><p>Under beställningsprocessen anger SÄLJAREN för KUNDEN möjliga leveranstider och fraktalternativ för de köpta PRODUKTERNA.</p><p>Fraktkostnader beräknas enligt leveransmetoden. Beloppet för dessa kostnader ska betalas av KUNDEN utöver priset för de köpta PRODUKTERNA.</p><p>Detaljer om leveranstider och kostnader anges på WEBBPLATSEN.</p><p>Leveransvillkor</p><p>Paketet lämnas till KUNDEN mot underskrift och vid uppvisande av identitetshandling.</p><p>Vid frånvaro lämnas en avi till KUNDEN så att paketet kan hämtas på postkontoret.</p><p>KUNDEN ansvarar för att hämta paketet på postkontoret inom 10 dagar. SÄLJAREN kan inte hållas ansvarig för ett paket som förstörs eller inte returneras av posttjänsterna, och detta skäl utgör inte grund för någon återbetalning.</p><p>Leveransproblem</p><p>KUNDEN informeras om leveransdatumet när transportören väljs, i slutet av onlinebeställningsprocessen, innan beställningen bekräftas.</p><p>Det anges att leveranser ska göras inom högst trettio (30) dagar. Om detta inte sker måste KUNDEN formellt uppmana SÄLJAREN att leverera inom en rimlig tidsperiod. Vid utebliven leverans inom denna period kan avtalet sägas upp.</p><p>SÄLJAREN ska återbetala KUNDEN, utan oskäligt dröjsmål efter mottagandet av uppsägningsbrevet, det totala belopp som betalats för PRODUKTERNA, inklusive skatter och leveransavgifter, med samma betalningsmetod som KUNDEN använde för att köpa PRODUKTERNA.</p><p>SÄLJAREN ansvarar fram till leveransen av PRODUKTEN till KUNDEN. KUNDEN påminns om att denne har tre (3) dagar på sig att meddela transportören om skada eller partiell förlust som konstaterats vid leveransen.</p>"
+    },
+    "LegalNotice": {
+      "title": "Juridiskt meddelande",
+      "breadcrumbHome": "Hem",
+      "body": "<p>Juridiskt meddelande</p><p>Kund: varje behörig fysisk person eller juridisk person som besöker webbplatsen. Användare: varje internetanvändare som använder webbplatsen. Innehåll: texter, bilder, videor, logotyper och andra delar av webbplatsen.</p><p>Uppgifter om webbplatsen</p><p>Webbplatsen publiceras av SASU OVOORO, 19 Allée de Brienne, 31000 Toulouse. Ansvarig och DPO: The Christmas Fabric, customer@thechristmasfabric.com. Hosting: Kinsta Inc, 8605 Santa Monica Blvd #92581, 90069 West Hollywood, CA.</p><p>Användningsvillkor</p><p>Användning av webbplatsen innebär godkännande av dessa villkor. Innehållet skyddas av immateriella rättigheter och får inte reproduceras, ändras eller utnyttjas utan skriftligt tillstånd.</p><p>Personuppgifter</p><p>Personuppgifter kan användas för konton, beställningar, fakturering, kundrelationer, säkerhet, analys och kommunikation. Personuppgifter säljs inte.</p><p>Användarrättigheter</p><p>Användare har rätt till tillgång, rättelse, radering, invändning, begränsning, återkallelse av samtycke och dataportabilitet. Begäran skickas till: DPO, OVOORO, 19 Allée de Brienne, 31000 Toulouse, med identitetshandling.</p><p>Cookies, säkerhet och jurisdiktion</p><p>Webbplatsen kan använda cookies och internettaggar för att förbättra navigering och mäta aktivitet. Webbläsaren kan acceptera eller avvisa cookies. Tvister omfattas av fransk lag och behöriga domstolar i Toulouse.</p>"
+    },
+    "HumanitarianProject": {
+      "title": "Humanitärt projekt",
+      "hero": {
+        "eyebrow": "Med dina beställningar",
+        "heading": "5% doneras",
+        "description": "5% av vinsten kommer att doneras till föreningen AHPA, med målet att bygga minst 1 pedagogisk trädgård i Kpomassè, Benin. Tack vare din beställning kan du följa utvecklingen av detta initiativ, som också stöds av vår franska webbplats.",
+        "link": "Noel Shop"
+      },
+      "association": {
+        "eyebrow": "Föreningen",
+        "heading": "AHPA",
+        "description": "Association Humanitaire pour l'Afrique (AHPA) är en internationell solidaritetsförening som stöder utvecklingsprojekt i Benin inom utbildning, hållbart jordbruk, miljöskydd och rättvis turism. Tillsammans med lokala föreningspartner stöder AHPA inkomstgenererande mikroprojekt för unga inom miljöutbildning.",
+        "logoAlt": "AHPA-föreningens logotyp"
+      },
+      "gallery": {
+        "image1Alt": "Pedagogiskt trädgårdsprojekt i Benin",
+        "image2Alt": "Lokalt samhällsprojekt stött av AHPA",
+        "image3Alt": "Jordbruks- och utbildningsinitiativ i Benin",
+        "image4Alt": "Fältaktivitet för det humanitära projektet"
+      }
+    },
+    "CustomerService": {
+      "banner": {
+        "heading": "Kundtjänst",
+        "subHeading": "Vad kan vi göra för dig idag?"
+      },
+      "faqSections": [
+        {
+          "eyebrow": "Läs mer om spårning och leverans av din beställning",
+          "heading": "Leverans och spårning",
+          "items": [
+            {
+              "question": "Hur kan jag spåra min beställning?",
+              "answer": "När din beställning har skickats får du ett bekräftelsemejl med ett spårningsnummer. Du kan också använda sidan Spåra min beställning."
+            },
+            {
+              "question": "När skickas min beställning?",
+              "answer": "Beställningar förbereds vanligtvis snabbt måndag till lördag, förutom helgdagar. Du får ett mejl när paketet lämnar vårt lager."
+            },
+            {
+              "question": "Varför uppdateras inte min spårningslänk?",
+              "answer": "Spårningslänkar kan ta lite tid att uppdateras efter att transportören har tagit emot paketet. Kontrollera igen senare."
+            },
+            {
+              "question": "Vad gör jag om mitt paket är försenat?",
+              "answer": "Förseningar kan uppstå under intensiva perioder. Kontrollera först spårningen och kontakta kundtjänst om leveransdatumet har passerat."
+            },
+            {
+              "question": "Kan jag ändra min leveransadress?",
+              "answer": "Kontakta oss så snart som möjligt. Om beställningen ännu inte har förberetts eller skickats gör vi vårt bästa för att ändra adressen."
+            },
+            {
+              "question": "Vad händer om jag inte är hemma vid leverans?",
+              "answer": "Transportören kan lämna en avi eller skicka paketet till ett utlämningsställe. Följ transportörens instruktioner."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Returnera en artikel, byt eller begär återbetalning",
+          "heading": "Retur och byte",
+          "items": [
+            {
+              "question": "Hur returnerar jag en artikel?",
+              "answer": "Kontakta kundtjänst med ditt ordernummer och artikeln du vill returnera. Vi bekräftar nästa steg och returadressen."
+            },
+            {
+              "question": "Hur länge kan jag begära retur?",
+              "answer": "Vår returpolicy gäller i 14 dagar från leveransdagen. Artiklar måste vara oanvända, otvättade, i originalförpackning och med etiketter kvar."
+            },
+            {
+              "question": "Kan jag byta min artikel till en annan storlek?",
+              "answer": "Ja, byte är möjligt om önskad storlek finns tillgänglig och den returnerade artikeln uppfyller våra returvillkor."
+            },
+            {
+              "question": "När får jag min återbetalning?",
+              "answer": "Efter att vi har mottagit och kontrollerat returen behandlas godkända återbetalningar till den ursprungliga betalningsmetoden inom några arbetsdagar."
+            },
+            {
+              "question": "Är reavaror återbetalningsbara?",
+              "answer": "Endast varor till ordinarie pris kan återbetalas, om inte lagen kräver annat. Reavaror kanske inte är återbetalningsbara."
+            },
+            {
+              "question": "Vad händer om min artikel är skadad eller defekt?",
+              "answer": "Kontakta oss inom 3 dagar efter leverans med ditt ordernummer och bilder på problemet. Vi granskar ärendet."
+            }
+          ]
+        }
+      ],
+      "form": {
+        "description": "Använd formuläret för att kontakta kundtjänst via e-post på customer@thechristmasfabric.com",
+        "heading": "Kontakta kundtjänst",
+        "firstNameLabel": "Ditt förnamn",
+        "firstNamePlaceholder": "Förnamn",
+        "orderNumberLabel": "Ditt ordernummer",
+        "orderNumberPlaceholder": "35445",
+        "reasonLabel": "Anledning till din förfrågan",
+        "reasonOptions": [
+          "Jag vill byta en produkt",
+          "Jag har problem med spårning",
+          "Jag vill returnera mitt paket eller få återbetalning",
+          "Jag vill ändra min beställning",
+          "Jag kontaktar er av en annan anledning"
+        ],
+        "submit": "Fortsätt"
+      }
     }
   }
 }

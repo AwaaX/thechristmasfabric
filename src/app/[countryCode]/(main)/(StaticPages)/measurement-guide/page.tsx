@@ -1,72 +1,75 @@
 "use client"
-import React, { useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 import men from "@lib/img/measurement-guide/men.webp"
 import women from "@lib/img/measurement-guide/women.webp"
 import baby from "@lib/img/measurement-guide/baby.webp"
 
-import { FaArrowDown } from "react-icons/fa"
 import { IoIosArrowDown } from "react-icons/io"
+import { useTranslations } from "next-intl"
+
+type MeasurementItem = {
+  primaryLabel: string
+  primaryText: string
+  secondaryLabel?: string
+  secondaryText?: string
+}
 
 const MeasurementGuide = () => {
   const [gender, setGender] = useState("men")
+  const t = useTranslations("StaticPages.MeasurementGuide")
+  const measurements = t.raw("measurements") as MeasurementItem[]
+
   return (
     <div className="small-container">
       <div className="py-[35px]">
         <div className="text-[20px] font-light flex-1 ">
-          A simple guide to make no mistakes
+          {t("intro.eyebrow")}
         </div>
         <h1 className="text-[42px] font-normal leading-snug">
-          Take your measurements
+          {t("intro.title")}
         </h1>
         <p className="christmas-font mt-6 ">
-          The Christmas Fabric clothing is made to an international average
-          because we want it to be wearable by everyone. That&apos; why knowing
-          your measurements will help you choose the right size. For example, if
-          you are used to taking L, for some models it may be a size M that fits
-          you better.
+          {t("intro.paragraph1")}
         </p>
         <p className="christmas-font mt-6 ">
-          Once you have taken your measurements you can then compare them to the
-          size guide available on the product page of your choice directly. Our
-          products usually have similar or different size guides.
+          {t("intro.paragraph2")}
         </p>
       </div>
       <div className="py-[35px]">
-        <div className="text-[20px] font-light flex-1 ">Use a string</div>
+        <div className="text-[20px] font-light flex-1 ">
+          {t("withoutTape.eyebrow")}
+        </div>
         <h1 className="text-[42px] font-normal leading-snug">
-          Measuring without a tape measure
+          {t("withoutTape.title")}
         </h1>
         <p className="christmas-font mt-6 ">
-          No problem! If you don&apos;t have a tape measure, you can use a
-          string or the edge of a long towel to measure your bust, waist, hips,
-          etc... Then remember to transfer the length of the string or towel to
-          a ruler to match the length in cm or inch.
+          {t("withoutTape.description")}
         </p>
       </div>
       <div className="py-[35px]">
         <div className="flex items-center justify-start gap-4">
           <h1 className="text-[42px] font-normal leading-snug">
-            View the guide for
+            {t("guideTitle")}
           </h1>
           <div className="flex items-center justify-start gap-2 border-b-2 border-black">
             <select
               className="text-[42px] font-normal leading-snug"
+              value={gender}
               onChange={(e) => setGender(e.target.value)}
             >
               <option value="men" className="px-3">
-                Men
+                {t("options.men")}
               </option>
               <option value="women" className="px-3">
-                Women
+                {t("options.women")}
               </option>
               <option value="child" className="px-3">
-                Child
+                {t("options.child")}
               </option>
               <option value="baby" className="px-3">
-                Baby
+                {t("options.baby")}
               </option>
             </select>
             <IoIosArrowDown className="text-[28px] font-normal leading-snug" />
@@ -74,42 +77,24 @@ const MeasurementGuide = () => {
         </div>
         <div className="grid grid-cols-2 gap-8">
           <ul className="pl-10">
-            <li className="christmas-font mt-6">
-              <span className="font-bold">A — Buste, tour de buste :</span>{" "}
-              Mesurer le tour du buste. Tous les guides des tailles Noël Shop
-              indiquent la mesure du tour de buste. Très utilisé sur nos guides
-              des tailles.
-              <br />
-              <span className="font-bold">Longueur du haut :</span> Mesurer la
-              longueur du creux en bas du cou jusqu&apos;au bassin. Très utilisé
-              sur nos guides des tailles.
-            </li>
-            <li className="christmas-font mt-6">
-              <span className="font-bold">B — Taille, tour de taille :</span>{" "}
-              Mesurer le tour de la taille. Souvent utilisé sur nos guides des
-              tailles.
-              <br />
-              <span className="font-bold">Longueur du bas : </span> Mesurer la
-              longueur du bassin jusqu&apos;à la cheville. Très utilisé sur nos
-              guides des tailles.
-            </li>
-            <li className="christmas-font mt-6">
-              <span className="font-bold">C — Hanches, tour de hanches :</span>{" "}
-              Mesurer le tour de hanches. Parfois utilisé sur nos guides des
-              tailles.
-            </li>
-            <li className="christmas-font mt-6">
-              <span className="font-bold">
-                D — Longueur d&apos;entrejambe :
-              </span>{" "}
-              Mesurer la longueur du creux de l&apos;entrejambe à la cheville
-              sans plier la jambe. Peu utilisé sur nos guides des tailles.
-            </li>
+            {measurements.map((item) => (
+              <li className="christmas-font mt-6" key={item.primaryLabel}>
+                <span className="font-bold">{item.primaryLabel}</span>{" "}
+                {item.primaryText}
+                {item.secondaryLabel && item.secondaryText && (
+                  <>
+                    <br />
+                    <span className="font-bold">{item.secondaryLabel}</span>{" "}
+                    {item.secondaryText}
+                  </>
+                )}
+              </li>
+            ))}
           </ul>
-          {gender === "men" && <Image src={men} alt="test" />}
-          {gender === "women" && <Image src={women} alt="test" />}
-          {gender === "child" && <Image src={men} alt="test" />}
-          {gender === "baby" && <Image src={baby} alt="test" />}
+          {gender === "men" && <Image src={men} alt={t("imageAlt")} />}
+          {gender === "women" && <Image src={women} alt={t("imageAlt")} />}
+          {gender === "child" && <Image src={men} alt={t("imageAlt")} />}
+          {gender === "baby" && <Image src={baby} alt={t("imageAlt")} />}
         </div>
       </div>
     </div>

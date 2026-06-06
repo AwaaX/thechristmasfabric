@@ -519,6 +519,182 @@
   "Checkout": {
     "Payment": {
       "selectMethod": "Selecteer een betaalmethode"
+    },
+    "Layout": {
+      "backToCart": "Terug naar winkelwagen",
+      "back": "Terug",
+      "store": "The Christmas Fabric"
+    }
+  },
+  "StaticPages": {
+    "PrivacyPolicy": {
+      "title": "Privacybeleid",
+      "breadcrumbHome": "Home",
+      "body": "<p>SECTIE 1 - VERZAMELDE PERSOONSGEGEVENS</p><p>Wanneer je een aankoop doet in onze winkel, verzamelen wij als onderdeel van ons koop- en verkoopproces de persoonsgegevens die je verstrekt, zoals je naam, adres en e-mailadres.</p><p>Wanneer je door onze winkel bladert, ontvangen wij ook automatisch het Internet Protocol-adres (IP-adres) van je computer. Hiermee kunnen wij meer details verkrijgen over de browser en het besturingssysteem dat je gebruikt.</p><p>E-mailmarketing (indien van toepassing): Met jouw toestemming kunnen wij je e-mails sturen over onze winkel, nieuwe producten en andere updates.</p><p>SECTIE 2 - TOESTEMMING</p><p>Hoe verkrijgen jullie mijn toestemming?</p><p>Wanneer je ons je persoonsgegevens verstrekt om een transactie af te ronden, je creditcard te verifieren, een bestelling te plaatsen, een levering te plannen of een aankoop te retourneren, gaan wij ervan uit dat je instemt met onze verzameling en ons gebruik van je gegevens uitsluitend voor dat doel.</p><p>Als wij je om persoonsgegevens vragen om een andere reden, zoals marketingdoeleinden, vragen wij rechtstreeks om je uitdrukkelijke toestemming of geven wij je de mogelijkheid om te weigeren.</p><p>Hoe trek ik mijn toestemming in? Je kunt je toestemming op elk moment aanpassen door <a href=\"#\">hier te klikken en je toestemming te bewerken</a>.</p><p>Als je, nadat je ons toestemming hebt gegeven, van gedachten verandert en niet langer instemt met contact door ons, het verzamelen van je gegevens of de openbaarmaking ervan, kun je ons dit laten weten via customer@thechristmasfabric.com of per post aan SAS OVOORO, het bedrijf dat thechristmasfabric.com exploiteert:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Frankrijk</p><p>SECTIE 3 - OPENBAARMAKING</p><p>Wij kunnen je persoonsgegevens openbaar maken als wij daartoe wettelijk verplicht zijn of als je onze Algemene Voorwaarden schendt.</p><p>SECTIE 4 - HOSTING</p><p>Onze winkel wordt gehost door Kinsta Inc. Zij bieden ons het online platform waarmee wij onze diensten en producten aan jou kunnen verkopen.</p><p>Je gegevens worden opgeslagen in het gegevensopslagsysteem en de databases van Kinsta Inc. Je gegevens worden bewaard op een beveiligde server die wordt beschermd door een firewall.</p><p>Betaling:</p><p>Bij een online aankoop op noel-shop.com worden geen creditcardgegevens opgeslagen. Je creditcardgegevens worden veilig gebruikt door diensten van derden om je betaling te verwerken. Om veiligheidsredenen worden de gegevens versleuteld volgens de Payment Card Industry Data Security Standard (PCI-DSS). De informatie over je aankooptransactie wordt door diensten van derden zoals PayPal, Stripe of Mollie bewaard zolang als nodig is om je bestelling af te ronden.</p><p>Alle directe betaalgateways voldoen aan de PCI-DSS-standaard, beheerd door de PCI Security Standards Council, een gezamenlijke inspanning van bedrijven zoals Visa, MasterCard, American Express en Discover.</p><p>De eisen van de PCI-DSS-standaard zorgen voor een veilige verwerking van creditcardgegevens door onze winkel en haar dienstverleners.</p><p>SECTIE 5 - DIENSTEN VAN DERDEN</p><p>Over het algemeen zullen de externe dienstverleners die wij gebruiken je gegevens alleen verzamelen, gebruiken en openbaar maken voor zover dat nodig is om de diensten uit te voeren die zij aan ons leveren.</p><p>Sommige externe dienstverleners, zoals betaalgateways en andere betalingsverwerkers, hebben echter hun eigen privacybeleid met betrekking tot de informatie die wij aan hen moeten verstrekken voor je aankooptransacties.</p><p>Voor deze aanbieders raden wij je aan hun privacybeleid zorgvuldig te lezen, zodat je begrijpt hoe zij met je persoonsgegevens omgaan.</p><p>Houd er rekening mee dat sommige leveranciers gevestigd kunnen zijn, of faciliteiten kunnen hebben, in een andere jurisdictie dan jij of wij. Als je doorgaat met een transactie waarvoor de diensten van een externe leverancier nodig zijn, kunnen je gegevens worden beheerst door de wetten van de jurisdictie waar die leverancier is gevestigd of waar zijn faciliteiten zich bevinden.</p><p>Als je bijvoorbeeld in Canada bent gevestigd en je transactie wordt verwerkt via een betaalgateway in de Verenigde Staten, kunnen de gegevens die zijn gebruikt om de transactie af te ronden openbaar worden gemaakt op grond van Amerikaans recht, waaronder de Patriot Act.</p><p>Zodra je onze winkelsite verlaat of wordt doorgestuurd naar een website of applicatie van een derde, val je niet langer onder dit Privacybeleid of de Verkoop- en Gebruiksvoorwaarden van onze website.</p><p>Links</p><p>Je kunt onze website verlaten door op bepaalde links op onze website te klikken. Wij aanvaarden geen verantwoordelijkheid voor de privacypraktijken van deze andere sites en raden je aan hun privacybeleid zorgvuldig te lezen.</p><p>SECTIE 6 - BEVEILIGING</p><p>Om je persoonsgegevens te beschermen, nemen wij redelijke voorzorgsmaatregelen en volgen wij best practices in de sector om ervoor te zorgen dat ze niet op ongepaste wijze verloren gaan, worden misbruikt, geraadpleegd, openbaar gemaakt, gewijzigd of vernietigd.</p><p>SECTIE 7 - LEEFTIJD VOOR TOESTEMMING</p><p>Door deze site te gebruiken, verklaar je dat je ten minste meerderjarig bent in je staat of provincie van verblijf en dat je ons toestemming hebt gegeven om minderjarigen onder jouw zorg deze website te laten gebruiken.</p><p>SECTIE 8 - WIJZIGINGEN IN DIT PRIVACYBELEID</p><p>Wij behouden ons het recht voor om dit Privacybeleid op elk moment te wijzigen, dus bekijk het regelmatig. Wijzigingen en verduidelijkingen worden onmiddellijk van kracht na publicatie op de website. Als wij de inhoud van dit beleid wijzigen, informeren wij je hier dat het is bijgewerkt, zodat je weet welke informatie wij verzamelen, hoe wij die gebruiken en onder welke omstandigheden, indien van toepassing, wij die openbaar maken.</p><p>Als onze winkel wordt overgenomen door of fuseert met een ander bedrijf, kunnen je gegevens worden overgedragen aan de nieuwe eigenaren zodat wij producten aan je kunnen blijven verkopen.</p><p>VRAGEN EN CONTACTINFORMATIE</p><p>Als je persoonsgegevens die wij over je hebben wilt inzien, corrigeren, wijzigen of verwijderen, een klacht wilt indienen of gewoon meer informatie wilt, neem dan contact op met onze privacyfunctionaris via customer@thechristmasfabric.com of per post op het hoofdkantoor van SAS OVOORO, dat thechristmasfabric.com exploiteert:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Frankrijk</p>"
+    },
+    "MeasurementGuide": {
+      "intro": {
+        "eyebrow": "Een eenvoudige gids om fouten te voorkomen",
+        "title": "Neem je maten op",
+        "paragraph1": "De kleding van The Christmas Fabric wordt gemaakt op basis van een internationaal gemiddelde, omdat we willen dat iedereen deze kan dragen. Daarom helpen je maten je om de juiste maat te kiezen. Als je bijvoorbeeld meestal L draagt, kan bij sommige modellen maat M beter passen.",
+        "paragraph2": "Zodra je je maten hebt opgenomen, kun je ze direct vergelijken met de maattabel op de productpagina van je keuze. Onze producten kunnen vergelijkbare of verschillende maattabellen hebben."
+      },
+      "withoutTape": {
+        "eyebrow": "Gebruik een touwtje",
+        "title": "Meten zonder meetlint",
+        "description": "Geen probleem. Als je geen meetlint hebt, kun je een touwtje of de rand van een lange handdoek gebruiken om je borst, taille, heupen en meer te meten. Leg daarna de lengte van het touwtje of de handdoek langs een liniaal om de lengte in cm of inches te bepalen."
+      },
+      "guideTitle": "Bekijk de gids voor",
+      "options": {
+        "men": "Heren",
+        "women": "Dames",
+        "child": "Kind",
+        "baby": "Baby"
+      },
+      "imageAlt": "Illustratie van de meetgids",
+      "measurements": [
+        {
+          "primaryLabel": "A - Borst, borstomtrek:",
+          "primaryText": "Meet rond de borst. Alle maattabellen van The Christmas Fabric tonen de borstomtrek. Deze maat wordt zeer vaak gebruikt in onze maattabellen.",
+          "secondaryLabel": "Lengte van de top:",
+          "secondaryText": "Meet vanaf de holte onderaan de hals tot aan het bekken. Deze maat wordt zeer vaak gebruikt in onze maattabellen."
+        },
+        {
+          "primaryLabel": "B - Taille, tailleomtrek:",
+          "primaryText": "Meet rond de taille. Deze maat wordt vaak gebruikt in onze maattabellen.",
+          "secondaryLabel": "Lengte van de onderkant:",
+          "secondaryText": "Meet vanaf het bekken tot aan de enkel. Deze maat wordt zeer vaak gebruikt in onze maattabellen."
+        },
+        {
+          "primaryLabel": "C - Heupen, heupomtrek:",
+          "primaryText": "Meet rond de heupen. Deze maat wordt soms gebruikt in onze maattabellen."
+        },
+        {
+          "primaryLabel": "D - Binnenbeenlengte:",
+          "primaryText": "Meet vanaf het kruis tot aan de enkel zonder het been te buigen. Deze maat wordt minder vaak gebruikt in onze maattabellen."
+        }
+      ]
+    },
+    "ReturnAndRefund": {
+      "title": "Retourneren en terugbetaling",
+      "breadcrumbHome": "Home",
+      "body": "<p>Ons beleid geldt 14 dagen vanaf de dag van levering. Als er 14 dagen zijn verstreken sinds de dag van je levering, kunnen wij je helaas geen terugbetaling of omruiling aanbieden.</p><p>Om in aanmerking te komen voor een gratis retour, moet je artikel worden teruggestuurd voor omruiling, ongebruikt zijn en in dezelfde staat verkeren als waarin je het hebt ontvangen. Het moet ook in de originele verpakking zitten.</p><p>Om misbruik te voorkomen, wordt alleen een retourvergoeding van 10 USD$ toegepast wanneer de klant om terugbetaling vraagt en de bestelling voldoet aan de verwachtingen van de klant met betrekking tot de artikelen die de aankoop op www.thechristmasfabric.com hebben gemotiveerd.</p><p>De klant moet bij het retourneren van het product controleren of de accessoires, indien aanwezig, compleet zijn en of de verpakking de originele verpakking is. Als de klant dit niet doet, kan er een bedrag op de terugbetaling worden ingehouden om het geleden verlies te dekken:<br>- Beschadigde of ontbrekende originele verpakking: 10 USD$.<br>- Ontbrekende accessoires: 20% van het totale terugbetalingsbedrag, of de prijs van het accessoire als die op de site wordt weergegeven.</p><p>Als het artikel niet in de originele staat wordt teruggestuurd, beschadigd, bevlekt, niet-functionerend of verslechterd is, en daardoor niet opnieuw kan worden verkocht, kan er geen terugbetaling worden gegeven.</p><p>Veel soorten producten kunnen niet worden geretourneerd. Bederfelijke goederen zoals voedsel, bloemen of tijdschriften kunnen niet worden geretourneerd. Wij accepteren ook geen intieme of sanitaire producten, gevaarlijke producten, of brandbare gassen of vloeistoffen.</p><p>Andere artikelen die niet kunnen worden geretourneerd:</p><p>Cadeaubonnen<br>Downloadbare software<br>Bepaalde gezondheids- en persoonlijke verzorgingsproducten<br>Om een retour te doen, moet je ons een ontvangstbewijs of aankoopbewijs tonen.</p><p>Stuur je aankoop niet terug naar de fabrikant.</p><p>Er zijn bepaalde situaties waarin alleen een gedeeltelijke terugbetaling wordt toegekend, indien van toepassing:</p><p>Boeken met duidelijke gebruikssporen.<br>CD, DVD, VHS-band, software, videogame, cassette of vinylplaat die is geopend.<br>Elk artikel dat niet in de originele staat verkeert, beschadigd is of onderdelen mist om redenen die niet te wijten zijn aan een fout van onze kant.<br>Elk artikel dat meer dan 30 dagen na levering wordt geretourneerd.</p><p>Terugbetalingen, indien van toepassing<br>Zodra wij het geretourneerde artikel hebben ontvangen en geïnspecteerd, sturen wij je een e-mail om te bevestigen dat wij het hebben ontvangen. Wij informeren je ook over onze beslissing om je terugbetalingsverzoek goed te keuren of af te wijzen.<br>Als je verzoek wordt goedgekeurd, wordt je terugbetaling verwerkt en wordt er automatisch een tegoed toegepast op je creditcard of oorspronkelijke betaalmethode binnen maximaal 2 tot 3 dagen, exclusief weekenden en feestdagen.</p><p>Late of ontbrekende terugbetalingen, indien van toepassing<br>Als je je terugbetaling nog niet hebt ontvangen, controleer dan de volgende stappen voordat je per e-mail contact opneemt met de site:<br>- Controleer of de terugbetaling niet in behandeling is op je bankrekening of gepland staat voor een weergegeven datum.<br>- Neem contact op met je bank om de termijnen te kennen die gelden voor overschrijvingen tussen bankrekeningen die niet bij dezelfde bank horen.<br><br>Als je na het voltooien van al deze stappen je terugbetaling nog steeds niet hebt ontvangen, of de termijn van je bank of de ontvangstdatum van je terugbetaling niet kent, neem dan contact met ons op via customer@thechristmasfabric.com.</p><p>Sale-artikelen, indien van toepassing<br>Alleen artikelen met een reguliere prijs kunnen worden terugbetaald. Sale-artikelen zijn helaas niet terugbetaalbaar.</p><p>Retour bij defect</p><p>Een artikel dat wordt geretourneerd wegens een defect valt onder ons gratis retouraanbod, en de klant betaalt geen kosten. Als ons team na meerdere tests en controles door de klantenservice geen defect vaststelt, is de retourlevering aan de klant voor rekening van de klant. Dit helpt ons misbruik van retouren te voorkomen en vraagt de klant om te controleren of het product daadwerkelijk een defect heeft en of een retour naar de klantenservice nodig is voordat er een omruiling plaatsvindt.</p><p>Omruilingen</p><p>Wij vervangen een artikel alleen als het defect of beschadigd is bij ontvangst door de klant. De klant heeft 3 dagen vanaf de dag van levering om een probleem te melden. Na deze termijn beschouwen wij het artikel als gebruikt en is het niet langer omruilbaar. Stuur voor elke omruiling een e-mail naar customer@thechristmasfabric.com.</p><p>Het artikel moet nieuw, ongebruikt, ongewassen, in de originele verpakking en met alle labels eraan zijn.</p><p>Je artikel moet worden verzonden naar het adres van het bedrijf dat www.thechristmasfabric.com exploiteert:<br>SAS OVOORO<br>19 Allée de Brienne<br>Toulouse<br>31000<br>Frankrijk</p><p>Geschenken<br>Als het geretourneerde artikel op het moment van aankoop als cadeau was aangeduid en rechtstreeks naar jou was verzonden, ontvang je cadeautegoed ter waarde van je retour. Zodra wij het geretourneerde artikel hebben ontvangen, wordt er een cadeaubon naar je opgestuurd. Retourverzendkosten voor geschenken worden niet gedekt.</p><p>Verzending<br>Om een product te retourneren, moet je het sturen naar het hoofdkantoor van SAS OVOORO, het bedrijf dat www.thechristmasfabric.com exploiteert: SAS OVOORO, 19 Allée de Brienne, Toulouse, 31000, Frankrijk.</p><p>Verwerkingstijden<br>Afhankelijk van waar je woont, kan de tijd die nodig is om je omgeruilde product te ontvangen variëren.</p><p>Na ontvangst van je product op het hoofdkantoor nemen wij 3 tot 5 werkdagen om het te controleren en een beslissing te nemen, die per e-mail wordt meegedeeld aan het adres dat je bij je bestelling hebt opgegeven.</p><p>Als de retourkosten voor herlevering aan de klant worden gedragen door SAS OVOORO, het bedrijf dat www.thechristmasfabric.com exploiteert, kan de levertijd variëren tussen 3 en 5 dagen.</p><p>Als de kosten voor retourzending naar de klant voor rekening van de klant zijn, varieert de levertijd afhankelijk van de voorkeursmethode die de klant kiest.</p><p>Als je een artikel verzendt met een waarde van meer dan 100 USD$ en je verantwoordelijk bent voor de retourverzendkosten, moet je overwegen een verzenddienst te gebruiken waarmee je de zending kunt volgen of een verzendverzekering af te sluiten. Wij garanderen niet dat wij het artikel dat je retourneert zullen ontvangen als er een probleem optreedt.</p>"
+    },
+    "TermsOfDelivery": {
+      "title": "Leveringsvoorwaarden",
+      "breadcrumbHome": "Home",
+      "body": "<p>De PRODUCTEN worden verzonden naar het afleveradres of de afleveradressen die de KLANT tijdens het bestelproces heeft opgegeven.</p><p>Verzendtijd</p><p>De termijnen voor het voorbereiden van een bestelling en het vervolgens uitgeven van de factuur, voordat de PRODUCTEN op voorraad worden verzonden, worden vermeld op de SITE. Deze termijnen omvatten geen weekenden of feestdagen.</p><p>Bij verzending van de PRODUCTEN wordt automatisch een e-mail naar de KLANT gestuurd, op voorwaarde dat het e-mailadres in het registratieformulier correct is.</p><p>Levertijd en kosten</p><p>Tijdens het bestelproces geeft de VERKOPER aan de KLANT de mogelijke levertijden en verzendopties voor de gekochte PRODUCTEN door.</p><p>Verzendkosten worden berekend volgens de leveringsmethode. Het bedrag van deze kosten is door de KLANT verschuldigd naast de prijs van de gekochte PRODUCTEN.</p><p>Details van levertijden en kosten worden op de SITE vermeld.</p><p>Leveringsvoorwaarden</p><p>Het pakket wordt aan de KLANT overhandigd tegen handtekening en op vertoon van een identiteitsdocument.</p><p>Bij afwezigheid wordt er een bericht voor de KLANT achtergelaten, zodat deze het pakket bij het postkantoor kan ophalen.</p><p>De KLANT is verantwoordelijk voor het ophalen van het pakket bij het postkantoor binnen 10 dagen. De VERKOPER kan niet verantwoordelijk worden gehouden voor een pakket dat door postdiensten is vernietigd of niet is teruggestuurd, en deze reden vormt geen grond om een terugbetaling te verkrijgen.</p><p>Leveringsproblemen</p><p>De KLANT wordt geïnformeerd over de leveringsdatum wanneer hij of zij de vervoerder kiest, aan het einde van het online bestelproces, vóór bevestiging van de bestelling.</p><p>Er wordt gespecificeerd dat leveringen binnen maximaal dertig (30) dagen plaatsvinden. Bij gebreke daarvan moet de KLANT de VERKOPER formeel in gebreke stellen om binnen een redelijke termijn te leveren. Bij niet-levering binnen deze termijn kan het contract worden beëindigd.</p><p>De VERKOPER zal de KLANT, zonder onnodige vertraging na ontvangst van de beëindigingsbrief, het totale bedrag terugbetalen dat voor de PRODUCTEN is betaald, inclusief belastingen en leveringskosten, via dezelfde betaalmethode die de KLANT heeft gebruikt om de PRODUCTEN te kopen.</p><p>De VERKOPER is verantwoordelijk tot de levering van het PRODUCT aan de KLANT. De KLANT wordt eraan herinnerd dat hij of zij een termijn van drie (3) dagen heeft om de vervoerder op de hoogte te stellen van eventuele schade of gedeeltelijk verlies die bij levering is vastgesteld.</p>"
+    },
+    "LegalNotice": {
+      "title": "Juridische kennisgeving",
+      "breadcrumbHome": "Home",
+      "body": "<p>Juridische kennisgeving</p><p>Klant: iedere handelingsbekwame natuurlijke persoon of rechtspersoon die de site bezoekt. Gebruiker: iedere internetgebruiker die de site gebruikt. Inhoud: teksten, afbeeldingen, video’s, logo’s en andere elementen van de site.</p><p>Gegevens van de site</p><p>De site wordt uitgegeven door SASU OVOORO, 19 Allée de Brienne, 31000 Toulouse. Verantwoordelijke en DPO: The Christmas Fabric, customer@thechristmasfabric.com. Hosting: Kinsta Inc, 8605 Santa Monica Blvd #92581, 90069 West Hollywood, CA.</p><p>Gebruiksvoorwaarden</p><p>Gebruik van de site houdt aanvaarding van deze voorwaarden in. De inhoud is beschermd door intellectuele eigendomsrechten en mag niet zonder schriftelijke toestemming worden gereproduceerd, gewijzigd of geëxploiteerd.</p><p>Persoonsgegevens</p><p>Persoonsgegevens kunnen worden gebruikt voor accountbeheer, bestellingen, facturatie, klantrelaties, beveiliging, analyse en communicatie. Persoonsgegevens worden niet verkocht.</p><p>Rechten van gebruikers</p><p>Gebruikers hebben rechten op inzage, rectificatie, verwijdering, bezwaar, beperking, intrekking van toestemming en overdraagbaarheid. Verzoeken: DPO, OVOORO, 19 Allée de Brienne, 31000 Toulouse, met identiteitsbewijs.</p><p>Cookies, beveiliging en bevoegdheid</p><p>De site kan cookies en internettags gebruiken om navigatie te verbeteren en activiteit te meten. Via de browser kunnen cookies worden geaccepteerd of geweigerd. Geschillen vallen onder Frans recht en de bevoegde rechtbanken van Toulouse.</p>"
+    },
+    "HumanitarianProject": {
+      "title": "Humanitair project",
+      "hero": {
+        "eyebrow": "Met je bestellingen",
+        "heading": "5% gedoneerd",
+        "description": "5% van de winst wordt gedoneerd aan de vereniging AHPA, met als doel ten minste 1 educatieve tuin te bouwen in Kpomassè, Benin. Dankzij je bestelling kun je de voortgang van dit initiatief volgen, dat ook wordt ondersteund door onze Franse website.",
+        "link": "Noel Shop"
+      },
+      "association": {
+        "eyebrow": "De vereniging",
+        "heading": "AHPA",
+        "description": "Association Humanitaire pour l'Afrique (AHPA) is een internationale solidariteitsvereniging die ontwikkelingsprojecten in Benin ondersteunt op het gebied van onderwijs, duurzame landbouw, milieubescherming en eerlijke toerisme. Samen met lokale verenigingspartners ondersteunt AHPA inkomensgenererende microprojecten voor jongeren rond milieueducatie.",
+        "logoAlt": "Logo van vereniging AHPA"
+      },
+      "gallery": {
+        "image1Alt": "Educatief tuinproject in Benin",
+        "image2Alt": "Lokaal gemeenschapsproject ondersteund door AHPA",
+        "image3Alt": "Landbouw- en onderwijsinitiatief in Benin",
+        "image4Alt": "Veldactiviteit van het humanitaire project"
+      }
+    },
+    "CustomerService": {
+      "banner": {
+        "heading": "Klantenservice",
+        "subHeading": "Wat kunnen we vandaag voor je doen?"
+      },
+      "faqSections": [
+        {
+          "eyebrow": "Meer informatie over tracking en levering van je bestelling",
+          "heading": "Levering en tracking",
+          "items": [
+            {
+              "question": "Hoe kan ik mijn bestelling volgen?",
+              "answer": "Zodra je bestelling is verzonden, ontvang je een bevestigingsmail met een trackingnummer. Je kunt ook de pagina Mijn bestelling volgen gebruiken."
+            },
+            {
+              "question": "Wanneer wordt mijn bestelling verzonden?",
+              "answer": "Bestellingen worden meestal snel voorbereid van maandag tot zaterdag, behalve op feestdagen. Je ontvangt een e-mail zodra je pakket ons magazijn verlaat."
+            },
+            {
+              "question": "Waarom wordt mijn trackinglink niet bijgewerkt?",
+              "answer": "Trackinglinks kunnen even nodig hebben om bij te werken nadat de vervoerder het pakket heeft ontvangen. Controleer later opnieuw."
+            },
+            {
+              "question": "Wat moet ik doen als mijn pakket vertraagd is?",
+              "answer": "Vertragingen kunnen voorkomen tijdens drukke periodes. Controleer eerst de tracking en neem contact op met de klantenservice als de leverdatum is verstreken."
+            },
+            {
+              "question": "Kan ik mijn afleveradres wijzigen?",
+              "answer": "Neem zo snel mogelijk contact met ons op. Als je bestelling nog niet is voorbereid of verzonden, proberen we het adres te wijzigen."
+            },
+            {
+              "question": "Wat gebeurt er als ik niet thuis ben bij levering?",
+              "answer": "De vervoerder kan een bericht achterlaten of het pakket naar een afhaalpunt sturen. Volg de instructies van de vervoerder."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Een artikel retourneren, ruilen of terugbetaling aanvragen",
+          "heading": "Retour en ruilen",
+          "items": [
+            {
+              "question": "Hoe retourneer ik een artikel?",
+              "answer": "Neem contact op met de klantenservice met je bestelnummer en het artikel dat je wilt retourneren. We bevestigen de volgende stappen en het retouradres."
+            },
+            {
+              "question": "Hoe lang heb ik om een retour aan te vragen?",
+              "answer": "Ons retourbeleid geldt 14 dagen vanaf de levering. Artikelen moeten ongebruikt, ongewassen, in de originele verpakking en met labels worden teruggestuurd."
+            },
+            {
+              "question": "Kan ik mijn artikel ruilen voor een andere maat?",
+              "answer": "Ja, ruilen is mogelijk als de gewenste maat beschikbaar is en het teruggestuurde artikel aan onze voorwaarden voldoet."
+            },
+            {
+              "question": "Wanneer ontvang ik mijn terugbetaling?",
+              "answer": "Na ontvangst en controle van je retour worden goedgekeurde terugbetalingen binnen enkele werkdagen verwerkt naar de oorspronkelijke betaalmethode."
+            },
+            {
+              "question": "Zijn sale-artikelen terugbetaalbaar?",
+              "answer": "Alleen artikelen met een reguliere prijs kunnen worden terugbetaald, tenzij de wet anders vereist. Sale-artikelen zijn mogelijk niet terugbetaalbaar."
+            },
+            {
+              "question": "Wat als mijn artikel beschadigd of defect is?",
+              "answer": "Neem binnen 3 dagen na levering contact met ons op met je bestelnummer en foto’s van het probleem. We bekijken de situatie."
+            }
+          ]
+        }
+      ],
+      "form": {
+        "description": "Gebruik dit formulier om de klantenservice per e-mail te contacteren via customer@thechristmasfabric.com",
+        "heading": "Contacteer de klantenservice",
+        "firstNameLabel": "Je voornaam",
+        "firstNamePlaceholder": "Voornaam",
+        "orderNumberLabel": "Je bestelnummer",
+        "orderNumberPlaceholder": "35445",
+        "reasonLabel": "De reden van je verzoek",
+        "reasonOptions": [
+          "Ik wil een product ruilen",
+          "Ik heb een probleem met tracking",
+          "Ik wil mijn pakket retourneren of terugbetaling krijgen",
+          "Ik wil mijn bestelling wijzigen",
+          "Ik neem contact op om een andere reden"
+        ],
+        "submit": "Doorgaan"
+      }
     }
   }
 }

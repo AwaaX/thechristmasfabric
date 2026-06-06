@@ -519,6 +519,182 @@
   "Checkout": {
     "Payment": {
       "selectMethod": "Seleziona un metodo di pagamento"
+    },
+    "Layout": {
+      "backToCart": "Torna al carrello",
+      "back": "Indietro",
+      "store": "The Christmas Fabric"
+    }
+  },
+  "StaticPages": {
+    "PrivacyPolicy": {
+      "title": "Informativa sulla privacy",
+      "breadcrumbHome": "Home",
+      "body": "<p>SEZIONE 1 - INFORMAZIONI PERSONALI RACCOLTE</p><p>Quando effettui un acquisto nel nostro negozio, nell'ambito del nostro processo di acquisto e vendita, raccogliamo le informazioni personali che ci fornisci, come nome, indirizzo e indirizzo e-mail.</p><p>Quando navighi nel nostro negozio, riceviamo automaticamente anche l'indirizzo IP del tuo computer, che ci consente di ottenere maggiori dettagli sul browser e sul sistema operativo che utilizzi.</p><p>Marketing via e-mail (se applicabile): con il tuo consenso, potremmo inviarti e-mail sul nostro negozio, sui nuovi prodotti e su altri aggiornamenti.</p><p>SEZIONE 2 - CONSENSO</p><p>Come ottenete il mio consenso?</p><p>Quando ci fornisci le tue informazioni personali per completare una transazione, verificare la tua carta di credito, effettuare un ordine, programmare una consegna o restituire un acquisto, presumiamo che tu acconsenta alla raccolta e all'uso delle tue informazioni solo per tale finalita.</p><p>Se ti chiediamo di fornire le tue informazioni personali per qualsiasi altro motivo, ad esempio per finalita di marketing, ti chiederemo direttamente il consenso esplicito oppure ti daremo la possibilita di rifiutare.</p><p>Come posso revocare il mio consenso? Puoi modificare il tuo consenso in qualsiasi momento <a href=\"#\">cliccando qui e modificando il tuo consenso</a>.</p><p>Se, dopo averci dato il tuo consenso, cambi idea e non acconsenti piu a essere contattato, alla raccolta delle tue informazioni o alla loro divulgazione, puoi informarci contattandoci all'indirizzo customer@thechristmasfabric.com o per posta a SAS OVOORO, la societa che gestisce thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Francia</p><p>SEZIONE 3 - DIVULGAZIONE</p><p>Potremmo divulgare le tue informazioni personali se siamo obbligati dalla legge o se violi i nostri Termini e Condizioni.</p><p>SEZIONE 4 - HOST</p><p>Il nostro negozio e ospitato da Kinsta Inc. Ci fornisce la piattaforma online che ci consente di venderti i nostri servizi e prodotti.</p><p>I tuoi dati sono archiviati nel sistema di archiviazione dati e nei database di Kinsta Inc. I tuoi dati sono conservati su un server sicuro protetto da firewall.</p><p>Pagamento:</p><p>Quando effettui un acquisto online su noel-shop.com, nessuna informazione relativa alla carta di credito viene memorizzata. Le informazioni della tua carta di credito vengono utilizzate in modo sicuro da servizi di terze parti per elaborare il pagamento. Per motivi di sicurezza, i dati sono crittografati in conformita al Payment Card Industry Data Security Standard (PCI-DSS). Le informazioni relative alla transazione di acquisto vengono conservate per il tempo necessario a completare l'ordine da servizi di terze parti come PayPal, Stripe o Mollie.</p><p>Tutti i gateway di pagamento diretto sono conformi allo standard PCI-DSS, gestito dal PCI Security Standards Council, iniziativa congiunta di societa come Visa, MasterCard, American Express e Discover.</p><p>I requisiti dello standard PCI-DSS garantiscono l'elaborazione sicura dei dati delle carte di credito da parte del nostro negozio e dei suoi fornitori di servizi.</p><p>SEZIONE 5 - SERVIZI FORNITI DA TERZE PARTI</p><p>In generale, i fornitori terzi che utilizziamo raccoglieranno, useranno e divulgheranno le tue informazioni solo nella misura necessaria per poter svolgere i servizi che ci forniscono.</p><p>Tuttavia, alcuni fornitori di servizi terzi, come gateway di pagamento e altri processori di transazioni di pagamento, hanno proprie informative sulla privacy relative alle informazioni che dobbiamo fornire loro per le tue transazioni di acquisto.</p><p>Per quanto riguarda questi fornitori, ti consigliamo di leggere attentamente le loro informative sulla privacy per capire come tratteranno le tue informazioni personali.</p><p>Tieni presente che alcuni fornitori possono trovarsi, o avere strutture situate, in una giurisdizione diversa dalla tua o dalla nostra. Se procedi con una transazione che richiede i servizi di un fornitore terzo, le tue informazioni possono essere disciplinate dalle leggi della giurisdizione in cui si trova tale fornitore o in cui si trovano le sue strutture.</p><p>Ad esempio, se ti trovi in Canada e la tua transazione viene elaborata tramite un gateway di pagamento situato negli Stati Uniti, le informazioni utilizzate per completare la transazione possono essere divulgate ai sensi della legge degli Stati Uniti, incluso il Patriot Act.</p><p>Quando lasci il sito del nostro negozio o vieni reindirizzato a un sito web o a un'applicazione di terze parti, non sei piu soggetto alla presente Informativa sulla privacy o ai Termini e Condizioni di vendita e utilizzo del nostro sito web.</p><p>Link</p><p>Puoi lasciare il nostro sito web cliccando su determinati link presenti sul nostro sito. Non ci assumiamo alcuna responsabilita per le pratiche sulla privacy di questi altri siti e ti consigliamo di leggere attentamente le loro informative sulla privacy.</p><p>SEZIONE 6 - SICUREZZA</p><p>Per proteggere le tue informazioni personali, adottiamo precauzioni ragionevoli e seguiamo le migliori pratiche del settore per garantire che non vengano perse, usate impropriamente, consultate, divulgate, alterate o distrutte in modo inappropriato.</p><p>SEZIONE 7 - ETA DEL CONSENSO</p><p>Utilizzando questo sito, dichiari di avere almeno la maggiore eta nel tuo stato o provincia di residenza e di averci dato il consenso affinche qualsiasi minore sotto la tua responsabilita possa utilizzare questo sito web.</p><p>SEZIONE 8 - MODIFICHE A QUESTA INFORMATIVA SULLA PRIVACY</p><p>Ci riserviamo il diritto di modificare questa Informativa sulla privacy in qualsiasi momento, pertanto ti invitiamo a consultarla frequentemente. Modifiche e chiarimenti avranno effetto immediatamente dopo la pubblicazione sul sito web. Se apportiamo modifiche al contenuto di questa informativa, ti informeremo qui che e stata aggiornata, cosi saprai quali informazioni raccogliamo, come le utilizziamo e in quali circostanze, se presenti, le divulghiamo.</p><p>Se il nostro negozio viene acquisito da un'altra societa o si fonde con essa, le tue informazioni possono essere trasferite ai nuovi proprietari affinche possiamo continuare a venderti prodotti.</p><p>DOMANDE E INFORMAZIONI DI CONTATTO</p><p>Se desideri accedere, correggere, modificare o eliminare qualsiasi informazione personale che abbiamo su di te, presentare un reclamo o semplicemente ricevere maggiori informazioni, contatta il nostro Responsabile della privacy all'indirizzo customer@thechristmasfabric.com o per posta presso la sede di SAS OVOORO, che gestisce thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Francia</p>"
+    },
+    "MeasurementGuide": {
+      "intro": {
+        "eyebrow": "Una guida semplice per evitare errori",
+        "title": "Prendi le tue misure",
+        "paragraph1": "I capi The Christmas Fabric sono realizzati secondo una media internazionale perché vogliamo che possano essere indossati da tutti. Per questo conoscere le tue misure ti aiuterà a scegliere la taglia giusta. Ad esempio, se di solito indossi una L, per alcuni modelli potrebbe vestirti meglio una M.",
+        "paragraph2": "Dopo aver preso le misure, puoi confrontarle direttamente con la guida alle taglie disponibile nella pagina del prodotto che hai scelto. I nostri prodotti possono avere guide alle taglie simili o diverse."
+      },
+      "withoutTape": {
+        "eyebrow": "Usa uno spago",
+        "title": "Misurare senza metro da sarta",
+        "description": "Nessun problema. Se non hai un metro da sarta, puoi usare uno spago o il bordo di un asciugamano lungo per misurare busto, vita, fianchi e altro. Poi riporta la lunghezza dello spago o dell’asciugamano su un righello per ottenere la misura in cm o in pollici."
+      },
+      "guideTitle": "Visualizza la guida per",
+      "options": {
+        "men": "Uomo",
+        "women": "Donna",
+        "child": "Bambino",
+        "baby": "Neonato"
+      },
+      "imageAlt": "Illustrazione della guida alle misure",
+      "measurements": [
+        {
+          "primaryLabel": "A - Busto, circonferenza busto:",
+          "primaryText": "Misura la circonferenza del busto. Tutte le guide alle taglie The Christmas Fabric indicano questa misura. È molto usata nelle nostre guide alle taglie.",
+          "secondaryLabel": "Lunghezza del sopra:",
+          "secondaryText": "Misura dall’incavo alla base del collo fino al bacino. È molto usata nelle nostre guide alle taglie."
+        },
+        {
+          "primaryLabel": "B - Vita, circonferenza vita:",
+          "primaryText": "Misura la circonferenza della vita. È spesso usata nelle nostre guide alle taglie.",
+          "secondaryLabel": "Lunghezza del sotto:",
+          "secondaryText": "Misura dal bacino fino alla caviglia. È molto usata nelle nostre guide alle taglie."
+        },
+        {
+          "primaryLabel": "C - Fianchi, circonferenza fianchi:",
+          "primaryText": "Misura la circonferenza dei fianchi. È talvolta usata nelle nostre guide alle taglie."
+        },
+        {
+          "primaryLabel": "D - Lunghezza interno gamba:",
+          "primaryText": "Misura dall’incavo del cavallo fino alla caviglia senza piegare la gamba. È usata meno spesso nelle nostre guide alle taglie."
+        }
+      ]
+    },
+    "ReturnAndRefund": {
+      "title": "Reso e rimborso",
+      "breadcrumbHome": "Home",
+      "body": "<p>La nostra politica dura 14 giorni dal giorno della consegna. Se sono trascorsi 14 giorni dal giorno della consegna, purtroppo non possiamo offrirti un rimborso o un cambio.</p><p>Per poter usufruire di un reso gratuito, l'articolo deve essere restituito per cambio, inutilizzato e nelle stesse condizioni in cui lo hai ricevuto. Deve inoltre essere nella confezione originale.</p><p>Per evitare abusi, si applica una tariffa di reso di 10 USD$ solo nel caso in cui il cliente richieda un rimborso e l'ordine sia conforme alle aspettative del cliente per gli articoli che hanno motivato il suo acquisto su www.thechristmasfabric.com.</p><p>Il cliente deve verificare al momento del reso che gli accessori, se presenti, siano completi e che l'imballaggio sia quello originale. Se il cliente non lo fa, al rimborso può essere applicato un addebito per coprire la perdita subita:<br>- Imballaggio originale danneggiato o mancante: 10 USD$.<br>- Accessori mancanti: 20% dell'importo totale del rimborso, oppure prezzo dell'accessorio se visualizzato sul sito.</p><p>Se l'articolo non viene restituito nelle condizioni originali, è danneggiato, macchiato, non funzionante o degradato, e questo impedisce di venderlo di nuovo, non potrà essere concesso alcun rimborso.</p><p>Molti tipi di prodotti non possono essere restituiti. I beni deperibili come alimenti, fiori o riviste non possono essere restituiti. Inoltre non accettiamo prodotti intimi o sanitari, prodotti pericolosi, gas o liquidi infiammabili.</p><p>Altri articoli che non possono essere restituiti:</p><p>Carte regalo<br>Software scaricabile<br>Alcuni prodotti per la salute e la cura personale<br>Per effettuare un reso, devi presentarci una ricevuta o una prova d'acquisto.</p><p>Ti preghiamo di non restituire il tuo acquisto al produttore.</p><p>Ci sono alcune situazioni in cui viene concesso solo un rimborso parziale, se applicabile:</p><p>Libri con evidenti segni di utilizzo.<br>CD, DVD, videocassetta VHS, software, videogioco, cassetta o disco in vinile che è stato aperto.<br>Qualsiasi articolo che non sia nelle condizioni originali, che sia danneggiato o che abbia parti mancanti per motivi non dovuti a un nostro errore.<br>Qualsiasi articolo restituito oltre 30 giorni dopo la consegna.</p><p>Rimborsi, se applicabili<br>Una volta ricevuto e ispezionato l'articolo restituito, ti invieremo un'e-mail per confermare che lo abbiamo ricevuto. Ti informeremo anche della nostra decisione di approvare o rifiutare la tua richiesta di rimborso.<br>Se la richiesta viene approvata, il rimborso verrà elaborato e un credito verrà applicato automaticamente alla tua carta di credito o al metodo di pagamento originale entro un massimo di 2-3 giorni, esclusi weekend e giorni festivi.</p><p>Rimborsi in ritardo o mancanti, se applicabili<br>Se non hai ancora ricevuto il rimborso, controlla i seguenti passaggi prima di contattare il sito via e-mail:<br>- Verifica che il rimborso non sia in corso sul tuo conto bancario o programmato per arrivare in una data indicata.<br>- Contatta la tua banca per conoscere i tempi applicati ai trasferimenti tra conti bancari non appartenenti alla stessa banca.<br><br>Se dopo aver completato tutti questi passaggi non hai ancora ricevuto il rimborso, o non conosci i tempi della tua banca o la data di ricezione del rimborso, contattaci all'indirizzo customer@thechristmasfabric.com.</p><p>Articoli in saldo, se applicabile<br>Solo gli articoli a prezzo regolare possono essere rimborsati. Purtroppo, gli articoli in saldo non sono rimborsabili.</p><p>Reso per malfunzionamento</p><p>Un articolo restituito a causa di un malfunzionamento rientra nella nostra offerta di reso gratuito, e il cliente non paga alcun costo. Se il nostro team non rileva alcun malfunzionamento dopo diversi test e verifiche del servizio post-vendita, la riconsegna al cliente sarà a carico del cliente. Questo ci consente di evitare resi abusivi e invita il cliente a verificare che il prodotto abbia un reale malfunzionamento e che un reso al servizio post-vendita sia necessario prima di qualsiasi cambio.</p><p>Cambi</p><p>Sostituiremo un articolo solo se è difettoso o danneggiato al momento della ricezione da parte del cliente. Il cliente ha 3 giorni dal giorno della consegna per dichiarare un problema. Dopo questo termine, consideriamo che l'articolo sia stato utilizzato e non sia più sostituibile. Per qualsiasi cambio, inviaci un'e-mail a customer@thechristmasfabric.com.</p><p>L'articolo deve essere nuovo, inutilizzato, non lavato, nella confezione originale e con tutte le etichette attaccate.</p><p>Il tuo articolo deve essere inviato all'indirizzo della società che gestisce www.thechristmasfabric.com:<br>SAS OVOORO<br>19 Allée de Brienne<br>Toulouse<br>31000<br>Francia</p><p>Regali<br>Se l'articolo restituito era stato identificato come regalo al momento dell'acquisto ed era stato inviato direttamente a te, riceverai un credito regalo pari al valore del reso. Una volta ricevuto l'articolo restituito, ti verrà spedito un buono regalo. I costi di spedizione per il reso dei regali non sono coperti.</p><p>Spedizione<br>Per restituire un prodotto, devi inviarlo alla sede di SAS OVOORO, la società che gestisce www.thechristmasfabric.com: SAS OVOORO, 19 Allée de Brienne, Toulouse, 31000, Francia.</p><p>Tempi di elaborazione<br>A seconda di dove vivi, il tempo necessario per ricevere il prodotto sostituito può variare.</p><p>Dopo aver ricevuto il prodotto presso la sede, impieghiamo da 3 a 5 giorni lavorativi per verificarlo e prendere una decisione, che ti verrà comunicata via e-mail all'indirizzo fornito al momento dell'ordine.</p><p>Se i costi di reso per la riconsegna al cliente sono sostenuti da SAS OVOORO, la società che gestisce www.thechristmasfabric.com, il tempo di consegna può variare tra 3 e 5 giorni.</p><p>Se il costo della spedizione di ritorno al cliente è a carico del cliente, il tempo di consegna varierà in base al metodo preferito scelto dal cliente.</p><p>Se stai spedendo un articolo del valore superiore a 100 USD$ e sei responsabile dei costi di reso, dovresti considerare l'utilizzo di un servizio di spedizione che consenta di tracciare la spedizione o l'acquisto di un'assicurazione sulla spedizione. Non garantiamo di ricevere l'articolo che stai restituendo in caso di problemi.</p>"
+    },
+    "TermsOfDelivery": {
+      "title": "Condizioni di consegna",
+      "breadcrumbHome": "Home",
+      "body": "<p>I PRODOTTI vengono spediti all'indirizzo o agli indirizzi di consegna indicati dal CLIENTE durante il processo d'ordine.</p><p>Tempo di spedizione</p><p>I termini per la preparazione dell'ordine e l'emissione della fattura, prima della spedizione dei PRODOTTI disponibili in magazzino, sono indicati sul SITO. Tali termini non includono weekend o giorni festivi.</p><p>Al momento della spedizione dei PRODOTTI verrà automaticamente inviata un'e-mail al CLIENTE, a condizione che l'indirizzo e-mail indicato nel modulo di registrazione sia corretto.</p><p>Tempi e costi di consegna</p><p>Durante il processo d'ordine, il VENDITORE indica al CLIENTE i possibili tempi di consegna e le opzioni di spedizione per i PRODOTTI acquistati.</p><p>Le spese di spedizione sono calcolate in base al metodo di consegna. L'importo di tali costi sarà dovuto dal CLIENTE in aggiunta al prezzo dei PRODOTTI acquistati.</p><p>I dettagli dei tempi e dei costi di consegna sono indicati sul SITO.</p><p>Condizioni di consegna</p><p>Il pacco sarà consegnato al CLIENTE dietro firma e previa presentazione di un documento di identità.</p><p>In caso di assenza, verrà lasciato al CLIENTE un avviso di passaggio per consentirgli di ritirare il pacco presso il proprio ufficio postale.</p><p>Il CLIENTE è responsabile del ritiro del pacco presso l'ufficio postale entro 10 giorni. Il VENDITORE non può essere ritenuto responsabile per un pacco distrutto o non restituito dai servizi postali, e tale motivo non costituisce base per ottenere alcun rimborso.</p><p>Problemi di consegna</p><p>Il CLIENTE viene informato della data di consegna quando sceglie il corriere, alla fine del processo di ordine online, prima di confermare l'ordine.</p><p>È specificato che le consegne saranno effettuate entro un massimo di trenta (30) giorni. In caso contrario, il CLIENTE dovrà mettere formalmente in mora il VENDITORE affinché consegni entro un termine ragionevole. In caso di mancata consegna entro tale termine, il contratto potrà essere risolto.</p><p>Il VENDITORE rimborserà al CLIENTE, senza indebito ritardo dopo il ricevimento della lettera di risoluzione, l'importo totale pagato per i PRODOTTI, incluse tasse e spese di consegna, con lo stesso metodo di pagamento utilizzato dal CLIENTE per acquistare i PRODOTTI.</p><p>Il VENDITORE è responsabile fino alla consegna del PRODOTTO al CLIENTE. Si ricorda che il CLIENTE dispone di un termine di tre (3) giorni per notificare al corriere eventuali danni o perdite parziali riscontrati al momento della consegna.</p>"
+    },
+    "LegalNotice": {
+      "title": "Note legali",
+      "breadcrumbHome": "Home",
+      "body": "<p>Note legali</p><p>Cliente: qualsiasi persona fisica capace o persona giuridica che visita il sito. Utente: qualsiasi internauta che usa il sito. Contenuto: testi, immagini, video, loghi e altri elementi del sito.</p><p>Dati del sito</p><p>Il sito è pubblicato da SASU OVOORO, 19 Allée de Brienne, 31000 Toulouse. Responsabile e DPO: The Christmas Fabric, customer@thechristmasfabric.com. Hosting: Kinsta Inc, 8605 Santa Monica Blvd #92581, 90069 West Hollywood, CA.</p><p>Condizioni di utilizzo</p><p>L’uso del sito implica l’accettazione delle presenti condizioni. I contenuti sono protetti da diritti di proprietà intellettuale e non possono essere riprodotti, modificati o sfruttati senza autorizzazione scritta.</p><p>Dati personali</p><p>I dati personali possono essere usati per gestire account, ordini, fatturazione, relazione cliente, sicurezza, analisi e comunicazioni. I dati personali non sono venduti.</p><p>Diritti degli utenti</p><p>Gli utenti hanno diritti di accesso, rettifica, cancellazione, opposizione, limitazione, revoca del consenso e portabilità. Richieste: DPO, OVOORO, 19 Allée de Brienne, 31000 Toulouse, con prova d’identità.</p><p>Cookie, sicurezza e giurisdizione</p><p>Il sito può usare cookie e tag internet per migliorare la navigazione e misurare l’attività. Il browser consente di accettare o rifiutare i cookie. Le controversie sono soggette al diritto francese e ai tribunali competenti di Toulouse.</p>"
+    },
+    "HumanitarianProject": {
+      "title": "Progetto umanitario",
+      "hero": {
+        "eyebrow": "Con i tuoi ordini",
+        "heading": "5% donato",
+        "description": "Il 5% dei profitti sarà donato all’associazione AHPA, con l’obiettivo di costruire almeno 1 giardino educativo a Kpomassè, in Benin. Grazie al tuo ordine, potrai seguire i progressi di questa iniziativa, sostenuta anche dal nostro sito francese.",
+        "link": "Noel Shop"
+      },
+      "association": {
+        "eyebrow": "L’associazione",
+        "heading": "AHPA",
+        "description": "Association Humanitaire pour l'Afrique (AHPA) è un’associazione di solidarietà internazionale che sostiene progetti di sviluppo in Benin nei settori dell’educazione, dell’agricoltura sostenibile, della tutela dell’ambiente e del turismo equo. Collaborando con partner associativi locali, AHPA sostiene microprogetti generatori di reddito per giovani nell’educazione ambientale.",
+        "logoAlt": "Logo dell’associazione AHPA"
+      },
+      "gallery": {
+        "image1Alt": "Progetto di giardino educativo in Benin",
+        "image2Alt": "Progetto comunitario locale sostenuto da AHPA",
+        "image3Alt": "Iniziativa agricola ed educativa in Benin",
+        "image4Alt": "Attività sul campo del progetto umanitario"
+      }
+    },
+    "CustomerService": {
+      "banner": {
+        "heading": "Servizio clienti",
+        "subHeading": "Cosa possiamo fare per te oggi?"
+      },
+      "faqSections": [
+        {
+          "eyebrow": "Scopri di più sul tracciamento e sulla consegna del tuo ordine",
+          "heading": "Consegna e tracciamento",
+          "items": [
+            {
+              "question": "Come posso tracciare il mio ordine?",
+              "answer": "Quando l’ordine viene spedito, riceverai un’e-mail con il numero di tracciamento. Puoi anche usare la pagina Traccia il mio ordine."
+            },
+            {
+              "question": "Quando verrà spedito il mio ordine?",
+              "answer": "Gli ordini vengono di solito preparati rapidamente dal lunedì al sabato, esclusi i festivi. Riceverai un’e-mail quando il pacco lascia il magazzino."
+            },
+            {
+              "question": "Perché il link di tracciamento non si aggiorna?",
+              "answer": "Il tracciamento può richiedere un po’ di tempo dopo la presa in carico del corriere. Controlla più tardi."
+            },
+            {
+              "question": "Cosa devo fare se il pacco è in ritardo?",
+              "answer": "I ritardi possono verificarsi nei periodi di maggiore attività. Controlla prima il tracking e poi contatta il servizio clienti."
+            },
+            {
+              "question": "Posso modificare l’indirizzo di consegna?",
+              "answer": "Contattaci il prima possibile. Se l’ordine non è ancora preparato o spedito, faremo il possibile per aggiornarlo."
+            },
+            {
+              "question": "Cosa succede se non sono a casa?",
+              "answer": "Il corriere può lasciare un avviso o portare il pacco a un punto di ritiro. Segui le istruzioni del corriere."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Restituire un articolo, fare un cambio o richiedere un rimborso",
+          "heading": "Reso e cambio",
+          "items": [
+            {
+              "question": "Come restituisco un articolo?",
+              "answer": "Contatta il servizio clienti con il numero d’ordine e l’articolo da restituire. Ti confermeremo i passaggi e l’indirizzo."
+            },
+            {
+              "question": "Quanto tempo ho per richiedere un reso?",
+              "answer": "La politica di reso dura 14 giorni dalla consegna. Gli articoli devono essere inutilizzati, non lavati, nella confezione originale e con etichette."
+            },
+            {
+              "question": "Posso cambiare taglia?",
+              "answer": "Sì, se la taglia richiesta è disponibile e l’articolo rispetta le condizioni di reso."
+            },
+            {
+              "question": "Quando riceverò il rimborso?",
+              "answer": "Dopo ricezione e controllo del reso, i rimborsi approvati vengono elaborati sul metodo di pagamento originale entro pochi giorni lavorativi."
+            },
+            {
+              "question": "Gli articoli in saldo sono rimborsabili?",
+              "answer": "Solo gli articoli a prezzo regolare possono essere rimborsati, salvo obblighi di legge. Gli articoli in saldo potrebbero non esserlo."
+            },
+            {
+              "question": "Cosa faccio se l’articolo è danneggiato o difettoso?",
+              "answer": "Contattaci entro 3 giorni dalla consegna con numero d’ordine e foto del problema. Esamineremo il caso."
+            }
+          ]
+        }
+      ],
+      "form": {
+        "description": "Usa questo modulo per contattare il servizio clienti via e-mail a customer@thechristmasfabric.com",
+        "heading": "Contatta il servizio clienti",
+        "firstNameLabel": "Il tuo nome",
+        "firstNamePlaceholder": "Nome",
+        "orderNumberLabel": "Il tuo numero d’ordine",
+        "orderNumberPlaceholder": "35445",
+        "reasonLabel": "Il motivo della richiesta",
+        "reasonOptions": [
+          "Voglio cambiare un prodotto",
+          "Ho un problema con il tracciamento",
+          "Voglio restituire il pacco o ottenere un rimborso",
+          "Voglio modificare il mio ordine",
+          "Vi contatto per un altro motivo"
+        ],
+        "submit": "Continua"
+      }
     }
   }
 }
