@@ -223,6 +223,10 @@
     "OrderConfirmed": {
       "title": "Ordine confermato | The Christmas Fabric",
       "description": "Il tuo acquisto è andato a buon fine."
+    },
+    "AllPyjamas": {
+      "title": "Pigiama di Natale | The Christmas Fabric",
+      "description": "Partecipa al progetto e acquista fantastici pigiami e capi originali per il Natale e questa stagione invernale da The Christmas Fabric"
     }
   },
   "Common": {

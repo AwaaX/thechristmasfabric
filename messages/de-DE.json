@@ -223,6 +223,10 @@
     "OrderConfirmed": {
       "title": "Bestellung bestätigt | The Christmas Fabric",
       "description": "Ihr Kauf war erfolgreich."
+    },
+    "AllPyjamas": {
+      "title": "Weihnachtspyjamas | The Christmas Fabric",
+      "description": "Mach beim Projekt mit und kaufe tolle Pyjamas und originelle Kleidung für Weihnachten und die Wintersaison bei The Christmas Fabric"
     }
   },
   "Common": {
