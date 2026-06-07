@@ -1,12 +1,14 @@
 import { Heading, Text } from "@medusajs/ui"
 import TransferActions from "@modules/order/components/transfer-actions"
 import TransferImage from "@modules/order/components/transfer-image"
+import { getTranslations } from "next-intl/server"
 
 export default async function TransferPage({
   params,
 }: {
   params: { id: string; token: string }
 }) {
+  const t = await getTranslations("Order.TransferPage")
   const { id, token } = params
 
   return (
@@ -14,21 +16,17 @@ export default async function TransferPage({
       <TransferImage />
       <div className="flex flex-col gap-y-6">
         <Heading level="h1" className="text-xl text-zinc-900">
-          Transfer request for order {id}
+          {t("heading", { id })}
         </Heading>
         <Text className="text-zinc-600">
-          You&#39;ve received a request to transfer ownership of your order ({id}).
-          If you agree to this request, you can approve the transfer by clicking
-          the button below.
+          {t("intro", { id })}
         </Text>
         <div className="w-full h-px bg-zinc-200" />
         <Text className="text-zinc-600">
-          If you accept, the new owner will take over all responsibilities and
-          permissions associated with this order.
+          {t("permissions")}
         </Text>
         <Text className="text-zinc-600">
-          If you do not recognize this request or wish to retain ownership, no
-          further action is required.
+          {t("noAction")}
         </Text>
         <div className="w-full h-px bg-zinc-200" />
         <TransferActions id={id} token={token} />

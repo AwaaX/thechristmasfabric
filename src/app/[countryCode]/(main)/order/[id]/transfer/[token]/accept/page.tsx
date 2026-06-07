@@ -1,6 +1,7 @@
 import { acceptTransferRequest } from "@lib/data/orders"
 import { Heading, Text } from "@medusajs/ui"
 import TransferImage from "@modules/order/components/transfer-image"
+import { getTranslations } from "next-intl/server"
 
 export default async function TransferPage({
   params,
@@ -11,6 +12,8 @@ export default async function TransferPage({
 
   const { success, error } = await acceptTransferRequest(id, token)
 
+  const t = await getTranslations("Order.TransferAccept")
+
   return (
     <div className="flex flex-col gap-y-4 items-start w-2/5 mx-auto mt-10 mb-20">
       <TransferImage />
@@ -18,20 +21,20 @@ export default async function TransferPage({
         {success && (
           <>
             <Heading level="h1" className="text-xl text-zinc-900">
-              Order transfered!
+              {t("successHeading")}
             </Heading>
             <Text className="text-zinc-600">
-              Order {id} has been successfully transfered to the new owner.
+              {t("successText", { id })}
             </Text>
           </>
         )}
         {!success && (
           <>
             <Text className="text-zinc-600">
-              There was an error accepting the transfer. Please try again.
+              {t("errorText")}
             </Text>
             {error && (
-              <Text className="text-red-500">Error message: {error}</Text>
+              <Text className="text-red-500">{t("errorMessage", { error })}</Text>
             )}
           </>
         )}

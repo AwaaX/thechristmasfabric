@@ -28,6 +28,10 @@
       "MobileMenu": {
         "menu": "Menu"
       }
+    },
+    "LanguageSelect": {
+      "label": "Language:",
+      "default": "Default"
     }
   },
   "HomePage": {
@@ -50,7 +54,10 @@
     },
     "Reviews": {
       "text1": "They share love with beautiful pyjamas",
-      "text2": "Reviews from our dear community"
+      "text2": "Reviews from our dear community",
+      "fromShop": "from {shop}",
+      "customerReviews": "Customer reviews",
+      "fromAddress": "From {address}"
     },
     "Services": {
       "card1": {
@@ -94,6 +101,9 @@
       "item3": {
         "title": "Matching and couples Christmas pyjamas"
       }
+    },
+    "ProductRail": {
+      "viewAll": "View all"
     }
   },
   "Footer": {
@@ -146,8 +156,10 @@
       "txt1": "I accept the",
       "txt2": "terms & conditions",
       "txt3": " the data protection",
+      "and": "and",
       "txt4": " Thanks for signing up for the newsletter! We",
       "txt5": "ll be in touch soon.",
+      "successMessage": "Thanks for signing up for the newsletter! We'll be in touch soon.",
       "Placeholder": "Your Email"
     }
   },
@@ -211,6 +223,10 @@
     "OrderConfirmed": {
       "title": "Order confirmed | The Christmas Fabric",
       "description": "Your purchase was successful."
+    },
+    "AllPyjamas": {
+      "title": "Christmas Pyjamas | The Christmas Fabric",
+      "description": "Get into the project and buy awesome pyjamas and original wear for Christmas and this winter season from The Christmas Fabric"
     }
   },
   "Common": {
@@ -222,7 +238,12 @@
     "Price": {
       "from": "From",
       "original": "Original:"
-    }
+    },
+    "Breadcrumbs": {
+      "home": "Home",
+      "products": "Products"
+    },
+    "thumbnailAlt": "Thumbnail"
   },
   "Account": {
     "Login": {
@@ -303,6 +324,70 @@
       "oldPassword": "Old password",
       "newPassword": "New password",
       "confirmPassword": "Confirm password"
+    },
+    "AddressForm": {
+      "newAddress": "New address",
+      "addAddress": "Add address",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company",
+      "address": "Address",
+      "apartment": "Apartment, suite, etc.",
+      "postalCode": "Postal code",
+      "city": "City",
+      "provinceState": "Province / State",
+      "country": "Country",
+      "phone": "Phone",
+      "cancel": "Cancel",
+      "save": "Save",
+      "edit": "Edit",
+      "remove": "Remove",
+      "editAddress": "Edit address"
+    },
+    "BillingAddress": {
+      "billingAddress": "Billing address",
+      "noBillingAddress": "No billing address",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company",
+      "phone": "Phone",
+      "address": "Address",
+      "apartment": "Apartment, suite, etc.",
+      "postalCode": "Postal code",
+      "city": "City",
+      "province": "Province"
+    },
+    "ProfileName": {
+      "name": "Name",
+      "firstName": "First name",
+      "lastName": "Last name"
+    },
+    "ProfileEmail": {
+      "email": "Email"
+    },
+    "ProfilePhone": {
+      "phone": "Phone"
+    },
+    "TransferRequest": {
+      "heading": "Order transfers",
+      "promptLine1": "Can't find the order you are looking for?",
+      "promptLine2": "Connect an order to your account.",
+      "orderIdPlaceholder": "Order ID",
+      "requestTransfer": "Request transfer",
+      "successRequested": "Transfer for order {id} requested",
+      "successEmailSent": "Transfer request email sent to {email}"
+    },
+    "AccountInfo": {
+      "defaultError": "An error occurred, please try again",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "updatedSuccessfully": "{label} updated successfully",
+      "saveChanges": "Save changes"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# item} other {# items}}",
+      "more": "more",
+      "seeDetails": "See details"
     }
   },
   "Cart": {
@@ -331,7 +416,25 @@
       "goToCart": "Go to cart",
       "empty": "Your shopping bag is empty.",
       "goToProductsSrOnly": "Go to all products page",
-      "explore": "Explore products"
+      "explore": "Explore products",
+      "shoppingBasket": "Shopping Basket",
+      "note": "Note",
+      "coupon": "Coupon",
+      "subtotalExclTax": "Subtotal (excl. tax)",
+      "taxes": "Taxes",
+      "totalInclTax": "Total (Incl. tax)",
+      "checkout": "Checkout",
+      "viewBasket": "View Basket",
+      "notePlaceholder": "Add special instructions for your order...",
+      "save": "Save",
+      "cancel": "Cancel",
+      "addCouponCode": "Add A Coupon Code",
+      "enterCode": "Enter Code",
+      "discountCode": "Discount code",
+      "apply": "Apply",
+      "emptyHeading": "Your basket is currently empty",
+      "emptyDescription": "You may check out all the available products and buy some in the shop.",
+      "returnToShop": "Return to Shop"
     },
     "Totals": {
       "subtotalExcluding": "Subtotal (excl. shipping and taxes)",
@@ -344,6 +447,16 @@
       "heading": "Page not found",
       "description": "The cart you tried to access does not exist. Clear your cookies and try again.",
       "cta": "Go to frontpage"
+    },
+    "SignInPrompt": {
+      "heading": "Already have an account?",
+      "description": "Sign in for a better experience.",
+      "cta": "Sign in"
+    },
+    "MismatchBanner": {
+      "message": "Something went wrong when we tried to transfer your cart",
+      "runAgain": "Run transfer again",
+      "transferring": "Transferring.."
     }
   },
   "Search": {
@@ -382,6 +495,28 @@
       "add": "Add to wishlist",
       "remove": "Remove from wishlist",
       "unavailable": "Select a variant to save"
+    },
+    "Toggle": {
+      "add": "Add To Wishlist",
+      "remove": "Remove From Wishlist",
+      "signIn": "Sign In To Save"
+    },
+    "Toast": {
+      "savedTitle": "Saved",
+      "savedDescription": "Item added to your wishlist.",
+      "removedTitle": "Removed",
+      "removedDescription": "Item removed from your wishlist.",
+      "errorTitle": "Error",
+      "errorDescription": "An error occurred while updating your wishlist."
+    }
+  },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Unlock Free Shipping",
+      "unlocked": "Free Shipping unlocked!",
+      "remaining": "Only {amount} away",
+      "viewCart": "View cart",
+      "viewProducts": "View products"
     }
   },
   "Order": {
@@ -406,13 +541,61 @@
     },
     "Details": {
       "heading": "Order details",
-      "back": "Back to overview"
+      "back": "Back to overview",
+      "confirmationDetails": "We have sent the order confirmation details to <email>{email}</email>.",
+      "orderDate": "Order date:",
+      "orderNumber": "Order number:",
+      "orderStatus": "Order status:",
+      "paymentStatus": "Payment status:",
+      "statuses": {
+        "not_fulfilled": "Not fulfilled",
+        "partially_fulfilled": "Partially fulfilled",
+        "fulfilled": "Fulfilled",
+        "partially_shipped": "Partially shipped",
+        "shipped": "Shipped",
+        "partially_delivered": "Partially delivered",
+        "delivered": "Delivered",
+        "canceled": "Canceled",
+        "not_paid": "Not paid",
+        "awaiting": "Awaiting",
+        "authorized": "Authorized",
+        "partially_authorized": "Partially authorized",
+        "captured": "Captured",
+        "partially_captured": "Partially captured",
+        "partially_refunded": "Partially refunded",
+        "refunded": "Refunded",
+        "requires_action": "Requires action"
+      }
     },
     "Shipping": {
       "heading": "Delivery",
       "address": "Shipping Address",
       "contact": "Contact",
       "method": "Method"
+    },
+    "Payment": {
+      "title": "Payment",
+      "method": "Payment method",
+      "details": "Payment details",
+      "paidAt": "{amount} paid at {date}"
+    },
+    "TransferPage": {
+      "heading": "Transfer request for order {id}",
+      "intro": "You've received a request to transfer ownership of your order ({id}). If you agree to this request, you can approve the transfer by clicking the button below.",
+      "permissions": "If you accept, the new owner will take over all responsibilities and permissions associated with this order.",
+      "noAction": "If you do not recognize this request or wish to retain ownership, no further action is required."
+    },
+    "TransferAccept": {
+      "successHeading": "Order transfered!",
+      "successText": "Order {id} has been successfully transfered to the new owner.",
+      "errorText": "There was an error accepting the transfer. Please try again.",
+      "errorMessage": "Error message: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Order transferred successfully!",
+      "declineSuccess": "Order transfer declined successfully!",
+      "accept": "Accept transfer",
+      "decline": "Decline transfer"
     }
   },
   "Store": {
@@ -421,7 +604,9 @@
       "created_at": "Latest Arrivals",
       "price_asc": "Price: Low to High",
       "price_desc": "Price: High to Low"
-    }
+    },
+    "showingResults": "Showing {from}–{to} of {total} results",
+    "filters": "Filters"
   },
   "Product": {
     "Actions": {
@@ -468,7 +653,25 @@
       "title": "Title",
       "content": "Content",
       "rating": "Rating",
-      "submit": "Submit"
+      "submit": "Submit",
+      "heading": "Product Reviews",
+      "description": "See what our customers are saying about this product.",
+      "count": "{count} reviews",
+      "loadMore": "Load more reviews"
+    },
+    "Related": {
+      "heading": "Related products",
+      "description": "You might also want to check out these products."
+    },
+    "Onboarding": {
+      "success": "Your demo product was successfully created! 🎉",
+      "description": "You can now continue setting up your store in the admin.",
+      "continue": "Continue setup in admin"
+    },
+    "Preview": {
+      "selectOption": "Select Option",
+      "inStock": "In Stock",
+      "sliderDescription": "Here are the Merry Grinchmas pajamas, a fun Christmas pajama idea to celebrate your Grinchmas alone or with others. Suitable for families, couples, children, and..."
     }
   },
   "Tracking": {
@@ -518,7 +721,250 @@
   },
   "Checkout": {
     "Payment": {
-      "selectMethod": "Select a payment method"
+      "selectMethod": "Select a payment method",
+      "title": "Payment",
+      "edit": "Edit",
+      "method": "Payment method",
+      "giftCard": "Gift card",
+      "enterCardDetails": "Enter card details",
+      "continueToReview": "Continue to review",
+      "details": "Payment details",
+      "anotherStep": "Another step will appear",
+      "placeOrder": "Place order"
+    },
+    "Layout": {
+      "backToCart": "Back to shopping cart",
+      "back": "Back",
+      "store": "The Christmas Fabric"
+    },
+    "ShippingAddress": {
+      "savedAddressesPrompt": "Hi {name}, do you want to use one of your saved addresses?",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "address": "Address",
+      "company": "Company",
+      "postalCode": "Postal code",
+      "city": "City",
+      "stateProvince": "State / Province",
+      "billingSameAsShipping": "Billing address same as shipping address",
+      "email": "Email",
+      "emailTitle": "Enter a valid email address.",
+      "phone": "Phone",
+      "chooseAddress": "Choose an address"
+    },
+    "Addresses": {
+      "shippingAddress": "Shipping Address",
+      "billingAddress": "Billing Address",
+      "contact": "Contact",
+      "edit": "Edit",
+      "continueToDelivery": "Continue to delivery",
+      "billingSameAsDelivery": "Billing and delivery address are the same."
+    },
+    "Shipping": {
+      "delivery": "Delivery",
+      "edit": "Edit",
+      "shippingMethod": "Shipping method",
+      "deliveryPrompt": "How would you like your order delivered?",
+      "pickupOrder": "Pick up your order",
+      "store": "Store",
+      "storePrompt": "Choose a store near you",
+      "continueToPayment": "Continue to payment",
+      "method": "Method"
+    },
+    "Review": {
+      "heading": "Review",
+      "confirmation": "By clicking the Place Order button, you confirm that you have read, understand and accept our Terms of Use, Terms of Sale and Returns Policy and acknowledge that you have read The Christmas Fabric's Privacy Policy."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Add Promotion Code(s)",
+      "apply": "Apply",
+      "promotionsApplied": "Promotion(s) applied:",
+      "removeDiscount": "Remove discount code from order"
+    },
+    "Summary": {
+      "heading": "In your Cart"
+    },
+    "PaymentTest": {
+      "attention": "Attention:",
+      "testingOnly": "For testing purposes only."
+    },
+    "PaymentMethods": {
+      "creditCard": "Credit card",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Manual Payment"
+    }
+  },
+  "StaticPages": {
+    "PrivacyPolicy": {
+      "title": "Privacy Policy",
+      "breadcrumbHome": "Home",
+      "body": "<p>SECTION 1 - PERSONAL INFORMATION COLLECTED</p><p>When you make a purchase from our store, as part of our buying and selling process, we collect the personal information you provide, such as your name, address and e-mail address.</p><p>When you browse our store, we also automatically receive the Internet Protocol (IP) address of your computer, which allows us to obtain more details about the browser and operating system you use.</p><p>E-mail Marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.</p><p>SECTION 2 - CONSENT</p><p>How do you obtain my consent?</p><p>When you provide us with your personal information to complete a transaction, verify your credit card, place an order, schedule a delivery or return a purchase, we assume that you consent to our collection and use of your information for that purpose only.</p><p>If we ask you to provide your personal information for any other reason, such as marketing purposes, we will ask you directly for your express consent, or we will give you the opportunity to decline.</p><p>How do I withdraw my consent? You can edit your consent at any time by <a href=\"#\">clicking here and editing your consent</a>.</p><p>If, after you have given us your consent, you change your mind and no longer consent to our contacting you, collecting your information or disclosing it, you may notify us by contacting us at customer@thechristmasfabric.com or by mail at SAS OVOORO, the company that operates thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>France</p><p>SECTION 3 - DISCLOSURE</p><p>We may disclose your personal information if we are required to do so by law or if you violate our Terms and Conditions.</p><p>SECTION 4 - HOST</p><p>Our store is hosted by Kinsta Inc. They provide us with the online platform that allows us to sell you our services and products.</p><p>Your data is stored in the data storage system and databases of Kinsta Inc. Your data is kept on a secure server protected by a firewall.</p><p>Payment:</p><p>When making an online purchase at noel-shop.com, no credit card information is stored. Your credit card information is used securely by third party services to process your payment. For security purposes, the data is encrypted in accordance with the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction information is retained as long as necessary to complete your order by third party services such as PayPal, Stripe or Mollie.</p><p>All direct payment gateways comply with the PCI-DSS standard, managed by the PCI Security Standards Council, which is a joint effort of companies such as Visa, MasterCard, American Express and Discover.</p><p>The requirements of the PCI-DSS standard ensure the secure processing of credit card data by our store and its service providers.</p><p>SECTION 5 - SERVICES PROVIDED BY THIRD PARTIES</p><p>Generally, the third party providers we use will only collect, use and disclose your information to the extent necessary to perform the services they provide to us.</p><p>However, some third party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies regarding the information we are required to provide to them for your purchase transactions.</p><p>With respect to these providers, we recommend that you read their privacy policies carefully so that you can understand how they will handle your personal information.</p><p>Keep in mind that some suppliers may be located or have facilities located in a different jurisdiction than you or us. If you proceed with a transaction that requires the services of a third party supplier, your information may be governed by the laws of the jurisdiction in which that supplier is located or the jurisdiction in which its facilities are located.</p><p>For example, if you are located in Canada and your transaction is processed through a payment gateway located in the United States, your information used to complete the transaction may be disclosed under United States law, including the Patriot Act.</p><p>Once you leave our store site or are redirected to a third party website or application, you are no longer governed by this Privacy Policy or the Terms and Conditions of Sale and Use of our website.</p><p>Links</p><p>You may leave our website by clicking on certain links on our website. We assume no responsibility for the privacy practices of these other sites and recommend that you read their privacy policies carefully.</p><p>SECTION 6 - SECURITY</p><p>To protect your personal information, we take reasonable precautions and follow industry best practices to ensure that it is not lost, misappropriated, accessed, disclosed, altered or destroyed in an inappropriate manner.</p><p>SECTION 7 - AGE OF CONSENT</p><p>By using this site, you represent that you are at least the age of majority in your state or province of residence, and that you have given us your consent to allow any minor in your care to use this website.</p><p>SECTION 8 - CHANGES TO THIS PRIVACY POLICY</p><p>We reserve the right to change this Privacy Policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon posting on the website. If we make changes to the content of this policy, we will notify you here that it has been updated, so that you know what information we collect, how we use it, and under what circumstances, if any, we disclose it.</p><p>If our store is acquired by or merged with another company, your information may be transferred to the new owners so that we can continue to sell products to you.</p><p>QUESTIONS AND CONTACT INFORMATION</p><p>If you would like to access, correct, amend or delete any personal information we have about you, file a complaint, or simply request more information, contact our Privacy Officer at customer@thechristmasfabric.com or by mail at the headquarters of SAS OVOORO, which operates thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>France</p>"
+    },
+    "MeasurementGuide": {
+      "intro": {
+        "eyebrow": "A simple guide to avoid mistakes",
+        "title": "Take your measurements",
+        "paragraph1": "The Christmas Fabric clothing is made to an international average because we want it to be wearable by everyone. That is why knowing your measurements will help you choose the right size. For example, if you are used to wearing L, some models may fit you better in size M.",
+        "paragraph2": "Once you have taken your measurements, you can compare them directly with the size guide available on the product page of your choice. Our products may have similar or different size guides."
+      },
+      "withoutTape": {
+        "eyebrow": "Use a string",
+        "title": "Measuring without a tape measure",
+        "description": "No problem. If you do not have a tape measure, you can use a string or the edge of a long towel to measure your bust, waist, hips, and more. Then transfer the length of the string or towel to a ruler to match the length in cm or inches."
+      },
+      "guideTitle": "View the guide for",
+      "options": {
+        "men": "Men",
+        "women": "Women",
+        "child": "Child",
+        "baby": "Baby"
+      },
+      "imageAlt": "Measurement guide illustration",
+      "measurements": [
+        {
+          "primaryLabel": "A - Bust, bust circumference:",
+          "primaryText": "Measure around the bust. All The Christmas Fabric size guides show the bust measurement. This is used very often in our size guides.",
+          "secondaryLabel": "Top length:",
+          "secondaryText": "Measure from the hollow at the base of the neck down to the pelvis. This is used very often in our size guides."
+        },
+        {
+          "primaryLabel": "B - Waist, waist circumference:",
+          "primaryText": "Measure around the waist. This is often used in our size guides.",
+          "secondaryLabel": "Bottom length:",
+          "secondaryText": "Measure from the pelvis down to the ankle. This is used very often in our size guides."
+        },
+        {
+          "primaryLabel": "C - Hips, hip circumference:",
+          "primaryText": "Measure around the hips. This is sometimes used in our size guides."
+        },
+        {
+          "primaryLabel": "D - Inseam length:",
+          "primaryText": "Measure from the crotch down to the ankle without bending the leg. This is used less often in our size guides."
+        }
+      ]
+    },
+    "ReturnAndRefund": {
+      "title": "Return and refund",
+      "breadcrumbHome": "Home",
+      "body": "<p>Our policy lasts 14 days from the day of delivery. If 14 days have passed from the day of your delivery, unfortunately we cannot offer you a refund or exchange.</p><p>To qualify for a free return, your item must be returned for exchange, unused and in the same condition as you received it. It must also be in its original packaging.</p><p>To avoid abuse, a return fee of 10 USD$ applies only when the customer requests a refund and the order matches the customer's expectations for the items that motivated the purchase on www.thechristmasfabric.com.</p><p>The customer must verify when returning the product that the accessories, if any, are complete and that the packaging is the original packaging. If the customer fails to do so, a charge may be applied to the refund to cover the loss incurred:<br>- Damaged or missing original packaging: 10 USD$.<br>- Missing accessories: 20% of the total refund amount, or the price of the accessory if displayed on the site.</p><p>If the item is not returned in its original condition, is damaged, stained, non-functional or degraded, and this prevents it from being sold again, no refund can be given.</p><p>Many types of products cannot be returned. Perishable goods such as food, flowers or magazines cannot be returned. We also do not accept intimate or sanitary products, dangerous products, or flammable gases or liquids.</p><p>Other items that cannot be returned:</p><p>Gift cards<br>Downloadable software<br>Certain health and personal care products<br>To make a return, you must present us with a receipt or proof of purchase.</p><p>Please do not return your purchase to the manufacturer.</p><p>There are certain situations where only a partial refund is granted, if applicable:</p><p>Books with obvious signs of use.<br>CD, DVD, VHS tape, software, video game, cassette, or vinyl record that has been opened.<br>Any item that is not in its original condition, is damaged, or has missing parts for reasons that are not due to an error on our part.<br>Any item returned more than 30 days after delivery.</p><p>Refunds, if applicable<br>Once we have received and inspected the returned item, we will send you an email to confirm that we have received it. We will also inform you of our decision to approve or reject your refund request.<br>If your request is approved, your refund will be processed and a credit will automatically be applied to your credit card or original payment method within a maximum of 2 to 3 days, excluding weekends and holidays.</p><p>Late or missing refunds, if applicable<br>If you have not yet received your refund, please check the following steps before contacting the site by email:<br>- Verify that the refund is not in progress on your bank account or scheduled to arrive on a posted date.<br>- Contact your bank to learn about the delays applied to transfers between bank accounts that do not belong to the same bank.<br><br>If after completing all these steps you still have not received your refund, or you do not know your bank's time frame or the refund receipt date, please contact us at customer@thechristmasfabric.com.</p><p>Sale items, if applicable<br>Only regular priced items can be refunded. Unfortunately, sale items are not refundable.</p><p>Return for malfunction</p><p>An item returned because of a malfunction is covered by our free return offer, and the customer does not pay any fees. If our team does not detect any malfunction after several tests and verifications by after-sales service, the return delivery to the customer will be at the customer's expense. This helps us avoid abusive returns and asks customers to verify that the product has a real malfunction and that a return to after-sales service is necessary before any exchange.</p><p>Exchanges</p><p>We will only replace an item if it is defective or damaged upon receipt by the customer. The customer has 3 days from the day of delivery to declare a problem. After this period, we consider that the item has been used and is no longer exchangeable. For any exchange, send us an email at customer@thechristmasfabric.com.</p><p>The item must be new, unused, unwashed, in its original packaging, and with all tags attached.</p><p>Your item should be sent to the address of the company operating www.thechristmasfabric.com:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>France</p><p>Gifts<br>If the returned item was identified as a gift at the time of purchase and was sent directly to you, you will receive gift credit equal to the value of your return. Once we receive the returned item, a gift certificate will be mailed to you. Return shipping costs for gifts are not covered.</p><p>Shipping<br>To return a product, you must send it to the headquarters of SAS OVOORO, the company operating www.thechristmasfabric.com: SAS OVOORO, 19 Allee de Brienne, Toulouse, 31000, France.</p><p>Processing times<br>Depending on where you live, the time it takes to receive your exchanged product may vary.</p><p>Upon receipt of your product at headquarters, we take 3 to 5 working days to verify it and make a decision, which will be communicated to you by email at the address you provided when ordering.</p><p>If the return costs for redelivery to the customer are borne by SAS OVOORO, the company operating www.thechristmasfabric.com, the delivery time may vary between 3 and 5 days.</p><p>If the return shipping cost to the customer is at the customer's expense, the delivery time will vary depending on the customer's preferred method.</p><p>If you are shipping an item valued at more than 100 USD$ and you are responsible for the return shipping costs, you should consider using a shipping service that allows you to track the shipment or purchasing shipping insurance. We do not guarantee that we will receive the item you are returning if a problem occurs.</p>"
+    },
+    "TermsOfDelivery": {
+      "title": "Terms of delivery",
+      "breadcrumbHome": "Home",
+      "body": "<p>The PRODUCTS are shipped to the delivery address or addresses indicated by the CLIENT during the ordering process.</p><p>Shipping time</p><p>The deadlines for preparing an order and issuing the invoice before shipping PRODUCTS in stock are mentioned on the SITE. These deadlines do not include weekends or public holidays.</p><p>An email will automatically be sent to the CUSTOMER when the PRODUCTS are shipped, provided that the email address in the registration form is correct.</p><p>Delivery time &amp; costs</p><p>During the ordering process, the SELLER indicates to the CUSTOMER the possible delivery times and shipping options for the PRODUCTS purchased.</p><p>Shipping costs are calculated according to the delivery method. The amount of these costs will be due by the CLIENT in addition to the price of the PRODUCTS purchased.</p><p>Details of delivery times and costs are provided on the SITE.</p><p>Terms of delivery</p><p>The parcel will be given to the CUSTOMER against signature and upon presentation of an identity document.</p><p>In case of absence, a delivery notice will be left for the CUSTOMER so that they can collect the parcel from their post office.</p><p>The CUSTOMER is responsible for picking up the package at the post office within 10 days. The SELLER cannot be held responsible for a package destroyed or not returned by postal services, and this reason does not constitute grounds for any refund.</p><p>Delivery problems</p><p>The CUSTOMER is informed of the delivery date when choosing the carrier, at the end of the online ordering process, before confirming the order.</p><p>It is specified that deliveries will be made within a maximum of thirty (30) days. Failing this, the CUSTOMER must give the SELLER formal notice to deliver within a reasonable period of time. In the event of non-delivery within this period, the contract may be terminated.</p><p>The SELLER shall refund the CUSTOMER, without undue delay after receiving the termination letter, the total amount paid for the PRODUCTS, including taxes and delivery charges, using the same payment method used by the CUSTOMER to purchase the PRODUCTS.</p><p>The SELLER is responsible until delivery of the PRODUCT to the CLIENT. The CLIENT is reminded that they have three (3) days to notify the carrier of any damage or partial loss observed at the time of delivery.</p>"
+    },
+    "LegalNotice": {
+      "title": "Legal Notice",
+      "breadcrumbHome": "Home",
+      "body": "<p>Definitions</p><p>Customer: any professional, legally capable natural person within the meaning of Articles 1123 et seq. of the Civil Code, or any legal entity, visiting the Site covered by these general conditions.</p><p>Services: https://www.thechristmasfabric.com provides Customers with access to the services and information presented on the Site.</p><p>Content: all elements making up the information available on the Site, including text, images and videos.</p><p>Customer information: hereinafter referred to as Information, meaning all personal data that may be held by https://www.thechristmasfabric.com for account management, customer relationship management, analysis and statistics.</p><p>User: any internet user connecting to and using the above-mentioned Site.</p><p>Personal information: information that allows, in any form whatsoever, directly or indirectly, the identification of the individuals to whom it applies. The terms personal data, data subject, processor and sensitive data have the meaning defined by the General Data Protection Regulation (GDPR: No. 2016-679).</p><p>Presentation of the website</p><p>In accordance with Article 6 of Law No. 2004-575 of June 21, 2004 for confidence in the digital economy, users of https://www.thechristmasfabric.com are informed of the identity of the parties involved in its implementation and monitoring: Owner: SASU OVOORO, share capital 1000 EUR, VAT number FR54890918436, 19 Allee de Brienne, 31000 Toulouse. Publication manager: The Christmas Fabric, customer@thechristmasfabric.com. Webmaster: The Christmas Fabric, customer@thechristmasfabric.com. Host: Kinsta Inc, 8605 Santa Monica Blvd #92581, 90069 West Hollywood, CA. Data Protection Officer: The Christmas Fabric, customer@thechristmasfabric.com.</p><p>General conditions of use</p><p>The Site is an intellectual work protected by the Intellectual Property Code and applicable international regulations. The Customer may not reuse, transfer or exploit all or part of the elements or works of the Site for their own account. Use of https://www.thechristmasfabric.com implies full acceptance of these general conditions of use. They may be modified or supplemented at any time, and users are invited to consult them regularly.</p><p>The Site is normally accessible at all times. Technical maintenance may cause interruptions, and https://www.thechristmasfabric.com will try to inform users in advance of the dates and times of intervention. The Site and these legal notices may be updated at any time.</p><p>Description of services</p><p>https://www.thechristmasfabric.com aims to provide information about the company's activities and strives to provide information that is as accurate as possible. It cannot be held responsible for omissions, inaccuracies or update deficiencies, whether caused by itself or by third-party partners. Information on the Site is provided for guidance, may change, and is not exhaustive.</p><p>Technical limitations</p><p>The Site uses JavaScript technology. The Site cannot be held responsible for material damage related to its use. The user agrees to access the Site with recent equipment, free of viruses, and with an up-to-date browser. The Site is hosted by a provider in accordance with GDPR requirements. The host ensures service continuity but may interrupt hosting for maintenance, infrastructure improvement, failure, or abnormal traffic.</p><p>https://www.thechristmasfabric.com and the host cannot be held responsible for malfunction of the internet network, telephone lines, or computer and telephone equipment, including network congestion preventing access to the server.</p><p>Intellectual property</p><p>https://www.thechristmasfabric.com owns the intellectual property rights or holds usage rights for all elements accessible on the Site, including text, images, graphics, logos, videos, icons and sounds. Any reproduction, representation, modification, publication or adaptation of all or part of the Site elements is prohibited without prior written authorization from https://www.thechristmasfabric.com. Unauthorized use will be considered infringement and pursued under Articles L.335-2 et seq. of the Intellectual Property Code.</p><p>Liability</p><p>https://www.thechristmasfabric.com acts as publisher of the Site and is responsible for the quality and accuracy of the Content it publishes. It cannot be held responsible for direct or indirect damage caused to the user's equipment when accessing the Site, resulting from unsuitable equipment, bugs or incompatibility.</p><p>https://www.thechristmasfabric.com cannot be held responsible for indirect damages such as loss of market or opportunity resulting from use of the Site. Interactive areas may be made available to users. The Site reserves the right to remove, without prior notice, any content that violates French law, especially data protection rules, and may hold the user civilly or criminally liable where appropriate.</p><p>Personal data management</p><p>The Customer is informed of the rules relating to marketing communication, the law of June 21, 2014 for confidence in the digital economy, the Data Protection Act of August 6, 2004, and the GDPR. For personal data collected when creating a user account and browsing the Site, the controller is https://www.thechristmasfabric.com, represented by BOER, its legal representative.</p><p>https://www.thechristmasfabric.com undertakes to comply with applicable legal provisions, define the purposes of processing, provide complete information on personal data processing, and maintain a processing register. Whenever personal data is processed, reasonable measures are taken to ensure its accuracy and relevance.</p><p>Purpose of collected data</p><p>https://www.thechristmasfabric.com may process data to enable Site navigation, manage and track ordered services, manage billing and order history, prevent and fight computer fraud such as spam or hacking, improve Site navigation, conduct optional satisfaction surveys, and carry out communication campaigns by SMS or email. Personal data is not sold and is used only when necessary or for statistical and analytical purposes.</p><p>User rights</p><p>In accordance with applicable European regulations, users have rights of access, rectification, update, completion, deletion, withdrawal of consent, restriction, objection, portability, and instructions concerning the fate of their data after death. To exercise these rights, the user may write to: DPO, OVOORO, 19 Allee de Brienne, 31000 Toulouse, identifying themselves precisely and attaching a copy of an identity document.</p><p>Requests for deletion of personal data are subject to legal obligations, especially document retention or archiving. Users may also file a complaint with the supervisory authority, in particular the CNIL: https://www.cnil.fr/fr/plaintes.</p><p>Non-disclosure of personal data</p><p>https://www.thechristmasfabric.com does not process, host or transfer customer information to a country outside the European Union or recognized as not adequate by the European Commission without informing the customer beforehand. It remains free to choose subcontractors that provide sufficient guarantees under GDPR.</p><p>https://www.thechristmasfabric.com takes necessary precautions to preserve information security and prevent disclosure to unauthorized persons. If an incident affects the integrity or confidentiality of customer information, the customer will be informed as soon as possible and corrective measures will be communicated. The Site does not collect sensitive data.</p><p>Personal data may be processed by subsidiaries and subcontractors exclusively for the purposes of this policy. The main persons likely to access user data are customer service agents.</p><p>Data collected</p><p>For users of https://www.thechristmasfabric.com, the data essential to service operation may include surname, first name, telephone number, email, address, postal code, city and country. This data may be kept for a maximum of 120 months after the end of the contractual relationship.</p><p>Incident notification and security</p><p>No method of internet transmission or electronic storage is completely secure. If a security breach is identified, affected users will be notified so they can take appropriate action. Incident notification procedures take national and European legal obligations into account.</p><p>No personal information of a Site user is published, exchanged, transferred, assigned or sold to third parties without the user's knowledge. Only a purchase of https://www.thechristmasfabric.com and its rights could allow transmission of this information to a purchaser subject to the same data obligations.</p><p>To ensure the security and confidentiality of personal data, https://www.thechristmasfabric.com uses protected networks and standard measures such as firewalls, pseudonymization, encryption and passwords. Reasonable measures are taken to protect personal data from loss, misuse, unauthorized access, disclosure, alteration or destruction.</p><p>Hypertext links, cookies and internet tags</p><p>The Site may contain links to other websites. https://www.thechristmasfabric.com cannot verify the content of these sites and assumes no responsibility for them. Unless cookies are disabled, the user accepts that the Site may use them. Cookies can be disabled at any time, although this may reduce or prevent access to all or part of the services.</p><p>A cookie is a small information file sent to the user's browser and stored on the user's device. It may include domain name, internet provider, operating system, and access date and time. Cookies do not damage the user's device.</p><p>Cookies may be used to process information about visits to the Site, such as pages viewed and searches carried out, to improve Site content and navigation. Users can configure their browser to accept or reject cookies. If cookies are refused or deleted, navigation and experience on the Site may be limited.</p><p>https://www.thechristmasfabric.com may use external service providers to help collect and process cookie-related information. Social network services may also deposit cookies if the user has accepted them while continuing navigation. Consent can be withdrawn at any time.</p><p>Internet tags</p><p>https://www.thechristmasfabric.com may use internet tags, also known as action tags, single-pixel GIFs, clear GIFs or invisible GIFs, through a web analytics partner that may be located abroad. These tags may be placed in online advertisements and on Site pages to evaluate visitor responses, Site activity and use of the Site.</p><p>Applicable law and jurisdiction</p><p>Any dispute relating to use of https://www.thechristmasfabric.com is subject to French law. Except where the law does not allow it, the competent courts of Toulouse have exclusive jurisdiction.</p>"
+    },
+    "HumanitarianProject": {
+      "title": "Humanitarian project",
+      "hero": {
+        "eyebrow": "With your orders",
+        "heading": "5% donated",
+        "description": "5% of profits will be donated to the AHPA association, with the aim of building at least 1 educational garden in Kpomasse, Benin. Thanks to your order, you will be able to follow the progress of this initiative, which is also supported by our French website.",
+        "link": "Noel Shop"
+      },
+      "association": {
+        "eyebrow": "The association",
+        "heading": "AHPA",
+        "description": "Association Humanitaire pour l'Afrique (AHPA) is an international solidarity association that supports development projects in Benin in the fields of education, sustainable agriculture, environmental protection and fair tourism. Working with local associative partners, AHPA supports income-generating micro-projects for young people in environmental education.",
+        "logoAlt": "AHPA association logo"
+      },
+      "gallery": {
+        "image1Alt": "Educational garden project in Benin",
+        "image2Alt": "Local community project supported by AHPA",
+        "image3Alt": "Agriculture and education initiative in Benin",
+        "image4Alt": "Humanitarian project field activity"
+      }
+    },
+    "CustomerService": {
+      "banner": {
+        "heading": "Customer Service",
+        "subHeading": "What can we do for you today?"
+      },
+      "faqSections": [
+        {
+          "eyebrow": "Learn more about the tracking and delivery of your order",
+          "heading": "Delivery and tracking",
+          "items": [
+            {
+              "question": "How can I track my order?",
+              "answer": "Once your order has shipped, you will receive a confirmation email with a tracking number. You can also use the Track my order page with your order details."
+            },
+            {
+              "question": "When will my order be shipped?",
+              "answer": "Orders are usually prepared quickly from Monday to Saturday, excluding public holidays. You will receive an email as soon as your package leaves our warehouse."
+            },
+            {
+              "question": "Why is my tracking link not updating?",
+              "answer": "Tracking links can take a little time to update after the carrier receives the package. Please check again later, and contact us if there is still no update after a few days."
+            },
+            {
+              "question": "What should I do if my package is delayed?",
+              "answer": "Carrier delays can happen during busy periods. Check the tracking page first, then contact customer service with your order number if the delivery date has passed."
+            },
+            {
+              "question": "Can I change my delivery address?",
+              "answer": "Contact us as soon as possible. If your order has not yet been prepared or shipped, we will do our best to update the delivery address."
+            },
+            {
+              "question": "What happens if I am not home for delivery?",
+              "answer": "The carrier may leave a delivery notice or redirect the parcel to a pickup point. Please follow the instructions provided by the carrier."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Return an item, make an exchange or request a refund",
+          "heading": "Return and exchange",
+          "items": [
+            {
+              "question": "How do I return an item?",
+              "answer": "Contact customer service with your order number and the item you want to return. We will confirm the next steps and the return address."
+            },
+            {
+              "question": "How long do I have to request a return?",
+              "answer": "Our return policy lasts 14 days from the day of delivery. Items must be unused, unwashed, and returned in their original packaging with tags attached."
+            },
+            {
+              "question": "Can I exchange my item for another size?",
+              "answer": "Yes, exchanges are possible when the requested size is available and the returned item meets our return conditions."
+            },
+            {
+              "question": "When will I receive my refund?",
+              "answer": "After we receive and inspect your return, approved refunds are processed to the original payment method within a few working days."
+            },
+            {
+              "question": "Are sale items refundable?",
+              "answer": "Only regular priced items can be refunded unless otherwise required by applicable law. Sale items may not be refundable."
+            },
+            {
+              "question": "What if my item is damaged or defective?",
+              "answer": "Please contact us within 3 days of delivery with your order number and photos of the issue. We will review the case and offer the appropriate solution."
+            }
+          ]
+        }
+      ],
+      "form": {
+        "description": "Use this form to contact customer service by email at customer@thechristmasfabric.com",
+        "heading": "Contact customer service",
+        "firstNameLabel": "Your first name",
+        "firstNamePlaceholder": "First Name",
+        "orderNumberLabel": "Your order number",
+        "orderNumberPlaceholder": "35445",
+        "reasonLabel": "The reason for your request",
+        "reasonOptions": [
+          "I want to exchange a product",
+          "I have a problem with tracking",
+          "I want to return my parcel or obtain a refund",
+          "I want to modify my order",
+          "I am contacting you for another reason"
+        ],
+        "submit": "Continue"
+      }
     }
   }
 }

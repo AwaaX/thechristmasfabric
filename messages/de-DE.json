@@ -28,6 +28,10 @@
       "MobileMenu": {
         "menu": "Menü"
       }
+    },
+    "LanguageSelect": {
+      "label": "Sprache:",
+      "default": "Standard"
     }
   },
   "HomePage": {
@@ -50,7 +54,10 @@
     },
     "Reviews": {
       "text1": "Sie teilen Liebe mit schönen Pyjamas",
-      "text2": "Bewertungen aus unserer lieben Community"
+      "text2": "Bewertungen aus unserer lieben Community",
+      "fromShop": "von {shop}",
+      "customerReviews": "Kundenbewertungen",
+      "fromAddress": "Aus {address}"
     },
     "Services": {
       "card1": {
@@ -94,6 +101,9 @@
       "item3": {
         "title": "Weihnachts-Pyjamas für Paare und im Partnerlook"
       }
+    },
+    "ProductRail": {
+      "viewAll": "Alle anzeigen"
     }
   },
   "Footer": {
@@ -146,8 +156,10 @@
       "txt1": "Ich akzeptiere die",
       "txt2": "Allgemeinen Geschäftsbedingungen",
       "txt3": "den Datenschutz",
+      "and": "und",
       "txt4": "Danke, dass Sie sich für den Newsletter angemeldet haben! Wir",
       "txt5": "werden uns bald bei Ihnen melden.",
+      "successMessage": "Danke, dass Sie sich für den Newsletter angemeldet haben! Wir werden uns bald bei Ihnen melden.",
       "Placeholder": "Ihre E-Mail"
     }
   },
@@ -211,6 +223,10 @@
     "OrderConfirmed": {
       "title": "Bestellung bestätigt | The Christmas Fabric",
       "description": "Ihr Kauf war erfolgreich."
+    },
+    "AllPyjamas": {
+      "title": "Weihnachtspyjamas | The Christmas Fabric",
+      "description": "Mach beim Projekt mit und kaufe tolle Pyjamas und originelle Kleidung für Weihnachten und die Wintersaison bei The Christmas Fabric"
     }
   },
   "Common": {
@@ -222,7 +238,12 @@
     "Price": {
       "from": "Ab",
       "original": "Original:"
-    }
+    },
+    "Breadcrumbs": {
+      "home": "Startseite",
+      "products": "Produkte"
+    },
+    "thumbnailAlt": "Vorschaubild"
   },
   "Account": {
     "Login": {
@@ -303,6 +324,70 @@
       "oldPassword": "Altes Passwort",
       "newPassword": "Neues Passwort",
       "confirmPassword": "Passwort bestätigen"
+    },
+    "AddressForm": {
+      "newAddress": "Neue Adresse",
+      "addAddress": "Adresse hinzufügen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "company": "Unternehmen",
+      "address": "Adresse",
+      "apartment": "Wohnung, Suite usw.",
+      "postalCode": "Postleitzahl",
+      "city": "Stadt",
+      "provinceState": "Bundesland / Provinz",
+      "country": "Land",
+      "phone": "Telefon",
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "edit": "Bearbeiten",
+      "remove": "Entfernen",
+      "editAddress": "Adresse bearbeiten"
+    },
+    "BillingAddress": {
+      "billingAddress": "Rechnungsadresse",
+      "noBillingAddress": "Keine Rechnungsadresse",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "company": "Firma",
+      "phone": "Telefon",
+      "address": "Adresse",
+      "apartment": "Wohnung, Suite usw.",
+      "postalCode": "Postleitzahl",
+      "city": "Stadt",
+      "province": "Provinz"
+    },
+    "ProfileName": {
+      "name": "Name",
+      "firstName": "Vorname",
+      "lastName": "Nachname"
+    },
+    "ProfileEmail": {
+      "email": "E-Mail"
+    },
+    "ProfilePhone": {
+      "phone": "Telefon"
+    },
+    "TransferRequest": {
+      "heading": "Bestellübertragungen",
+      "promptLine1": "Findest du die gesuchte Bestellung nicht?",
+      "promptLine2": "Verknüpfe eine Bestellung mit deinem Konto.",
+      "orderIdPlaceholder": "Bestell-ID",
+      "requestTransfer": "Übertragung anfordern",
+      "successRequested": "Übertragung für Bestellung {id} angefordert",
+      "successEmailSent": "Übertragungsanfrage-E-Mail an {email} gesendet"
+    },
+    "AccountInfo": {
+      "defaultError": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "updatedSuccessfully": "{label} wurde erfolgreich aktualisiert",
+      "saveChanges": "Änderungen speichern"
+    },
+    "OrderCard": {
+      "itemCount": "{count, plural, one {# Artikel} other {# Artikel}}",
+      "more": "mehr",
+      "seeDetails": "Details ansehen"
     }
   },
   "Cart": {
@@ -331,7 +416,25 @@
       "goToCart": "Zum Warenkorb",
       "empty": "Ihre Einkaufstasche ist leer.",
       "goToProductsSrOnly": "Zur Produktübersicht",
-      "explore": "Produkte entdecken"
+      "explore": "Produkte entdecken",
+      "shoppingBasket": "Warenkorb",
+      "note": "Notiz",
+      "coupon": "Gutschein",
+      "subtotalExclTax": "Zwischensumme (ohne Steuern)",
+      "taxes": "Steuern",
+      "totalInclTax": "Gesamt (inkl. Steuern)",
+      "checkout": "Zur Kasse",
+      "viewBasket": "Warenkorb ansehen",
+      "notePlaceholder": "Füge besondere Anweisungen für deine Bestellung hinzu...",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "addCouponCode": "Gutscheincode hinzufügen",
+      "enterCode": "Code eingeben",
+      "discountCode": "Rabattcode",
+      "apply": "Anwenden",
+      "emptyHeading": "Dein Warenkorb ist derzeit leer",
+      "emptyDescription": "Du kannst alle verfügbaren Produkte ansehen und einige im Shop kaufen.",
+      "returnToShop": "Zurück zum Shop"
     },
     "Totals": {
       "subtotalExcluding": "Zwischensumme (exkl. Versand und Steuern)",
@@ -344,6 +447,16 @@
       "heading": "Seite nicht gefunden",
       "description": "Der Warenkorb, den Sie aufrufen wollten, existiert nicht. Löschen Sie Ihre Cookies und versuchen Sie es erneut.",
       "cta": "Zur Startseite"
+    },
+    "SignInPrompt": {
+      "heading": "Haben Sie bereits ein Konto?",
+      "description": "Melden Sie sich an, um ein besseres Erlebnis zu haben.",
+      "cta": "Anmelden"
+    },
+    "MismatchBanner": {
+      "message": "Beim Übertragen deines Warenkorbs ist etwas schiefgelaufen",
+      "runAgain": "Übertragung erneut ausführen",
+      "transferring": "Übertragung läuft.."
     }
   },
   "Search": {
@@ -382,6 +495,28 @@
       "add": "Zur Wunschliste hinzufügen",
       "remove": "Von der Wunschliste entfernen",
       "unavailable": "Wählen Sie eine Variante zum Speichern"
+    },
+    "Toggle": {
+      "add": "Zur Wunschliste hinzufügen",
+      "remove": "Von Wunschliste entfernen",
+      "signIn": "Zum Speichern anmelden"
+    },
+    "Toast": {
+      "savedTitle": "Gespeichert",
+      "savedDescription": "Artikel zu deiner Wunschliste hinzugefügt.",
+      "removedTitle": "Entfernt",
+      "removedDescription": "Artikel aus deiner Wunschliste entfernt.",
+      "errorTitle": "Fehler",
+      "errorDescription": "Beim Aktualisieren deiner Wunschliste ist ein Fehler aufgetreten."
+    }
+  },
+  "Shipping": {
+    "FreeShippingNudge": {
+      "unlock": "Kostenlosen Versand freischalten",
+      "unlocked": "Kostenloser Versand freigeschaltet!",
+      "remaining": "Nur noch {amount}",
+      "viewCart": "Warenkorb ansehen",
+      "viewProducts": "Produkte ansehen"
     }
   },
   "Order": {
@@ -406,13 +541,61 @@
     },
     "Details": {
       "heading": "Bestelldetails",
-      "back": "Zurück zur Übersicht"
+      "back": "Zurück zur Übersicht",
+      "confirmationDetails": "Wir haben die Bestellbestätigung an <email>{email}</email> gesendet.",
+      "orderDate": "Bestelldatum:",
+      "orderNumber": "Bestellnummer:",
+      "orderStatus": "Bestellstatus:",
+      "paymentStatus": "Zahlungsstatus:",
+      "statuses": {
+        "not_fulfilled": "Nicht erfüllt",
+        "partially_fulfilled": "Teilweise erfüllt",
+        "fulfilled": "Erfüllt",
+        "partially_shipped": "Teilweise versendet",
+        "shipped": "Versendet",
+        "partially_delivered": "Teilweise geliefert",
+        "delivered": "Geliefert",
+        "canceled": "Storniert",
+        "not_paid": "Nicht bezahlt",
+        "awaiting": "Ausstehend",
+        "authorized": "Autorisiert",
+        "partially_authorized": "Teilweise autorisiert",
+        "captured": "Erfasst",
+        "partially_captured": "Teilweise erfasst",
+        "partially_refunded": "Teilweise erstattet",
+        "refunded": "Erstattet",
+        "requires_action": "Aktion erforderlich"
+      }
     },
     "Shipping": {
       "heading": "Lieferung",
       "address": "Lieferadresse",
       "contact": "Kontakt",
       "method": "Methode"
+    },
+    "Payment": {
+      "title": "Zahlung",
+      "method": "Zahlungsmethode",
+      "details": "Zahlungsdetails",
+      "paidAt": "{amount} bezahlt am {date}"
+    },
+    "TransferPage": {
+      "heading": "Übertragungsanfrage für Bestellung {id}",
+      "intro": "Sie haben eine Anfrage erhalten, das Eigentum an Ihrer Bestellung ({id}) zu übertragen. Wenn Sie dieser Anfrage zustimmen, können Sie die Übertragung genehmigen, indem Sie auf die Schaltfläche unten klicken.",
+      "permissions": "Wenn Sie zustimmen, übernimmt der neue Eigentümer alle Verantwortlichkeiten und Berechtigungen, die mit dieser Bestellung verbunden sind.",
+      "noAction": "Wenn Sie diese Anfrage nicht erkennen oder das Eigentum behalten möchten, ist keine weitere Aktion erforderlich."
+    },
+    "TransferAccept": {
+      "successHeading": "Bestellung übertragen!",
+      "successText": "Die Bestellung {id} wurde erfolgreich an den neuen Eigentümer übertragen.",
+      "errorText": "Beim Akzeptieren der Übertragung ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      "errorMessage": "Fehlermeldung: {error}"
+    },
+    "TransferActions": {
+      "acceptSuccess": "Bestellung erfolgreich übertragen!",
+      "declineSuccess": "Bestellübertragung erfolgreich abgelehnt!",
+      "accept": "Übertragung annehmen",
+      "decline": "Übertragung ablehnen"
     }
   },
   "Store": {
@@ -421,7 +604,9 @@
       "created_at": "Neueste Produkte",
       "price_asc": "Preis: aufsteigend",
       "price_desc": "Preis: absteigend"
-    }
+    },
+    "showingResults": "Zeige {from}–{to} von {total} Ergebnissen",
+    "filters": "Filter"
   },
   "Product": {
     "Actions": {
@@ -468,7 +653,25 @@
       "title": "Titel",
       "content": "Inhalt",
       "rating": "Bewertung",
-      "submit": "Absenden"
+      "submit": "Absenden",
+      "heading": "Produktbewertungen",
+      "description": "Erfahre, was unsere Kunden über dieses Produkt sagen.",
+      "count": "{count} Bewertungen",
+      "loadMore": "Weitere Bewertungen laden"
+    },
+    "Related": {
+      "heading": "Ähnliche Produkte",
+      "description": "Vielleicht möchtest du dir auch diese Produkte ansehen."
+    },
+    "Onboarding": {
+      "success": "Dein Demo-Produkt wurde erfolgreich erstellt! 🎉",
+      "description": "Du kannst die Einrichtung deines Shops jetzt im Admin-Bereich fortsetzen.",
+      "continue": "Einrichtung im Admin fortsetzen"
+    },
+    "Preview": {
+      "selectOption": "Option auswählen",
+      "inStock": "Auf Lager",
+      "sliderDescription": "Hier sind die Merry Grinchmas-Pyjamas, eine lustige Weihnachts-Pyjama-Idee, um Grinchmas allein oder mit anderen zu feiern. Geeignet für Familien, Paare, Kinder und..."
     }
   },
   "Tracking": {
@@ -518,7 +721,250 @@
   },
   "Checkout": {
     "Payment": {
-      "selectMethod": "Wählen Sie eine Zahlungsmethode"
+      "selectMethod": "Wählen Sie eine Zahlungsmethode",
+      "title": "Zahlung",
+      "edit": "Bearbeiten",
+      "method": "Zahlungsmethode",
+      "giftCard": "Geschenkkarte",
+      "enterCardDetails": "Kartendaten eingeben",
+      "continueToReview": "Weiter zur Überprüfung",
+      "details": "Zahlungsdetails",
+      "anotherStep": "Ein weiterer Schritt wird angezeigt",
+      "placeOrder": "Bestellung aufgeben"
+    },
+    "Layout": {
+      "backToCart": "Zurück zum Warenkorb",
+      "back": "Zurück",
+      "store": "The Christmas Fabric"
+    },
+    "ShippingAddress": {
+      "savedAddressesPrompt": "Hallo {name}, möchtest du eine deiner gespeicherten Adressen verwenden?",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "address": "Adresse",
+      "company": "Firma",
+      "postalCode": "Postleitzahl",
+      "city": "Stadt",
+      "stateProvince": "Bundesland / Provinz",
+      "billingSameAsShipping": "Rechnungsadresse identisch mit Lieferadresse",
+      "email": "E-Mail",
+      "emailTitle": "Gib eine gültige E-Mail-Adresse ein.",
+      "phone": "Telefon",
+      "chooseAddress": "Adresse auswählen"
+    },
+    "Addresses": {
+      "shippingAddress": "Lieferadresse",
+      "billingAddress": "Rechnungsadresse",
+      "contact": "Kontakt",
+      "edit": "Bearbeiten",
+      "continueToDelivery": "Weiter zur Lieferung",
+      "billingSameAsDelivery": "Rechnungs- und Lieferadresse sind identisch."
+    },
+    "Shipping": {
+      "delivery": "Lieferung",
+      "edit": "Bearbeiten",
+      "shippingMethod": "Versandart",
+      "deliveryPrompt": "Wie möchten Sie Ihre Bestellung erhalten?",
+      "pickupOrder": "Bestellung abholen",
+      "store": "Filiale",
+      "storePrompt": "Wählen Sie eine Filiale in Ihrer Nähe",
+      "continueToPayment": "Weiter zur Zahlung",
+      "method": "Methode"
+    },
+    "Review": {
+      "heading": "Überprüfung",
+      "confirmation": "Mit einem Klick auf die Schaltfläche Bestellung aufgeben bestätigen Sie, dass Sie unsere Nutzungsbedingungen, Verkaufsbedingungen und Rückgaberichtlinie gelesen, verstanden und akzeptiert haben und die Datenschutzerklärung von The Christmas Fabric gelesen haben."
+    },
+    "DiscountCode": {
+      "addPromotionCodes": "Aktionscode(s) hinzufügen",
+      "apply": "Anwenden",
+      "promotionsApplied": "Angewendete Aktion(en):",
+      "removeDiscount": "Rabattcode aus der Bestellung entfernen"
+    },
+    "Summary": {
+      "heading": "In Ihrem Warenkorb"
+    },
+    "PaymentTest": {
+      "attention": "Achtung:",
+      "testingOnly": "Nur zu Testzwecken."
+    },
+    "PaymentMethods": {
+      "creditCard": "Kreditkarte",
+      "ideal": "iDeal",
+      "bancontact": "Bancontact",
+      "paypal": "PayPal",
+      "manualPayment": "Manuelle Zahlung"
+    }
+  },
+  "StaticPages": {
+    "PrivacyPolicy": {
+      "title": "Datenschutzerklärung",
+      "breadcrumbHome": "Startseite",
+      "body": "<p>ABSCHNITT 1 - ERHOBENE PERSONENBEZOGENE DATEN</p><p>Wenn Sie in unserem Shop einen Kauf tätigen, erheben wir im Rahmen unseres Kauf- und Verkaufsprozesses die personenbezogenen Daten, die Sie uns bereitstellen, wie Ihren Namen, Ihre Adresse und Ihre E-Mail-Adresse.</p><p>Wenn Sie in unserem Shop surfen, erhalten wir außerdem automatisch die Internet-Protokoll-Adresse (IP-Adresse) Ihres Computers. Dadurch können wir weitere Details über den von Ihnen verwendeten Browser und das Betriebssystem erhalten.</p><p>E-Mail-Marketing (falls zutreffend): Mit Ihrer Erlaubnis können wir Ihnen E-Mails über unseren Shop, neue Produkte und andere Aktualisierungen senden.</p><p>ABSCHNITT 2 - EINWILLIGUNG</p><p>Wie erhalten Sie meine Einwilligung?</p><p>Wenn Sie uns Ihre personenbezogenen Daten zur Verfügung stellen, um eine Transaktion abzuschließen, Ihre Kreditkarte zu verifizieren, eine Bestellung aufzugeben, eine Lieferung zu planen oder einen Kauf zurückzusenden, gehen wir davon aus, dass Sie der Erhebung und Verwendung Ihrer Daten ausschließlich zu diesem Zweck zustimmen.</p><p>Wenn wir Sie aus einem anderen Grund, etwa zu Marketingzwecken, um Ihre personenbezogenen Daten bitten, fragen wir Sie direkt nach Ihrer ausdrücklichen Einwilligung oder geben Ihnen die Möglichkeit, abzulehnen.</p><p>Wie kann ich meine Einwilligung widerrufen? Sie können Ihre Einwilligung jederzeit bearbeiten, indem Sie <a href=\"#\">hier klicken und Ihre Einwilligung bearbeiten</a>.</p><p>Wenn Sie nach Erteilung Ihrer Einwilligung Ihre Meinung ändern und nicht mehr damit einverstanden sind, dass wir Sie kontaktieren, Ihre Daten erheben oder offenlegen, können Sie uns dies unter customer@thechristmasfabric.com oder per Post an SAS OVOORO mitteilen, das Unternehmen, das thechristmasfabric.com betreibt:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Frankreich</p><p>ABSCHNITT 3 - OFFENLEGUNG</p><p>Wir können Ihre personenbezogenen Daten offenlegen, wenn wir gesetzlich dazu verpflichtet sind oder wenn Sie gegen unsere Allgemeinen Geschäftsbedingungen verstoßen.</p><p>ABSCHNITT 4 - HOSTING</p><p>Unser Shop wird von Kinsta Inc. gehostet. Dieses Unternehmen stellt uns die Online-Plattform bereit, über die wir Ihnen unsere Dienstleistungen und Produkte verkaufen können.</p><p>Ihre Daten werden im Datenspeichersystem und in den Datenbanken von Kinsta Inc. gespeichert. Ihre Daten werden auf einem sicheren Server gespeichert, der durch eine Firewall geschützt ist.</p><p>Zahlung:</p><p>Bei einem Online-Kauf auf noel-shop.com werden keine Kreditkarteninformationen gespeichert. Ihre Kreditkarteninformationen werden von Drittanbietern sicher verwendet, um Ihre Zahlung zu verarbeiten. Aus Sicherheitsgründen werden die Daten gemäß dem Payment Card Industry Data Security Standard (PCI-DSS) verschlüsselt. Die Informationen zu Ihrer Kauftransaktion werden von Drittanbietern wie PayPal, Stripe oder Mollie so lange aufbewahrt, wie es zur Bearbeitung Ihrer Bestellung erforderlich ist.</p><p>Alle direkten Zahlungsgateways entsprechen dem PCI-DSS-Standard, der vom PCI Security Standards Council verwaltet wird, einer gemeinsamen Initiative von Unternehmen wie Visa, MasterCard, American Express und Discover.</p><p>Die Anforderungen des PCI-DSS-Standards gewährleisten die sichere Verarbeitung von Kreditkartendaten durch unseren Shop und seine Dienstleister.</p><p>ABSCHNITT 5 - VON DRITTEN ERBRACHTE DIENSTLEISTUNGEN</p><p>Im Allgemeinen erheben, verwenden und legen die von uns eingesetzten Drittanbieter Ihre Informationen nur in dem Umfang offen, der erforderlich ist, um die von ihnen für uns erbrachten Dienstleistungen auszuführen.</p><p>Einige Drittanbieter, wie Zahlungsgateways und andere Zahlungsabwickler, haben jedoch eigene Datenschutzrichtlinien in Bezug auf die Informationen, die wir ihnen für Ihre Kauftransaktionen bereitstellen müssen.</p><p>In Bezug auf diese Anbieter empfehlen wir Ihnen, deren Datenschutzrichtlinien sorgfältig zu lesen, damit Sie verstehen, wie sie mit Ihren personenbezogenen Daten umgehen.</p><p>Bitte beachten Sie, dass einige Anbieter in einer anderen Rechtsordnung ansässig sein oder Einrichtungen in einer anderen Rechtsordnung haben können als Sie oder wir. Wenn Sie eine Transaktion durchführen, die die Dienste eines Drittanbieters erfordert, können Ihre Informationen den Gesetzen der Rechtsordnung unterliegen, in der dieser Anbieter ansässig ist oder in der sich seine Einrichtungen befinden.</p><p>Wenn Sie sich beispielsweise in Kanada befinden und Ihre Transaktion über ein Zahlungsgateway in den Vereinigten Staaten verarbeitet wird, können die zur Abwicklung der Transaktion verwendeten Informationen nach US-amerikanischem Recht offengelegt werden, einschließlich des Patriot Act.</p><p>Sobald Sie unsere Shop-Website verlassen oder zu einer Website oder Anwendung eines Drittanbieters weitergeleitet werden, unterliegen Sie nicht mehr dieser Datenschutzerklärung oder den Verkaufs- und Nutzungsbedingungen unserer Website.</p><p>Links</p><p>Sie können unsere Website verlassen, indem Sie auf bestimmte Links auf unserer Website klicken. Wir übernehmen keine Verantwortung für die Datenschutzpraktiken dieser anderen Websites und empfehlen Ihnen, deren Datenschutzrichtlinien sorgfältig zu lesen.</p><p>ABSCHNITT 6 - SICHERHEIT</p><p>Zum Schutz Ihrer personenbezogenen Daten treffen wir angemessene Vorsichtsmaßnahmen und befolgen bewährte Branchenpraktiken, um sicherzustellen, dass sie nicht in unangemessener Weise verloren gehen, zweckentfremdet, abgerufen, offengelegt, verändert oder zerstört werden.</p><p>ABSCHNITT 7 - ALTER DER EINWILLIGUNG</p><p>Durch die Nutzung dieser Website erklären Sie, dass Sie mindestens volljährig in Ihrem Bundesstaat oder Ihrer Provinz des Wohnsitzes sind und dass Sie uns Ihre Einwilligung gegeben haben, Minderjährigen in Ihrer Obhut die Nutzung dieser Website zu gestatten.</p><p>ABSCHNITT 8 - ÄNDERUNGEN DIESER DATENSCHUTZERKLÄRUNG</p><p>Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Bitte prüfen Sie sie daher regelmäßig. Änderungen und Klarstellungen treten unmittelbar nach ihrer Veröffentlichung auf der Website in Kraft. Wenn wir den Inhalt dieser Richtlinie ändern, informieren wir Sie hier über die Aktualisierung, damit Sie wissen, welche Informationen wir erheben, wie wir sie verwenden und unter welchen Umständen wir sie gegebenenfalls offenlegen.</p><p>Wenn unser Shop von einem anderen Unternehmen übernommen wird oder mit einem anderen Unternehmen fusioniert, können Ihre Informationen an die neuen Eigentümer übertragen werden, damit wir Ihnen weiterhin Produkte verkaufen können.</p><p>FRAGEN UND KONTAKTINFORMATIONEN</p><p>Wenn Sie personenbezogene Daten, die wir über Sie gespeichert haben, einsehen, korrigieren, ändern oder löschen möchten, eine Beschwerde einreichen oder einfach weitere Informationen wünschen, kontaktieren Sie unseren Datenschutzbeauftragten unter customer@thechristmasfabric.com oder per Post am Sitz von SAS OVOORO, das thechristmasfabric.com betreibt:<br>SAS OVOORO<br>19 Allee de Brienne<br>Toulouse<br>31000<br>Frankreich</p>"
+    },
+    "MeasurementGuide": {
+      "intro": {
+        "eyebrow": "Ein einfacher Leitfaden, um Fehler zu vermeiden",
+        "title": "Nehmen Sie Ihre Maße",
+        "paragraph1": "Die Kleidung von The Christmas Fabric wird nach einem internationalen Durchschnitt gefertigt, damit sie von möglichst vielen Menschen getragen werden kann. Deshalb helfen Ihnen Ihre Maße dabei, die richtige Größe zu wählen. Wenn Sie zum Beispiel normalerweise L tragen, kann Ihnen bei manchen Modellen Größe M besser passen.",
+        "paragraph2": "Nachdem Sie Ihre Maße genommen haben, können Sie sie direkt mit der Größentabelle auf der Produktseite Ihrer Wahl vergleichen. Unsere Produkte können ähnliche oder unterschiedliche Größentabellen haben."
+      },
+      "withoutTape": {
+        "eyebrow": "Verwenden Sie eine Schnur",
+        "title": "Messen ohne Maßband",
+        "description": "Kein Problem. Wenn Sie kein Maßband haben, können Sie eine Schnur oder die Kante eines langen Handtuchs verwenden, um Brust, Taille, Hüfte und mehr zu messen. Übertragen Sie anschließend die Länge der Schnur oder des Handtuchs auf ein Lineal, um die Länge in cm oder Zoll zu bestimmen."
+      },
+      "guideTitle": "Guide anzeigen für",
+      "options": {
+        "men": "Herren",
+        "women": "Damen",
+        "child": "Kinder",
+        "baby": "Baby"
+      },
+      "imageAlt": "Illustration des Messleitfadens",
+      "measurements": [
+        {
+          "primaryLabel": "A - Brust, Brustumfang:",
+          "primaryText": "Messen Sie den Brustumfang. Alle Größentabellen von The Christmas Fabric geben den Brustumfang an. Diese Angabe wird in unseren Größentabellen sehr häufig verwendet.",
+          "secondaryLabel": "Oberteillänge:",
+          "secondaryText": "Messen Sie von der Vertiefung am Halsansatz bis zum Becken. Diese Angabe wird in unseren Größentabellen sehr häufig verwendet."
+        },
+        {
+          "primaryLabel": "B - Taille, Taillenumfang:",
+          "primaryText": "Messen Sie den Taillenumfang. Diese Angabe wird in unseren Größentabellen häufig verwendet.",
+          "secondaryLabel": "Unterteillänge:",
+          "secondaryText": "Messen Sie vom Becken bis zum Knöchel. Diese Angabe wird in unseren Größentabellen sehr häufig verwendet."
+        },
+        {
+          "primaryLabel": "C - Hüfte, Hüftumfang:",
+          "primaryText": "Messen Sie den Hüftumfang. Diese Angabe wird in unseren Größentabellen manchmal verwendet."
+        },
+        {
+          "primaryLabel": "D - Schrittlänge:",
+          "primaryText": "Messen Sie von der Schrittnaht bis zum Knöchel, ohne das Bein zu beugen. Diese Angabe wird in unseren Größentabellen seltener verwendet."
+        }
+      ]
+    },
+    "ReturnAndRefund": {
+      "title": "Rückgabe und Erstattung",
+      "breadcrumbHome": "Startseite",
+      "body": "<p>Unsere Richtlinie gilt 14 Tage ab dem Tag der Lieferung. Wenn seit dem Tag Ihrer Lieferung 14 Tage vergangen sind, können wir Ihnen leider keine Erstattung und keinen Umtausch anbieten.</p><p>Um für eine kostenlose Rückgabe in Frage zu kommen, muss Ihr Artikel zum Umtausch zurückgegeben werden, unbenutzt sein und sich im selben Zustand befinden, in dem Sie ihn erhalten haben. Er muss sich außerdem in der Originalverpackung befinden.</p><p>Um Missbrauch zu vermeiden, fällt eine Rücksendegebühr von 10 USD$ nur dann an, wenn der Kunde eine Erstattung verlangt und die Bestellung den Erwartungen des Kunden hinsichtlich der Artikel entspricht, die den Kauf auf www.thechristmasfabric.com motiviert haben.</p><p>Der Kunde muss bei der Rückgabe des Produkts prüfen, ob das Zubehör, sofern vorhanden, vollständig ist und ob es sich um die Originalverpackung handelt. Tut der Kunde dies nicht, kann ein Betrag von der Erstattung abgezogen werden, um den entstandenen Verlust zu decken:<br>- Beschädigte oder fehlende Originalverpackung: 10 USD$.<br>- Fehlendes Zubehör: 20 % des gesamten Erstattungsbetrags oder der Preis des Zubehörs, falls dieser auf der Website angezeigt wird.</p><p>Wenn der Artikel nicht im Originalzustand zurückgegeben wird, beschädigt, verschmutzt, nicht funktionsfähig oder beeinträchtigt ist und dadurch nicht erneut verkauft werden kann, kann keine Erstattung gewährt werden.</p><p>Viele Arten von Produkten können nicht zurückgegeben werden. Verderbliche Waren wie Lebensmittel, Blumen oder Zeitschriften können nicht zurückgegeben werden. Wir akzeptieren außerdem keine Intim- oder Hygieneprodukte, gefährlichen Produkte oder entzündlichen Gase oder Flüssigkeiten.</p><p>Weitere Artikel, die nicht zurückgegeben werden können:</p><p>Geschenkkarten<br>Herunterladbare Software<br>Bestimmte Gesundheits- und Körperpflegeprodukte<br>Für eine Rückgabe müssen Sie uns eine Quittung oder einen Kaufnachweis vorlegen.</p><p>Bitte senden Sie Ihren Kauf nicht an den Hersteller zurück.</p><p>In bestimmten Situationen wird gegebenenfalls nur eine Teilerstattung gewährt:</p><p>Bücher mit deutlichen Gebrauchsspuren.<br>CD, DVD, VHS-Kassette, Software, Videospiel, Kassette oder Schallplatte, die geöffnet wurde.<br>Jeder Artikel, der sich nicht im Originalzustand befindet, beschädigt ist oder aus Gründen, die nicht auf einen Fehler unsererseits zurückzuführen sind, fehlende Teile aufweist.<br>Jeder Artikel, der mehr als 30 Tage nach der Lieferung zurückgegeben wird.</p><p>Erstattungen, falls zutreffend<br>Sobald wir den zurückgesandten Artikel erhalten und geprüft haben, senden wir Ihnen eine E-Mail, um den Eingang zu bestätigen. Wir informieren Sie außerdem über unsere Entscheidung, ob Ihr Erstattungsantrag genehmigt oder abgelehnt wird.<br>Wenn Ihr Antrag genehmigt wird, wird Ihre Erstattung bearbeitet und innerhalb von maximal 2 bis 3 Tagen, ausgenommen Wochenenden und Feiertage, automatisch Ihrer Kreditkarte oder ursprünglichen Zahlungsmethode gutgeschrieben.</p><p>Verspätete oder fehlende Erstattungen, falls zutreffend<br>Wenn Sie Ihre Erstattung noch nicht erhalten haben, prüfen Sie bitte die folgenden Schritte, bevor Sie die Website per E-Mail kontaktieren:<br>- Vergewissern Sie sich, dass die Erstattung nicht bereits auf Ihrem Bankkonto in Bearbeitung ist oder für ein manchmal angezeigtes Datum geplant wurde.<br>- Kontaktieren Sie Ihre Bank, um die Fristen für Überweisungen zwischen Bankkonten zu erfahren, die nicht zur selben Bank gehören.<br><br>Wenn Sie nach Abschluss all dieser Schritte Ihre Erstattung immer noch nicht erhalten haben oder den Zeitrahmen Ihrer Bank bzw. das Eingangsdatum Ihrer Erstattung nicht kennen, kontaktieren Sie uns bitte unter customer@thechristmasfabric.com.</p><p>Sale-Artikel, falls zutreffend<br>Nur Artikel zum regulären Preis können erstattet werden. Sale-Artikel sind leider nicht erstattungsfähig.</p><p>Rückgabe wegen Fehlfunktion</p><p>Ein Artikel, der wegen einer Fehlfunktion zurückgegeben wird, fällt unter unser kostenloses Rückgabeangebot, und der Kunde zahlt keine Gebühren. Wenn unser Team nach mehreren Tests und Überprüfungen durch den Kundendienst keine Fehlfunktion feststellt, erfolgt die Rücksendung an den Kunden auf Kosten des Kunden. Dies hilft uns, missbräuchliche Rückgaben zu vermeiden, und fordert den Kunden auf, zu prüfen, ob das Produkt tatsächlich eine Fehlfunktion aufweist und ob eine Rückgabe an den Kundendienst vor einem Umtausch erforderlich ist.</p><p>Umtausch</p><p>Wir ersetzen einen Artikel nur, wenn er bei Erhalt durch den Kunden defekt oder beschädigt ist. Der Kunde hat ab dem Tag der Lieferung 3 Tage Zeit, ein Problem zu melden. Nach Ablauf dieser Frist gehen wir davon aus, dass der Artikel verwendet wurde und nicht mehr umtauschbar ist. Für jeden Umtausch senden Sie uns bitte eine E-Mail an customer@thechristmasfabric.com.</p><p>Der Artikel muss neu, unbenutzt, ungewaschen, in der Originalverpackung und mit allen Etiketten versehen sein.</p><p>Ihr Artikel sollte an die Adresse des Unternehmens gesendet werden, das www.thechristmasfabric.com betreibt:<br>SAS OVOORO<br>19 Allée de Brienne<br>Toulouse<br>31000<br>Frankreich</p><p>Geschenke<br>Wenn der zurückgegebene Artikel beim Kauf als Geschenk gekennzeichnet war und direkt an Sie gesendet wurde, erhalten Sie eine Geschenkgutschrift in Höhe des Werts Ihrer Rückgabe. Sobald wir den zurückgegebenen Artikel erhalten haben, wird Ihnen ein Geschenkgutschein per Post zugesandt. Rücksendekosten für Geschenke werden nicht übernommen.</p><p>Versand<br>Um ein Produkt zurückzugeben, müssen Sie es an den Hauptsitz von SAS OVOORO senden, dem Unternehmen, das www.thechristmasfabric.com betreibt: SAS OVOORO, 19 Allée de Brienne, Toulouse, 31000, Frankreich.</p><p>Bearbeitungszeiten<br>Je nachdem, wo Sie wohnen, kann die Zeit bis zum Erhalt Ihres umgetauschten Produkts variieren.</p><p>Nach Eingang Ihres Produkts am Hauptsitz benötigen wir 3 bis 5 Werktage, um es zu prüfen und eine Entscheidung zu treffen, die Ihnen per E-Mail an die bei der Bestellung angegebene Adresse mitgeteilt wird.</p><p>Wenn die Rücksendekosten für die erneute Lieferung an den Kunden von SAS OVOORO, dem Betreiber von www.thechristmasfabric.com, getragen werden, kann die Lieferzeit zwischen 3 und 5 Tagen variieren.</p><p>Wenn die Rücksendekosten an den Kunden vom Kunden zu tragen sind, variiert die Lieferzeit je nach der vom Kunden gewählten bevorzugten Methode.</p><p>Wenn Sie einen Artikel mit einem Wert von mehr als 100 USD$ versenden und für die Rücksendekosten verantwortlich sind, sollten Sie einen Versanddienst nutzen, der eine Sendungsverfolgung ermöglicht, oder eine Versandversicherung abschließen. Wir garantieren nicht, dass wir den von Ihnen zurückgesendeten Artikel im Falle eines Problems erhalten.</p>"
+    },
+    "TermsOfDelivery": {
+      "title": "Lieferbedingungen",
+      "breadcrumbHome": "Startseite",
+      "body": "<p>Die PRODUKTE werden an die Lieferadresse oder Lieferadressen versendet, die der KUNDE während des Bestellvorgangs angibt.</p><p>Versandzeit</p><p>Die Fristen für die Vorbereitung einer Bestellung und die anschließende Ausstellung der Rechnung vor dem Versand der vorrätigen PRODUKTE sind auf der WEBSITE angegeben. Diese Fristen umfassen keine Wochenenden oder Feiertage.</p><p>Beim Versand der PRODUKTE wird automatisch eine E-Mail an den KUNDEN gesendet, sofern die im Registrierungsformular angegebene E-Mail-Adresse korrekt ist.</p><p>Lieferzeiten und Kosten</p><p>Während des Bestellvorgangs teilt der VERKÄUFER dem KUNDEN die möglichen Lieferzeiten und Versandoptionen für die gekauften PRODUKTE mit.</p><p>Die Versandkosten werden entsprechend der Liefermethode berechnet. Der Betrag dieser Kosten ist vom KUNDEN zusätzlich zum Preis der gekauften PRODUKTE zu zahlen.</p><p>Einzelheiten zu Lieferzeiten und Kosten sind auf der WEBSITE aufgeführt.</p><p>Lieferbedingungen</p><p>Das Paket wird dem KUNDEN gegen Unterschrift und nach Vorlage eines Ausweisdokuments übergeben.</p><p>Bei Abwesenheit wird dem KUNDEN eine Benachrichtigung hinterlassen, damit er sein Paket bei seinem Postamt abholen kann.</p><p>Der KUNDE ist dafür verantwortlich, das Paket innerhalb von 10 Tagen beim Postamt abzuholen. Der VERKÄUFER kann nicht für ein Paket verantwortlich gemacht werden, das von den Postdiensten zerstört oder nicht zurückgesendet wurde, und dieser Grund berechtigt nicht zu einer Erstattung.</p><p>Lieferprobleme</p><p>Der KUNDE wird über das Lieferdatum informiert, wenn er am Ende des Online-Bestellvorgangs vor Bestätigung der Bestellung den Zusteller auswählt.</p><p>Es wird festgelegt, dass Lieferungen innerhalb von maximal dreißig (30) Tagen erfolgen. Andernfalls muss der KUNDE den VERKÄUFER förmlich auffordern, innerhalb einer angemessenen Frist zu liefern. Erfolgt innerhalb dieser Frist keine Lieferung, kann der Vertrag beendet werden.</p><p>Der VERKÄUFER erstattet dem KUNDEN nach Erhalt des Kündigungsschreibens ohne unangemessene Verzögerung den gesamten für die PRODUKTE gezahlten Betrag einschließlich Steuern und Lieferkosten mit derselben Zahlungsmethode, die der KUNDE für den Kauf der PRODUKTE verwendet hat.</p><p>Der VERKÄUFER ist bis zur Lieferung des PRODUKTS an den KUNDEN verantwortlich. Es wird daran erinnert, dass der KUNDE eine Frist von drei (3) Tagen hat, um dem Zusteller Schäden oder teilweisen Verlust mitzuteilen, die bei der Lieferung festgestellt wurden.</p>"
+    },
+    "LegalNotice": {
+      "title": "Impressum",
+      "breadcrumbHome": "Startseite",
+      "body": "<p>Definitionen</p><p>Kunde: jede geschäftsfähige natürliche Person oder juristische Person, die https://www.thechristmasfabric.com besucht. Nutzer: jeder Internetnutzer, der sich mit der Website verbindet und sie nutzt. Inhalt: alle auf der Website vorhandenen Elemente, insbesondere Texte, Bilder, Grafiken, Videos, Logos, Icons und Töne. Kundeninformationen: personenbezogene Daten, die zur Konto- und Kundenverwaltung sowie für Analyse- und Statistikzwecke verarbeitet werden können.</p><p>Angaben zur Website</p><p>Gemäß Artikel 6 des französischen Gesetzes Nr. 2004-575 vom 21. Juni 2004 werden die Nutzer informiert: Eigentümer ist SASU OVOORO, Stammkapital 1000 EUR, USt-IdNr. FR54890918436, 19 Allée de Brienne, 31000 Toulouse. Verantwortlich für die Veröffentlichung: The Christmas Fabric, customer@thechristmasfabric.com. Webmaster: The Christmas Fabric. Hosting: Kinsta Inc, 8605 Santa Monica Blvd #92581, 90069 West Hollywood, CA. Datenschutzbeauftragter: The Christmas Fabric, customer@thechristmasfabric.com.</p><p>Allgemeine Nutzungsbedingungen</p><p>Die Nutzung der Website setzt die vollständige Annahme dieser Bedingungen voraus. Die Website ist ein durch das Recht des geistigen Eigentums und internationale Vorschriften geschütztes Werk. Ohne vorherige schriftliche Genehmigung dürfen Elemente der Website nicht wiederverwendet, übertragen oder verwertet werden.</p><p>Zugang und Leistungen</p><p>Die Website ist grundsätzlich jederzeit zugänglich. Technische Wartungsarbeiten können jedoch zu Unterbrechungen führen. https://www.thechristmasfabric.com bemüht sich um möglichst genaue Informationen, haftet jedoch nicht für Auslassungen, Ungenauigkeiten oder fehlende Aktualisierungen.</p><p>Technische Beschränkungen</p><p>Die Website verwendet unter anderem JavaScript. Der Nutzer verpflichtet sich, die Website mit aktueller, virenfreier Ausrüstung und einem aktuellen Browser zu nutzen. Die Website und ihr Hoster haften nicht für Störungen des Internets, von Telefonleitungen oder technischer Ausrüstung, die den Zugang zum Server verhindern.</p><p>Geistiges Eigentum</p><p>https://www.thechristmasfabric.com ist Inhaber der Rechte oder Nutzungsrechte an den zugänglichen Elementen der Website. Jede Vervielfältigung, Darstellung, Änderung, Veröffentlichung oder Anpassung, ganz oder teilweise, ist ohne vorherige schriftliche Genehmigung untersagt und kann als Rechtsverletzung verfolgt werden.</p><p>Haftung</p><p>https://www.thechristmasfabric.com handelt als Herausgeber der Website und ist für die Qualität der veröffentlichten Inhalte verantwortlich. Eine Haftung für direkte oder indirekte Schäden im Zusammenhang mit der Nutzung der Website, insbesondere durch Inkompatibilität, Fehler oder ungeeignete Ausrüstung, ist ausgeschlossen.</p><p>Personenbezogene Daten</p><p>Der Kunde wird über die Vorschriften zur Marketingkommunikation, zur digitalen Wirtschaft, zum Datenschutzrecht und zur DSGVO informiert. Verantwortlicher für die Verarbeitung ist https://www.thechristmasfabric.com, vertreten durch BOER als gesetzlichen Vertreter.</p><p>Daten können verarbeitet werden, um Navigation, Bestellungen, Rechnungsstellung und Bestellhistorie zu verwalten, Computerbetrug zu verhindern, die Nutzererfahrung zu verbessern, optionale Zufriedenheitsumfragen durchzuführen und Kommunikationskampagnen per SMS oder E-Mail umzusetzen. Personenbezogene Daten werden nicht verkauft.</p><p>Rechte der Nutzer</p><p>Gemäß DSGVO haben Nutzer Rechte auf Auskunft, Berichtigung, Aktualisierung, Löschung, Widerruf der Einwilligung, Einschränkung, Widerspruch und Datenübertragbarkeit. Zur Ausübung dieser Rechte kann geschrieben werden an: DPO, OVOORO, 19 Allée de Brienne, 31000 Toulouse, mit Kopie eines Identitätsnachweises.</p><p>Löschungsanträge unterliegen gesetzlichen Aufbewahrungs- und Archivierungspflichten. Nutzer können außerdem eine Beschwerde bei der CNIL einreichen: https://www.cnil.fr/fr/plaintes.</p><p>Vertraulichkeit und Sicherheit</p><p>https://www.thechristmasfabric.com überträgt Informationen nicht ohne vorherige Information in Länder außerhalb der Europäischen Union oder in nicht als angemessen anerkannte Länder. Dienstleister können eingesetzt werden, sofern sie ausreichende DSGVO-Garantien bieten. Wesentliche Daten können Name, Vorname, Telefon, E-Mail, Adresse, Postleitzahl, Stadt und Land umfassen und bis zu 120 Monate nach Ende der Vertragsbeziehung gespeichert werden.</p><p>Bei einem Sicherheitsvorfall werden betroffene Nutzer informiert. Die Website verwendet Standardmaßnahmen wie Firewalls, Pseudonymisierung, Verschlüsselung und Passwörter, um Daten vor Verlust, Missbrauch, unbefugtem Zugriff, Offenlegung, Änderung oder Zerstörung zu schützen.</p><p>Links, Cookies und Internet-Tags</p><p>Die Website kann Links zu anderen Websites enthalten. https://www.thechristmasfabric.com kontrolliert deren Inhalte nicht und übernimmt dafür keine Verantwortung. Cookies können genutzt werden, um Navigation und Dienste zu verbessern. Nutzer können ihren Browser so einstellen, dass Cookies akzeptiert oder abgelehnt werden; dies kann Funktionen einschränken.</p><p>Die Website kann Internet-Tags über Analysepartner verwenden, um Website-Aktivität, Wirksamkeit von Aktionen und Seitennutzung zu messen. Drittanbieter können mit Zustimmung des Nutzers ebenfalls Cookies setzen; diese Zustimmung kann jederzeit widerrufen werden.</p><p>Anwendbares Recht</p><p>Jede Streitigkeit im Zusammenhang mit der Nutzung von https://www.thechristmasfabric.com unterliegt französischem Recht. Soweit gesetzlich zulässig, sind ausschließlich die zuständigen Gerichte von Toulouse zuständig.</p>"
+    },
+    "HumanitarianProject": {
+      "title": "Humanitäres Projekt",
+      "hero": {
+        "eyebrow": "Mit Ihren Bestellungen",
+        "heading": "5 % gespendet",
+        "description": "5 % der Gewinne werden an den Verein AHPA gespendet, mit dem Ziel, mindestens 1 Bildungsgarten in Kpomassè, Benin, aufzubauen. Dank Ihrer Bestellung können Sie den Fortschritt dieser Initiative verfolgen, die auch von unserer französischen Website unterstützt wird.",
+        "link": "Noel Shop"
+      },
+      "association": {
+        "eyebrow": "Der Verein",
+        "heading": "AHPA",
+        "description": "Association Humanitaire pour l'Afrique (AHPA) ist ein internationaler Solidaritätsverein, der Entwicklungsprojekte in Benin in den Bereichen Bildung, nachhaltige Landwirtschaft, Umweltschutz und fairer Tourismus unterstützt. Gemeinsam mit lokalen Vereins_partnern unterstützt AHPA einkommensschaffende Mikroprojekte für junge Menschen in der Umweltbildung.",
+        "logoAlt": "Logo des Vereins AHPA"
+      },
+      "gallery": {
+        "image1Alt": "Bildungsgarten-Projekt in Benin",
+        "image2Alt": "Lokales Gemeinschaftsprojekt, unterstützt von AHPA",
+        "image3Alt": "Landwirtschafts- und Bildungsinitiative in Benin",
+        "image4Alt": "Feldaktivität des humanitären Projekts"
+      }
+    },
+    "CustomerService": {
+      "banner": {
+        "heading": "Kundendienst",
+        "subHeading": "Was können wir heute für Sie tun?"
+      },
+      "faqSections": [
+        {
+          "eyebrow": "Mehr über Sendungsverfolgung und Lieferung erfahren",
+          "heading": "Lieferung und Sendungsverfolgung",
+          "items": [
+            {
+              "question": "Wie kann ich meine Bestellung verfolgen?",
+              "answer": "Sobald Ihre Bestellung versendet wurde, erhalten Sie eine Bestätigungs-E-Mail mit einer Sendungsnummer. Sie können auch die Seite Meine Bestellung verfolgen nutzen."
+            },
+            {
+              "question": "Wann wird meine Bestellung versendet?",
+              "answer": "Bestellungen werden in der Regel schnell von Montag bis Samstag vorbereitet, ausgenommen Feiertage. Sie erhalten eine E-Mail, sobald Ihr Paket unser Lager verlässt."
+            },
+            {
+              "question": "Warum aktualisiert sich mein Tracking-Link nicht?",
+              "answer": "Tracking-Links können etwas Zeit benötigen, nachdem der Versanddienstleister das Paket übernommen hat. Prüfen Sie später erneut und kontaktieren Sie uns, wenn nach einigen Tagen keine Aktualisierung erfolgt."
+            },
+            {
+              "question": "Was soll ich tun, wenn mein Paket verspätet ist?",
+              "answer": "In Stoßzeiten kann es zu Verzögerungen kommen. Prüfen Sie zuerst die Sendungsverfolgung und kontaktieren Sie dann den Kundendienst mit Ihrer Bestellnummer."
+            },
+            {
+              "question": "Kann ich meine Lieferadresse ändern?",
+              "answer": "Kontaktieren Sie uns so schnell wie möglich. Wenn Ihre Bestellung noch nicht vorbereitet oder versendet wurde, versuchen wir, die Adresse zu ändern."
+            },
+            {
+              "question": "Was passiert, wenn ich bei der Lieferung nicht zuhause bin?",
+              "answer": "Der Versanddienstleister kann eine Benachrichtigung hinterlassen oder das Paket an eine Abholstelle weiterleiten. Bitte folgen Sie den Anweisungen des Versanddienstleisters."
+            }
+          ]
+        },
+        {
+          "eyebrow": "Artikel zurücksenden, umtauschen oder Erstattung anfordern",
+          "heading": "Rückgabe und Umtausch",
+          "items": [
+            {
+              "question": "Wie sende ich einen Artikel zurück?",
+              "answer": "Kontaktieren Sie den Kundendienst mit Ihrer Bestellnummer und dem Artikel, den Sie zurückgeben möchten. Wir bestätigen die nächsten Schritte und die Rücksendeadresse."
+            },
+            {
+              "question": "Wie lange kann ich eine Rückgabe beantragen?",
+              "answer": "Unsere Rückgabefrist beträgt 14 Tage ab Lieferung. Artikel müssen unbenutzt, ungewaschen, in Originalverpackung und mit Etiketten zurückgegeben werden."
+            },
+            {
+              "question": "Kann ich meinen Artikel gegen eine andere Größe umtauschen?",
+              "answer": "Ja, Umtausch ist möglich, wenn die gewünschte Größe verfügbar ist und der zurückgesendete Artikel unsere Rückgabebedingungen erfüllt."
+            },
+            {
+              "question": "Wann erhalte ich meine Erstattung?",
+              "answer": "Nach Erhalt und Prüfung Ihrer Rücksendung werden genehmigte Erstattungen innerhalb weniger Werktage auf die ursprüngliche Zahlungsmethode zurückgebucht."
+            },
+            {
+              "question": "Sind reduzierte Artikel erstattungsfähig?",
+              "answer": "Nur regulär bepreiste Artikel können erstattet werden, sofern gesetzlich nichts anderes vorgeschrieben ist. Reduzierte Artikel sind möglicherweise nicht erstattungsfähig."
+            },
+            {
+              "question": "Was ist, wenn mein Artikel beschädigt oder defekt ist?",
+              "answer": "Kontaktieren Sie uns innerhalb von 3 Tagen nach Lieferung mit Ihrer Bestellnummer und Fotos des Problems. Wir prüfen den Fall und bieten eine passende Lösung an."
+            }
+          ]
+        }
+      ],
+      "form": {
+        "description": "Nutzen Sie dieses Formular, um den Kundendienst per E-Mail unter customer@thechristmasfabric.com zu kontaktieren",
+        "heading": "Kundendienst kontaktieren",
+        "firstNameLabel": "Ihr Vorname",
+        "firstNamePlaceholder": "Vorname",
+        "orderNumberLabel": "Ihre Bestellnummer",
+        "orderNumberPlaceholder": "35445",
+        "reasonLabel": "Grund Ihrer Anfrage",
+        "reasonOptions": [
+          "Ich möchte ein Produkt umtauschen",
+          "Ich habe ein Problem mit der Sendungsverfolgung",
+          "Ich möchte mein Paket zurücksenden oder eine Erstattung erhalten",
+          "Ich möchte meine Bestellung ändern",
+          "Ich kontaktiere Sie aus einem anderen Grund"
+        ],
+        "submit": "Weiter"
+      }
     }
   }
 }

@@ -6,6 +6,7 @@ import { getDefaultProductVariant } from "@lib/util/product"
 import { HttpTypes } from "@medusajs/types"
 import { clx } from "@medusajs/ui"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
+import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import type { KeyboardEvent, MouseEvent } from "react"
 
@@ -29,6 +30,7 @@ const SwhWishlistToggle = ({
   product,
   tooltipClassName,
 }: SwhWishlistToggleProps) => {
+  const t = useTranslations("Wishlist.Toggle")
   const params = useParams()
   const router = usePageLoaderRouter()
   const { hasCustomer, isInWishlist, isPending, toggleWishlist } = useWishlist()
@@ -47,9 +49,9 @@ const SwhWishlistToggle = ({
 
   const label = hasCustomer
     ? isSaved
-      ? "Remove From Wishlist"
-      : "Add To Wishlist"
-    : "Sign In To Save"
+      ? t("remove")
+      : t("add")
+    : t("signIn")
 
   const handleAction = async () => {
     if (!hasCustomer) {

@@ -1,5 +1,6 @@
 import { Radio as RadioGroupOption } from "@headlessui/react"
 import { Text, clx } from "@medusajs/ui"
+import { useTranslations } from "next-intl"
 import React, { useContext, useMemo, type JSX } from "react"
 
 import Radio from "@modules/common/components/radio"
@@ -26,7 +27,9 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
   disabled = false,
   children,
 }) => {
+  const tm = useTranslations("Checkout.PaymentMethods")
   const isDevelopment = process.env.NODE_ENV === "development"
+  const title = paymentInfoMap[paymentProviderId]?.title
 
   return (
     <RadioGroupOption
@@ -45,7 +48,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
         <div className="flex items-center gap-x-4">
           <Radio checked={selectedPaymentOptionId === paymentProviderId} />
           <Text className="text-base-regular">
-            {paymentInfoMap[paymentProviderId]?.title || paymentProviderId}
+            {title ? tm(title) : paymentProviderId}
           </Text>
           {isManual(paymentProviderId) && isDevelopment && (
             <PaymentTest className="hidden small:block" />

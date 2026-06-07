@@ -175,7 +175,7 @@ const CartDropdown = ({
             data-testid="nav-cart-dropdown"
           >
             <div className="heading px-6 py-6 flex items-center justify-between relative ">
-              <div className="heading5">Shopping Basket</div>
+              <div className="heading5">{t("shoppingBasket")}</div>
               <RxCross2
                 className="text-[24px] font-normal hover:text-hoverGray duration-300 ease-in-out cursor-pointer"
                 onClick={() => setCartDropdownOpen(false)}
@@ -299,7 +299,7 @@ const CartDropdown = ({
                               data-testid="cart-item-quantity"
                               data-value={item.quantity}
                             >
-                              Quantity: {item.quantity}
+                              {t("quantity")}: {item.quantity}
                             </span>
                             <DeleteButton
                               id={item.id}
@@ -320,19 +320,19 @@ const CartDropdown = ({
                       onClick={() => handleActiveTab("note")}
                     >
                       <Icon.NotePencilIcon className="text-xl" />
-                      <div className="text-title">Note</div>
+                      <div className="text-title">{t("note")}</div>
                     </div>
                     <div
                       className="item flex flex-col justify-center items-center gap-1 cursor-pointer group hover:text-hoverGray duration-300 ease-in-out"
                       onClick={() => handleActiveTab("coupon")}
                     >
                       <Icon.TagIcon className="text-xl" />
-                      <div className="text-title">Coupon</div>
+                      <div className="text-title">{t("coupon")}</div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between pt-6 px-6 ">
                     <div className="text-[16px] font-normal text-christmasText ">
-                      Subtotal (excl. tax)
+                      {t("subtotalExclTax")}
                     </div>
                     <div className="text-title ">
                       {convertToLocale({
@@ -343,7 +343,7 @@ const CartDropdown = ({
                   </div>
                   <div className="flex items-center justify-between  px-6 ">
                     <div className="text-[16px] font-normal text-christmasText">
-                      Taxes
+                      {t("taxes")}
                     </div>
                     <div className="text-title ">
                       {convertToLocale({
@@ -353,7 +353,7 @@ const CartDropdown = ({
                     </div>
                   </div>
                   <div className="flex items-center justify-between pt-6 px-6 ">
-                    <div className="body1 font-medium">Total (Incl. tax)</div>
+                    <div className="body1 font-medium">{t("totalInclTax")}</div>
                     <div className="body1 font-medium">
                       {convertToLocale({
                         amount: total,
@@ -368,7 +368,7 @@ const CartDropdown = ({
                         className="swh-btn bg-black text-white text-[16px] font-normal"
                         onClick={() => setCartDropdownOpen(false)}
                       >
-                        Checkout
+                        {t("checkout")}
                       </LocalizedClientLink>
                     </div>
                     <div className="mt-[10px]">
@@ -377,7 +377,7 @@ const CartDropdown = ({
                         className="has-line-before text-[16px] font-normal"
                         onClick={() => setCartDropdownOpen(false)}
                       >
-                        View Basket
+                        {t("viewBasket")}
                       </LocalizedClientLink>
                     </div>
                   </div>
@@ -390,7 +390,7 @@ const CartDropdown = ({
                     <div className="px-6 py-4 border-b border-line">
                       <div className="item flex items-center gap-3 cursor-pointer">
                         <Icon.NotePencil className="text-xl" />
-                        <div className="caption1">Note</div>
+                        <div className="caption1">{t("note")}</div>
                       </div>
                     </div>
                     <div className="form pt-4 px-6">
@@ -398,7 +398,7 @@ const CartDropdown = ({
                         name="form-note"
                         id="form-note"
                         rows={4}
-                        placeholder="Add special instructions for your order..."
+                        placeholder={t("notePlaceholder")}
                         className="caption1 py-3 px-4 bg-surface border-line rounded-md w-full"
                       ></textarea>
                     </div>
@@ -407,13 +407,13 @@ const CartDropdown = ({
                         className="swh-btn bg-black text-white text-[16px] font-normal"
                         onClick={() => setActiveTab("")}
                       >
-                        Save
+                        {t("save")}
                       </div>
                       <div
                         onClick={() => setActiveTab("")}
                         className="hover:text-hoverGray cursor-pointer text-[16px] font-normal mt-[10px]"
                       >
-                        Cancel
+                        {t("cancel")}
                       </div>
                     </div>
                   </div>
@@ -426,7 +426,7 @@ const CartDropdown = ({
                     <div className="px-6 py-4 border-b border-line">
                       <div className="item flex items-center gap-3 cursor-pointer">
                         <Icon.Tag className="text-xl" />
-                        <div className="caption1">Add A Coupon Code</div>
+                        <div className="caption1">{t("addCouponCode")}</div>
                       </div>
                     </div>
                     <div className="form pt-4 px-6">
@@ -435,13 +435,13 @@ const CartDropdown = ({
                           htmlFor="select-discount"
                           className="caption1 text-secondary"
                         >
-                          Enter Code
+                          {t("enterCode")}
                         </label>
                         <input
                           className="border-line px-5 py-3 w-full rounded-xl mt-3"
                           id="select-discount"
                           type="text"
-                          placeholder="Discount code"
+                          placeholder={t("discountCode")}
                         />
                       </div>
                     </div>
@@ -450,13 +450,13 @@ const CartDropdown = ({
                         className="swh-btn bg-black text-white text-[16px] font-normal"
                         onClick={() => setActiveTab("")}
                       >
-                        Apply
+                        {t("apply")}
                       </div>
                       <div
                         onClick={() => setActiveTab("")}
                         className="hover:text-hoverGray cursor-pointer text-[16px] font-normal mt-[10px]"
                       >
-                        Cancel
+                        {t("cancel")}
                       </div>
                     </div>
                   </div>
@@ -470,11 +470,10 @@ const CartDropdown = ({
                   </div>
 
                   <div className="body1 font-medium">
-                    Your basket is currently empty
+                    {t("emptyHeading")}
                   </div>
                   <div className="text-[16px] font-normal text-christmasText text-center px-5">
-                    You may check out all the available products and buy some in
-                    the shop.
+                    {t("emptyDescription")}
                   </div>
 
                   {/* CTA Button */}
@@ -484,7 +483,7 @@ const CartDropdown = ({
                       className="swh-btn bg-black text-white text-[16px] font-normal mt-4"
                       onClick={() => setCartDropdownOpen(false)}
                     >
-                      Return to Shop
+                      {t("returnToShop")}
                     </LocalizedClientLink>
                   </div>
                 </div>

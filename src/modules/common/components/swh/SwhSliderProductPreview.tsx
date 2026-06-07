@@ -5,6 +5,7 @@ import DynamicImage from "./DynamicImage"
 import SwhWishlistToggle, { type SwhProductPreviewData } from "./SwhWishlistToggle"
 import { getProductPrice } from "@lib/util/get-product-price"
 import PreviewPrice from "@modules/products/components/product-preview/price"
+import { useTranslations } from "next-intl"
 
 type SwhSliderProductPreviewProps = {
   data: SwhProductPreviewData
@@ -15,9 +16,10 @@ const SwhSliderProductPreview = ({
   data,
   type,
 }: SwhSliderProductPreviewProps) => {
-      const { cheapestPrice,highestPrice } = getProductPrice({
-        product: data,
-      })
+  const t = useTranslations("Product.Preview")
+  const { cheapestPrice, highestPrice } = getProductPrice({
+    product: data,
+  })
   const originalPriceText = data.price?.original_price
   const salePriceText = data.price?.calculated_price
   const originalPrice = originalPriceText
@@ -78,7 +80,12 @@ const SwhSliderProductPreview = ({
                 <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]  ">
                   <div className="product-price christmas-font text-black">
                     {/* {data.price?.calculated_price} */}
-                              {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
+                    {cheapestPrice && (
+                      <PreviewPrice
+                        price={cheapestPrice}
+                        highestPrice={highestPrice}
+                      />
+                    )}
                   </div>
                   {typeof percentSale === "number" && percentSale > 0 && (
                     <>
@@ -93,7 +100,7 @@ const SwhSliderProductPreview = ({
                 </div>
                 <div className="caption1 text-[#356941] flex gap-2 items-center">
                   <div className="w-[6px] h-[6px] rounded-full bg-[#356941]"></div>{" "}
-                  In Stock
+                  {t("inStock")}
                 </div>
                 {/* Select Option */}
                 <div className="w-full mt-4 opacity-0 group-hover:opacity-100 duration-500 ease-in-out">
@@ -103,7 +110,7 @@ const SwhSliderProductPreview = ({
                       e.stopPropagation()
                     }}
                   >
-                    Select Option
+                    {t("selectOption")}
                   </div>
                 </div>
               </div>
@@ -157,9 +164,7 @@ const SwhSliderProductPreview = ({
                   </div>
 
                   <div className="text-secondary desc mt-5 max-sm:hidden">
-                    Here are the Merry Grinchmas pajamas, a fun Christmas pajama
-                    idea to celebrate your Grinchmas alone or with others.
-                    Suitable for families, couples, children, and…
+                    {t("sliderDescription")}
                   </div>
 
                   <div className="flex items-center justify-start gap-8 mt-8">
@@ -171,7 +176,7 @@ const SwhSliderProductPreview = ({
                         e.stopPropagation()
                       }}
                     >
-                      Select Option
+                      {t("selectOption")}
                     </div>
 
                     {/* Add to WishList */}
