@@ -175,6 +175,10 @@ export const getLocalizedProductHandle = async ({
       limit: 1,
     },
   }).then(({ response }) => response.products[0])
+  
+  if (locale === "en-GB") {
+    return localizedProduct?.handle;
+  }
 
   return localizedProduct?.custom_translation?.[locale]?.handle ?? localizedProduct?.custom_translation?.[targetCountryCode]?.handle ?? null;
 }

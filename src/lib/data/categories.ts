@@ -76,5 +76,14 @@ export const getLocalizedCategoryHandle = async ({
     )
     .then(({ product_categories }) => product_categories[0])
 
-  return category?.custom_translation?.[locale]?.handle ?? category?.custom_translation?.[targetCountryCode]?.handle ?? category?.handle ?? null
+  if (locale === "en-GB") {
+    return category?.handle
+  }
+
+  return (
+    category?.custom_translation?.[locale]?.handle ??
+    category?.custom_translation?.[targetCountryCode]?.handle ??
+    category?.handle ??
+    null
+  )
 }
