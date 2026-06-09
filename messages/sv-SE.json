@@ -50,6 +50,8 @@
     },
     "NewsLetter": {
       "text1": "Prenumerera för att stå på vår sida",
+      "increaseQuantity": "Öka antal",
+      "decreaseQuantity": "Minska antal",
       "text2": "Ta emot de viktigaste nyheterna om det största internationella julprojektet"
     },
     "Reviews": {
@@ -432,6 +434,11 @@
       "enterCode": "Ange kod",
       "discountCode": "Rabattkod",
       "apply": "Använd",
+      "couponCodeRequired": "Ange en kupongkod",
+      "couponError": "Den här kupongkoden är ogiltig eller har förfallit",
+      "couponApplied": "Kupong använd framgångsrikt!",
+      "enterValidCode": "Ange din kampanjkod och tryck på Retur eller klicka på Använd",
+      "close": "Stäng",
       "emptyHeading": "Din varukorg är för närvarande tom",
       "emptyDescription": "Du kan titta på alla tillgängliga produkter och köpa några i butiken.",
       "returnToShop": "Tillbaka till butiken"
@@ -439,6 +446,7 @@
     "Totals": {
       "subtotalExcluding": "Delsumma (exkl. frakt och skatter)",
       "shipping": "Frakt",
+      "calculatedAtCheckout": "Beräknas i kassan",
       "discount": "Rabatt",
       "taxes": "Skatter",
       "total": "Totalt"
@@ -622,7 +630,14 @@
       "inventoryAlert": "Just nu finns endast {quantity} artikel/artiklar tillgängliga!",
       "estimatedDeliveryLabel": "Beräknad leverans:",
       "estimatedDeliveryText": "Ditt paket kommer fram inom 3-5 arbetsdagar till ditt utlämningsställe eller hem till dig.",
-      "selectOptions": "Välj alternativ"
+      "selectOptions": "Välj alternativ",
+      "optionGender": "Kön",
+      "optionSize": "Storlek",
+      "optionColor": "Färg",
+      "optionValueBaby": "Baby",
+      "optionValueKid": "Barn",
+      "optionValueWomen": "Dam",
+      "optionValueMen": "Herr"
     },
     "Tabs": {
       "sizeGuide": "Storleksguide",
@@ -778,8 +793,11 @@
     "DiscountCode": {
       "addPromotionCodes": "Lägg till kampanjkod(er)",
       "apply": "Använd",
-      "promotionsApplied": "Tillämpade kampanjer:",
-      "removeDiscount": "Ta bort rabattkod från beställningen"
+      "promotionsApplied": "Tillämpad kuponger",
+      "removeDiscount": "Ta bort kupong",
+      "couponRemoved": "Kupong borttagen framgångsrikt",
+      "couponApplied": "Kupong tillämpad framgångsrikt!",
+      "enterCode": "Ange kupongkod"
     },
     "Summary": {
       "heading": "I din varukorg"

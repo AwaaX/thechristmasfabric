@@ -8,6 +8,7 @@ import { useElements, useStripe } from "@stripe/react-stripe-js"
 import React, { useState } from "react"
 import { useTranslations } from "next-intl"
 import ErrorMessage from "../error-message"
+import { isRedirectError } from "next/dist/client/components/redirect-error"
 
 type PaymentButtonProps = {
   cart: HttpTypes.StoreCart
@@ -162,7 +163,10 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
   const onPaymentCompleted = async () => {
     await placeOrder()
       .catch((err) => {
-        setErrorMessage(err.message)
+        if(isRedirectError(err)) {
+          throw err
+        }
+        console.error("Payment error:", err)
       })
       .finally(() => {
         setSubmitting(false)
@@ -186,10 +190,10 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
       >
         {t("placeOrder")}
       </Button>
-      <ErrorMessage
+      {/* <ErrorMessage
         error={errorMessage}
         data-testid="manual-payment-error-message"
-      />
+      /> */}
     </>
   )
 }

@@ -56,19 +56,21 @@
 
 // export default OptionSelect
 
-import { ProductOption } from "@medusajs/medusa"
+import { HttpTypes } from "@medusajs/types"
 import { clx } from "@medusajs/ui"
 import React from "react"
 
 import { onlyUnique } from "@lib/util/only-unique"
 
 type OptionSelectProps = {
-  option: ProductOption
+  option: HttpTypes.StoreProductOption
   current: string
   updateOption: (option: Record<string, string>) => void
   title: string
   disabled: boolean
   toShowValues: string[]
+  displayValues?: string[]
+  formatValue?: (value: string) => string
   "data-testid"?: string
 }
 
@@ -78,10 +80,14 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
   current,
   updateOption,
   title,
+  displayValues,
+  formatValue,
   "data-testid": dataTestId,
   disabled,
 }) => {
-  const filteredOptions = option.values.map((v) => v.value).filter(onlyUnique)
+  const filteredOptions =
+    displayValues ||
+    (option.values ?? []).map((v: any) => v.value).filter(onlyUnique)
 
   return (
     <div className="flex flex-col gap-y-3">
@@ -93,7 +99,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
       <div className="flex flex-wrap gap-2" data-testid={dataTestId}>
         {filteredOptions.map((v) => {
           if (option.title.toLowerCase() === "size") {
-            if (toShowValues.length > 0 ) {
+            if (toShowValues.length > 0) {
               if (toShowValues.includes(v)) {
                 return (
                   <button
@@ -110,7 +116,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
                     disabled={disabled}
                     data-testid="option-button"
                   >
-                    {v}
+                    {formatValue ? formatValue(v) : v}
                   </button>
                 )
               } else {
@@ -132,7 +138,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
                   disabled={disabled}
                   data-testid="option-button"
                 >
-                  {v}
+                  {formatValue ? formatValue(v) : v}
                 </button>
               )
           } else {
@@ -151,7 +157,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
                 disabled={disabled}
                 data-testid="option-button"
               >
-                {v}
+                {formatValue ? formatValue(v) : v}
               </button>
             )
           }

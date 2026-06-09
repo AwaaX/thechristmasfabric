@@ -8,7 +8,8 @@ import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
 import { useMemo, useState } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
+import { getLocale } from "@lib/data/locale-actions"
 
 type ProductTabsProps = {
   product: HttpTypes.StoreProduct
@@ -20,6 +21,7 @@ type SizeGuide = {
   data: {
     table_id: string
     table_data: SizeGuideTableData
+    translations?: { [key: string]: SizeGuideTableData }
   }
 }
 
@@ -122,7 +124,8 @@ const SizeGuideTab = ({ sizeguides }: { sizeguides: SizeGuide[] }) => {
   const t = useTranslations("Product.Tabs")
   const [, setOpenSizeGuide] = useState<boolean>(false)
   const [visibleIndex, setVisibleIndex] = useState<number | null>(null)
-
+  const locale =useLocale()
+  const normailzedLocale=locale.split("-")[0]
   const structuredSizeGuides = useMemo(() => {
     return sizeguides.map((guide: SizeGuide) => {
       const table = guide.data
@@ -131,10 +134,10 @@ const SizeGuideTab = ({ sizeguides }: { sizeguides: SizeGuide[] }) => {
 
       return {
         title: title,
-        table: table.table_data,
+        table: table.translations?.[normailzedLocale] ?? table.table_data,
       }
     })
-  }, [sizeguides]) // Recalculate when inputData changes
+  }, [sizeguides, normailzedLocale]) // Recalculate when inputData or locale changes
 
   const toggleTable = (index: number) => {
     // Toggle visibility: set the index to the clicked one or null if already open

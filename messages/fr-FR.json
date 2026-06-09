@@ -50,6 +50,8 @@
     },
     "NewsLetter": {
       "text1": "Abonnez-vous pour être avec nous",
+      "increaseQuantity": "Augmenter la quantité",
+      "decreaseQuantity": "Diminuer la quantité",
       "text2": "Recevez les actualités les plus importantes sur le plus grand projet\r\n              international de Noël"
     },
     "Reviews": {
@@ -432,6 +434,11 @@
       "enterCode": "Saisir le code",
       "discountCode": "Code de réduction",
       "apply": "Appliquer",
+      "couponCodeRequired": "Veuillez entrer un code coupon",
+      "couponError": "Ce code coupon est invalide ou a expiré",
+      "couponApplied": "Coupon appliqué avec succès!",
+      "enterValidCode": "Entrez votre code promotionnel et appuyez sur Entrée ou cliquez sur Appliquer",
+      "close": "Fermer",
       "emptyHeading": "Votre panier est actuellement vide",
       "emptyDescription": "Vous pouvez consulter tous les produits disponibles et en acheter dans la boutique.",
       "returnToShop": "Retourner à la boutique"
@@ -439,6 +446,7 @@
     "Totals": {
       "subtotalExcluding": "Sous-total (hors livraison et taxes)",
       "shipping": "Livraison",
+      "calculatedAtCheckout": "Calculé au moment du paiement",
       "discount": "Réduction",
       "taxes": "Taxes",
       "total": "Total"
@@ -622,7 +630,14 @@
       "inventoryAlert": "Seulement {quantity} article(s) disponible(s) actuellement !",
       "estimatedDeliveryLabel": "Livraison estimée :",
       "estimatedDeliveryText": "Votre colis arrivera sous 3 à 5 jours ouvrés à votre point relais ou directement chez vous.",
-      "selectOptions": "Sélectionner des options"
+      "selectOptions": "Sélectionner les options",
+      "optionGender": "Genre",
+      "optionSize": "Taille",
+      "optionColor": "Couleur",
+      "optionValueBaby": "Bébé",
+      "optionValueKid": "Enfant",
+      "optionValueWomen": "Femme",
+      "optionValueMen": "Homme"
     },
     "Tabs": {
       "sizeGuide": "Guide des tailles",
@@ -778,8 +793,11 @@
     "DiscountCode": {
       "addPromotionCodes": "Ajouter un ou plusieurs codes promotionnels",
       "apply": "Appliquer",
-      "promotionsApplied": "Promotion(s) appliquée(s) :",
-      "removeDiscount": "Retirer le code de réduction de la commande"
+      "promotionsApplied": "Coupons appliqués",
+      "removeDiscount": "Supprimer le coupon",
+      "couponRemoved": "Coupon supprimé avec succès",
+      "couponApplied": "Coupon appliqué avec succès!",
+      "enterCode": "Entrez le code coupon"
     },
     "Summary": {
       "heading": "Dans votre panier"

@@ -22,7 +22,10 @@ export const listCartShippingMethods = async (cartId: string) => {
           cart_id: cartId,
         },
         headers,
-        next: { revalidate: 5 },
+        next: {
+          revalidate: 5,
+          ...next,
+        },
         cache: "force-cache",
       }
     )
@@ -39,10 +42,6 @@ export const calculatePriceForShippingOption = async (
 ) => {
   const headers = {
     ...(await getAuthHeaders()),
-  }
-
-  const next = {
-    ...(await getCacheOptions("fulfillment")),
   }
 
   const body = { cart_id: cartId, data }
@@ -62,7 +61,7 @@ export const calculatePriceForShippingOption = async (
       }
     )
     .then(({ shipping_option }) => shipping_option)
-    .catch((e) => {
+    .catch(() => {
       return null
     })
 }

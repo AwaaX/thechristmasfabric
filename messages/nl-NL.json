@@ -50,6 +50,8 @@
     },
     "NewsLetter": {
       "text1": "Schrijf je in om aan onze kant te staan",
+      "increaseQuantity": "Hoeveelheid verhogen",
+      "decreaseQuantity": "Hoeveelheid verlagen",
       "text2": "Ontvang het belangrijkste nieuws over het grootste internationale kerstproject"
     },
     "Reviews": {
@@ -432,6 +434,11 @@
       "enterCode": "Voer code in",
       "discountCode": "Kortingscode",
       "apply": "Toepassen",
+      "couponCodeRequired": "Voer een couponcode in",
+      "couponError": "Deze couponcode is ongeldig of verlopen",
+      "couponApplied": "Coupon succesvol toegepast!",
+      "enterValidCode": "Voer uw promotiecode in en druk op Enter of klik op Toepassen",
+      "close": "Sluiten",
       "emptyHeading": "Je mandje is momenteel leeg",
       "emptyDescription": "Je kunt alle beschikbare producten bekijken en er enkele in de winkel kopen.",
       "returnToShop": "Terug naar de winkel"
@@ -439,6 +446,7 @@
     "Totals": {
       "subtotalExcluding": "Subtotaal (excl. verzending en belastingen)",
       "shipping": "Verzending",
+      "calculatedAtCheckout": "Wordt berekend bij het afrekenen",
       "discount": "Korting",
       "taxes": "Belastingen",
       "total": "Totaal"
@@ -622,7 +630,14 @@
       "inventoryAlert": "Er zijn momenteel slechts {quantity} stuk(s) beschikbaar!",
       "estimatedDeliveryLabel": "Geschatte levering:",
       "estimatedDeliveryText": "Je pakket arriveert binnen 3-5 werkdagen op je afhaalpunt of gewoon bij je thuis.",
-      "selectOptions": "Opties selecteren"
+      "selectOptions": "Opties selecteren",
+      "optionGender": "Geslacht",
+      "optionSize": "Maat",
+      "optionColor": "Kleur",
+      "optionValueBaby": "Baby",
+      "optionValueKid": "Kind",
+      "optionValueWomen": "Dames",
+      "optionValueMen": "Heren"
     },
     "Tabs": {
       "sizeGuide": "Maattabel",
@@ -778,8 +793,11 @@
     "DiscountCode": {
       "addPromotionCodes": "Promotiecode(s) toevoegen",
       "apply": "Toepassen",
-      "promotionsApplied": "Toegepaste promotie(s):",
-      "removeDiscount": "Kortingscode uit bestelling verwijderen"
+      "promotionsApplied": "Toegepaste coupons",
+      "removeDiscount": "Coupon verwijderen",
+      "couponRemoved": "Coupon succesvol verwijderd",
+      "couponApplied": "Coupon succesvol toegepast!",
+      "enterCode": "Voer couponcode in"
     },
     "Summary": {
       "heading": "In je winkelwagen"

@@ -50,6 +50,8 @@
     },
     "NewsLetter": {
       "text1": "Abonnieren Sie uns",
+      "increaseQuantity": "Menge erhöhen",
+      "decreaseQuantity": "Menge verringern",
       "text2": "Erhalten Sie die wichtigsten Neuigkeiten über das größte internationale Weihnachtsprojekt"
     },
     "Reviews": {
@@ -432,6 +434,11 @@
       "enterCode": "Code eingeben",
       "discountCode": "Rabattcode",
       "apply": "Anwenden",
+      "couponCodeRequired": "Bitte geben Sie einen Gutscheincode ein",
+      "couponError": "Dieser Gutscheincode ist ungültig oder abgelaufen",
+      "couponApplied": "Gutschein erfolgreich angewendet!",
+      "enterValidCode": "Geben Sie Ihren Aktionscode ein und drücken Sie die Eingabetaste oder klicken Sie auf Anwenden",
+      "close": "Schließen",
       "emptyHeading": "Dein Warenkorb ist derzeit leer",
       "emptyDescription": "Du kannst alle verfügbaren Produkte ansehen und einige im Shop kaufen.",
       "returnToShop": "Zurück zum Shop"
@@ -439,6 +446,7 @@
     "Totals": {
       "subtotalExcluding": "Zwischensumme (exkl. Versand und Steuern)",
       "shipping": "Versand",
+      "calculatedAtCheckout": "Wird an der Kasse berechnet",
       "discount": "Rabatt",
       "taxes": "Steuern",
       "total": "Gesamt"
@@ -622,7 +630,14 @@
       "inventoryAlert": "Derzeit sind nur {quantity} Stück verfügbar!",
       "estimatedDeliveryLabel": "Voraussichtliche Lieferung:",
       "estimatedDeliveryText": "Ihr Paket kommt in 3-5 Werktagen an Ihren Abholort oder direkt zu Ihnen nach Hause.",
-      "selectOptions": "Optionen wählen"
+      "selectOptions": "Optionen wählen",
+      "optionGender": "Geschlecht",
+      "optionSize": "Größe",
+      "optionColor": "Farbe",
+      "optionValueBaby": "Baby",
+      "optionValueKid": "Kind",
+      "optionValueWomen": "Damen",
+      "optionValueMen": "Herren"
     },
     "Tabs": {
       "sizeGuide": "Größentabelle",
@@ -778,8 +793,11 @@
     "DiscountCode": {
       "addPromotionCodes": "Aktionscode(s) hinzufügen",
       "apply": "Anwenden",
-      "promotionsApplied": "Angewendete Aktion(en):",
-      "removeDiscount": "Rabattcode aus der Bestellung entfernen"
+      "promotionsApplied": "Angewendete Aktionscodes",
+      "removeDiscount": "Gutschein entfernen",
+      "couponRemoved": "Gutschein erfolgreich entfernt",
+      "couponApplied": "Gutschein erfolgreich angewendet!",
+      "enterCode": "Gutscheincode eingeben"
     },
     "Summary": {
       "heading": "In Ihrem Warenkorb"

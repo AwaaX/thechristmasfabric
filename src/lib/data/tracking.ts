@@ -157,7 +157,10 @@ export async function fetchTrackingByOrder(
   email: string
 ): Promise<OrderTrackingResponse> {
   if (!orderId?.trim() || !email?.trim()) {
-    return { success: false, error: "Please enter both order ID and email." }
+    return {
+      success: false,
+      error: "Please enter both Order Number and email.",
+    }
   }
 
   try {
@@ -182,7 +185,7 @@ export async function fetchTrackingByOrder(
       if (res.status === 404) {
         return {
           success: false,
-          error: "Order not found. Please check your order ID and email.",
+          error: "Order not found. Please check your Order Number and email.",
         }
       }
       return { success: false, error: `Server error: ${res.status}` }
@@ -193,7 +196,7 @@ export async function fetchTrackingByOrder(
     if (!json.order) {
       return {
         success: false,
-        error: "Order not found. Please check your order ID and email.",
+        error: "Order not found. Please check your Order Number and email.",
       }
     }
 

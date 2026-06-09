@@ -98,13 +98,11 @@ async function getRegionMap(cacheId: string) {
       }
 
       return json
+    }).catch((error) => {
+      console.error("Error fetching regions:", error)
+      return { regions: [] } 
     })
 
-    if (!regions?.length) {
-      throw new Error(
-        "No regions found. Please set up regions in your Medusa Admin."
-      )
-    }
 
     // Create a map of country codes to regions.
     regions.forEach((region: HttpTypes.StoreRegion) => {

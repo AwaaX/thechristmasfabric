@@ -23,6 +23,13 @@ import * as Icon from "@phosphor-icons/react/dist/ssr"
 import parse from "html-react-parser"
 import { Star, StarSolid } from "@medusajs/icons"
 import { getDefaultProductVariant } from "@lib/util/product"
+import {
+  formatSizeString,
+  sortGenderValues,
+  sortSizeValues,
+  getTranslatedGenderValue,
+  getTranslatedOptionTitle,
+} from "@lib/util/product-options"
 import { useTranslations } from "next-intl"
 
 type ProductActionsProps = {
@@ -62,6 +69,32 @@ export default function ProductActions({
   const variants = product.variants ?? []
   const productOptions = product.options || []
 
+  // Filter out options with only one value and collect values to auto-select
+  const { displayedOptions, autoSelectValues } = useMemo(() => {
+    const optionsToDisplay: typeof productOptions = []
+    const singleValueOptions: Record<string, string> = {}
+
+    for (const option of productOptions) {
+      const uniqueValues = Array.from(
+        new Set(option.values?.map((v) => v.value) ?? [])
+      )
+
+      if (uniqueValues.length === 1) {
+        singleValueOptions[option.id] = uniqueValues[0]
+      } else {
+        // Only display options with multiple values
+        optionsToDisplay.push(option)
+      }
+    }
+
+    return {
+      displayedOptions: optionsToDisplay,
+      autoSelectValues: singleValueOptions,
+    }
+  }, [productOptions])
+
+  console.log(productOptions)
+
   useEffect(() => {
     if (!product?.id) {
       setReviewRating(0)
@@ -89,11 +122,13 @@ export default function ProductActions({
     const optionObj: Record<string, string> = {}
 
     for (const option of productOptions) {
-      Object.assign(optionObj, { [option.id]: undefined })
+      Object.assign(optionObj, {
+        [option.id]: autoSelectValues[option.id] ?? undefined,
+      })
     }
 
     setOptions(optionObj)
-  }, [productOptions])
+  }, [productOptions, autoSelectValues])
 
   // memoized record of the product's variants
   const variantRecord = useMemo(() => {
@@ -207,19 +242,19 @@ export default function ProductActions({
 
   // Memoize the selected gender option ID
   const selectedGenderId = useMemo(() => {
-    const genderOption = productOptions.find(
+    const genderOption = displayedOptions.find(
       (option) => option.title.toLowerCase() === "gender"
     )
     return genderOption ? genderOption.id : null
-  }, [productOptions])
+  }, [displayedOptions])
 
   // Memoize the selected gender option ID
   const selectedSizeId = useMemo(() => {
-    const sizeOption = productOptions.find(
+    const sizeOption = displayedOptions.find(
       (option) => option.title.toLowerCase() === "size"
     )
     return sizeOption ? sizeOption.id : null
-  }, [productOptions])
+  }, [displayedOptions])
 
   // Memoize the selected gender based on the selectedGenderId
   const selectedGender = useMemo(() => {
@@ -454,7 +489,24 @@ export default function ProductActions({
         <div>
           {variants.length > 1 && (
             <div className="flex flex-col gap-y-4">
-              {productOptions.map((option) => {
+              {displayedOptions.map((option) => {
+                const sortedValues =
+                  option.title.toLowerCase() === "gender"
+                    ? sortGenderValues(
+                        Array.from(
+                          new Set(option.values?.map((v) => v.value) ?? [])
+                        )
+                      )
+                    : option.title.toLowerCase() === "size"
+                    ? sortSizeValues(
+                        Array.from(
+                          new Set(option.values?.map((v) => v.value) ?? [])
+                        )
+                      )
+                    : Array.from(
+                        new Set(option.values?.map((v) => v.value) ?? [])
+                      )
+
                 return (
                   <div key={option.id}>
                     <OptionSelect
@@ -462,7 +514,15 @@ export default function ProductActions({
                       toShowValues={Array.from(uniqueSizes)}
                       current={options[option.id]}
                       updateOption={updateOptions}
-                      title={option.title}
+                      title={getTranslatedOptionTitle(option.title, t)}
+                      displayValues={sortedValues}
+                      formatValue={
+                        option.title.toLowerCase() === "size"
+                          ? formatSizeString
+                          : option.title.toLowerCase() === "gender"
+                          ? (value) => getTranslatedGenderValue(value, t)
+                          : undefined
+                      }
                       data-testid="product-options"
                       disabled={!!disabled || isAdding}
                     />

@@ -13,6 +13,7 @@ type CartTotalsProps = {
     item_subtotal?: number | null
     shipping_subtotal?: number | null
     discount_subtotal?: number | null
+    shipping_methods?: Array<{ id?: string | null }> | null
   }
 }
 
@@ -25,7 +26,9 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
     item_subtotal,
     shipping_subtotal,
     discount_subtotal,
+    shipping_methods,
   } = totals
+  const hasShippingMethod = (shipping_methods?.length ?? 0) > 0
 
   return (
     <div>
@@ -38,8 +41,16 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
         </div>
         <div className="flex items-center justify-between">
           <span>{t("shipping")}</span>
-          <span data-testid="cart-shipping" data-value={shipping_subtotal || 0}>
-            {convertToLocale({ amount: shipping_subtotal ?? 0, currency_code })}
+          <span
+            data-testid="cart-shipping"
+            data-value={hasShippingMethod ? shipping_subtotal || 0 : ""}
+          >
+            {hasShippingMethod
+              ? convertToLocale({
+                  amount: shipping_subtotal ?? 0,
+                  currency_code,
+                })
+              : t("calculatedAtCheckout")}
           </span>
         </div>
         {!!discount_subtotal && (

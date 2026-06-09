@@ -372,7 +372,7 @@
       "heading": "Order transfers",
       "promptLine1": "Can't find the order you are looking for?",
       "promptLine2": "Connect an order to your account.",
-      "orderIdPlaceholder": "Order ID",
+      "orderIdPlaceholder": "Order Number",
       "requestTransfer": "Request transfer",
       "successRequested": "Transfer for order {id} requested",
       "successEmailSent": "Transfer request email sent to {email}"
@@ -432,6 +432,13 @@
       "enterCode": "Enter Code",
       "discountCode": "Discount code",
       "apply": "Apply",
+      "increaseQuantity": "Increase quantity",
+      "decreaseQuantity": "Decrease quantity",
+      "couponCodeRequired": "Please enter a coupon code",
+      "couponError": "This coupon code is invalid or has expired",
+      "couponApplied": "Coupon applied successfully!",
+      "enterValidCode": "Enter your promo code and press Enter or click Apply",
+      "close": "Close",
       "emptyHeading": "Your basket is currently empty",
       "emptyDescription": "You may check out all the available products and buy some in the shop.",
       "returnToShop": "Return to Shop"
@@ -439,6 +446,7 @@
     "Totals": {
       "subtotalExcluding": "Subtotal (excl. shipping and taxes)",
       "shipping": "Shipping",
+      "calculatedAtCheckout": "Calculated at checkout",
       "discount": "Discount",
       "taxes": "Taxes",
       "total": "Total"
@@ -622,7 +630,14 @@
       "inventoryAlert": "Currently only {quantity} item(s) available!",
       "estimatedDeliveryLabel": "Estimated Delivery:",
       "estimatedDeliveryText": "Your package will arrive in 3-5 business days at your pick up location or in the comfort of your home.",
-      "selectOptions": "Select Options"
+      "selectOptions": "Select Options",
+      "optionGender": "Gender",
+      "optionSize": "Size",
+      "optionColor": "Color",
+      "optionValueBaby": "Baby",
+      "optionValueKid": "Kid",
+      "optionValueWomen": "Women",
+      "optionValueMen": "Men"
     },
     "Tabs": {
       "sizeGuide": "Size guide",
@@ -686,7 +701,7 @@
       "orderFoundNoTracking": "Order found, but no tracking details are available yet.",
       "orderPrompt": "To track your order, enter your order number and email address:",
       "trackingPrompt": "To track your order, please enter the tracking number you received in the shipping confirmation email",
-      "orderId": "Order ID",
+      "orderId": "Order Number",
       "orderNumberPlaceholder": "Order Number",
       "orderEmail": "Order Email",
       "emailPlaceholder": "Email Address",
@@ -778,8 +793,11 @@
     "DiscountCode": {
       "addPromotionCodes": "Add Promotion Code(s)",
       "apply": "Apply",
-      "promotionsApplied": "Promotion(s) applied:",
-      "removeDiscount": "Remove discount code from order"
+      "promotionsApplied": "Applied Coupons",
+      "removeDiscount": "Remove coupon",
+      "couponRemoved": "Coupon removed successfully",
+      "couponApplied": "Coupon applied successfully!",
+      "enterCode": "Enter coupon code"
     },
     "Summary": {
       "heading": "In your Cart"

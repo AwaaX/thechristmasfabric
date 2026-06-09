@@ -122,7 +122,10 @@ export async function retrieveCart(cartId?: string, fields?: string) {
           fields,
         },
         headers,
-        next: { revalidate: 5 },
+        next: {
+          revalidate: 5,
+          ...next,
+        },
         cache: "force-cache",
       })
       .then(({ cart }: { cart: HttpTypes.StoreCart }) => cart)
@@ -269,16 +272,23 @@ export async function updateLineItem({
     ...(await getAuthHeaders()),
   }
 
-  await sdk.store.cart
-    .updateLineItem(cartId, lineId, { quantity }, {}, headers)
-    .then(async () => {
-      const cartCacheTag = await getCacheTag("carts")
-      revalidateTag(cartCacheTag)
+  try {
+    await sdk.store.cart.updateLineItem(
+      cartId,
+      lineId,
+      { quantity },
+      {},
+      headers
+    )
 
-      const fulfillmentCacheTag = await getCacheTag("fulfillment")
-      revalidateTag(fulfillmentCacheTag)
-    })
-    .catch(throwNormalizedMedusaError)
+    const cartCacheTag = await getCacheTag("carts")
+    revalidateTag(cartCacheTag)
+
+    const fulfillmentCacheTag = await getCacheTag("fulfillment")
+    revalidateTag(fulfillmentCacheTag)
+  } catch (err) {
+    throwNormalizedMedusaError(err)
+  }
 }
 
 export async function deleteLineItem(lineId: string) {
@@ -558,14 +568,17 @@ export async function listCartOptions() {
     ...(await getAuthHeaders()),
   }
   const next = {
-    ...(await getCacheOptions("shippingOptions")),
+    ...(await getCacheOptions("fulfillment")),
   }
 
   return await sdk.client.fetch<{
     shipping_options: HttpTypes.StoreCartShippingOption[]
   }>("/store/shipping-options", {
     query: { cart_id: cartId },
-    next: { revalidate: 5 },
+    next: {
+      revalidate: 5,
+      ...next,
+    },
     headers,
     cache: "force-cache",
   })

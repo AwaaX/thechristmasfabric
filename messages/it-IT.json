@@ -50,6 +50,8 @@
     },
     "NewsLetter": {
       "text1": "Iscriviti per essere dei nostri",
+      "increaseQuantity": "Aumenta quantità",
+      "decreaseQuantity": "Diminuisci quantità",
       "text2": "Ricevi le notizie più importanti sul più grande progetto natalizio internazionale"
     },
     "Reviews": {
@@ -432,6 +434,11 @@
       "enterCode": "Inserisci il codice",
       "discountCode": "Codice sconto",
       "apply": "Applica",
+      "couponCodeRequired": "Inserire un codice coupon",
+      "couponError": "Questo codice coupon non è valido o è scaduto",
+      "couponApplied": "Coupon applicato con successo!",
+      "enterValidCode": "Immettere il codice promozionale e premere Invio o fare clic su Applica",
+      "close": "Chiudi",
       "emptyHeading": "Il tuo carrello è attualmente vuoto",
       "emptyDescription": "Puoi consultare tutti i prodotti disponibili e acquistarne alcuni nel negozio.",
       "returnToShop": "Torna al negozio"
@@ -439,6 +446,7 @@
     "Totals": {
       "subtotalExcluding": "Subtotale (spedizione e tasse escluse)",
       "shipping": "Spedizione",
+      "calculatedAtCheckout": "Calcolato al checkout",
       "discount": "Sconto",
       "taxes": "Tasse",
       "total": "Totale"
@@ -622,7 +630,14 @@
       "inventoryAlert": "Attualmente sono disponibili solo {quantity} pezzi!",
       "estimatedDeliveryLabel": "Consegna stimata:",
       "estimatedDeliveryText": "Il tuo pacco arriverà in 3-5 giorni lavorativi presso il tuo punto di ritiro o comodamente a casa tua.",
-      "selectOptions": "Seleziona opzioni"
+      "selectOptions": "Seleziona opzioni",
+      "optionGender": "Genere",
+      "optionSize": "Dimensione",
+      "optionColor": "Colore",
+      "optionValueBaby": "Bebè",
+      "optionValueKid": "Bambino",
+      "optionValueWomen": "Donna",
+      "optionValueMen": "Uomo"
     },
     "Tabs": {
       "sizeGuide": "Guida alle taglie",
@@ -778,8 +793,11 @@
     "DiscountCode": {
       "addPromotionCodes": "Aggiungi codice/i promozionale/i",
       "apply": "Applica",
-      "promotionsApplied": "Promozione/i applicata/e:",
-      "removeDiscount": "Rimuovi il codice sconto dall'ordine"
+      "promotionsApplied": "Coupon applicati",
+      "removeDiscount": "Rimuovi coupon",
+      "couponRemoved": "Coupon rimosso con successo",
+      "couponApplied": "Coupon applicato con successo!",
+      "enterCode": "Immettere il codice coupon"
     },
     "Summary": {
       "heading": "Nel tuo carrello"

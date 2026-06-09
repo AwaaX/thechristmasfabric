@@ -7,20 +7,18 @@ import {
   Transition,
 } from "@headlessui/react"
 import { convertToLocale } from "@lib/util/money"
+import { updateLineItem } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import DeleteButton from "@modules/common/components/delete-button"
 import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import Thumbnail from "@modules/products/components/thumbnail"
 import { useTranslations } from "next-intl"
-import { usePathname } from "next/navigation"
-import { Fragment, useEffect, useRef, useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { Fragment, useEffect, useRef, useState, useTransition } from "react"
 import { BiShoppingBag } from "react-icons/bi"
 import { RxCross2 } from "react-icons/rx"
 import Image from "next/image"
-import { head } from "lodash"
 import emptycart from "@lib/img/cart/empty-cart.png"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import { getCheckoutStep } from "@modules/cart/templates/summary"
@@ -30,19 +28,25 @@ const CartDropdown = ({
 }: {
   cart?: HttpTypes.StoreCart | null
 }) => {
-  const [activeTimer, setActiveTimer] = useState<NodeJS.Timer | undefined>(
-    undefined
-  )
+  const [updatingItemId, setUpdatingItemId] = useState<string | null>(null)
+  const [isRefreshing, startRefreshTransition] = useTransition()
   const [activeTab, setActiveTab] = useState<string | undefined>("")
   const handleActiveTab = (tab: string) => {
     setActiveTab(tab)
   }
   const [cartDropdownOpen, setCartDropdownOpen] = useState(false)
+  const [couponCode, setCouponCode] = useState("")
+  const [isApplyingCoupon, setIsApplyingCoupon] = useState(false)
+  const [couponError, setCouponError] = useState<string | null>(null)
+  const [couponSuccess, setCouponSuccess] = useState(false)
+  const couponTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const main = useTranslations("NavBar.Main.IconMenu")
   const t = useTranslations("Cart.Dropdown")
+  const router = useRouter()
 
   const open = () => setCartDropdownOpen(true)
   const close = () => setCartDropdownOpen(false)
+  const isUpdatingCart = updatingItemId !== null || isRefreshing
 
   const totalItems =
     cartState?.items?.reduce((acc, item) => {
@@ -50,37 +54,67 @@ const CartDropdown = ({
     }, 0) || 0
 
   const step = cartState ? getCheckoutStep(cartState) : "address"
-
-    console.log(cartState)
-    const taxTotal=cartState?.tax_total ?? 0
-    const total = cartState?.total ?? 0
+  const taxTotal = cartState?.tax_total ?? 0
+  const total = cartState?.total ?? 0
   const subtotal = cartState?.subtotal ?? 0
   const itemRef = useRef<number>(totalItems || 0)
 
+  const changeQuantity = async (lineId: string, quantity: number) => {
+    if (quantity < 1 || isUpdatingCart) {
+      return
+    }
+
+    setUpdatingItemId(lineId)
+
+    try {
+      await updateLineItem({ lineId, quantity })
+      startRefreshTransition(() => {
+        router.refresh()
+      })
+    } finally {
+      setUpdatingItemId(null)
+    }
+  }
+
+  const applyCoupon = async () => {
+    // Clear previous messages
+    setCouponError(null)
+    setCouponSuccess(false)
+
+    // Validate input
+    if (!couponCode.trim()) {
+      setCouponError(t("couponCodeRequired"))
+      return
+    }
+
+    setIsApplyingCoupon(true)
+
+    try {
+      // TODO: Replace with actual API call to apply coupon
+      // For now, simulate API call with timeout
+      await new Promise((resolve) => setTimeout(resolve, 800))
+
+      // Simulate success (in real implementation, this would be based on API response)
+      setCouponSuccess(true)
+      setCouponCode("")
+
+      // Auto-clear success message after 3 seconds
+      if (couponTimeoutRef.current) {
+        clearTimeout(couponTimeoutRef.current)
+      }
+      couponTimeoutRef.current = setTimeout(() => {
+        setCouponSuccess(false)
+      }, 3000)
+    } catch (error) {
+      setCouponError(t("couponError") || "Failed to apply coupon")
+    } finally {
+      setIsApplyingCoupon(false)
+    }
+  }
+
   const timedOpen = () => {
     open()
-
-    const timer = setTimeout(close, 5000)
-
-    setActiveTimer(timer)
   }
-
-  const openAndCancel = () => {
-    if (activeTimer) {
-      clearTimeout(activeTimer)
-    }
-
-    open()
-  }
-
-  // Clean up the timer when the component unmounts
-  useEffect(() => {
-    return () => {
-      if (activeTimer) {
-        clearTimeout(activeTimer)
-      }
-    }
-  }, [activeTimer])
 
   const pathname = usePathname()
 
@@ -90,8 +124,9 @@ const CartDropdown = ({
       window.scrollTo({ top: 0, behavior: "smooth" })
       timedOpen()
     }
+    itemRef.current = totalItems
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [totalItems, itemRef.current])
+  }, [pathname, totalItems])
 
   // disable scroll on body when modal is open
   useEffect(() => {
@@ -100,6 +135,15 @@ const CartDropdown = ({
       document.body.style.overflow = "unset"
     }
   }, [cartDropdownOpen])
+
+  // cleanup coupon timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (couponTimeoutRef.current) {
+        clearTimeout(couponTimeoutRef.current)
+      }
+    }
+  }, [])
 
   // on escape key press, close modal
   useEffect(() => {
@@ -174,6 +218,11 @@ const CartDropdown = ({
             // className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
             data-testid="nav-cart-dropdown"
           >
+            {isUpdatingCart && (
+              <div className="absolute inset-0 bg-white/50 z-10 flex items-center justify-center cursor-wait">
+                <div className="w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
             <div className="heading px-6 py-6 flex items-center justify-between relative ">
               <div className="heading5">{t("shoppingBasket")}</div>
               <RxCross2
@@ -276,31 +325,56 @@ const CartDropdown = ({
                         <div className="flex flex-col items-start justify-start flex-4">
                           <div className="flex flex-col items-start justify-start mr-4 max-w-[300px]">
                             <h3 className=" overflow-hidden text-ellipsis">
-                              {/* <LocalizedClientLink
+                              <LocalizedClientLink
                                 href={`/products/${item.product_handle}`}
                                 data-testid="product-link"
-                              > */}
-                              {item.title}
-                              {/* </LocalizedClientLink> */}
+                              >
+                                {item.product_title}
+                              </LocalizedClientLink>
                             </h3>
-                            {/* <LineItemOptions
+                            <LineItemOptions
                               variant={item.variant}
                               data-testid="cart-item-variant"
                               data-value={item.variant}
-                            /> */}
+                            />
                             <LineItemPrice
                               currencyCode={cartState.currency_code}
                               item={item}
                               style="tight"
                             />
                           </div>
-                          <div>
-                            <span
-                              data-testid="cart-item-quantity"
-                              data-value={item.quantity}
-                            >
-                              {t("quantity")}: {item.quantity}
-                            </span>
+                          <div className="flex items-center gap-3 mt-2">
+                            <div className="flex items-center gap-2  border border-line px-2 py-1">
+                              <button
+                                type="button"
+                                className="flex h-5 w-5 items-center justify-center disabled:cursor-not-allowed disabled:opacity-40"
+                                onClick={() =>
+                                  changeQuantity(item.id, item.quantity - 1)
+                                }
+                                disabled={isUpdatingCart || item.quantity <= 1}
+                                aria-label={t("decreaseQuantity")}
+                              >
+                                <Icon.MinusIcon size={20} />
+                              </button>
+                              <span
+                                className="min-w-6 text-center text-[16px] font-medium"
+                                data-testid="cart-item-quantity"
+                                data-value={item.quantity}
+                              >
+                                {item.quantity}
+                              </span>
+                              <button
+                                type="button"
+                                className="flex h-5 w-5 items-center justify-center disabled:cursor-not-allowed disabled:opacity-40"
+                                onClick={() =>
+                                  changeQuantity(item.id, item.quantity + 1)
+                                }
+                                disabled={isUpdatingCart}
+                                aria-label={t("increaseQuantity")}
+                              >
+                                <Icon.PlusIcon size={20} />
+                              </button>
+                            </div>
                             <DeleteButton
                               id={item.id}
                               className="mt-1"
@@ -429,34 +503,89 @@ const CartDropdown = ({
                         <div className="caption1">{t("addCouponCode")}</div>
                       </div>
                     </div>
-                    <div className="form pt-4 px-6">
-                      <div className="">
-                        <label
-                          htmlFor="select-discount"
-                          className="caption1 text-secondary"
-                        >
-                          {t("enterCode")}
-                        </label>
+                    <div className="form pt-6 px-6">
+                      {/* Input and Apply Button Row */}
+                      <div className="flex gap-2 mb-4">
                         <input
-                          className="border-line px-5 py-3 w-full rounded-xl mt-3"
+                          className="flex-1 border-2 border-line px-4 py-3 rounded-lg text-base font-medium transition-colors focus:outline-none focus:border-black disabled:bg-gray-50 disabled:cursor-not-allowed"
                           id="select-discount"
                           type="text"
                           placeholder={t("discountCode")}
+                          value={couponCode}
+                          onChange={(e) => {
+                            setCouponCode(e.target.value)
+                            setCouponError(null)
+                          }}
+                          onKeyPress={(e) => {
+                            if (e.key === "Enter") {
+                              applyCoupon()
+                            }
+                          }}
+                          disabled={isApplyingCoupon || couponSuccess}
                         />
+                        <button
+                          onClick={applyCoupon}
+                          disabled={
+                            isApplyingCoupon ||
+                            couponSuccess ||
+                            !couponCode.trim()
+                          }
+                          className="px-6 py-3 bg-black text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 flex items-center justify-center min-w-[120px] relative"
+                        >
+                          {isApplyingCoupon ? (
+                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          ) : couponSuccess ? (
+                            <Icon.CheckCircle size={20} weight="fill" />
+                          ) : (
+                            t("apply")
+                          )}
+                        </button>
                       </div>
+
+                      {/* Error Message */}
+                      {couponError && (
+                        <div className="flex gap-2 items-start mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                          <Icon.WarningCircle
+                            size={18}
+                            weight="fill"
+                            className="text-red-600 flex-shrink-0 mt-0.5"
+                          />
+                          <p className="text-sm font-medium text-red-600">
+                            {couponError}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Success Message */}
+                      {couponSuccess && (
+                        <div className="flex gap-2 items-start mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                          <Icon.CheckCircle
+                            size={18}
+                            weight="fill"
+                            className="text-green-600 flex-shrink-0 mt-0.5"
+                          />
+                          <p className="text-sm font-medium text-green-600">
+                            {t("couponApplied") ||
+                              "Coupon applied successfully!"}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Helper Text */}
+                      {!couponError && !couponSuccess && (
+                        <p className="text-xs text-gray-500 mb-4">
+                          {t("enterValidCode") ||
+                            "Enter your promo code and press Enter or click Apply"}
+                        </p>
+                      )}
                     </div>
-                    <div className="block-button text-center p-6">
+
+                    <div className="block-button text-center p-6 border-t border-line">
                       <div
-                        className="swh-btn bg-black text-white text-[16px] font-normal"
+                        className="hover:text-hoverGray cursor-pointer text-[16px] font-normal"
                         onClick={() => setActiveTab("")}
                       >
-                        {t("apply")}
-                      </div>
-                      <div
-                        onClick={() => setActiveTab("")}
-                        className="hover:text-hoverGray cursor-pointer text-[16px] font-normal mt-[10px]"
-                      >
-                        {t("cancel")}
+                        {t("close")}
                       </div>
                     </div>
                   </div>
@@ -469,9 +598,7 @@ const CartDropdown = ({
                     <Image src={emptycart} alt={"site-logo"} />
                   </div>
 
-                  <div className="body1 font-medium">
-                    {t("emptyHeading")}
-                  </div>
+                  <div className="body1 font-medium">{t("emptyHeading")}</div>
                   <div className="text-[16px] font-normal text-christmasText text-center px-5">
                     {t("emptyDescription")}
                   </div>

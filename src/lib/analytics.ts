@@ -75,7 +75,7 @@ const getAppliedCoupon = (
 ) => {
   const codes =
     promotions
-      ?.map((promotion) => promotion.code?.trim())
+      ?.map((promotion) => promotion?.code?.trim())
       .filter((code): code is string => Boolean(code)) ?? []
 
   return codes.length > 0 ? codes.join(",") : undefined
