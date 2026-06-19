@@ -2,6 +2,7 @@ import { HttpTypes } from "@medusajs/types"
 import { Container } from "@medusajs/ui"
 import Checkbox from "@modules/common/components/checkbox"
 import Input from "@modules/common/components/input"
+import AddressAutocomplete from "../address-autocomplete"
 import { mapKeys } from "lodash"
 import { useTranslations } from "next-intl"
 import React, { useEffect, useMemo, useState } from "react"
@@ -131,7 +132,7 @@ const ShippingAddress = ({
           required
           data-testid="shipping-last-name-input"
         />
-        <Input
+        <AddressAutocomplete
           label={t("address")}
           name="shipping_address.address_1"
           autoComplete="address-line1"
@@ -139,6 +140,16 @@ const ShippingAddress = ({
           onChange={handleChange}
           required
           data-testid="shipping-address-input"
+          onAddressSelect={(address) => {
+            setFormData((prev) => ({
+              ...prev,
+              "shipping_address.address_1": address.address_1,
+              "shipping_address.city": address.city,
+              "shipping_address.postal_code": address.postal_code,
+              "shipping_address.province": address.province,
+              "shipping_address.country_code": address.country_code,
+            }))
+          }}
         />
         <Input
           label={t("company")}

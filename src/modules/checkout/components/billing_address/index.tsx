@@ -1,5 +1,6 @@
 import { HttpTypes } from "@medusajs/types"
 import Input from "@modules/common/components/input"
+import AddressAutocomplete from "../address-autocomplete"
 import { useTranslations } from "next-intl"
 import React, { useState } from "react"
 import CountrySelect from "../country-select"
@@ -50,7 +51,7 @@ const BillingAddress = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
           required
           data-testid="billing-last-name-input"
         />
-        <Input
+        <AddressAutocomplete
           label={t("address")}
           name="billing_address.address_1"
           autoComplete="address-line1"
@@ -58,6 +59,16 @@ const BillingAddress = ({ cart }: { cart: HttpTypes.StoreCart | null }) => {
           onChange={handleChange}
           required
           data-testid="billing-address-input"
+          onAddressSelect={(address) => {
+            setFormData((prev: any) => ({
+              ...prev,
+              "billing_address.address_1": address.address_1,
+              "billing_address.city": address.city,
+              "billing_address.postal_code": address.postal_code,
+              "billing_address.province": address.province,
+              "billing_address.country_code": address.country_code,
+            }))
+          }}
         />
         <Input
           label={t("company")}
