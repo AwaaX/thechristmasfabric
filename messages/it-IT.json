@@ -434,6 +434,8 @@
       "enterCode": "Inserisci il codice",
       "discountCode": "Codice sconto",
       "apply": "Applica",
+      "increaseQuantity": "Aumenta quantità",
+      "decreaseQuantity": "Diminuisci quantità",
       "couponCodeRequired": "Inserire un codice coupon",
       "couponError": "Questo codice coupon non è valido o è scaduto",
       "couponApplied": "Coupon applicato con successo!",

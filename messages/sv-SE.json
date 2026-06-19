@@ -434,6 +434,8 @@
       "enterCode": "Ange kod",
       "discountCode": "Rabattkod",
       "apply": "Använd",
+      "increaseQuantity": "Öka antal",
+      "decreaseQuantity": "Minska antal",
       "couponCodeRequired": "Ange en kupongkod",
       "couponError": "Den här kupongkoden är ogiltig eller har förfallit",
       "couponApplied": "Kupong använd framgångsrikt!",

@@ -434,6 +434,8 @@
       "enterCode": "Code eingeben",
       "discountCode": "Rabattcode",
       "apply": "Anwenden",
+      "increaseQuantity": "Menge erhöhen",
+      "decreaseQuantity": "Menge verringern",
       "couponCodeRequired": "Bitte geben Sie einen Gutscheincode ein",
       "couponError": "Dieser Gutscheincode ist ungültig oder abgelaufen",
       "couponApplied": "Gutschein erfolgreich angewendet!",

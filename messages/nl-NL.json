@@ -434,6 +434,8 @@
       "enterCode": "Voer code in",
       "discountCode": "Kortingscode",
       "apply": "Toepassen",
+      "increaseQuantity": "Hoeveelheid verhogen",
+      "decreaseQuantity": "Hoeveelheid verlagen",
       "couponCodeRequired": "Voer een couponcode in",
       "couponError": "Deze couponcode is ongeldig of verlopen",
       "couponApplied": "Coupon succesvol toegepast!",

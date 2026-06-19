@@ -434,6 +434,8 @@
       "enterCode": "Saisir le code",
       "discountCode": "Code de réduction",
       "apply": "Appliquer",
+      "increaseQuantity": "Augmenter la quantité",
+      "decreaseQuantity": "Diminuer la quantité",
       "couponCodeRequired": "Veuillez entrer un code coupon",
       "couponError": "Ce code coupon est invalide ou a expiré",
       "couponApplied": "Coupon appliqué avec succès!",
