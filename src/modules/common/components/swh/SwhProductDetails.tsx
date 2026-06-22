@@ -56,7 +56,7 @@ const SwhProductDetails = ({ data: productMain, region }) => {
               // overflow: "hidden", // Ensure overflow is hidden
             }}
           >
-            {productMain.images.map((item, index) => (
+            {[{ url: productMain.thumbnail }, ...productMain.images].map((item, index) => (
               <SwiperSlide key={index} className="">
                 {/* <Image
                   src={item.url}
@@ -80,7 +80,7 @@ const SwhProductDetails = ({ data: productMain, region }) => {
             modules={[Thumbs]}
             className="mySwiper2     flex-[3]"
           >
-            {productMain.images.map((item, index) => (
+            {[{ url: productMain.thumbnail }, ...productMain.images].map((item, index) => (
               <SwiperSlide
                 key={index}
                 onClick={() => {
@@ -125,7 +125,7 @@ const SwhProductDetails = ({ data: productMain, region }) => {
               swiperRef.current = swiper
             }}
           >
-            {productMain.images.map((item, index) => (
+            {[{ url: productMain.thumbnail }, ...productMain.images].map((item, index) => (
               <SwiperSlide
                 key={index}
                 onClick={() => {

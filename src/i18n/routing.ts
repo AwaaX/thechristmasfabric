@@ -12,6 +12,7 @@ export const locales = [
   "en-AU", // English (Australia)
   "en-IE", // English (Ireland)
   "en-GB", // English (United Kingdom)
+  "fr-FR", // French (France)
 ] as const
 
 export const defaultLocale = "en-GB"
@@ -33,6 +34,7 @@ export const pathnames = {
       "en-AU": "/christmas-pyjamas/[category]/[handle]/[pid]", // English (Australia)
       "en-IE": "/christmas-pyjamas/[category]/[handle]/[pid]", // English (Ireland)
       "en-GB": "/christmas-pyjamas/[category]/[handle]/[pid]", // English (United Kingdom)
+      "fr-FR": "/pyjamas-de-noel/[category]/[handle]/[pid]", // French (France)
     },
     "/results/[query]": {
       "es-ES": "/resultados/[query]", // Spanish (Spain)
@@ -45,6 +47,7 @@ export const pathnames = {
       "en-AU": "/results/[query]", // English (Australia)
       "en-IE": "/results/[query]", // English (Ireland)
       "en-GB": "/results/[query]", // English (United Kingdom)
+      "fr-FR": "/resultats/[query]", // French (France)
     },
     "/search": {
       "es-ES": "/buscar", // Spanish (Spain)
