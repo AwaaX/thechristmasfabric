@@ -2,7 +2,17 @@
 import { listProductsWithSort } from "@lib/data/products"
 import SwhProductSliderUI from "@modules/layout/components/product-slider-ui"
 
-const ProductCarouselSlider = async ({ countryCode }) => {
+/** Props for ProductCarouselSlider component */
+interface ProductCarouselSliderProps {
+  /** Country/region code for locale-specific product data */
+  countryCode: string
+}
+
+/**
+ * Product carousel slider (Server Component)
+ * Fetches and displays featured products in a carousel layout
+ */
+const ProductCarouselSlider = async ({ countryCode }: ProductCarouselSliderProps) => {
   const queryParams = {
     limit: 12,
   }

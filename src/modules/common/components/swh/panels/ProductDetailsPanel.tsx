@@ -7,10 +7,23 @@ import "swiper/css/bundle"
 import Image from "next/image"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import DynamicImage from "../utilities/DynamicImage"
+import { HttpTypes } from "@medusajs/types"
 
 SwiperCore.use([Navigation, Thumbs])
 
-const ProductDetailsPanel = ({ data: productMain, region }) => {
+/** Props for ProductDetailsPanel component */
+interface ProductDetailsPanelProps {
+  /** Product data to display */
+  data: HttpTypes.StoreProduct
+  /** Store region for pricing context */
+  region: HttpTypes.StoreRegion
+}
+
+/**
+ * Product details image carousel panel
+ * Displays product images in an interactive Swiper carousel with thumbnail navigation
+ */
+const ProductDetailsPanel = ({ data: productMain, region }: ProductDetailsPanelProps) => {
   const swiperRef: any = useRef()
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null)
   const [openPopupImg, setOpenPopupImg] = useState(false)

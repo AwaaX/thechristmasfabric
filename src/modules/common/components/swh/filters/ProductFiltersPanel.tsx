@@ -18,7 +18,17 @@ const fetchCategories = async () => {
   return { product_categories: topLevelCategories }
 }
 
-const ProductFiltersPanel = async ({ params }) => {
+/** Props for ProductFiltersPanel component */
+interface ProductFiltersPanelProps {
+  /** Route parameters containing category or search filters */
+  params?: { category?: string }
+}
+
+/**
+ * Product filters sidebar panel (Server Component)
+ * Displays category filters and price range filter for product browsing
+ */
+const ProductFiltersPanel = async ({ params }: ProductFiltersPanelProps) => {
   // console.log("params?.category",params?.category)
 
   // const { product_categories } =params?.category?await getCategoryByHandle([decodeURIComponent(params.category)]).then((product_categories) => product_categories):await fetchCategories()

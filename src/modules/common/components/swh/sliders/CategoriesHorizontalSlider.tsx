@@ -14,10 +14,14 @@ const fetchCategories = async () => {
     }
   } catch (error) {
     console.error("Error fetching categories:", error)
-    throw error // Ensure errors are propagated correctly
+    throw error
   }
 }
 
+/**
+ * Horizontal categories carousel slider (Server Component)
+ * Fetches and displays top-level product categories in a carousel layout
+ */
 const CategoriesHorizontalSlider = async () => {
   const categories = await fetchCategories()
 

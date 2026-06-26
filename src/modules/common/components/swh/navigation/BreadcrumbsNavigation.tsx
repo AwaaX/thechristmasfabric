@@ -3,7 +3,21 @@ import LocalizedClientLink from '@modules/common/components/localized-client-lin
 import * as Icon from "@phosphor-icons/react/dist/ssr";
 import { useTranslations } from 'next-intl'
 
-const BreadcrumbsNavigation = ({title,path,params}) => {
+/** Props for BreadcrumbsNavigation component */
+interface BreadcrumbsNavigationProps {
+  /** Page title for the breadcrumb */
+  title?: string
+  /** URL path segment for the breadcrumb */
+  path?: string
+  /** Route parameters containing category or other segments */
+  params?: { category?: string }
+}
+
+/**
+ * Breadcrumb navigation component
+ * Displays hierarchical navigation path for user orientation
+ */
+const BreadcrumbsNavigation = ({title, path, params}: BreadcrumbsNavigationProps) => {
   const t = useTranslations("Common.Breadcrumbs")
   const path_title=path?.replace(/-/g, ' ');
   const formatted_title=params?.category?decodeURIComponent(params.category).replace(/-/g, ' '):title;

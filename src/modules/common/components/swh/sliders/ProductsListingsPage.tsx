@@ -9,7 +9,7 @@ import clsx from "clsx"
 import ProductGridCard from "../product-previews/ProductGridCard"
 import AnimatedContainer from "../utilities/AnimatedContainer"
 import animation from "@lib/util/animation"
-// import { useSearchParams } from "next/navigation"
+import { HttpTypes } from "@medusajs/types"
 
 const sortOptions = ["created_at", "price_asc", "price_desc"]
 
@@ -20,6 +20,26 @@ const gridColsMap: Record<number, string> = {
   5: "lg:grid-cols-5",
 }
 
+/** Props for ProductsListingsPage component */
+interface ProductsListingsPageProps {
+  /** Current sort option */
+  sortBy?: string
+  /** Array of products to display */
+  products: HttpTypes.StoreProduct[]
+  /** Current page number */
+  page: number
+  /** Total number of pages */
+  totalPages: number
+  /** Total number of products */
+  totalProducts: number
+  /** Number of products per page */
+  productsPerPage: number
+}
+
+/**
+ * Products listing page with grid display and pagination
+ * Shows products with sorting, filtering, and pagination controls
+ */
 const ProductsListingsPage = ({
   sortBy,
   products,
@@ -27,7 +47,7 @@ const ProductsListingsPage = ({
   totalPages,
   totalProducts,
   productsPerPage,
-}) => {
+}: ProductsListingsPageProps) => {
   const t = useTranslations("Store")
   const tSort = useTranslations("Store.Sort")
   const [layoutCol, setLayoutCol] = useState<number | null>(4)

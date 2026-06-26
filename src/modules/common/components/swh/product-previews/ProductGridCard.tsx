@@ -9,11 +9,18 @@ import PreviewPrice from "@modules/products/components/product-preview/price"
 import { getProductPrice } from "@lib/util/get-product-price"
 import { useTranslations } from "next-intl"
 
+/** Props for ProductGridCard component */
 type ProductGridCardProps = {
+  /** Product data to display */
   data: ProductGridCardData
+  /** Display type: grid for multi-column layout, list for single-column */
   type: "grid" | "list"
 }
 
+/**
+ * Product display card for grid and list layouts
+ * Shows product image, title, pricing, and wishlist toggle
+ */
 const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
   const t = useTranslations("Product.Preview")
     const { cheapestPrice,highestPrice } = getProductPrice({

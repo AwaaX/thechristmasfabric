@@ -8,11 +8,18 @@ import { getProductPrice } from "@lib/util/get-product-price"
 import PreviewPrice from "@modules/products/components/product-preview/price"
 import { useTranslations } from "next-intl"
 
+/** Props for ProductSliderCard component */
 type ProductSliderCardProps = {
+  /** Product data to display */
   data: ProductGridCardData
+  /** Display type: grid for multi-column layout, list for single-column */
   type: "grid" | "list"
 }
 
+/**
+ * Product card for carousel/slider displays
+ * Optimized for horizontal scrolling layouts
+ */
 const ProductSliderCard = ({
   data,
   type,
