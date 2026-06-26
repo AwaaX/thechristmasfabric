@@ -2,7 +2,7 @@ import React from "react"
 import Slider from "rc-slider"
 import { getTranslations } from "next-intl/server"
 import { notFound } from "next/navigation"
-import SwhCategoryFilter from "@modules/layout/components/swh-category-filter"
+import SwhCategoryFilter from "@modules/layout/components/category-filter-panel"
 import { listCategories } from "@lib/data/categories"
 
 const fetchCategories = async () => {
@@ -18,7 +18,7 @@ const fetchCategories = async () => {
   return { product_categories: topLevelCategories }
 }
 
-const SwhFilters = async ({ params }) => {
+const ProductFiltersPanel = async ({ params }) => {
   // console.log("params?.category",params?.category)
 
   // const { product_categories } =params?.category?await getCategoryByHandle([decodeURIComponent(params.category)]).then((product_categories) => product_categories):await fetchCategories()
@@ -158,4 +158,4 @@ const SwhFilters = async ({ params }) => {
   )
 }
 
-export default SwhFilters
+export default ProductFiltersPanel

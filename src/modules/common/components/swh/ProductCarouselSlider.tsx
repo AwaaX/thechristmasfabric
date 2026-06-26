@@ -1,8 +1,8 @@
 
 import { listProductsWithSort } from "@lib/data/products"
-import SwhProductSliderUI from "@modules/layout/components/swh-product-slider-ui"
+import SwhProductSliderUI from "@modules/layout/components/product-slider-ui"
 
-const SwhProductsSlider = async ({ countryCode }) => {
+const ProductCarouselSlider = async ({ countryCode }) => {
   const queryParams = {
     limit: 12,
   }
@@ -18,4 +18,4 @@ const SwhProductsSlider = async ({ countryCode }) => {
   return <SwhProductSliderUI products={products} />
 }
 
-export default SwhProductsSlider
+export default ProductCarouselSlider

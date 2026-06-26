@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Navigation } from "swiper/modules"
 import "swiper/css/bundle"
-import SwhSliderProductPreview from "@modules/common/components/swh/SwhSliderProductPreview"
+import ProductSliderCard from "@modules/common/components/swh/ProductSliderCard"
 
 
 const SwhProductSliderUI = ({ products }) => {
@@ -43,7 +43,7 @@ const SwhProductSliderUI = ({ products }) => {
                 {products.length > 0 &&
                   products.map((p, i) => (
                     <SwiperSlide key={p.id}>
-                      <SwhSliderProductPreview data={p} type={"grid"} />
+                      <ProductSliderCard data={p} type={"grid"} />
                     </SwiperSlide>
                   ))}
               </Swiper>

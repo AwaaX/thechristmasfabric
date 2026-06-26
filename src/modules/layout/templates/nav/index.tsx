@@ -19,7 +19,7 @@ import NavMenu from "@modules/layout/components/nav-menu"
 import MobileMenu from "./MobileMenu"
 import CountrySelect from "@modules/layout/components/country-select"
 import { ArrowRightMini } from "@medusajs/icons"
-import SwhRegionSelect from "@modules/common/components/swh/SwhRegionSelect"
+import RegionSelector from "@modules/common/components/swh/RegionSelector"
 
 export default async function Nav() {
   const top = await getTranslations("NavBar.Top")
@@ -77,7 +77,7 @@ export default async function Nav() {
             {/* <div className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300">
              <p>USA</p> <FaGlobe className="text-base" />
            </div> */}
-            <SwhRegionSelect regions={regions} />
+            <RegionSelector regions={regions} />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Heading, Text } from "@medusajs/ui"
 
 import { useTranslations } from "next-intl"
-import SwhProductsSlider from "@modules/common/components/swh/SwhProductsSlider"
+import ProductCarouselSlider from "@modules/common/components/swh/ProductCarouselSlider"
 
 const QuickLookSection = ({ countryCode }) => {
   const t = useTranslations("HomePage.QuickLook")
@@ -21,7 +21,7 @@ const QuickLookSection = ({ countryCode }) => {
             </Heading>
             <p className="christmas-font ">{t("description")}</p>
           </div>
-          <SwhProductsSlider countryCode={countryCode} />
+          <ProductCarouselSlider countryCode={countryCode} />
         </div>
       </div>
     </>

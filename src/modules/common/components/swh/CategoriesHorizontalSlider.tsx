@@ -1,6 +1,6 @@
 
 import { listCategories } from "@lib/data/categories"
-import SwhCatSliderUI from "@modules/layout/components/swh-cat-slider-ui"
+import SwhCatSliderUI from "@modules/layout/components/category-slider-ui"
 
 const fetchCategories = async () => {
   try {
@@ -18,7 +18,7 @@ const fetchCategories = async () => {
   }
 }
 
-const SwhCategoriesSlider = async () => {
+const CategoriesHorizontalSlider = async () => {
   const categories = await fetchCategories()
 
   if (!categories) {
@@ -28,4 +28,4 @@ const SwhCategoriesSlider = async () => {
   return <SwhCatSliderUI categories={categories} />
 }
 
-export default SwhCategoriesSlider
+export default CategoriesHorizontalSlider

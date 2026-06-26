@@ -3,7 +3,7 @@ import { useToggleState } from "@medusajs/ui"
 import CurrencySelect from "@modules/layout/components/currency-select"
 import React from "react"
 
-const SwhCurrencySelect = ({ regions, product = {} }) => {
+const CurrencySelector = ({ regions, product = {} }) => {
   const toggleState = useToggleState()
 
   return (
@@ -23,4 +23,4 @@ const SwhCurrencySelect = ({ regions, product = {} }) => {
   )
 }
 
-export default SwhCurrencySelect
+export default CurrencySelector

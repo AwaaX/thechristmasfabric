@@ -3,33 +3,28 @@
 import { useWishlist } from "@lib/context/wishlist-context"
 import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
 import { getDefaultProductVariant } from "@lib/util/product"
-import { HttpTypes } from "@medusajs/types"
 import { clx } from "@medusajs/ui"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import type { KeyboardEvent, MouseEvent } from "react"
+import type { ProductGridCardData } from "./types"
 
-export type SwhProductPreviewData = HttpTypes.StoreProduct & {
-  price?: {
-    calculated_price?: string | null
-    original_price?: string | null
-  } | null
-}
+export type { ProductGridCardData } from "./types"
 
-type SwhWishlistToggleProps = {
+type WishlistButtonProps = {
   className: string
   iconSize: number
-  product: SwhProductPreviewData
+  product: ProductGridCardData
   tooltipClassName: string
 }
 
-const SwhWishlistToggle = ({
+const WishlistButton = ({
   className,
   iconSize,
   product,
   tooltipClassName,
-}: SwhWishlistToggleProps) => {
+}: WishlistButtonProps) => {
   const t = useTranslations("Wishlist.Toggle")
   const params = useParams()
   const router = usePageLoaderRouter()
@@ -115,4 +110,4 @@ const SwhWishlistToggle = ({
   )
 }
 
-export default SwhWishlistToggle
+export default WishlistButton

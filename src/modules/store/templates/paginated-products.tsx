@@ -2,7 +2,7 @@ import { listProductsWithSort } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { buildProductListEcommercePayload } from "@lib/analytics"
 import AnalyticsEvent from "@modules/analytics/components/event"
-import SwhProductsPage from "@modules/common/components/swh/SwhProductsPage"
+import ProductsListingsPage from "@modules/common/components/swh/ProductsListingsPage"
 import ProductPreview from "@modules/products/components/product-preview"
 import { Pagination } from "@modules/store/components/pagination"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
@@ -99,7 +99,7 @@ export default async function PaginatedProducts({
         />
       )} */}
 
-      <SwhProductsPage
+      <ProductsListingsPage
       sortBy={sortBy}
       products={products}
       page={page}

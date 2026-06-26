@@ -6,7 +6,7 @@ import * as Icon from "@phosphor-icons/react/dist/ssr"
 import RefinementList from "@modules/store/components/refinement-list"
 import { IoIosArrowUp } from "react-icons/io"
 import clsx from "clsx"
-import SwhProductPreview from "./SwhProductPreview"
+import ProductGridCard from "./ProductGridCard"
 import AnimatedContainer from "./AnimatedContainer"
 import animation from "@lib/util/animation"
 // import { useSearchParams } from "next/navigation"
@@ -20,7 +20,7 @@ const gridColsMap: Record<number, string> = {
   5: "lg:grid-cols-5",
 }
 
-const SwhProductsPage = ({
+const ProductsListingsPage = ({
   sortBy,
   products,
   page,
@@ -226,7 +226,7 @@ const SwhProductsPage = ({
         {products.map((p) => {
           return (
             <li key={p.id}>
-              <SwhProductPreview data={p} type={layoutType} />
+              <ProductGridCard data={p} type={layoutType} />
             </li>
           )
         })}
@@ -242,4 +242,4 @@ const SwhProductsPage = ({
   )
 }
 
-export default SwhProductsPage
+export default ProductsListingsPage

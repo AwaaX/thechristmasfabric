@@ -2,20 +2,20 @@
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import DynamicImage from "./DynamicImage"
-import SwhWishlistToggle, {
-  type SwhProductPreviewData,
-} from "./SwhWishlistToggle"
+import WishlistButton, {
+  type ProductGridCardData,
+} from "./WishlistButton"
 import parse from "html-react-parser"
 import PreviewPrice from "@modules/products/components/product-preview/price"
 import { getProductPrice } from "@lib/util/get-product-price"
 import { useTranslations } from "next-intl"
 
-type SwhProductPreviewProps = {
-  data: SwhProductPreviewData
+type ProductGridCardProps = {
+  data: ProductGridCardData
   type: "grid" | "list"
 }
 
-const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
+const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
   const t = useTranslations("Product.Preview")
     const { cheapestPrice,highestPrice } = getProductPrice({
       product: data,
@@ -46,7 +46,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
               <div className="product-thumb   relative overflow-hidden ">
                 {/* Add to WishList */}
                 <div className="list-action-right absolute top-3 right-3 max-lg:hidden">
-                  <SwhWishlistToggle
+                  <WishlistButton
                     className="add-wishlist-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative"
                     iconSize={18}
                     product={data}
@@ -159,7 +159,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
 
                     {/* Add to WishList */}
                     <div className="">
-                      <SwhWishlistToggle
+                      <WishlistButton
                         className="add-wishlist-btn tag-action-ctrl w-[42px] h-[42px] flex items-center justify-center rounded-full bg-white duration-300 relative ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)]"
                         iconSize={24}
                         product={data}
@@ -177,4 +177,4 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
   )
 }
 
-export default SwhProductPreview
+export default ProductGridCard

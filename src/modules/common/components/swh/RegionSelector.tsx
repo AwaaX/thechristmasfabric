@@ -3,7 +3,7 @@ import { useToggleState } from "@medusajs/ui"
 import CountrySelect from "@modules/layout/components/country-select"
 import React from "react"
 
-const SwhRegionSelect = ({ regions }) => {
+const RegionSelector = ({ regions }) => {
   const toggleState = useToggleState()
 
   return (
@@ -22,4 +22,4 @@ const SwhRegionSelect = ({ regions }) => {
   )
 }
 
-export default SwhRegionSelect
+export default RegionSelector

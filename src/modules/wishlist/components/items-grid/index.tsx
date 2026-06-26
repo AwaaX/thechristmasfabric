@@ -6,7 +6,7 @@ import { Button } from "@medusajs/ui"
 import Thumbnail from "@modules/products/components/thumbnail"
 import ProductPrice from "@modules/products/components/product-price"
 import WishlistButton from "@modules/products/components/wishlist-button"
-import SwhProductPreview from "@modules/common/components/swh/SwhProductPreview"
+import ProductGridCard from "@modules/common/components/swh/ProductGridCard"
 import { useTranslations } from "next-intl"
 
 type WishlistItemsGridProps = {
@@ -118,7 +118,7 @@ export default function WishlistItemsGrid({
                 )}
               </div>
             </div> */}
-             <SwhProductPreview data={item.product} type="grid" />
+             <ProductGridCard data={item.product} type="grid" />
                      {variantTitle && (
                   <p className="text-small-regular text-ui-fg-subtle">
                     {t("variant")}: {variantTitle}

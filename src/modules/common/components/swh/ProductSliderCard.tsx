@@ -2,20 +2,20 @@
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import DynamicImage from "./DynamicImage"
-import SwhWishlistToggle, { type SwhProductPreviewData } from "./SwhWishlistToggle"
+import WishlistButton, { type ProductGridCardData } from "./WishlistButton"
 import { getProductPrice } from "@lib/util/get-product-price"
 import PreviewPrice from "@modules/products/components/product-preview/price"
 import { useTranslations } from "next-intl"
 
-type SwhSliderProductPreviewProps = {
-  data: SwhProductPreviewData
+type ProductSliderCardProps = {
+  data: ProductGridCardData
   type: "grid" | "list"
 }
 
-const SwhSliderProductPreview = ({
+const ProductSliderCard = ({
   data,
   type,
-}: SwhSliderProductPreviewProps) => {
+}: ProductSliderCardProps) => {
   const t = useTranslations("Product.Preview")
   const { cheapestPrice, highestPrice } = getProductPrice({
     product: data,
@@ -46,7 +46,7 @@ const SwhSliderProductPreview = ({
               <div className="product-thumb bg-white relative overflow-hidden rounded-2xl">
                 {/* Add to WishList */}
                 <div className="list-action-right absolute top-3 right-3 max-lg:hidden">
-                  <SwhWishlistToggle
+                  <WishlistButton
                     className="add-wishlist-btn w-[32px] h-[32px] flex items-center justify-center rounded-full bg-white duration-300 relative"
                     iconSize={18}
                     product={data}
@@ -181,7 +181,7 @@ const SwhSliderProductPreview = ({
 
                     {/* Add to WishList */}
                     <div className="">
-                      <SwhWishlistToggle
+                      <WishlistButton
                         className="add-wishlist-btn tag-action-ctrl w-[42px] h-[42px] flex items-center justify-center rounded-full bg-white duration-300 relative ease-out hover:shadow-[0_0_0_0.2rem_rgba(0,0,0,1)]"
                         iconSize={24}
                         product={data}
@@ -199,4 +199,4 @@ const SwhSliderProductPreview = ({
   )
 }
 
-export default SwhSliderProductPreview
+export default ProductSliderCard

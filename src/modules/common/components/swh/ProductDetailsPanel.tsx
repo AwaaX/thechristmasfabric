@@ -10,7 +10,7 @@ import DynamicImage from "./DynamicImage"
 
 SwiperCore.use([Navigation, Thumbs])
 
-const SwhProductDetails = ({ data: productMain, region }) => {
+const ProductDetailsPanel = ({ data: productMain, region }) => {
   const swiperRef: any = useRef()
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null)
   const [openPopupImg, setOpenPopupImg] = useState(false)
@@ -151,4 +151,4 @@ const SwhProductDetails = ({ data: productMain, region }) => {
   )
 }
 
-export default SwhProductDetails
+export default ProductDetailsPanel

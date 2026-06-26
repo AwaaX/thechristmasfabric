@@ -3,7 +3,7 @@ import LocalizedClientLink from '@modules/common/components/localized-client-lin
 import * as Icon from "@phosphor-icons/react/dist/ssr";
 import { useTranslations } from 'next-intl'
 
-const SwhBreadCrumbs = ({title,path,params}) => {
+const BreadcrumbsNavigation = ({title,path,params}) => {
   const t = useTranslations("Common.Breadcrumbs")
   const path_title=path?.replace(/-/g, ' ');
   const formatted_title=params?.category?decodeURIComponent(params.category).replace(/-/g, ' '):title;
@@ -32,4 +32,4 @@ const SwhBreadCrumbs = ({title,path,params}) => {
   )
 }
 
-export default SwhBreadCrumbs
+export default BreadcrumbsNavigation

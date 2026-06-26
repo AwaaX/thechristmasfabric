@@ -16,7 +16,7 @@ import { notFound } from "next/navigation"
 import { HttpTypes } from "@medusajs/types"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import ProductReviews from "../components/product-reviews"
-import SwhProductDetails from "@modules/common/components/swh/SwhProductDetails"
+import ProductDetailsPanel from "@modules/common/components/swh/ProductDetailsPanel"
 
 type ProductTemplateProps = {
   product: HttpTypes.StoreProduct
@@ -56,7 +56,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
       <div className="product-detail grouped small-container">
         <div className="featured-product underwear md:py-20 py-10">
           <div className="container flex justify-between gap-y-6 flex-wrap">
-            <SwhProductDetails data={product} region={region} />
+            <ProductDetailsPanel data={product} region={region} />
             <div className="product-infor md:w-1/2 w-full lg:pl-[15px] md:pl-2">
               <div className="flex flex-col  small:top-48 small:py-0  w-full md:py-8 gap-y-12 md:mt-8">
                 <ProductActionsWrapper
