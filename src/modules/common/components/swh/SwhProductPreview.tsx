@@ -37,7 +37,6 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
   return (
     <>
       <LocalizedClientLink
-        // href={`/christmas-pyjamas/${categorytitle}/${data.handle}/${data.id}`}
         href={`/products/${data.handle}`}
         className="group"
       >
@@ -59,14 +58,6 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                 <div className="product-img w-full h-full aspect-[3/4] flex items-center justify-center">
                   <>
                     {data.thumbnail && (
-                      // <Image
-                      //   src={data.thumbnail}
-                      //   width={500}
-                      //   height={500}
-                      //   priority={true}
-                      //   alt={data.title}
-                      //   className="w-full  duration-700 "
-                      // />
                       <DynamicImage
                         url={data.thumbnail}
                         alt={data.title}
@@ -95,8 +86,6 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                 </div>
                 <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
                   <div className="product-price text-title">
-                    {/* {data.price?.calculated_price} */}
-
                     {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
                   </div>
                   {typeof percentSale === "number" && percentSale > 0 && (
@@ -121,14 +110,6 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                 <div className="product-thumb  relative overflow-hidden  block max-sm:w-1/2 w-1/4 ">
                   <div className="product-img w-full aspect-[3/4] bg-slate-200 overflow-hidden flex items-center justify-center">
                     {data.thumbnail && (
-                      // <Image
-                      //   src={data.thumbnail}
-                      //   width={500}
-                      //   height={500}
-                      //   priority={true}
-                      //   alt={data.name}
-                      //   className="w-full  duration-700"
-                      // />
                       <DynamicImage
                         url={data.thumbnail}
                         alt={data.title}
@@ -146,8 +127,7 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
 
                   <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
                     <div className="product-price text-title">
-                      {/* {data.price?.calculated_price} */}
-                        {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
+                      {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
                     </div>
                     {typeof percentSale === "number" && percentSale > 0 && (
                       <>
@@ -162,8 +142,6 @@ const SwhProductPreview = ({ data, type }: SwhProductPreviewProps) => {
                   </div>
 
                   <div className="text-secondary desc mt-5 max-sm:hidden">
-                    {/* {parse(data?.metadata?.["en-GB_short_description"]) ||
-                      "No Description Found"} */}
                     {parse(data.subtitle)}
                   </div>
 
