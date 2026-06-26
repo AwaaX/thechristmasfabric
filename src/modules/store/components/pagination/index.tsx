@@ -1,7 +1,7 @@
 "use client"
 
 import { clx } from "@medusajs/ui"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { usePathname, useSearchParams } from "next/navigation"
 
 export function Pagination({

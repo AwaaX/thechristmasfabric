@@ -1,7 +1,7 @@
 "use client"
 
 import { InstantSearch } from "react-instantsearch-hooks-web"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { MagnifyingGlassMini } from "@medusajs/icons"
 
 

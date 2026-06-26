@@ -2,7 +2,7 @@
 
 import { setAddresses } from "@lib/data/cart"
 import compareAddresses from "@lib/util/compare-addresses"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { CheckCircleSolid } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { Heading, Text, useToggleState } from "@medusajs/ui"

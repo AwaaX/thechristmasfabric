@@ -7,7 +7,7 @@ import {
   ListboxOptions,
   Transition,
 } from "@headlessui/react"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { useTranslations } from "next-intl"
 import { Fragment, useEffect, useMemo, useState, useTransition } from "react"
 import ReactCountryFlag from "react-country-flag"

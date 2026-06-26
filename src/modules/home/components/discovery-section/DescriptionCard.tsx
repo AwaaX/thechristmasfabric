@@ -1,5 +1,5 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import DynamicImage from "@modules/common/components/swh/DynamicImage"
+import { DynamicImage } from "@modules/common/components/swh/utilities"
 
 import React from "react"
 

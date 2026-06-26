@@ -11,7 +11,7 @@ import { Fragment, useEffect, useMemo, useState } from "react"
 import ReactCountryFlag from "react-country-flag"
 
 import { StateType } from "@lib/hooks/use-toggle-state"
-import { usePageLoader } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoader } from "@modules/common/components/swh/providers"
 import { useParams, usePathname } from "next/navigation"
 import { updateRegion } from "@lib/data/cart"
 import { getLocalizedProductHandle } from "@lib/data/products"

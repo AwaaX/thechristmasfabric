@@ -69,7 +69,7 @@ const customTranslationFields = locale ? `*custom_translation.${locale}` : "*cus
           offset,
           region_id: region?.id,
           fields:
-            `*variants.calculated_price,+variants.inventory_quantity,*variants.images,+metadata,+tags,*sizeguides,${customTranslationFields}`,
+            `*variants.calculated_price,+variants.inventory_quantity,${customTranslationFields}`,
           ...queryParams,
         },
         headers,
@@ -120,7 +120,7 @@ export const listProductsWithSort = async ({
     pageParam: 0,
     queryParams: {
       ...queryParams,
-      limit: 100,
+      limit: 25,
     },
     countryCode,
   })

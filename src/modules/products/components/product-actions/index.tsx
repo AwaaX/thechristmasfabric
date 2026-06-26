@@ -9,7 +9,7 @@ import { addToCart } from "@lib/data/cart"
 import { getProductReviews } from "@lib/data/products"
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { useWishlist } from "@lib/context/wishlist-context"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { HttpTypes } from "@medusajs/types"
 import { Button, clx } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
@@ -93,8 +93,6 @@ export default function ProductActions({
     }
   }, [productOptions])
 
-  console.log(productOptions)
-
   useEffect(() => {
     if (!product?.id) {
       setReviewRating(0)
@@ -146,10 +144,8 @@ export default function ProductActions({
 
         temp[option.option_id] = option.value
       }
-      // console.log("temp", temp)
       map[variant?.id] = temp
     }
-    // console.log("variantRecord", map)
     return map
   }, [variants])
 
@@ -323,13 +319,6 @@ export default function ProductActions({
     }
   }, [availableGenders, selectedGenderId, selectedGender])
 
-  // console.log("selectedSizeId", selectedSizeId)
-  // console.log("selectedGenderId", selectedGenderId)
-  // console.log("selectedGender", selectedGender)
-  // console.log("selections", options)
-  // console.log("availableVariants", availableVariants)
-  // console.log("uniqueSizes", uniqueSizes)
-
   // Function to handle increasing the quantity
   const handleIncreaseQuantity = () => {
     if (variant) {
@@ -360,10 +349,6 @@ export default function ProductActions({
       setShowAlert(false) // Hide alert in other cases
     }
   }, [quantity, variant])
-
-  // const wishlistVariantId =
-  //   variant?.id ??
-  //   (variants.length === 1 && variants[0]?.id ? variants[0].id : undefined)
 
   const defaultVariant = getDefaultProductVariant(product)
   const wishlistVariantId = defaultVariant?.id
@@ -464,24 +449,6 @@ export default function ProductActions({
             data-testid="product-description"
           >
             {product.subtitle && parse(product.subtitle)}
-            {/* {localizedProduct.shortDescription} */}
-            {/* {parse(localizedProduct?.subTitle)} */}
-            {/* {parse(product.metadata?.["en-US_short_description"] as string)} */}
-            {/* <ShowMoreText
-              lines={3}
-              more={"showmore"}
-              less={"showless"}
-              className=""
-              anchorClass="text-[#FF8C52] cursor-pointer text-[16px]"
-              expanded={false}
-              truncatedEndingComponent={" ... "}
-            >
-              {parse(product.metadata?.["en-US_short_description"] as string)}
-            </ShowMoreText> */}
-            {/* A beautiful set of red, grey and black checked Christmas pajamas for
-            the whole family, couples, kids and babies. You will find on this
-            model bears, fir trees and caribou patterns for Christmas and animal
-            lovers. */}
           </div>
         </div>
       </div>
@@ -529,7 +496,6 @@ export default function ProductActions({
                   </div>
                 )
               })}
-              {/* <Divider /> */}
             </div>
           )}
         </div>
@@ -582,19 +548,6 @@ export default function ProductActions({
             {t("estimatedDeliveryText")}
           </span>
         </div>
-
-        {/* <MobileActions
-          product={product}
-          variant={variant}
-          region={region}
-          options={options}
-          updateOptions={updateOptions}
-          inStock={inStock}
-          handleAddToCart={handleAddToCart}
-          isAdding={isAdding}
-          show={!inView}
-          optionsDisabled={!!disabled || isAdding}
-        /> */}
       </div>
     </>
   )

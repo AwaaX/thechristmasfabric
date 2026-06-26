@@ -4,7 +4,7 @@ import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
-import SwhBreadCrumbsProductPage from "@modules/common/components/swh/SwhBreadCrumbsProductPage"
+import { ProductPageBreadcrumbs } from '@modules/common/components/swh/navigation'
 import { buildHreflangAlternates } from "@lib/util/metadata"
 import { getLocalizedProductHandle } from "@lib/data/products"
 
@@ -156,7 +156,7 @@ export default async function ProductPage(props: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SwhBreadCrumbsProductPage
+      <ProductPageBreadcrumbs
         title={"shop"}
         path={"christmas-pyjamas"}
         params={params}

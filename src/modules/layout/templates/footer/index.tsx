@@ -72,8 +72,8 @@ export default async function Footer() {
           <div className="flex-1">
             <div className="relative flex max-md:flex-col items-center gap-x-6 h-full flex-1 basis-0 justify-start">
               <p>{t("Top.SwitchText")}</p>
-              {/* <SwhRegionSelect regions={regions} />
-              <SwhCurrencySelect regions={regions} /> */}
+              {/* <RegionSelector regions={regions} />
+              <CurrencySelector regions={regions} /> */}
             </div>
           </div>
           <div className="flex-1 text-center max-md:border-t border-black">

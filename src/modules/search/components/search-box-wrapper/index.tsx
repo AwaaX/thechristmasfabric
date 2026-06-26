@@ -1,4 +1,4 @@
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import {
   ChangeEvent,
   FormEvent,

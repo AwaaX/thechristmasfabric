@@ -3,7 +3,7 @@ import { getRegion } from "@lib/data/regions"
 import { HttpTypes } from "@medusajs/types"
 import { getTranslations } from "next-intl/server"
 import Product from "../product-preview"
-import SwhProductPreview from "@modules/common/components/swh/SwhProductPreview"
+import { ProductGridCard } from "@modules/common/components/swh/product-previews"
 
 type RelatedProductsProps = {
   product: HttpTypes.StoreProduct
@@ -65,7 +65,7 @@ export default async function RelatedProducts({
         {products.map((product) => (
           <li key={product.id}>
             {/* <Product region={region} product={product} /> */}
-      <SwhProductPreview data={product} type="grid" />
+      <ProductGridCard data={product} type="grid" />
           </li>
         ))}
       </ul>
