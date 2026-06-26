@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Navigation } from "swiper/modules"
 import "swiper/css/bundle"
-import ProductSliderCard from "@modules/common/components/swh/ProductSliderCard"
+import { ProductSliderCard } from "@modules/common/components/swh/product-previews"
 
 
 const SwhProductSliderUI = ({ products }) => {

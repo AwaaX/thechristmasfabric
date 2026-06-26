@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Navigation } from "swiper/modules"
 import "swiper/css/bundle"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import DynamicImage from "@modules/common/components/swh/DynamicImage"
+import { DynamicImage } from "@modules/common/components/swh/utilities"
 
 
 const SwhCatSliderUI = ({ categories }) => {

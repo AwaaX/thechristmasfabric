@@ -1,5 +1,5 @@
-import BreadcrumbsNavigation from "@modules/common/components/swh/BreadcrumbsNavigation"
-import ProductFiltersPanel from "@modules/common/components/swh/ProductFiltersPanel"
+import { BreadcrumbsNavigation } from '@modules/common/components/swh/navigation'
+import { ProductFiltersPanel } from '@modules/common/components/swh/filters'
 import React from "react"
 
 

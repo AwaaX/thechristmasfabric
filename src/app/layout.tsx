@@ -6,7 +6,7 @@ import { Jost } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import Script from "next/script"
 import "styles/styles.scss"
-import ProgressBarProviders from "@modules/common/components/swh/ProgressBarProvider"
+import { ProgressBarProvider } from '@modules/common/components/swh/providers'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const jost = Jost({
@@ -81,7 +81,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <main className="relative">
           {" "}
           <NextIntlClientProvider>
-            <ProgressBarProviders>{props.children}</ProgressBarProviders>
+            <ProgressBarProvider>{props.children}</ProgressBarProvider>
           </NextIntlClientProvider>
         </main>
         <Script id="show-hide-header" strategy="beforeInteractive">

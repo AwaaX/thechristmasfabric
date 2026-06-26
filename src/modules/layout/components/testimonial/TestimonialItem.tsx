@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 import { TestimonialType } from 'types/global'
-import Rate from '@modules/common/components/swh/Rate'
+import { Rate } from "@modules/common/components/swh/utilities"
 
 interface TestimonialProps {
     data: TestimonialType

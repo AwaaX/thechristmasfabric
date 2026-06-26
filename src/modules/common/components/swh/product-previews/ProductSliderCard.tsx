@@ -1,25 +1,26 @@
 "use client"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import DynamicImage from "./DynamicImage"
-import WishlistButton, {
-  type ProductGridCardData,
-} from "./WishlistButton"
-import parse from "html-react-parser"
-import PreviewPrice from "@modules/products/components/product-preview/price"
+import DynamicImage from "../utilities/DynamicImage"
+import WishlistButton from "../WishlistButton"
+import type { ProductGridCardData } from "./types"
 import { getProductPrice } from "@lib/util/get-product-price"
+import PreviewPrice from "@modules/products/components/product-preview/price"
 import { useTranslations } from "next-intl"
 
-type ProductGridCardProps = {
+type ProductSliderCardProps = {
   data: ProductGridCardData
   type: "grid" | "list"
 }
 
-const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
+const ProductSliderCard = ({
+  data,
+  type,
+}: ProductSliderCardProps) => {
   const t = useTranslations("Product.Preview")
-    const { cheapestPrice,highestPrice } = getProductPrice({
-      product: data,
-    })
+  const { cheapestPrice, highestPrice } = getProductPrice({
+    product: data,
+  })
   const originalPriceText = data.price?.original_price
   const salePriceText = data.price?.calculated_price
   const originalPrice = originalPriceText
@@ -41,9 +42,9 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
         className="group"
       >
         {type === "grid" ? (
-          <div className="product-item grid-type">
-            <div className="product-main cursor-pointer block ">
-              <div className="product-thumb   relative overflow-hidden ">
+          <div className="product-item grid-type hover:border duration-500 ease-in-out border border-transparent hover:border-black rounded-md px-2  group">
+            <div className="product-main cursor-pointer block">
+              <div className="product-thumb bg-white relative overflow-hidden rounded-2xl">
                 {/* Add to WishList */}
                 <div className="list-action-right absolute top-3 right-3 max-lg:hidden">
                   <WishlistButton
@@ -55,38 +56,37 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
                 </div>
 
                 {/* Thumb Image */}
-                <div className="product-img w-full h-full aspect-[3/4] flex items-center justify-center">
+                <div className="product-img w-full h-full aspect-[3/4]">
                   <>
                     {data.thumbnail && (
+                      // <Image
+                      //   src={data.thumbnail}
+                      //   width={500}
+                      //   height={500}
+                      //   priority={true}
+                      //   alt={data.title}
+                      //   className="w-full h-full object-cover duration-700"
+                      // />
                       <DynamicImage
                         url={data.thumbnail}
                         alt={data.title}
-                        className="w-full aspect-[3/4] object-contain "
+                        className="w-full aspect-[3/4] object-cover "
                       />
                     )}
                   </>
                 </div>
-
-                {/* Select Option */}
-                <div className="list-action px-5 absolute w-full bottom-5 ">
-                  <div
-                    className="quick-view-btn w-full text-[16px] bg-white swh-btn "
-                    onClick={(e) => {
-                      e.stopPropagation()
-                    }}
-                  >
-                    {t("selectOption")}
-                  </div>
-                </div>
               </div>
-
-              <div className=" mt-4 lg:mb-7">
-                <div className="product-name text-title duration-300">
-                  {data.title}
-                </div>
-                <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
-                  <div className="product-price text-title">
-                    {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
+              <div className="mt-4 lg:mb-7">
+                <div className="christmas-font-head">{data.title}</div>
+                <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]  ">
+                  <div className="product-price christmas-font text-black">
+                    {/* {data.price?.calculated_price} */}
+                    {cheapestPrice && (
+                      <PreviewPrice
+                        price={cheapestPrice}
+                        highestPrice={highestPrice}
+                      />
+                    )}
                   </div>
                   {typeof percentSale === "number" && percentSale > 0 && (
                     <>
@@ -99,6 +99,21 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
                     </>
                   )}
                 </div>
+                <div className="caption1 text-[#356941] flex gap-2 items-center">
+                  <div className="w-[6px] h-[6px] rounded-full bg-[#356941]"></div>{" "}
+                  {t("inStock")}
+                </div>
+                {/* Select Option */}
+                <div className="w-full mt-4 opacity-0 group-hover:opacity-100 duration-500 ease-in-out">
+                  <div
+                    className="w-full text-[16px] swh-btn text-black border-black"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                    }}
+                  >
+                    {t("selectOption")}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -107,9 +122,17 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
             <div className="product-item list-type">
               <div className="product-main cursor-pointer flex lg:items-center sm:justify-between gap-7 max-lg:gap-5">
                 {/* thumb Image */}
-                <div className="product-thumb  relative overflow-hidden  block max-sm:w-1/2 w-1/4 ">
-                  <div className="product-img w-full aspect-[3/4] bg-slate-200 overflow-hidden flex items-center justify-center">
+                <div className="product-thumb bg-white relative overflow-hidden rounded-2xl block max-sm:w-1/2 w-1/4 ">
+                  <div className="product-img w-full aspect-[3/4] rounded-2xl overflow-hidden">
                     {data.thumbnail && (
+                      // <Image
+                      //   src={data.thumbnail}
+                      //   width={500}
+                      //   height={500}
+                      //   priority={true}
+                      //   alt={data.name}
+                      //   className="w-full h-full object-cover duration-700"
+                      // />
                       <DynamicImage
                         url={data.thumbnail}
                         alt={data.title}
@@ -121,13 +144,13 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
 
                 {/* Details */}
                 <div className="flex flex-col items-start justify-center  w-3/4">
-                  <div className="product-name heading6 inline-block duration-300">
+                  <div className="product-name heading6 inline-block duration-300 max-md:!text-sm">
                     {data.title}
                   </div>
 
                   <div className="product-price-block flex items-center gap-2 flex-wrap mt-1 duration-300 relative z-[1]">
                     <div className="product-price text-title">
-                      {cheapestPrice && <PreviewPrice price={cheapestPrice} highestPrice={highestPrice} />}
+                      {data.price?.calculated_price}
                     </div>
                     {typeof percentSale === "number" && percentSale > 0 && (
                       <>
@@ -142,7 +165,7 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
                   </div>
 
                   <div className="text-secondary desc mt-5 max-sm:hidden">
-                    {parse(data.subtitle)}
+                    {t("sliderDescription")}
                   </div>
 
                   <div className="flex items-center justify-start gap-8 mt-8">
@@ -177,4 +200,4 @@ const ProductGridCard = ({ data, type }: ProductGridCardProps) => {
   )
 }
 
-export default ProductGridCard
+export default ProductSliderCard

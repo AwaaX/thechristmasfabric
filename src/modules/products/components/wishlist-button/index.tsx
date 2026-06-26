@@ -1,7 +1,7 @@
 "use client"
 
 import { useWishlist } from "@lib/context/wishlist-context"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { Heart } from "@medusajs/icons"
 import { Button, clx } from "@medusajs/ui"
 import { useTranslations } from "next-intl"

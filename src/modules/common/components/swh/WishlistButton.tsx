@@ -1,16 +1,16 @@
 "use client"
 
 import { useWishlist } from "@lib/context/wishlist-context"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { getDefaultProductVariant } from "@lib/util/product"
 import { clx } from "@medusajs/ui"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import type { KeyboardEvent, MouseEvent } from "react"
-import type { ProductGridCardData } from "./types"
+import type { ProductGridCardData } from "./product-previews/types"
 
-export type { ProductGridCardData } from "./types"
+export type { ProductGridCardData } from "./product-previews/types"
 
 type WishlistButtonProps = {
   className: string

@@ -10,7 +10,7 @@ import { getProductByHandle2, getProductById2 } from "app/actions"
 import { useParams } from "next/navigation"
 import { IoIosArrowDown } from "react-icons/io"
 import { usePathname, useRouter } from "i18n/routing"
-import { updateRegion } from "@lib/data"
+import { updateRegion } from "@lib/data/cart"
 
 type CurrencyType = {
   code: string

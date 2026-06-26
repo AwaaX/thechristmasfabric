@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Heading, Text } from "@medusajs/ui"
 
 import { useTranslations } from "next-intl"
-import ProductCarouselSlider from "@modules/common/components/swh/ProductCarouselSlider"
+import { ProductCarouselSlider } from "@modules/common/components/swh/sliders"
 
 const QuickLookSection = ({ countryCode }) => {
   const t = useTranslations("HomePage.QuickLook")

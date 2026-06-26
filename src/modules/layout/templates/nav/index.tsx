@@ -19,7 +19,7 @@ import NavMenu from "@modules/layout/components/nav-menu"
 import MobileMenu from "./MobileMenu"
 import CountrySelect from "@modules/layout/components/country-select"
 import { ArrowRightMini } from "@medusajs/icons"
-import RegionSelector from "@modules/common/components/swh/RegionSelector"
+import { RegionSelector } from "@modules/common/components/swh/selectors"
 
 export default async function Nav() {
   const top = await getTranslations("NavBar.Top")

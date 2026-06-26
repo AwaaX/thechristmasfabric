@@ -6,7 +6,7 @@ import { Button } from "@medusajs/ui"
 import Thumbnail from "@modules/products/components/thumbnail"
 import ProductPrice from "@modules/products/components/product-price"
 import WishlistButton from "@modules/products/components/wishlist-button"
-import ProductGridCard from "@modules/common/components/swh/ProductGridCard"
+import { ProductGridCard } from "@modules/common/components/swh/product-previews"
 import { useTranslations } from "next-intl"
 
 type WishlistItemsGridProps = {

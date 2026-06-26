@@ -16,7 +16,7 @@ import { notFound } from "next/navigation"
 import { HttpTypes } from "@medusajs/types"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import ProductReviews from "../components/product-reviews"
-import ProductDetailsPanel from "@modules/common/components/swh/ProductDetailsPanel"
+import { ProductDetailsPanel } from "@modules/common/components/swh/panels"
 
 type ProductTemplateProps = {
   product: HttpTypes.StoreProduct

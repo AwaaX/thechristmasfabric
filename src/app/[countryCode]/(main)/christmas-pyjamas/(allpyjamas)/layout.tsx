@@ -1,6 +1,6 @@
-import BreadcrumbsNavigation from "@modules/common/components/swh/BreadcrumbsNavigation"
-import CategoriesHorizontalSlider from "@modules/common/components/swh/CategoriesHorizontalSlider"
-import ProductFiltersPanel from "@modules/common/components/swh/ProductFiltersPanel"
+import { BreadcrumbsNavigation } from '@modules/common/components/swh/navigation'
+import { CategoriesHorizontalSlider } from '@modules/common/components/swh/sliders'
+import { ProductFiltersPanel } from '@modules/common/components/swh/filters'
 import SkeletonCategoriesSlider from "@modules/skeletons/templates/skeleton-categories-slider"
 import { Suspense } from "react"
 

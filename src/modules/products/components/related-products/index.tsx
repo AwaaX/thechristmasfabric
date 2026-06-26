@@ -3,7 +3,7 @@ import { getRegion } from "@lib/data/regions"
 import { HttpTypes } from "@medusajs/types"
 import { getTranslations } from "next-intl/server"
 import Product from "../product-preview"
-import ProductGridCard from "@modules/common/components/swh/ProductGridCard"
+import { ProductGridCard } from "@modules/common/components/swh/product-previews"
 
 type RelatedProductsProps = {
   product: HttpTypes.StoreProduct

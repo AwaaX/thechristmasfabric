@@ -47,7 +47,7 @@ export const usePageLoader = () => {
   const context = useContext(PageLoaderContext)
 
   if (!context) {
-    throw new Error("usePageLoader must be used within ProgressBarProviders")
+    throw new Error("usePageLoader must be used within ProgressBarProvider")
   }
 
   return context
@@ -85,7 +85,7 @@ export const usePageLoaderRouter = () => {
   )
 }
 
-const ProgressBarProviders = ({ children }: { children: React.ReactNode }) => {
+const ProgressBarProvider = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const searchParamsKey = searchParams.toString()
@@ -176,4 +176,4 @@ const ProgressBarProviders = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export default ProgressBarProviders
+export default ProgressBarProvider

@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import Banner from '@modules/common/components/swh/Banner';
+import { Banner } from '@modules/common/components/swh/utilities';
 import { useTranslations } from "next-intl"
 
 type FaqItem = {

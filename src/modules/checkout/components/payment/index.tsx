@@ -10,7 +10,7 @@ import ErrorMessage from "@modules/checkout/components/error-message"
 import PaymentContainer, {
   StripeCardContainer,
 } from "@modules/checkout/components/payment-container"
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import Divider from "@modules/common/components/divider"
 import { useTranslations } from "next-intl"
 import { usePathname, useSearchParams } from "next/navigation"

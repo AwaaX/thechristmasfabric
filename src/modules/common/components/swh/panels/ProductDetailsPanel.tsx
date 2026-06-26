@@ -6,7 +6,7 @@ import { Navigation, Thumbs, Scrollbar } from "swiper/modules"
 import "swiper/css/bundle"
 import Image from "next/image"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
-import DynamicImage from "./DynamicImage"
+import DynamicImage from "../utilities/DynamicImage"
 
 SwiperCore.use([Navigation, Thumbs])
 

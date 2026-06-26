@@ -1,6 +1,6 @@
 "use client"
 
-import { usePageLoaderRouter } from "@modules/common/components/swh/ProgressBarProvider"
+import { usePageLoaderRouter } from "@modules/common/components/swh/providers"
 import { usePathname, useSearchParams } from "next/navigation"
 import { useCallback } from "react"
 

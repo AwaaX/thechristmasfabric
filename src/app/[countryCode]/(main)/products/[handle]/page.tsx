@@ -4,7 +4,7 @@ import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
-import ProductPageBreadcrumbs from "@modules/common/components/swh/ProductPageBreadcrumbs"
+import { ProductPageBreadcrumbs } from '@modules/common/components/swh/navigation'
 import { buildHreflangAlternates } from "@lib/util/metadata"
 import { getLocalizedProductHandle } from "@lib/data/products"
 
