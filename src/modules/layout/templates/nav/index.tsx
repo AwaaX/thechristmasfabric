@@ -17,8 +17,6 @@ import Image from "next/image"
 import sitelogo from "@lib/img/sitelogo.svg"
 import NavMenu from "@modules/layout/components/nav-menu"
 import MobileMenu from "./MobileMenu"
-import CountrySelect from "@modules/layout/components/country-select"
-import { ArrowRightMini } from "@medusajs/icons"
 import SwhRegionSelect from "@modules/common/components/swh/SwhRegionSelect"
 
 export default async function Nav() {

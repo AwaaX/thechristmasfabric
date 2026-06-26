@@ -34,6 +34,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang={locale || ""} data-mode="light">
       <head>
+        <link rel="preconnect" href="https://tag.goadopt.io" />
+        <link rel="preconnect" href="https://disclaimer-api.goadopt.io" />
         <meta
           name="adopt-website-id"
           content="6d183e5e-44e9-4089-8a91-c0a4ff2d853a"
@@ -68,7 +70,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         />
 
         <Script
-          src="//tag.goadopt.io/injector.js?website_code=6d183e5e-44e9-4089-8a91-c0a4ff2d853a"
+          src="https://tag.goadopt.io/injector.js?website_code=6d183e5e-44e9-4089-8a91-c0a4ff2d853a"
           strategy="beforeInteractive"
           className="adopt-injector"
         />

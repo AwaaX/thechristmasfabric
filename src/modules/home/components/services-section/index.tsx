@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Heading, Text } from "@medusajs/ui"
+import { Text } from "@medusajs/ui"
 import sitelogo from "@lib/img/sitelogo.svg"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ServiceCard from "./ServiceCard"

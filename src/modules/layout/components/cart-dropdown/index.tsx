@@ -16,12 +16,12 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import { useTranslations } from "next-intl"
 import { usePathname, useRouter } from "next/navigation"
 import { Fragment, useEffect, useRef, useState, useTransition } from "react"
-import { BiShoppingBag } from "react-icons/bi"
-import { RxCross2 } from "react-icons/rx"
 import Image from "next/image"
 import emptycart from "@lib/img/cart/empty-cart.png"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import { getCheckoutStep } from "@modules/cart/templates/summary"
+import { BiShoppingBag } from "react-icons/bi"
+import { RxCross2 } from "react-icons/rx"
 
 const CartDropdown = ({
   cart: cartState,
@@ -182,6 +182,7 @@ const CartDropdown = ({
 
         <PopoverButton
           onClick={() => setCartDropdownOpen(true)}
+          aria-label={`${main("Cart")}, ${totalItems} items`}
           className="h-full outline-none "
         >
           <div className="hover:text-hoverGray text-black font-medium duration-300 ease-in-out relative  text-[20px] md:text-[24px] tag-action-ctrl">

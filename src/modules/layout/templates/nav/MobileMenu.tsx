@@ -5,7 +5,6 @@ import { Popover, Transition } from "@headlessui/react"
 import { RxCross2 } from "react-icons/rx"
 import { HiBars3 } from "react-icons/hi2"
 import { FaRegStar, FaRegUser } from "react-icons/fa"
-import NavMenu from "@modules/layout/components/nav-menu"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { IoChevronDown, IoChevronUp } from "react-icons/io5"
 import { useTranslations } from "next-intl"
@@ -86,6 +85,7 @@ const MobileMenu = () => {
       <Popover className=" h-full">
         <Popover.Button
           onClick={openMenu}
+          aria-label="Open menu"
           className="p-2 hover:text-hoverGray text-black  duration-300 ease-in-out text-[20px] md:text-[32px] cursor-pointer  relative tag-action-ctrl lg:hidden"
         >
           <HiBars3 />
@@ -122,7 +122,7 @@ const MobileMenu = () => {
                 >
                   {navMenu("all pyjamas")}
                 </LocalizedClientLink>
-                <button onClick={toggleSubmenu} className="text-xl">
+                <button onClick={toggleSubmenu} className="text-xl" aria-label={submenuOpen ? "Collapse submenu" : "Expand submenu"}>
                   {submenuOpen ? <IoChevronUp /> : <IoChevronDown />}
                 </button>
               </li>

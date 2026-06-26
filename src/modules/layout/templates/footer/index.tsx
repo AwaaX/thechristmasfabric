@@ -214,6 +214,7 @@ export default async function Footer() {
                 href={"https://www.tiktok.com/@thechristmasfabric"}
                 target="_blank"
                 className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300"
+                aria-label="Tiktok"
               >
                 <FaTiktok className="text-base" />
               </Link>
@@ -221,6 +222,7 @@ export default async function Footer() {
                 href={"https://www.instagram.com/thechristmasfabric/"}
                 target="_blank"
                 className=" font-normal flex items-center justify-center gap-[10px] group  hover:text-hoverGray cursor-pointer duration-300"
+                aria-label="Instagram"
               >
                 <FaInstagram className="text-base" />
               </Link>

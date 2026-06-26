@@ -1,6 +1,5 @@
 import Image from "next/image"
 import React from "react"
-import serviceIcon from "@lib/img/x_mas_box_01b.jpg.webp"
 
 const ServiceCard = ({icon,title,brief,pop}:{icon:any,title:any,brief:any,pop:any}) => {
   return (

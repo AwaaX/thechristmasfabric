@@ -1,11 +1,7 @@
 "use client"
 
-import { Popover, Transition } from "@headlessui/react"
-import { Cart } from "@medusajs/medusa"
 import { Button } from "@medusajs/ui"
 import { useTranslations } from "next-intl"
-import { useParams, usePathname } from "next/navigation"
-import { Fragment, useEffect, useRef, useState } from "react"
 
 import { formatAmount } from "@lib/util/prices"
 import DeleteButton from "@modules/common/components/delete-button"
@@ -13,7 +9,6 @@ import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Thumbnail from "@modules/products/components/thumbnail"
-import { BiShoppingBag } from "react-icons/bi"
 import { useModalCartContext } from "@modules/custom/context/ModalCartContext"
 import { useCart } from "../context/CartContext"
 

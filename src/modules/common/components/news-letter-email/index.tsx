@@ -46,8 +46,7 @@ const NewsLetterEmail = ({
             />
             {/* Arrow Button */}
             {!sending && (
-              <button type="submit">
-                {" "}
+              <button type="submit" aria-label="Submit" style={{fontSize: "24px"}}>
                 <IoMdArrowForward />
               </button>
             )}
@@ -70,8 +69,11 @@ const NewsLetterEmail = ({
             }`}
           >
             {/* Checkbox */}
-            <input type="checkbox" required={!isFooter} />
+            <label htmlFor="acceptTerms">
+              <input type="checkbox" required={!isFooter} id="acceptTerms" />
+            </label>
             {/* Text */}
+
             <p className="max-md:flex max-md:items-center max-md:justify-start max-md:gap-1 max-md:whitespace-nowrap max-md:flex-wrap">
               {t("txt1")}{" "}
               <LocalizedClientLink
@@ -88,6 +90,7 @@ const NewsLetterEmail = ({
                 {t("txt3")}
               </LocalizedClientLink>
             </p>
+            {/* </label> */}
           </div>
         </form>
       )}

@@ -1,10 +1,9 @@
-import Image from "next/image"
-import { Heading, Text } from "@medusajs/ui"
+import { Heading } from "@medusajs/ui"
 
 import { useTranslations } from "next-intl"
 import SwhProductsSlider from "@modules/common/components/swh/SwhProductsSlider"
 
-const QuickLookSection = ({ countryCode }) => {
+const QuickLookSection = ({ countryCode }: { countryCode: string }) => {
   const t = useTranslations("HomePage.QuickLook")
   return (
     <>

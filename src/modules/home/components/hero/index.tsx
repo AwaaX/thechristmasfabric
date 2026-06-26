@@ -1,5 +1,4 @@
-import { Github } from "@medusajs/icons"
-import { Button, Heading, Text } from "@medusajs/ui"
+import { Heading, Text } from "@medusajs/ui"
 import heroImg from "@lib/img/slide01.webp"
 import Image from "next/image"
 import { getTranslations } from "next-intl/server"
@@ -16,6 +15,8 @@ const Hero = async () => {
           alt={"hero-img"}
           className=" object-left md:object-center object-cover w-full h-full"
           placeholder="blur"
+          priority
+          fetchPriority="high"
         />
 
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6 px-2">
