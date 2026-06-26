@@ -1,9 +1,14 @@
-import Image from "next/image"
+"use client"
+
 import { Heading, Text } from "@medusajs/ui"
 import reviews from "@lib/data/reviews.json"
-
+import dynamic from "next/dynamic"
 import { useTranslations } from "next-intl"
-import Testimonial from "@modules/layout/components/testimonial"
+
+const Testimonial = dynamic(
+  () => import("@modules/layout/components/testimonial"),
+  { ssr: false }
+)
 const ReviewSection = () => {
   const t = useTranslations("HomePage.Reviews")
   return (

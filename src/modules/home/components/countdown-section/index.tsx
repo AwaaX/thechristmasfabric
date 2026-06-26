@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Heading, Text } from "@medusajs/ui"
+import { Heading } from "@medusajs/ui"
 import timerSectionImg from "@lib/img/x_mas_countdown_banner.jpg.webp"
 import { useTranslations } from "next-intl"
 

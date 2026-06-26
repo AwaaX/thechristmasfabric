@@ -1,7 +1,6 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { DynamicImage } from "@modules/common/components/swh/utilities"
 
-import Image from "next/image"
 import React from "react"
 
 const DescriptionCard = ({

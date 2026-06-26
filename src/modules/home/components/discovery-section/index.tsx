@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Heading, Text } from "@medusajs/ui"
 import productImg1 from "@lib/img/christmas-pyjamas-original2-min-370x500.png"
 import productImg2 from "@lib/img/family-original2-min-300x300.png"

@@ -132,6 +132,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
                   height: "16px",
                 }}
                 countryCode={current.country ?? ""}
+                alt={current.country}
               />
               {current.label}
               <IoIosArrowDown className="group-hover:text-hoverGray " />
